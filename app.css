@@ -1,0 +1,169 @@
+:root {
+	--blue: #1F4481;
+	--blue-brightness-opacity: 0.1;
+	--blue-brightness-filter: hue;
+	--blue-filter: hue;
+
+	--green: #26513C;
+	--green-brightness-opacity: 0.1;
+	--green-brightness-filter: hue;
+	--green-filter: color;
+
+	--red: #601f1f;
+	--red-brightness-opacity: 0.3;
+	--red-brightness-filter: hue;
+	--red-filter: hue;
+
+	--brown: #4D341E;
+	--brown-brightness-opacity: 0.15;
+	--brown-brightness-filter: luminosity;
+	--brown-filter: hue;
+}
+
+html,
+body,
+ul,
+li,
+figure,
+figcaption {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	justify-content: safe center;
+	align-items: safe center;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+fieldset {
+	border: none 0;
+}
+
+.app {
+	width: 100%;
+}
+
+.product {
+	position: relative;
+	width: 1200px;
+	height: 675px;
+	margin: 0 auto;
+	border-radius: 40px;
+	overflow: hidden;
+}
+
+.toolbar {
+	display: flex;
+	justify-content: space-around;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 8px 80px;
+	background: white;
+}
+
+.color-options ul {
+	display: flex;
+}
+
+.color-options li {
+	position: relative;
+}
+
+.color-options input {
+	position: absolute;
+	top: 35%;
+	left: 35%;
+}
+
+.color-options label {
+	position: relative;
+	display: block;
+	width: 48px;
+	height: 48px;
+	background: var(--color);
+	border-radius: 50%;
+	text-indent: -9999em;
+	transform: scale(.8);
+}
+
+.color-options label::before,
+.color-options label::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: var(--color);
+	opacity: .2;
+	border-radius: 50%;
+	transform: scale(1.125);
+	transition: all .3s;
+}
+
+.color-options label::after {
+	transform: scale(1);
+}
+
+/* Focus & Hover states */
+.color-options input:focus + label::after,
+.color-options label:hover::after {
+	transform: scale(1.25);
+}
+
+/* Selected state */
+.color-options input:checked + label::before {
+	transform: scale(1.2);
+	opacity: 1;
+}
+
+.color-options input:checked + label::after {
+	transform: scale(1.1);
+	opacity: 1;
+	box-shadow: inset 0 0 0 2px white;
+}
+
+/* Selected Focus */
+.color-options input:checked:focus + label::after,
+.color-options input:checked + label:hover::after {
+	box-shadow: inset 0 0 0 2px rgba(255,255,255, .5);
+	transform: scale(1);
+}
+
+.filters,
+.filters > div {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.color {
+	background: var(--color, transparent);
+	mix-blend-mode: var(--filter, color);
+	clip-path: var(--shape);
+}
+.brightness {
+	background: var(--brightness-color, black);
+	mix-blend-mode: var(--brightness-filter, luminosity);
+	opacity: var(--brightness-opacity, 0);
+	clip-path: var(--shape);
+}

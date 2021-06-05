@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Leather - Color-picker</title>
+
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+	
+	<div class="app">
+		<div class="toolbar">
+			<div class="tabs" role="tabs">
+				<ul role="tabslist">
+					<li role="none">
+						<button role="tab" aria-selected="true" aria-controls="product-1" id="tab-p-1">Wings</button>
+					</li>
+					<li role="none">
+						<button role="tab" aria-selected="false" aria-controls="product-2" id="tab-p-2">Wings Open</button>
+					</li>
+					<li role="none">
+						<button role="tab" aria-selected="false" aria-controls="product-3" id="tab-p-3">Card Holder</button>
+					</li>
+					<li role="none">
+						<button role="tab" aria-selected="false" aria-controls="product-4" id="tab-p-4">Hug</button>
+					</li>
+				</ul>
+			</div>
+
+			<div class="color-options">
+				<fieldset>
+					<legend id="type-color-1">Base Color</legend>
+					<ul>
+						<li>
+							<input checked type="radio" id="tc1-blue" value="blue" name="tc1" aria-describedby="type-color-1">
+							<label for="tc1-blue" style="--color: var(--blue)">Blue</label>
+						</li>
+						<li>
+							<input type="radio" id="tc1-green" value="green" name="tc1" aria-describedby="type-color-1">
+							<label for="tc1-green" style="--color: var(--green)">Green</label>
+						</li>
+						<li>
+							<input type="radio" id="tc1-red" value="red" name="tc1" aria-describedby="type-color-1">
+							<label for="tc1-red" style="--color: var(--red)">Red</label>
+						</li>
+						<li>
+							<input type="radio" id="tc1-brown" value="brown" name="tc1" aria-describedby="type-color-1">
+							<label for="tc1-brown" style="--color: var(--brown)">Brown</label>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+		</div>
+		<div class="product">
+			<figure id="product-1" tabindex="0" role="tabpanel" aria-labelledby="tab-p-1" style="--ratio: 16 / 9;" aria-hidden="false">
+				<img src="products/wings-bi-fold-wallet.jpg" width="1600" height="900" alt="">
+				<figcaption>Wings - Bi-fold Wallet</figcaption>
+
+				<div class="filters" style="--brightness-color: black; --shape: polygon(13.08% 51.99%, 15.16% 50.58%, 18% 50.29%, 23.08% 48.89%, 29.92% 49.48%, 41.58% 49.78%, 47.83% 49.48%, 47.42% 25.52%, 47% 24.78%, 46.42% 23.74%, 39.59% 26.41%, 14.17% 35.22%, 15.92% 34.33%, 23.75% 31.3%, 37.66% 26.41%, 45.41% 23.6%, 47.58% 23.01%, 49.25% 22.57%, 50.91% 22.57%, 52.75% 22.79%, 54.83% 23.23%, 56.42% 23.83%, 58.83% 24.57%, 61.75% 25.46%, 65.25% 26.64%, 67.17% 27.23%, 69.42% 27.97%, 71.92% 28.71%, 75.25% 29.75%, 79.25% 30.94%, 86.75% 33.46%, 84.58% 32.98%, 80.33% 31.95%, 75.58% 30.61%, 69.75% 28.98%, 63.42% 26.9%, 58.5% 25.27%, 54.33% 23.94%, 53.74% 24.49%, 53.58% 25.31%, 53.16% 26.05%, 53.58% 26.94%, 53.5% 39.9%, 53.42% 46.34%, 53.33% 49.83%, 55.42% 49.82%, 57.42% 49.82%, 60.5% 49.68%, 63.5% 49.53%, 67.5% 49.23%, 71.58% 48.94%, 74.75% 48.49%, 77.42% 48.05%, 79% 48.64%, 80.76% 49.09%, 82.34% 49.38%, 84.17% 49.83%, 86% 50.27%, 87.08% 50.57%, 88% 51.01%, 87.74% 54.94%, 87.41% 61.97%, 87.16% 67.38%, 87.16% 73.52%, 86.91% 78.56%, 86.59% 83.6%, 86.24% 88.82%, 86.16% 89.97%, 85.57% 90.68%, 84.66% 91.01%, 82.24% 89.97%, 79.82% 88.78%, 76.66% 87.3%, 73.33% 85.82%, 70.16% 84.04%, 66.83% 82.41%, 63.24% 80.49%, 61.08% 79.15%, 58.83% 77.97%, 55.66% 76.49%, 53.91% 75.6%, 53.91% 74.86%, 52.83% 74.41%, 51.66% 74.12%, 50.58% 74.12%, 49.66% 74.12%, 48.58% 74.41%, 48% 74.85%, 47.33% 75.45%, 43.75% 77.22%, 40.41% 79.15%, 35.25% 81.82%, 30% 84.78%, 26.08% 87.01%, 19.75% 90.41%, 17.42% 91.89%, 16.5% 91.89%, 15.75% 91.3%, 15.25% 91.01%, 14.83% 84.78%, 14.29% 76.33%, 14% 70.63%, 13.83% 70.78%, 14% 73.23%, 14% 75.82%, 14.33% 79.82%, 14.58% 84.04%, 14.92% 88.7%, 15% 90.41%, 14.75% 89.82%, 14.58% 87.67%, 14.33% 84.49%, 13.92% 78.78%, 13.42% 70.11%, 12.92% 61%, 12.67% 56.19%, 12.51% 52.26%, 12.33% 48.34%, 12% 42.19%, 11.92% 37.97%, 12.34% 36.85%, 12.92% 35.6%, 13.17% 35.86%, 12.75% 36.71%, 12.42% 37.57%, 12.25% 38.41%, 12.5% 44.71%, 12.75% 50.71%, 13.42% 64.3%, 13.76% 70.6%, 14.01% 70.52%)">
+					<div class="color"></div>
+					<div class="brightness"></div>
+				</div>
+			</figure>
+
+			<figure id="product-2" tabindex="0" role="tabpanel" aria-labelledby="tab-p-2" style="--ratio: 16 / 9;" hidden aria-hidden="true">
+				<img src="products/wings-bi-fold-wallet-2.jpg" width="1600" height="900" alt="">
+				<figcaption>Wings - Bi-fold Wallet Open</figcaption>
+			</figure>
+
+			<figure id="product-3" tabindex="0" role="tabpanel" aria-labelledby="tab-p-3" style="--ratio: 16 / 9;" hidden aria-hidden="true">
+				<img src="products/simple-card-holder.jpg" width="1600" height="900" alt="">
+				<figcaption>Simple Card Holder</figcaption>
+			</figure>
+
+			<figure id="product-4" tabindex="0" role="tabpanel" aria-labelledby="tab-p-4" style="--ratio: 16 / 9;" hidden aria-hidden="true">
+				<img src="products/hug-card-holder.jpg" width="1600" height="900" alt="">
+				<figcaption>Hug - Card Holder</figcaption>
+			</figure>
+		</div>
+	</div>
+	
+	<script async src="app.js"></script>
+</body>
+</html>

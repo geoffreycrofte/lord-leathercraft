@@ -26,7 +26,18 @@
 		filters.forEach(function(filter){
 			filter.style.setProperty('--' + name, value);
 		});
-	}
+	};
+	let setAppBottomPadding = function() {
+		let toolbarH = document.querySelector('.toolbar').offsetHeight;
+		console.log(toolbarH);
+		document.querySelector('body').style.setProperty('--toolbard-height', toolbarH + 'px');
+	};
+
+	/**
+	 * Get toolbar height
+	 */
+	setAppBottomPadding();
+	window.addEventListener('resize', setAppBottomPadding);
 
 	/**
 	 * Makes the type of product change.

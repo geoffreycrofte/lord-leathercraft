@@ -43,6 +43,8 @@ body {
 	display: flex;
 	justify-content: safe center;
 	align-items: safe center;
+	color: #444;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 img {
@@ -55,7 +57,7 @@ fieldset {
 }
 
 .app {
-	width: 100%;
+	padding: 8px 8px var(--toolbard-height, 8px) 8px;
 }
 
 .product {
@@ -65,6 +67,16 @@ fieldset {
 	margin: 0 auto;
 	border-radius: 40px;
 	overflow: hidden;
+	transition: all .6s;
+}
+
+.product figure {
+	line-height: 0;
+}
+
+.product figcaption {
+	position: absolute;
+	left: -9999em;
 }
 
 .toolbar {
@@ -74,8 +86,25 @@ fieldset {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 8px 80px;
+	padding: 16px var(--toolbar-lat-padding, 80px) 4px;
 	background: white;
+	z-index: 10;
+}
+
+/* Products Buttons List */
+.tabs ul {
+	display: flex;
+}
+
+.color-options {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.color-options legend {
+	font-weight: 500;
+	font-size: .875em;
 }
 
 .color-options ul {
@@ -147,6 +176,13 @@ fieldset {
 	transform: scale(1);
 }
 
+/* Disabled */
+.color-options input:disabled + label,
+.color-options input:disabled + label {
+	opacity: .3;
+	cursor: not-allowed;
+}
+
 .filters,
 .filters > div {
 	position: absolute;
@@ -160,10 +196,49 @@ fieldset {
 	background: var(--color, transparent);
 	mix-blend-mode: var(--filter, color);
 	clip-path: var(--shape);
+	/*clip-path: polygon(14.19% 35.72%, 18.01% 41.7%, 21.61% 45.61%, 24.54% 48.77%, 28.84% 53.23%, 36.62% 61.03%, 44.05% 68.59%, 50.96% 74.51%, 54.98% 76.9%, 56.65% 77.22%, 58.05% 77.3%, 59.15% 76.56%, 61.21% 74.53%, 83.76% 47.74%, 83.75% 46.07%, 64.25% 68.85%, 63.06% 68.16%, 61.48% 66.35%, 60.06% 63.91%, 58.14% 61.1%, 56.33% 58.57%, 54.87% 57.09%, 53.1% 53.98%, 51.57% 50.85%, 49.82% 46.76%, 48.27% 44.05%, 46.75% 41.73%, 45.04% 39.58%, 42.8% 37.71%, 40.88% 36.48%, 38.52% 35.12%, 35.74% 34.19%, 33.28% 33.53%, 30.92% 33.09%, 27.57% 32.37%, 25.12% 31.46%, 22.52% 30.61%, 20.38% 29.35%, 19.67% 28.25%, 13.99% 31.8%, 13.84% 33.93%);*/
 }
 .brightness {
 	background: var(--brightness-color, black);
 	mix-blend-mode: var(--brightness-filter, luminosity);
 	opacity: var(--brightness-opacity, 0);
 	clip-path: var(--shape);
+}
+
+@media (max-height: 800px ), (max-width: 1280px) {
+	.product {
+		width: 1000px;
+		height: 562.5px;
+	}
+}
+
+@media (max-height: 680px ), (max-width: 1032px) {
+	.product {
+		width: 800px;
+		height: 450px;
+	}
+	.toolbar {
+		--toolbar-lat-padding: 24px;
+	}
+}
+
+@media (max-height: 560px ), (max-width: 830px)  {
+	body {
+		align-items: flex-start;
+		padding-top: 0;
+	}
+	.app {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.toolbar {
+		--toolbar-lat-padding: 16px;
+	}
+	.product {
+		width: auto;
+		height: auto;
+		border-radius: 0;
+		margin-left: -8px;
+		margin-right: -8px;
+	}
 }

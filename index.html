@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Leather - Color-picker</title>
 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="app.css">
 </head>
 <body>
@@ -29,7 +30,7 @@
 
 			<div class="color-options">
 				<fieldset>
-					<legend id="type-color-1">Base Color</legend>
+					<legend id="type-color-1">Accent Color</legend>
 					<ul>
 						<li>
 							<input checked type="radio" id="tc1-blue" value="blue" name="tc1" aria-describedby="type-color-1">
@@ -46,6 +47,28 @@
 						<li>
 							<input type="radio" id="tc1-brown" value="brown" name="tc1" aria-describedby="type-color-1">
 							<label for="tc1-brown" style="--color: var(--brown)">Brown</label>
+						</li>
+					</ul>
+				</fieldset>
+
+				<fieldset>
+					<legend id="type-color-2">Base Color</legend>
+					<ul>
+						<li>
+							<input disabled checked type="radio" id="tc1-blue" value="blue" name="tc2" aria-describedby="type-color-2">
+							<label for="tc2-blue" style="--color: var(--blue)">Blue</label>
+						</li>
+						<li>
+							<input disabled type="radio" id="tc2-green" value="green" name="tc2" aria-describedby="type-color-2">
+							<label for="tc2-green" style="--color: var(--green)">Green</label>
+						</li>
+						<li>
+							<input disabled="" type="radio" id="tc2-red" value="red" name="tc2" aria-describedby="type-color-2">
+							<label for="tc2-red" style="--color: var(--red)">Red</label>
+						</li>
+						<li>
+							<input checked type="radio" id="tc2-brown" value="brown" name="tc2" aria-describedby="type-color-2">
+							<label for="tc2-brown" style="--color: var(--brown)">Brown</label>
 						</li>
 					</ul>
 				</fieldset>
@@ -70,6 +93,11 @@
 			<figure id="product-3" tabindex="0" role="tabpanel" aria-labelledby="tab-p-3" style="--ratio: 16 / 9;" hidden aria-hidden="true">
 				<img src="products/simple-card-holder.jpg" width="1600" height="900" alt="">
 				<figcaption>Simple Card Holder</figcaption>
+
+				<div class="filters" style="--brightness-color: black; --shape: polygon(14.19% 35.72%, 18.01% 41.7%, 21.61% 45.61%, 24.54% 48.77%, 28.84% 53.23%, 36.62% 61.03%, 44.05% 68.59%, 50.96% 74.51%, 54.98% 76.9%, 56.65% 77.22%, 58.05% 77.3%, 59.15% 76.56%, 61.21% 74.53%, 83.76% 47.74%, 83.75% 46.07%, 64.25% 68.85%, 63.06% 68.16%, 61.48% 66.35%, 60.06% 63.91%, 58.14% 61.1%, 56.33% 58.57%, 54.87% 57.09%, 53.1% 53.98%, 51.57% 50.85%, 49.82% 46.76%, 48.27% 44.05%, 46.75% 41.73%, 45.04% 39.58%, 42.8% 37.71%, 40.88% 36.48%, 38.52% 35.12%, 35.74% 34.19%, 33.28% 33.53%, 30.92% 33.09%, 27.57% 32.37%, 25.12% 31.46%, 22.52% 30.61%, 20.38% 29.35%, 19.67% 28.25%, 13.99% 31.8%, 13.84% 33.93%);">
+					<div class="color"></div>
+					<div class="brightness"></div>
+				</div>
 			</figure>
 
 			<figure id="product-4" tabindex="0" role="tabpanel" aria-labelledby="tab-p-4" style="--ratio: 16 / 9;" hidden aria-hidden="true">

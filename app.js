@@ -4,6 +4,7 @@
 	let tabs = document.querySelectorAll('[role="tab"]');
 	let tcontent = document.querySelectorAll('[role="tabpanel"]');
 	let color1 = document.querySelectorAll('[name="tc1"]');
+	let color2 = document.querySelectorAll('[name="tc2"]');
 	let filters = document.querySelectorAll('.filters');
 	let hideAllTabs = function() {
 		
@@ -27,17 +28,6 @@
 			filter.style.setProperty('--' + name, value);
 		});
 	};
-	let setAppBottomPadding = function() {
-		let toolbarH = document.querySelector('.toolbar').offsetHeight;
-		console.log(toolbarH);
-		document.querySelector('body').style.setProperty('--toolbard-height', toolbarH + 'px');
-	};
-
-	/**
-	 * Get toolbar height
-	 */
-	//setAppBottomPadding();
-	//window.addEventListener('resize', setAppBottomPadding);
 
 	/**
 	 * Makes the type of product change.
@@ -58,6 +48,15 @@
 			setFiltersValue('filter', 'var(--' + this.value + '-filter)');
 			setFiltersValue('brightness-opacity', 'var(--' + this.value + '-brightness-opacity)');
 			setFiltersValue('brightness-filter', 'var(--' + this.value + '-brightness-filter)');
+		});
+	});
+
+	color2.forEach(function(c2) {
+		c2.addEventListener('change', function(e){
+			setFiltersValue('color-2', 'var(--' + this.value + ')');
+			setFiltersValue('filter-2', 'var(--' + this.value + '-filter)');
+			setFiltersValue('brightness-opacity-2', 'var(--' + this.value + '-brightness-opacity)');
+			setFiltersValue('brightness-filter-2', 'var(--' + this.value + '-brightness-filter)');
 		});
 	});
 })();

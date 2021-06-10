@@ -100,8 +100,42 @@ fieldset {
 }
 
 /* Products Buttons List */
+.tabs {
+	flex-basis: 50%;
+}
+
 .tabs ul {
 	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 32px;
+}
+
+.tabs li {
+	flex-basis: 25%;
+}
+
+.tabs button {
+	width: 100%;
+	height: 100%;
+	padding: 16px;
+	font-size: 1em;
+	background: transparent;
+	border: 1px solid #ddd;
+	transition: all .3s;
+}
+
+.tabs button[aria-selected="true"] {
+	background: var(--blue);
+	border-color: var(--blue);
+	color: white;
+}
+
+.tabs li:first-child button {
+	border-radius: 8px 0 0 8px;
+}
+
+.tabs li:last-child button {
+	border-radius: 0 8px 8px 0;
 }
 
 .color-options {
@@ -206,6 +240,7 @@ fieldset {
 	clip-path: var(--shape);
 	/*clip-path: polygon(14.19% 35.72%, 18.01% 41.7%, 21.61% 45.61%, 24.54% 48.77%, 28.84% 53.23%, 36.62% 61.03%, 44.05% 68.59%, 50.96% 74.51%, 54.98% 76.9%, 56.65% 77.22%, 58.05% 77.3%, 59.15% 76.56%, 61.21% 74.53%, 83.76% 47.74%, 83.75% 46.07%, 64.25% 68.85%, 63.06% 68.16%, 61.48% 66.35%, 60.06% 63.91%, 58.14% 61.1%, 56.33% 58.57%, 54.87% 57.09%, 53.1% 53.98%, 51.57% 50.85%, 49.82% 46.76%, 48.27% 44.05%, 46.75% 41.73%, 45.04% 39.58%, 42.8% 37.71%, 40.88% 36.48%, 38.52% 35.12%, 35.74% 34.19%, 33.28% 33.53%, 30.92% 33.09%, 27.57% 32.37%, 25.12% 31.46%, 22.52% 30.61%, 20.38% 29.35%, 19.67% 28.25%, 13.99% 31.8%, 13.84% 33.93%);*/
 }
+
 .brightness {
 	background: var(--brightness-color, black);
 	mix-blend-mode: var(--brightness-filter, luminosity);
@@ -213,14 +248,31 @@ fieldset {
 	clip-path: var(--shape);
 }
 
-@media (max-height: 840px ), (max-width: 1280px) {
+/* The color 2 for the bi-color items */
+.color-2 {
+	background: var(--color-2, transparent);
+	mix-blend-mode: var(--filter-2, color);
+	clip-path: var(--shape-2);
+	clip-path: polygon(12.82% 52.10%, 12.76% 48.41%, 12.41% 42.13%, 12.34% 38.31%, 12.72% 36.84%, 13.3% 35.6%, 17.98% 34%, 23.63% 31.9%, 30.81% 29.31%, 42.16% 25.48%, 45.31% 24.12%, 46.73% 23.5%, 47.38% 25.35%, 47.52% 34.87%, 47.83% 49.23%, 45.62% 49.55%, 45.37% 40.18%, 45.08% 39.68%, 44.83% 39.36%, 22.72% 48.43%);
+}
+
+.brightness-2 {
+	/*
+	background: var(--brightness-color-2, black);
+	mix-blend-mode: var(--brightness-filter-2, luminosity);
+	opacity: var(--brightness-opacity-2, 0);
+	clip-path: var(--shape-2);
+	*/
+}
+
+@media (max-height: 840px), (max-width: 1280px) {
 	.product {
 		width: 1000px;
 		height: 562.5px;
 	}
 }
 
-@media (max-height: 700px ), (max-width: 1032px) {
+@media (max-height: 700px), (max-width: 1032px) {
 	.product {
 		width: 800px;
 		height: 450px;
@@ -230,7 +282,7 @@ fieldset {
 	}
 }
 
-@media (max-height: 584px ), (max-width: 830px)  {
+@media (max-height: 584px), (max-width: 830px)  {
 	.app,
 	.lightroom {
 		padding: 0;
@@ -244,7 +296,11 @@ fieldset {
 		width: auto;
 		height: auto;
 		border-radius: 0;
-		margin-left: -8px;
-		margin-right: -8px;
+	}
+}
+
+@media (max-width: 480px)  {
+	.toolbar {
+		flex-wrap: wrap;
 	}
 }

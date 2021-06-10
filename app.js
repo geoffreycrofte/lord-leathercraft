@@ -36,8 +36,8 @@
 	/**
 	 * Get toolbar height
 	 */
-	setAppBottomPadding();
-	window.addEventListener('resize', setAppBottomPadding);
+	//setAppBottomPadding();
+	//window.addEventListener('resize', setAppBottomPadding);
 
 	/**
 	 * Makes the type of product change.

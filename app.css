@@ -269,7 +269,7 @@ fieldset {
 	clip-path: var(--shape-2);
 }
 
-/*@media (max-height: 840px), (max-width: 1280px) {
+@media (max-height: 840px), (max-width: 1280px) {
 	.product {
 		width: 1000px;
 		height: 562.5px;
@@ -310,4 +310,4 @@ fieldset {
 	.color-options {
 		justify-content: center;
 	}
-}*/
+}

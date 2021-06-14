@@ -1,6 +1,6 @@
 (function(){
 	console.log('Hello World');
-
+	const url = new URL(window.location);
 	let tabs = document.querySelectorAll('[role="tab"]');
 	let tcontent = document.querySelectorAll('[role="tabpanel"]');
 	let color1 = document.querySelectorAll('[name="tc1"]');
@@ -28,6 +28,10 @@
 			filter.style.setProperty('--' + name, value);
 		});
 	};
+	let updateURL = function(param, value) {
+		url.searchParams.set(param, value);
+		window.history.pushState({}, '', url);
+	};
 
 	/**
 	 * Makes the type of product change.
@@ -36,6 +40,7 @@
 		tab.addEventListener('click', function(e){
 			hideAllTabs();
 			showClicked(this);
+			updateURL('p', this.id.split('-')[2]);
 		});
 	});
 
@@ -43,11 +48,14 @@
 	 * Makes the color of product change.
 	 */
 	color1.forEach(function(c1) {
-		c1.addEventListener('change', function(e){
+		c1.addEventListener('change', function(e, i){
 			setFiltersValue('color', 'var(--' + this.value + ')');
 			setFiltersValue('filter', 'var(--' + this.value + '-filter)');
 			setFiltersValue('brightness-opacity', 'var(--' + this.value + '-brightness-opacity)');
 			setFiltersValue('brightness-filter', 'var(--' + this.value + '-brightness-filter)');
+
+			
+			updateURL('c1', this.value );
 		});
 	});
 
@@ -57,6 +65,27 @@
 			setFiltersValue('filter-2', 'var(--' + this.value + '-filter)');
 			setFiltersValue('brightness-opacity-2', 'var(--' + this.value + '-brightness-opacity)');
 			setFiltersValue('brightness-filter-2', 'var(--' + this.value + '-brightness-filter)');
+
+			updateURL('c2', this.value );
 		});
 	});
+
+	/**
+	 * Read URL Parameters
+	 */
+	const queryString = url.search;
+	const urlParams = new URLSearchParams(queryString);
+
+	if ( urlParams.has('p') ) {
+		document.getElementById('tab-p-' + urlParams.get('p') ).click();
+	}
+
+	if ( urlParams.has('c1') ) {
+		document.querySelector('[name="tc1"][value="' + urlParams.get('c1') + '"]').click();
+	}
+
+	if ( urlParams.has('c2') ) {
+		document.querySelector('[name="tc2"][value="' + urlParams.get('c2') + '"]').click();	
+	}
+
 })();

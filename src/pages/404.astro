@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { routes } from '../i18n/ui';
+---
+
+<BaseLayout
+  lang="en"
+  title="Page not found"
+  description="This page does not exist or has moved."
+  alternates={{}}
+  noindex
+>
+  <div class="container prose notfound">
+    <h1>Page not found</h1>
+    <p>This page does not exist or has moved. Try the <a href={routes.home.en}>home page</a> or the <a href={routes.guides.en}>guides</a>.</p>
+    <div lang="fr">
+      <h2>Page introuvable</h2>
+      <p>Cette page n’existe pas ou a été déplacée. Essayez l’<a href={routes.home.fr}>accueil</a> ou les <a href={routes.guides.fr}>guides</a>.</p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .notfound {
+    margin-top: var(--space-l);
+  }
+</style>

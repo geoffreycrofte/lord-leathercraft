@@ -1,0 +1,43 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { PAYHIP_AFFILIATE_URL } from '../../data/site';
+import { routes } from '../../i18n/ui';
+---
+
+<PageLayout
+  lang="fr"
+  title="Liens affiliés"
+  description="Pourquoi certains liens de lord.crofte.fr sont affiliés, comment ils sont signalés, à quels programmes je participe, et ce que ça change pour vous."
+  alternates={routes.affiliate}
+  updated={new Date('2026-10-29')}
+>
+  <p>
+    Certains liens de ce site sont des liens affiliés. Si vous achetez quelque chose après avoir suivi l’un d’eux, le
+    vendeur me verse une petite commission. Cela ne vous coûte rien de plus, et cela aide à garder les guides gratuits.
+  </p>
+
+  <h2>Comment les reconnaître</h2>
+  <ul>
+    <li>Chaque lien affilié est suivi de la mention « (lien affilié) », à l’intérieur du lien.</li>
+    <li>Chaque page qui contient au moins un lien affilié affiche un avertissement en haut de l’article.</li>
+    <li>Dans le code, ces liens portent l’attribut <code>rel="sponsored"</code>, comme le demandent les moteurs de recherche.</li>
+  </ul>
+
+  <h2>Les programmes auxquels je participe</h2>
+  <ul>
+    <li>
+      <strong>Payhip</strong>, la plateforme de ma boutique. Si vous voulez vendre vos propres patrons, utilisez mon
+      <a href={PAYHIP_AFFILIATE_URL} rel="sponsored noopener" hreflang="en">lien de parrainage Payhip<span class="affiliate-marker"> (lien affilié)</span></a>.
+    </li>
+    <li><strong>Amazon</strong>. En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.</li>
+    <li><strong>AliExpress</strong>, pour certains outils et accessoires.</li>
+    <li>Certaines <strong>boutiques partenaires</strong> offrent aussi des codes de réduction à mes lecteurs. Un code peut également me rapporter une commission.</li>
+  </ul>
+
+  <h2>Mon engagement</h2>
+  <p>
+    Je ne recommande que des outils et des matières que j’utilise ou que j’utiliserais moi-même. Un programme
+    d’affiliation ne décide jamais de ce que je recommande, et je fais aussi des liens vers des produits qui ne me
+    rapportent rien.
+  </p>
+</PageLayout>

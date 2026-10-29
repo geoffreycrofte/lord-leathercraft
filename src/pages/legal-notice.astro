@@ -1,0 +1,43 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { CONTACT_EMAIL } from '../data/site';
+import { routes } from '../i18n/ui';
+---
+
+<PageLayout
+  lang="en"
+  title="Legal notice"
+  description="Legal notice of lord.crofte.fr: who publishes this website, who hosts it, and how to get in touch about its content."
+  alternates={routes.legal}
+  updated={new Date('2026-10-29')}
+>
+  <h2>Publisher</h2>
+  <p>
+    This website is published by Geoffrey Crofte, in a personal capacity. Lord Leathercraft is the name of a
+    not-for-profit, informal initiative (an unregistered association) that helps beginners learn leathercraft. It has no
+    separate legal entity.
+  </p>
+  <p>Publication director: Geoffrey Crofte.</p>
+  <p>Contact: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+
+  <h2>Hosting</h2>
+  <p>
+    GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.
+    <a href="https://github.com/contact">github.com/contact</a>.
+  </p>
+
+  <h2>Online shop</h2>
+  <p>
+    Patterns and handmade goods are sold on <a href="https://shop.crofte.fr" hreflang="en">shop.crofte.fr</a>, a shop
+    operated with Payhip. Its own terms and legal information apply to purchases.
+  </p>
+
+  <h2>Intellectual property</h2>
+  <p>
+    Texts, photos, drawings and patterns on this website are the work of Geoffrey Crofte unless stated otherwise. Do not
+    reuse them without permission. Linking to any page is welcome.
+  </p>
+
+  <h2>Affiliate links</h2>
+  <p>Some pages contain affiliate links. See <a href={routes.affiliate.en}>how affiliate links work</a>.</p>
+</PageLayout>

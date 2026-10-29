@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { routes, type Lang } from '../i18n/ui';
+import { getArticles } from '../lib/articles';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const articles = await getArticles(lang);
+const copy = {
+  en: {
+    title: 'Leathercraft guides',
+    description: 'Guides and tutorials on leathercraft: choosing leather, caring for it, and how a leather pattern is designed, from sketch to finished piece.',
+    intro: 'Practical guides for beginners and curious makers. Each one links to the patterns you need to put it into practice.',
+  },
+  fr: {
+    title: 'Guides de maroquinerie',
+    description: 'Guides et tutos de maroquinerie : bien choisir son cuir, l’entretenir et comprendre comment naît un patron, du croquis à la pièce finie.',
+    intro: 'Des guides pratiques pour les débutants et les curieux. Chacun renvoie vers les patrons qui permettent de passer à la pratique.',
+  },
+}[lang];
+---
+
+<BaseLayout lang={lang} title={copy.title} description={copy.description} alternates={routes.guides}>
+  <div class="container">
+    <h1 class="page-title">{copy.title}</h1>
+    <p class="prose">{copy.intro}</p>
+    <ul class="cards" role="list">
+      {articles.map((article) => <li><ArticleCard article={article} headingLevel={2} /></li>)}
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-title {
+    margin-top: var(--space-l);
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-m);
+    list-style: none;
+    margin: var(--space-l) 0 0;
+    padding: 0;
+  }
+</style>

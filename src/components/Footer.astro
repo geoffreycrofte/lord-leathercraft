@@ -1,0 +1,85 @@
+---
+import SocialIcon from './SocialIcon.astro';
+import { socials } from '../data/site';
+import { routes, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <section aria-labelledby="footer-social">
+      <h2 id="footer-social" class="site-footer__title">{t('footer.social')}</h2>
+      <ul class="social">
+        {
+          socials.map((s) => (
+            <li>
+              <a href={s.url}>
+                <SocialIcon slug={s.icon} />
+                <span>{s.name}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <nav aria-label={t('footer.legal')}>
+      <ul class="legal">
+        <li><a href={routes.legal[lang]}>{t('footer.legalNotice')}</a></li>
+        <li><a href={routes.privacy[lang]}>{t('footer.privacy')}</a></li>
+        <li><a href={routes.affiliate[lang]}>{t('footer.affiliate')}</a></li>
+      </ul>
+    </nav>
+    <p class="copyright">© {new Date().getFullYear()} Lord Leathercraft</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: var(--space-xl);
+    padding-block: var(--space-l);
+    background: var(--leather-700);
+    color: var(--leather-100);
+  }
+  .site-footer a {
+    color: inherit;
+  }
+  .site-footer__title {
+    font-size: 1.25rem;
+    margin: 0 0 var(--space-s);
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-m);
+  }
+  .social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-block: 0.25rem;
+  }
+  .social svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .legal {
+    margin-top: var(--space-l);
+    font-size: 0.9375rem;
+  }
+  .copyright {
+    margin: var(--space-s) 0 0;
+    font-size: 0.9375rem;
+  }
+  .site-footer :focus-visible {
+    outline-color: var(--leather-100);
+  }
+</style>

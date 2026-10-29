@@ -1,0 +1,98 @@
+---
+import logo from '../assets/logo.svg?raw';
+import { SHOP_URL } from '../data/site';
+import { otherLang, routes, useTranslations, type Lang } from '../i18n/ui';
+import type { Alternates } from '../layouts/BaseLayout.astro';
+
+interface Props {
+  lang: Lang;
+  alternates: Alternates;
+}
+
+const { lang, alternates } = Astro.props;
+const t = useTranslations(lang);
+const target = otherLang(lang);
+const switchHref = alternates[target] ?? routes.home[target];
+const current = Astro.url.pathname;
+const nav = [
+  { href: routes.home[lang], label: t('nav.home') },
+  { href: routes.guides[lang], label: t('nav.guides') },
+];
+const isCurrent = (href: string) =>
+  href === routes.home[lang] ? current === href : current.startsWith(href);
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href={routes.home[lang]}>
+      <span class="brand__logo" aria-hidden="true" set:html={logo} />
+      <span class="brand__name">{t('site.name')}</span>
+    </a>
+    <nav aria-label={t('nav.label')}>
+      <ul>
+        {
+          nav.map((item) => (
+            <li>
+              <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li><a href={SHOP_URL} hreflang="en">{t('nav.shop')}</a></li>
+        <li>
+          <a href={switchHref} hreflang={target} lang={target}>
+            {t('lang.switch')}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .site-header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-s);
+    padding-block: var(--space-s);
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .brand__logo :global(svg) {
+    width: 2.75rem;
+    height: 2.75rem;
+    display: block;
+  }
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-m);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+  nav a:hover,
+  nav a[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-thickness: 0.12em;
+  }
+</style>

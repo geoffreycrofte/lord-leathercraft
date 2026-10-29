@@ -1,0 +1,46 @@
+---
+import { shopCollections, type CollectionKey } from '../data/site';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  keys: CollectionKey[];
+}
+
+const { lang, keys } = Astro.props;
+const t = useTranslations(lang);
+---
+
+{
+  keys.length > 0 && (
+    <section class="related" aria-labelledby="related-title">
+      <h2 id="related-title">{t('article.related')}</h2>
+      <p>{t('external.newShop')}</p>
+      <ul>
+        {keys.map((key) => (
+          <li>
+            <a href={shopCollections[key].url} hreflang="en">
+              {shopCollections[key][lang]}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+<style>
+  .related {
+    max-width: var(--measure);
+    margin-top: var(--space-l);
+    padding: var(--space-m);
+    background: var(--color-surface);
+    border-radius: var(--radius);
+  }
+  h2 {
+    margin-top: 0;
+  }
+  ul {
+    margin: 0;
+  }
+</style>

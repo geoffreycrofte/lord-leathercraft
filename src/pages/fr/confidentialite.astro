@@ -1,0 +1,50 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL } from '../../data/site';
+import { routes } from '../../i18n/ui';
+---
+
+<PageLayout
+  lang="fr"
+  title="Confidentialité"
+  description="Ni cookies, ni mesure d’audience, ni pistage : les données que traite lord.crofte.fr, ce que peuvent collecter l’hébergeur et les vidéos, et vos droits."
+  alternates={routes.privacy}
+  updated={new Date('2026-10-29')}
+>
+  <p>En bref : ce site ne dépose aucun cookie, n’utilise aucun outil de mesure d’audience et ne vous piste pas.</p>
+
+  <h2>Ce que ce site ne fait pas</h2>
+  <ul>
+    <li>Aucun cookie ni stockage local.</li>
+    <li>Aucune mesure d’audience, aucune publicité, aucun traceur de réseau social.</li>
+    <li>Les polices de caractères sont servies par ce site, pas par un tiers.</li>
+  </ul>
+
+  <h2>Hébergement</h2>
+  <p>
+    Le site est hébergé par GitHub Pages. Comme tout serveur web, GitHub reçoit des données techniques, comme votre
+    adresse IP, lorsque vous chargez une page, à des fins de sécurité et de fonctionnement. Voir la
+    <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement">déclaration de confidentialité de GitHub</a>.
+  </p>
+
+  <h2>Vidéos</h2>
+  <p>
+    Les vidéos sont hébergées par YouTube. Elles sont intégrées en mode confidentialité renforcée (youtube-nocookie.com)
+    et rien n’est chargé depuis YouTube avant que vous lanciez la lecture. Ensuite, la
+    <a href="https://policies.google.com/privacy?hl=fr">politique de confidentialité de Google</a> s’applique.
+  </p>
+
+  <h2>Liens vers d’autres sites</h2>
+  <p>
+    Quand vous suivez un lien vers la boutique (shop.crofte.fr, gérée avec Payhip), un réseau social ou le site d’un
+    partenaire, la politique de confidentialité de ce site s’applique. Les liens affiliés indiquent au partenaire que vous
+    venez d’ici : voir <a href={routes.affiliate.fr}>comment fonctionnent les liens affiliés</a>.
+  </p>
+
+  <h2>Vos droits</h2>
+  <p>
+    Si vous m’écrivez, j’utilise votre adresse uniquement pour vous répondre. Vous pouvez demander l’accès à nos échanges
+    ou leur suppression à <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Vous pouvez aussi adresser une
+    réclamation à la <a href="https://www.cnil.fr">CNIL</a>.
+  </p>
+</PageLayout>

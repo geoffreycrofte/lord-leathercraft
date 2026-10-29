@@ -1,0 +1,129 @@
+---
+import { Image, getImage } from 'astro:assets';
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateNotice from '../components/AffiliateNotice.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import RelatedCollections from '../components/RelatedCollections.astro';
+import YouTube from '../components/YouTube.astro';
+import { AUTHOR } from '../data/site';
+import { formatDate, routes, useTranslations } from '../i18n/ui';
+import { getArticleAlternates, type Article } from '../lib/articles';
+
+interface Props {
+  article: Article;
+}
+
+const { article } = Astro.props;
+const { data } = article;
+const lang = data.lang;
+const t = useTranslations(lang);
+const { Content, remarkPluginFrontmatter } = await render(article);
+const alternates = await getArticleAlternates(article);
+const site = Astro.site!;
+const url = new URL(alternates[lang], site).href;
+const ogImage = data.cover ? (await getImage({ src: data.cover, width: 1200, format: 'jpg' })).src : undefined;
+
+const crumbs = [
+  { label: t('nav.home'), href: routes.home[lang] },
+  { label: t('nav.guides'), href: routes.guides[lang] },
+];
+
+const jsonLd: object[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: data.title,
+    description: data.description,
+    inLanguage: lang,
+    datePublished: data.pubDate.toISOString(),
+    dateModified: (data.updatedDate ?? data.pubDate).toISOString(),
+    author: { '@type': 'Person', name: AUTHOR },
+    publisher: { '@type': 'Organization', name: 'Lord Leathercraft', url: site.href },
+    mainEntityOfPage: url,
+    ...(ogImage && { image: new URL(ogImage, site).href }),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [...crumbs, { label: data.title, href: alternates[lang] }].map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.label,
+      item: new URL(c.href, site).href,
+    })),
+  },
+];
+
+if (data.howTo) {
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: data.title,
+    description: data.description,
+    inLanguage: lang,
+    ...(data.howTo.totalTime && { totalTime: data.howTo.totalTime }),
+    step: data.howTo.steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.name, text: s.text })),
+  });
+}
+---
+
+<BaseLayout
+  lang={lang}
+  title={data.title}
+  description={data.description}
+  alternates={alternates}
+  ogImage={ogImage}
+  ogType="article"
+  jsonLd={jsonLd}
+>
+  <article class="container article">
+    <Breadcrumbs lang={lang} items={crumbs} current={data.title} />
+    <header class="prose">
+      <h1>{data.title}</h1>
+      <p class="article__meta">
+        {t('article.published')} <time datetime={data.pubDate.toISOString().slice(0, 10)}>{formatDate(data.pubDate, lang)}</time>
+        {
+          data.updatedDate && (
+            <>
+              · {t('article.updated')}{' '}
+              <time datetime={data.updatedDate.toISOString().slice(0, 10)}>{formatDate(data.updatedDate, lang)}</time>
+            </>
+          )
+        }
+      </p>
+    </header>
+    {
+      data.cover && (
+        <Image
+          class="article__cover"
+          src={data.cover}
+          alt={data.coverAlt ?? ''}
+          widths={[640, 960, 1280, 1920]}
+          sizes="(min-width: 75rem) 75rem, 100vw"
+          loading="eager"
+          fetchpriority="high"
+        />
+      )
+    }
+    {remarkPluginFrontmatter.hasAffiliateLinks && <AffiliateNotice lang={lang} />}
+    <div class="prose">
+      <Content components={{ YouTube }} />
+    </div>
+    <RelatedCollections lang={lang} keys={data.collections} />
+  </article>
+</BaseLayout>
+
+<style>
+  .article__meta {
+    font-size: 0.9375rem;
+  }
+  .article__cover {
+    display: block;
+    width: 100%;
+    max-height: 32rem;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-block: var(--space-m);
+  }
+</style>

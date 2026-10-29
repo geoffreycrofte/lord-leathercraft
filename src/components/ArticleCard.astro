@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import { guidePath } from '../i18n/ui';
+import type { Article } from '../lib/articles';
+
+interface Props {
+  article: Article;
+  headingLevel: 2 | 3;
+}
+
+const { article, headingLevel } = Astro.props;
+const { data } = article;
+const Heading = `h${headingLevel}` as const;
+---
+
+<article class="card">
+  <div class="card__body">
+    <Heading class="card__title">
+      <a href={guidePath(data.lang, data.slug)}>{data.title}</a>
+    </Heading>
+    <p>{data.description}</p>
+  </div>
+  {data.cover && <Image src={data.cover} alt="" widths={[480, 800]} sizes="(min-width: 40rem) 24rem, 100vw" />}
+</article>
+
+<style>
+  .card {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .card :global(img) {
+    order: -1;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+  .card__body {
+    padding: var(--space-s) var(--space-m) var(--space-m);
+  }
+  .card__title {
+    font-size: 1.3rem;
+    margin: 0 0 var(--space-xs);
+  }
+  /* Whole card clickable, while the link text stays the title only. */
+  .card__title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .card:has(a:focus-visible) {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+  .card__title a:focus-visible {
+    outline: none;
+  }
+  .card p {
+    margin: 0;
+  }
+</style>

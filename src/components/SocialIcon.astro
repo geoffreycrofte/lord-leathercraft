@@ -1,0 +1,15 @@
+---
+import * as icons from 'simple-icons';
+
+interface Props {
+  slug: string;
+}
+
+const key = `si${Astro.props.slug.charAt(0).toUpperCase()}${Astro.props.slug.slice(1)}` as keyof typeof icons;
+const icon = icons[key] as { path: string } | undefined;
+if (!icon) throw new Error(`Unknown Simple Icons slug: ${Astro.props.slug}`);
+---
+
+<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" fill="currentColor">
+  <path d={icon.path} />
+</svg>

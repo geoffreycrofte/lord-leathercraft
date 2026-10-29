@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { SHOP_URL, shopCollections, socials, type CollectionKey } from '../data/site';
+import { routes, type Lang } from '../i18n/ui';
+import { getArticles } from '../lib/articles';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const latest = (await getArticles(lang)).slice(0, 3);
+const projectKeys: CollectionKey[] = ['wallets', 'cardholders', 'bags', 'deskHome', 'wears', 'laptopSleeves'];
+
+const copy = {
+  en: {
+    title: 'Lord Leathercraft',
+    description: 'Leathercraft PDF patterns, guides and tutorials to make wallets, cardholders and bags by hand, with vegetable-tanned leather. By Geoffrey Crofte.',
+    heading: 'Leathercraft patterns and guides to make it yourself',
+    intro: 'Wallets, cardholders, bags and desk accessories: tested PDF patterns, step-by-step instructions and making-of videos, plus free guides to learn the craft.',
+    ctaShop: 'Browse the patterns',
+    ctaGuides: 'Read the guides',
+    latest: 'Latest guides',
+    allGuides: 'All guides',
+    projects: 'Find a pattern by project',
+    projectsIntro: 'Each collection opens on the shop, where patterns are sold as instant PDF downloads.',
+    aboutTitle: 'About Lord Leathercraft',
+    about: [
+      'Lord Leathercraft is a passion project run by Geoffrey Crofte, a designer and leathercrafter. Its aim is simple: help beginners and curious makers create leather goods that last.',
+      'I design every pattern, build and test it with vegetable-tanned leather, then share it with instructions and videos. The guides on this site are free.',
+    ],
+  },
+  fr: {
+    title: 'Lord Leathercraft',
+    description: 'Patrons PDF, guides et tutos de maroquinerie pour fabriquer à la main portefeuilles, porte-cartes et sacs en cuir au tannage végétal. Par Geoffrey Crofte.',
+    heading: 'Patrons et guides de maroquinerie pour fabriquer soi-même',
+    intro: 'Portefeuilles, porte-cartes, sacs et accessoires de bureau : des patrons PDF testés, des instructions pas à pas et des vidéos de fabrication, ainsi que des guides gratuits pour apprendre.',
+    ctaShop: 'Voir les patrons',
+    ctaGuides: 'Lire les guides',
+    latest: 'Derniers guides',
+    allGuides: 'Tous les guides',
+    projects: 'Trouver un patron par projet',
+    projectsIntro: 'Chaque collection s’ouvre sur la boutique (en anglais), où les patrons sont vendus en PDF téléchargeables immédiatement.',
+    aboutTitle: 'À propos de Lord Leathercraft',
+    about: [
+      'Lord Leathercraft est un projet passion porté par Geoffrey Crofte, designer et maroquinier. Son but est simple : aider les débutants et les curieux à créer des objets en cuir qui durent.',
+      'Je conçois chaque patron, je le fabrique et le teste avec du cuir au tannage végétal, puis je le partage avec ses instructions et ses vidéos. Les guides de ce site sont gratuits.',
+    ],
+  },
+}[lang];
+
+const site = Astro.site!;
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Lord Leathercraft',
+    url: site.href,
+    inLanguage: lang,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Lord Leathercraft',
+    url: site.href,
+    logo: new URL('/favicons/android-chrome-512x512.png', site).href,
+    sameAs: [SHOP_URL, ...socials.map((s) => s.url)],
+  },
+];
+---
+
+<BaseLayout lang={lang} title={copy.title} description={copy.description} alternates={routes.home} jsonLd={jsonLd}>
+  <section class="hero">
+    <div class="container">
+      <h1>{copy.heading}</h1>
+      <p class="hero__intro">{copy.intro}</p>
+      <p class="hero__actions">
+        <a class="button" href={shopCollections.all.url} hreflang="en">{copy.ctaShop}</a>
+        <a class="button button--secondary" href={routes.guides[lang]}>{copy.ctaGuides}</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="container section" aria-labelledby="latest-title">
+    <h2 id="latest-title">{copy.latest}</h2>
+    <ul class="cards" role="list">
+      {latest.map((article) => <li><ArticleCard article={article} headingLevel={3} /></li>)}
+    </ul>
+    <p><a href={routes.guides[lang]}>{copy.allGuides}</a></p>
+  </section>
+
+  <section class="container section" aria-labelledby="projects-title">
+    <h2 id="projects-title">{copy.projects}</h2>
+    <p class="prose">{copy.projectsIntro}</p>
+    <ul class="projects" role="list">
+      {projectKeys.map((key) => <li><a href={shopCollections[key].url} hreflang="en">{shopCollections[key][lang]}</a></li>)}
+    </ul>
+  </section>
+
+  <section class="container section" aria-labelledby="about-title">
+    <div class="prose">
+      <h2 id="about-title">{copy.aboutTitle}</h2>
+      {copy.about.map((p) => <p>{p}</p>)}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: var(--color-surface);
+    padding-block: var(--space-xl);
+  }
+  .hero h1 {
+    max-width: 20ch;
+  }
+  .hero__intro {
+    max-width: 55ch;
+    font-size: 1.2rem;
+  }
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    margin: var(--space-m) 0 0;
+  }
+  .button--secondary {
+    background: transparent;
+    color: var(--leather-600);
+    box-shadow: inset 0 0 0 2px currentColor;
+  }
+  .button--secondary:hover {
+    background: var(--leather-600);
+    color: var(--leather-100);
+  }
+  .section {
+    margin-top: var(--space-xl);
+  }
+  .section h2 {
+    margin-top: 0;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-m);
+    list-style: none;
+    margin: var(--space-m) 0;
+    padding: 0;
+  }
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-s);
+    list-style: none;
+    padding: 0;
+  }
+  .projects a {
+    display: block;
+    padding: var(--space-s) var(--space-m);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .projects a:hover {
+    border-color: var(--leather-600);
+    text-decoration: underline;
+  }
+</style>

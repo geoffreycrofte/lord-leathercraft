@@ -1,0 +1,192 @@
+/*
+ * Lord Leathercraft — base styles.
+ * Palette taken from the former link page. Contrast ratios (WCAG):
+ *   leather-700 on paper 13.9:1 · leather-600 on paper 6.9:1
+ *   leather-600 on cream 6.2:1  · cream on leather-600 6.2:1
+ *   leather-500 is reserved for non-text accents (4.4:1 on paper).
+ * Dark theme: not decided yet (see PLAN.md). Keep colours in tokens.
+ */
+
+:root {
+  --leather-100: #fee9ce;
+  --leather-200: #f9d3a1;
+  --leather-500: #bb5715;
+  --leather-600: #8c4111;
+  --leather-700: #471b06;
+  --paper: #fff8ee;
+
+  --color-bg: var(--paper);
+  --color-surface: var(--leather-100);
+  --color-text: var(--leather-700);
+  --color-link: var(--leather-600);
+  --color-accent: var(--leather-500);
+  --color-border: var(--leather-200);
+  --color-focus: var(--leather-700);
+
+  --font-body: 'Poppins', system-ui, sans-serif;
+  --font-heading: 'Fraunces Variable', Georgia, serif;
+
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.5rem;
+  --space-xl: 4rem;
+  --measure: 70ch;
+  --wide: 75rem;
+  --radius: 0.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-wrap: anywhere;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 1.5em 0 0.5em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem);
+  margin-top: 0;
+}
+h2 {
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+}
+h3 {
+  font-size: 1.3rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1em;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.16em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.visually-hidden {
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-s);
+  top: -10rem;
+  z-index: 10;
+  padding: var(--space-xs) var(--space-s);
+  background: var(--leather-700);
+  color: var(--leather-100);
+  border-radius: var(--radius);
+}
+
+.skip-link:focus {
+  top: var(--space-s);
+}
+
+.container {
+  width: min(100% - 2 * var(--space-s), var(--wide));
+  margin-inline: auto;
+}
+
+.prose {
+  max-width: var(--measure);
+}
+
+.prose figure {
+  margin: var(--space-l) 0;
+}
+
+.prose figcaption {
+  font-size: 0.9rem;
+  margin-top: var(--space-xs);
+}
+
+.prose img {
+  border-radius: var(--radius);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  background: var(--leather-600);
+  color: var(--leather-100);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--leather-700);
+}
+
+.affiliate-marker {
+  font-size: 0.85em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (forced-colors: active) {
+  .button {
+    border: 2px solid ButtonText;
+  }
+}

@@ -1,27 +1,48 @@
 /*
- * Lord Leathercraft — base styles.
- * Palette taken from the former link page. Contrast ratios (WCAG):
- *   leather-700 on paper 13.9:1 · leather-600 on paper 6.9:1
- *   leather-600 on cream 6.2:1  · cream on leather-600 6.2:1
- *   leather-500 is reserved for non-text accents (4.4:1 on paper).
- * Dark theme: not decided yet (see PLAN.md). Keep colours in tokens.
+ * Lord Leathercraft — foundations.
+ * Palette from the "Leather Craft Branding" Figma file (LORD/Primary,
+ * Neutral, Accent). Contrast ratios (WCAG), see PLAN.md for the full rules:
+ *   neutral-700 on white 15.4:1 · neutral-600 on white 8.3:1
+ *   primary-600 on white 7.3:1 · white on primary-500 4.7:1
+ *   primary-500 as text: on white only (4.47:1 on primary-050 fails)
+ *   accent-700 on accent-100 10.3:1 · accent-500 and lighter: decor only
+ * Dark theme: not decided yet. Keep colours in tokens.
  */
 
 :root {
-  --leather-100: #fee9ce;
-  --leather-200: #f9d3a1;
-  --leather-500: #bb5715;
-  --leather-600: #8c4111;
-  --leather-700: #471b06;
-  --paper: #fff8ee;
+  --primary-050: #fff9f1;
+  --primary-100: #fee9ce;
+  --primary-200: #f9d3a1;
+  --primary-300: #efb378;
+  --primary-400: #d27f41;
+  --primary-500: #bb5715;
+  --primary-600: #8c4111;
+  --primary-700: #471b06;
 
-  --color-bg: var(--paper);
-  --color-surface: var(--leather-100);
-  --color-text: var(--leather-700);
-  --color-link: var(--leather-600);
-  --color-accent: var(--leather-500);
-  --color-border: var(--leather-200);
-  --color-focus: var(--leather-700);
+  --neutral-100: #ededee;
+  --neutral-200: #d4d7de;
+  --neutral-300: #b9bdc8;
+  --neutral-400: #858b9b;
+  --neutral-500: #637278;
+  --neutral-600: #435056;
+  --neutral-700: #242525;
+
+  --accent-100: #d2f7f9;
+  --accent-200: #75e9ef;
+  --accent-300: #32d6df;
+  --accent-400: #14b1ba;
+  --accent-500: #128a90;
+  --accent-600: #00686e;
+  --accent-700: #033f43;
+
+  --color-bg: #ffffff;
+  --color-bg-alt: var(--primary-050);
+  --color-text: var(--neutral-700);
+  --color-text-muted: var(--neutral-600);
+  --color-link: var(--primary-600);
+  --color-link-hover: var(--primary-700);
+  --color-border: var(--neutral-100);
+  --color-focus: var(--neutral-700);
 
   --font-body: 'Poppins', system-ui, sans-serif;
   --font-heading: 'Fraunces Variable', Georgia, serif;
@@ -30,10 +51,14 @@
   --space-s: 1rem;
   --space-m: 1.5rem;
   --space-l: 2.5rem;
-  --space-xl: 4rem;
+  --space-xl: 5rem;
   --measure: 70ch;
   --wide: 75rem;
-  --radius: 0.5rem;
+  --radius-s: 0.625rem;
+  --radius: 1rem;
+  --radius-l: 1.5rem;
+  --radius-pill: 999px;
+  --shadow: 0 0.75rem 2rem rgb(36 37 37 / 0.16);
 }
 
 *,
@@ -69,21 +94,35 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
   margin: 1.5em 0 0.5em;
   text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem);
+  font-weight: 900;
+  font-size: clamp(2.4rem, 2rem + 2.5vw, 3.75rem);
+  line-height: 1.06;
   margin-top: 0;
 }
+
 h2 {
-  font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 1.4rem + 1.5vw, 2.5rem);
+  line-height: 1.15;
 }
+
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.375rem;
+  line-height: 1.25;
+}
+
+/* Italic accent inside a title, as on the brand mockups. */
+.title-accent {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--primary-500);
 }
 
 p,
@@ -106,13 +145,18 @@ a {
 }
 
 a:hover {
+  color: var(--color-link-hover);
   text-decoration-thickness: 0.16em;
 }
 
 :focus-visible {
   outline: 3px solid var(--color-focus);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
+}
+
+.on-dark :focus-visible {
+  outline-color: var(--primary-100);
 }
 
 .visually-hidden {
@@ -130,9 +174,9 @@ a:hover {
   top: -10rem;
   z-index: 10;
   padding: var(--space-xs) var(--space-s);
-  background: var(--leather-700);
-  color: var(--leather-100);
-  border-radius: var(--radius);
+  background: var(--neutral-700);
+  color: #fff;
+  border-radius: var(--radius-s);
 }
 
 .skip-link:focus {
@@ -140,8 +184,38 @@ a:hover {
 }
 
 .container {
-  width: min(100% - 2 * var(--space-s), var(--wide));
+  width: min(100% - 2 * var(--space-m), var(--wide));
   margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+.section--alt {
+  background: var(--color-bg-alt);
+}
+
+.section--dark {
+  background: var(--neutral-700);
+  color: var(--neutral-100);
+}
+
+.section--dark h2 {
+  color: #fff;
+}
+
+.section__title {
+  margin-top: 0;
+}
+
+.lead {
+  font-size: 1.1875rem;
+  color: var(--color-text-muted);
+}
+
+.muted {
+  color: var(--color-text-muted);
 }
 
 .prose {
@@ -153,7 +227,8 @@ a:hover {
 }
 
 .prose figcaption {
-  font-size: 0.9rem;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
   margin-top: var(--space-xs);
 }
 
@@ -161,18 +236,77 @@ a:hover {
   border-radius: var(--radius);
 }
 
+/* Pill buttons. */
 .button {
-  display: inline-block;
-  padding: 0.75rem 1.25rem;
-  border-radius: var(--radius);
-  background: var(--leather-600);
-  color: var(--leather-100);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3.25rem;
+  padding: 0 1.75rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--primary-500);
+  color: #fff;
   font-weight: 600;
   text-decoration: none;
+  transition: background-color 0.2s;
 }
 
 .button:hover {
-  background: var(--leather-700);
+  background: var(--primary-600);
+  color: #fff;
+}
+
+.button--outline {
+  background: transparent;
+  border-color: var(--primary-600);
+  color: var(--primary-600);
+}
+
+.button--outline:hover {
+  background: var(--primary-100);
+  color: var(--primary-700);
+}
+
+.button--light {
+  background: var(--primary-300);
+  color: var(--neutral-700);
+}
+
+.button--light:hover {
+  background: var(--primary-100);
+  color: var(--neutral-700);
+}
+
+.button--small {
+  min-height: 2.75rem;
+  padding: 0 1.25rem;
+}
+
+.button svg {
+  flex-shrink: 0;
+}
+
+/* Category chips. */
+.chip {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.6;
+  background: var(--neutral-100);
+  color: var(--neutral-700);
+}
+
+.chip--accent {
+  background: var(--accent-100);
+  color: var(--accent-700);
+}
+
+.chip--primary {
+  background: var(--primary-100);
+  color: var(--primary-700);
 }
 
 .affiliate-marker {
@@ -185,8 +319,17 @@ a:hover {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
 @media (forced-colors: active) {
-  .button {
+  .button,
+  .chip {
     border: 2px solid ButtonText;
   }
 }

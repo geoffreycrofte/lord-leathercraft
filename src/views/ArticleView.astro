@@ -4,6 +4,7 @@ import { render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AffiliateNotice from '../components/AffiliateNotice.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CategoryChip from '../components/CategoryChip.astro';
 import RelatedCollections from '../components/RelatedCollections.astro';
 import YouTube from '../components/YouTube.astro';
 import { AUTHOR } from '../data/site';
@@ -79,7 +80,8 @@ if (data.howTo) {
 >
   <article class="container article">
     <Breadcrumbs lang={lang} items={crumbs} current={data.title} />
-    <header class="prose">
+    <header class="prose article__header">
+      <CategoryChip lang={lang} category={data.category} />
       <h1>{data.title}</h1>
       <p class="article__meta">
         {t('article.published')} <time datetime={data.pubDate.toISOString().slice(0, 10)}>{formatDate(data.pubDate, lang)}</time>
@@ -115,15 +117,26 @@ if (data.howTo) {
 </BaseLayout>
 
 <style>
+  .article__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-s);
+  }
+  .article__header h1,
+  .article__meta {
+    margin: 0;
+  }
   .article__meta {
     font-size: 0.9375rem;
+    color: var(--color-text-muted);
   }
   .article__cover {
     display: block;
     width: 100%;
     max-height: 32rem;
     object-fit: cover;
-    border-radius: var(--radius);
-    margin-block: var(--space-m);
+    border-radius: var(--radius-l);
+    margin-block: var(--space-l) var(--space-m);
   }
 </style>

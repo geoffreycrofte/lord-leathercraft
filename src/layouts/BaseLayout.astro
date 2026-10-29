@@ -2,7 +2,9 @@
 import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/400-italic.css';
 import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
 import '@fontsource-variable/fraunces';
+import '@fontsource-variable/fraunces/wght-italic.css';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -53,7 +55,7 @@ const xDefault = alternates[defaultLang];
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
     <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
     <link rel="manifest" href="/favicons/site.webmanifest" />
-    <meta name="theme-color" content="#fee9ce" />
+    <meta name="theme-color" content="#ffffff" />
 
     <meta property="og:site_name" content={t('site.name')} />
     <meta property="og:title" content={title} />
@@ -72,6 +74,6 @@ const xDefault = alternates[defaultLang];
     <main id="content">
       <slot />
     </main>
-    <Footer lang={lang} />
+    <Footer lang={lang} alternates={alternates} />
   </body>
 </html>

@@ -27,7 +27,7 @@ const copy = {
 <BaseLayout lang={lang} title={copy.title} description={copy.description} alternates={routes.guides}>
   <div class="container">
     <h1 class="page-title">{copy.title}</h1>
-    <p class="prose">{copy.intro}</p>
+    <p class="prose lead">{copy.intro}</p>
     <ul class="cards" role="list">
       {articles.map((article) => <li><ArticleCard article={article} headingLevel={2} /></li>)}
     </ul>
@@ -36,12 +36,12 @@ const copy = {
 
 <style>
   .page-title {
-    margin-top: var(--space-l);
+    margin-top: var(--space-xl);
   }
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
-    gap: var(--space-m);
+    gap: 1.75rem;
     list-style: none;
     margin: var(--space-l) 0 0;
     padding: 0;

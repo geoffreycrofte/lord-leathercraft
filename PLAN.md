@@ -86,7 +86,9 @@ Payhip est très limité pour le contenu et le SEO :
 - [x] Audit axe (WCAG 2.2 AA et bonnes pratiques) : 0 violation sur les 19 pages, à 1280 px et à 320 px, sans défilement horizontal
 - [ ] Relecture des traductions et des textes légaux par Geoffrey
 - [ ] Bascule DNS et activation de GitHub Pages ([docs/deploiement.md](docs/deploiement.md))
-- [ ] Phase Claude Design : affiner la direction visuelle à partir de ce socle (voir le journal)
+- [x] Phase Claude Design : canevas https://claude.ai/artifact/FsjPri4A6Fv43xCmArJe4K (accueil bureau et mobile, fondations), validé
+- [x] Design system reporté dans le code : palette Figma en variables CSS, boutons en pilule, étiquettes de catégorie, en-tête et pied de page, nouvelle page d'accueil
+- [ ] Remplacer les emplacements photo (voir « Photos à intégrer »)
 
 ### Phase 2 — Contenu
 
@@ -101,6 +103,17 @@ Payhip est très limité pour le contenu et le SEO :
 
 - Domaine dédié éventuel.
 - Migration éventuelle de la boutique hors de Payhip (non souhaitée).
+
+## 7 bis. Photos à intégrer
+
+Les photos du fichier Figma « Leather Craft Branding » n'ont pas pu être téléchargées : www.figma.com est bloqué par le réseau de la session. Geoffrey les fournira. En attendant :
+
+- [ ] **Portrait** (accueil, section « À propos ») : composant `Placeholder` dans `src/views/HomeView.astro`.
+- [ ] **Photos de collections** : les tuiles de l'accueil sont en aplats de couleur. Une version photo reste possible.
+- [ ] **Photo de couverture pour l'article cuir ou cuir vegan** : la carte s'affiche en version sombre, sans image.
+- [ ] **Logo clair pour fonds sombres** : le pied de page utilise le nom en Fraunces.
+
+Pour remplacer un emplacement : déposer l'image dans `src/assets/`, l'importer et utiliser `<Image>` à la place de `<Placeholder>`.
 
 ## 8. Questions ouvertes
 
@@ -130,3 +143,7 @@ Payhip est très limité pour le contenu et le SEO :
 | 2026-10-29 | Pas de mesure d'audience. |
 | 2026-10-29 | Catalogues produits Notion non migrés pour l'instant, faute de présentation arrêtée. Les articles renvoient vers les collections Payhip. |
 | 2026-10-29 | Manifeste du consortium : résumé dans nos propres mots avec un lien vers l'original, plutôt que copié. Le logo de la marque du consortium n'est pas repris. |
+| 2026-10-29 | Design system issu du Figma « Leather Craft Branding » : gammes Primary (cuir, 050 à 700), Neutral (ardoise) et Accent (sarcelle). Fraunces Black et italique Bold pour les titres, Poppins pour le texte. Fond blanc, bandes Primary 050, bandes sombres Neutral 700. |
+| 2026-10-29 | Règles de contraste : Primary 500 en texte seulement sur blanc ; Accent 500 et plus clair en décor uniquement ; étiquettes Accent 700 sur Accent 100. |
+| 2026-10-29 | Les articles reçoivent une catégorie (`care`, `design`, `materials`, `tools`), affichée en étiquette. Un article sans couverture s'affiche en carte sombre. |
+| 2026-10-29 | Logo SVG du dépôt corrigé (balises de groupe orphelines). |

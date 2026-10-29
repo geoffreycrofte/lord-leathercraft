@@ -1,52 +1,119 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
+import Icon from '../components/Icon.astro';
+import Placeholder from '../components/Placeholder.astro';
 import { SHOP_URL, shopCollections, socials, type CollectionKey } from '../data/site';
-import { routes, type Lang } from '../i18n/ui';
+import { guidePath, routes, type Lang } from '../i18n/ui';
 import { getArticles } from '../lib/articles';
+import heroPhoto from '../assets/home/packaging.jpg';
+import patternPhoto from '../assets/articles/pattern-illustrator.jpg';
 
 interface Props {
   lang: Lang;
 }
 
 const { lang } = Astro.props;
-const latest = (await getArticles(lang)).slice(0, 3);
-const projectKeys: CollectionKey[] = ['wallets', 'cardholders', 'bags', 'deskHome', 'wears', 'laptopSleeves'];
+const articles = await getArticles(lang);
+const latest = articles.slice(0, 3);
+const featured = articles.find((a) => a.data.translationKey === 'design-process');
+const instagram = socials.find((s) => s.icon === 'instagram')!;
+
+/** Each tile keeps a text colour with at least 7:1 on its background. */
+const projects: { key: CollectionKey; tone: string }[] = [
+  { key: 'wallets', tone: 'tile--primary-100' },
+  { key: 'cardholders', tone: 'tile--accent-100' },
+  { key: 'bags', tone: 'tile--primary-200' },
+  { key: 'deskHome', tone: 'tile--neutral-100' },
+  { key: 'wears', tone: 'tile--accent-200' },
+  { key: 'laptopSleeves', tone: 'tile--primary-300' },
+];
 
 const copy = {
   en: {
     title: 'Lord Leathercraft',
     description: 'Leathercraft PDF patterns, guides and tutorials to make wallets, cardholders and bags by hand, with vegetable-tanned leather. By Geoffrey Crofte.',
-    heading: 'Leathercraft patterns and guides to make it yourself',
-    intro: 'Wallets, cardholders, bags and desk accessories: tested PDF patterns, step-by-step instructions and making-of videos, plus free guides to learn the craft.',
+    eyebrow: 'Leathercraft patterns and free guides',
+    heading: 'Make leather goods',
+    headingAccent: 'that last a lifetime',
+    intro: 'Tested PDF patterns, step-by-step instructions and making-of videos for wallets, cardholders and bags. And free guides to learn the craft, from the first cut to the last stitch.',
     ctaShop: 'Browse the patterns',
-    ctaGuides: 'Read the guides',
+    ctaGuides: 'Start with the guides',
+    perks: ['Vegetable-tanned leather', 'Built and tested', 'Videos included'],
+    heroAlt: 'Hands pressing a brass wax seal onto a leather piece wrapped in black paper, on a green cutting mat.',
+    featuredLabel: 'Guide',
+    whyTitle: 'Patterns from real projects',
+    why: [
+      { icon: 'tool', title: 'Built and tested first', text: 'Every pattern is made and used before it is published, with the leather thickness and stitching I recommend.' },
+      { icon: 'video', title: 'With a making-of video', text: 'Most patterns come with a video of the build, so you see each step instead of guessing from a drawing.' },
+      { icon: 'document', title: 'Instructions you can follow', text: 'Named pieces, cut counts, PDF and Illustrator files: you are never lost in the middle of a build.' },
+    ],
     latest: 'Latest guides',
     allGuides: 'All guides',
     projects: 'Find a pattern by project',
-    projectsIntro: 'Each collection opens on the shop, where patterns are sold as instant PDF downloads.',
-    aboutTitle: 'About Lord Leathercraft',
-    about: [
-      'Lord Leathercraft is a passion project run by Geoffrey Crofte, a designer and leathercrafter. Its aim is simple: help beginners and curious makers create leather goods that last.',
-      'I design every pattern, build and test it with vegetable-tanned leather, then share it with instructions and videos. The guides on this site are free.',
+    projectsIntro: 'Each collection opens on the shop, where patterns are instant PDF downloads.',
+    shopSuffix: 'on the shop',
+    allPatterns: 'See all patterns',
+    insideEyebrow: 'Inside a pattern',
+    insideTitle: 'Everything you need,',
+    insideTitleAccent: 'nothing left to guess',
+    inside: [
+      'Printable templates, every piece named and counted',
+      'Recommended leather thickness, stitching line and hole spacing',
+      'A true-size square to check your print',
+      'Illustrator files and, for most patterns, a making-of video',
     ],
+    insideAlt: 'Printed sheets of the French Identity Card Holder pattern: each leather piece outlined and named, such as Base or Pocket R2 with the number to cut, and a box of recommendations for leather thickness, stitching line and hole spacing.',
+    aboutTitle: 'About the leathercrafter',
+    about: [
+      'I started leathercraft at the end of 2020, first for myself, making the small goods I needed. Friends and colleagues asked for theirs, the catalogue grew, and I decided to share the templates I use every day.',
+      'I am a digital designer, so precise, well-finished templates matter to me, on screen as much as in leather. Lord Leathercraft is a not-for-profit side project to help beginners get started.',
+    ],
+    portrait: 'portrait of Geoffrey Crofte',
+    follow: 'Follow on Instagram',
   },
   fr: {
     title: 'Lord Leathercraft',
     description: 'Patrons PDF, guides et tutos de maroquinerie pour fabriquer à la main portefeuilles, porte-cartes et sacs en cuir au tannage végétal. Par Geoffrey Crofte.',
-    heading: 'Patrons et guides de maroquinerie pour fabriquer soi-même',
-    intro: 'Portefeuilles, porte-cartes, sacs et accessoires de bureau : des patrons PDF testés, des instructions pas à pas et des vidéos de fabrication, ainsi que des guides gratuits pour apprendre.',
+    eyebrow: 'Patrons de maroquinerie et guides gratuits',
+    heading: 'Fabriquez des objets en cuir',
+    headingAccent: 'qui durent toute une vie',
+    intro: 'Des patrons PDF testés, des instructions pas à pas et des vidéos de fabrication pour portefeuilles, porte-cartes et sacs. Et des guides gratuits pour apprendre, de la première découpe au dernier point.',
     ctaShop: 'Voir les patrons',
-    ctaGuides: 'Lire les guides',
+    ctaGuides: 'Commencer par les guides',
+    perks: ['Cuir au tannage végétal', 'Fabriqués et testés', 'Vidéos incluses'],
+    heroAlt: 'Des mains appliquent un cachet de cire en laiton sur une pièce en cuir emballée dans du papier noir, sur un tapis de découpe vert.',
+    featuredLabel: 'Guide',
+    whyTitle: 'Des patrons issus de vrais projets',
+    why: [
+      { icon: 'tool', title: 'Fabriqués et testés d’abord', text: 'Chaque patron est fabriqué et utilisé avant d’être publié, avec l’épaisseur de cuir et la couture que je recommande.' },
+      { icon: 'video', title: 'Avec une vidéo de fabrication', text: 'La plupart des patrons sont accompagnés d’une vidéo : vous voyez chaque étape au lieu de deviner à partir d’un dessin.' },
+      { icon: 'document', title: 'Des instructions faciles à suivre', text: 'Pièces nommées, quantités à découper, fichiers PDF et Illustrator : vous n’êtes jamais perdu en plein montage.' },
+    ],
     latest: 'Derniers guides',
     allGuides: 'Tous les guides',
     projects: 'Trouver un patron par projet',
     projectsIntro: 'Chaque collection s’ouvre sur la boutique (en anglais), où les patrons sont vendus en PDF téléchargeables immédiatement.',
-    aboutTitle: 'À propos de Lord Leathercraft',
-    about: [
-      'Lord Leathercraft est un projet passion porté par Geoffrey Crofte, designer et maroquinier. Son but est simple : aider les débutants et les curieux à créer des objets en cuir qui durent.',
-      'Je conçois chaque patron, je le fabrique et le teste avec du cuir au tannage végétal, puis je le partage avec ses instructions et ses vidéos. Les guides de ce site sont gratuits.',
+    shopSuffix: 'sur la boutique',
+    allPatterns: 'Voir tous les patrons',
+    insideEyebrow: 'Dans un patron',
+    insideTitle: 'Tout ce qu’il faut,',
+    insideTitleAccent: 'rien à deviner',
+    inside: [
+      'Des gabarits à imprimer, chaque pièce nommée et comptée',
+      'L’épaisseur de cuir, la ligne de couture et l’espacement des trous recommandés',
+      'Un carré à taille réelle pour vérifier l’impression',
+      'Les fichiers Illustrator et, pour la plupart des patrons, une vidéo de fabrication',
     ],
+    insideAlt: 'Planches imprimées du patron French Identity Card Holder : chaque pièce de cuir tracée et nommée, par exemple Base ou Pocket R2 avec le nombre à découper, et un encadré de recommandations pour l’épaisseur du cuir, la ligne de couture et l’espacement des trous.',
+    aboutTitle: 'À propos du maroquinier',
+    about: [
+      'J’ai commencé la maroquinerie fin 2020, d’abord pour moi, en fabriquant les petits objets dont j’avais besoin. Des amis et des collègues ont demandé les leurs, le catalogue a grandi, et j’ai décidé de partager les gabarits que j’utilise tous les jours.',
+      'Je suis designer numérique : des gabarits précis et bien finis comptent pour moi, à l’écran comme dans le cuir. Lord Leathercraft est un projet bénévole pour aider les débutants à se lancer.',
+    ],
+    portrait: 'portrait de Geoffrey Crofte',
+    follow: 'Suivre sur Instagram',
   },
 }[lang];
 
@@ -71,99 +138,448 @@ const jsonLd = [
 ---
 
 <BaseLayout lang={lang} title={copy.title} description={copy.description} alternates={routes.home} jsonLd={jsonLd}>
-  <section class="hero">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <p class="chip chip--accent hero__eyebrow">{copy.eyebrow}</p>
+        <h1 id="hero-title">{copy.heading} <em class="title-accent">{copy.headingAccent}</em></h1>
+        <p class="lead">{copy.intro}</p>
+        <p class="hero__actions">
+          <a class="button" href={shopCollections.all.url} hreflang="en">
+            {copy.ctaShop}
+            <Icon name="external" size={18} strokeWidth={2.2} />
+          </a>
+          <a class="button button--outline" href={routes.guides[lang]}>{copy.ctaGuides}</a>
+        </p>
+        <ul class="perks">
+          {
+            copy.perks.map((perk) => (
+              <li>
+                <Icon name="check" size={18} strokeWidth={2.4} />
+                {perk}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="hero__media">
+        <Image
+          class="hero__photo"
+          src={heroPhoto}
+          alt={copy.heroAlt}
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 60rem) 36rem, 100vw"
+          loading="eager"
+          fetchpriority="high"
+        />
+        {
+          featured && (
+            <div class="hero__card">
+              {featured.data.cover && <Image src={featured.data.cover} alt="" width={168} height={168} />}
+              <div>
+                <span class="hero__card-label">{copy.featuredLabel}</span>
+                <a href={guidePath(lang, featured.data.slug)}>{featured.data.title}</a>
+              </div>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="why-title">
     <div class="container">
-      <h1>{copy.heading}</h1>
-      <p class="hero__intro">{copy.intro}</p>
-      <p class="hero__actions">
-        <a class="button" href={shopCollections.all.url} hreflang="en">{copy.ctaShop}</a>
-        <a class="button button--secondary" href={routes.guides[lang]}>{copy.ctaGuides}</a>
+      <h2 id="why-title" class="section__title why__title">{copy.whyTitle}</h2>
+      <ul class="why">
+        {
+          copy.why.map((item) => (
+            <li>
+              <span class="why__icon">
+                <Icon name={item.icon as 'tool' | 'video' | 'document'} size={32} strokeWidth={1.8} />
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="latest-title">
+    <div class="container">
+      <div class="section__head">
+        <h2 id="latest-title" class="section__title">{copy.latest}</h2>
+        <a href={routes.guides[lang]}>{copy.allGuides}</a>
+      </div>
+      <ul class="cards" role="list">
+        {latest.map((article) => <li><ArticleCard article={article} headingLevel={3} /></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" class="section section--alt" aria-labelledby="projects-title">
+    <div class="container">
+      <h2 id="projects-title" class="section__title">{copy.projects}</h2>
+      <p class="muted prose">{copy.projectsIntro}</p>
+      <ul class="tiles" role="list">
+        {
+          projects.map(({ key, tone }) => (
+            <li>
+              <a class:list={['tile', tone]} href={shopCollections[key].url} hreflang="en">
+                <Icon name="external" size={24} />
+                <span class="tile__label">
+                  {shopCollections[key][lang]}
+                  <span class="visually-hidden">, {copy.shopSuffix}</span>
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="projects__all">
+        <a class="button button--outline" href={shopCollections.all.url} hreflang="en">
+          {copy.allPatterns}
+          <Icon name="external" size={16} strokeWidth={2.2} />
+        </a>
       </p>
     </div>
   </section>
 
-  <section class="container section" aria-labelledby="latest-title">
-    <h2 id="latest-title">{copy.latest}</h2>
-    <ul class="cards" role="list">
-      {latest.map((article) => <li><ArticleCard article={article} headingLevel={3} /></li>)}
-    </ul>
-    <p><a href={routes.guides[lang]}>{copy.allGuides}</a></p>
+  <section class="section section--dark on-dark" aria-labelledby="inside-title">
+    <div class="container inside">
+      <Image
+        class="inside__photo"
+        src={patternPhoto}
+        alt={copy.insideAlt}
+        widths={[640, 960, 1280]}
+        sizes="(min-width: 60rem) 36rem, 100vw"
+      />
+      <div class="inside__text">
+        <p class="inside__eyebrow">{copy.insideEyebrow}</p>
+        <h2 id="inside-title" class="section__title">
+          {copy.insideTitle} <em class="inside__accent">{copy.insideTitleAccent}</em>
+        </h2>
+        <ul class="inside__list">
+          {
+            copy.inside.map((item) => (
+              <li>
+                <Icon name="check" size={22} strokeWidth={2.4} />
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+        <a class="button button--light" href={shopCollections.all.url} hreflang="en">
+          {copy.ctaShop}
+          <Icon name="external" size={18} strokeWidth={2.2} />
+        </a>
+      </div>
+    </div>
   </section>
 
-  <section class="container section" aria-labelledby="projects-title">
-    <h2 id="projects-title">{copy.projects}</h2>
-    <p class="prose">{copy.projectsIntro}</p>
-    <ul class="projects" role="list">
-      {projectKeys.map((key) => <li><a href={shopCollections[key].url} hreflang="en">{shopCollections[key][lang]}</a></li>)}
-    </ul>
-  </section>
-
-  <section class="container section" aria-labelledby="about-title">
-    <div class="prose">
-      <h2 id="about-title">{copy.aboutTitle}</h2>
-      {copy.about.map((p) => <p>{p}</p>)}
+  <section id="about" class="section" aria-labelledby="about-title">
+    <div class="container about">
+      <Placeholder lang={lang} label={copy.portrait} class="about__portrait" />
+      <div class="about__text">
+        <h2 id="about-title" class="section__title">{copy.aboutTitle}</h2>
+        {copy.about.map((p) => <p class="muted">{p}</p>)}
+        <a class="button" href={instagram.url}>{copy.follow}</a>
+      </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
   .hero {
-    background: var(--color-surface);
-    padding-block: var(--space-xl);
+    padding-block: 4.5rem 5.5rem;
+  }
+  .hero__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 27.5rem), 1fr));
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .hero__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-m);
+  }
+  .hero__text > * {
+    margin: 0;
   }
   .hero h1 {
-    max-width: 20ch;
+    font-size: clamp(2.6rem, 2rem + 3vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.01em;
   }
-  .hero__intro {
-    max-width: 55ch;
-    font-size: 1.2rem;
+  .hero__eyebrow {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.875rem;
   }
   .hero__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-s);
-    margin: var(--space-m) 0 0;
+    gap: 0.75rem;
   }
-  .button--secondary {
-    background: transparent;
-    color: var(--leather-600);
-    box-shadow: inset 0 0 0 2px currentColor;
+  .perks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    padding: 0;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
   }
-  .button--secondary:hover {
-    background: var(--leather-600);
-    color: var(--leather-100);
+  .perks li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
   }
-  .section {
-    margin-top: var(--space-xl);
+  .perks :global(svg) {
+    color: var(--accent-600);
   }
-  .section h2 {
-    margin-top: 0;
+  .hero__media {
+    position: relative;
+    padding-bottom: 3.5rem;
+  }
+  .hero__photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-l);
+  }
+  .hero__card {
+    position: absolute;
+    left: -1rem;
+    bottom: 0;
+    width: min(80%, 21.5rem);
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 0.75rem;
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .hero__card :global(img) {
+    width: 5.25rem;
+    height: 5.25rem;
+    object-fit: cover;
+    border-radius: var(--radius-s);
+    flex-shrink: 0;
+  }
+  .hero__card div {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .hero__card-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--accent-600);
+  }
+  .hero__card a {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    line-height: 1.25;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .hero__card a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .hero__card:hover a {
+    text-decoration: underline;
+  }
+  @media (max-width: 30rem) {
+    .hero__card {
+      left: 0.75rem;
+    }
+  }
+
+  .why__title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .why {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
+    gap: var(--space-l);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .why li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  .why__icon {
+    display: grid;
+    place-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: var(--radius-pill);
+    background: var(--primary-100);
+    color: var(--primary-600);
+  }
+  .why h3 {
+    margin: 0.25rem 0 0;
+    font-family: var(--font-body);
+    font-size: 1.1875rem;
+  }
+  .why p {
+    margin: 0;
+    max-width: 30ch;
+    color: var(--color-text-muted);
+  }
+
+  .section__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem var(--space-m);
+    margin-bottom: 2.25rem;
+  }
+  .section__head h2 {
+    margin: 0;
+  }
+  .section__head a {
+    font-weight: 600;
   }
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
-    gap: var(--space-m);
+    gap: 1.75rem;
     list-style: none;
-    margin: var(--space-m) 0;
+    margin: 0;
     padding: 0;
   }
-  .projects {
+
+  .tiles {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
-    gap: var(--space-s);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16.25rem), 1fr));
+    gap: 1.25rem;
     list-style: none;
+    margin: 2.25rem 0 0;
     padding: 0;
   }
-  .projects a {
-    display: block;
-    padding: var(--space-s) var(--space-m);
-    border: 2px solid var(--color-border);
+  .tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 10.5rem;
+    padding: 1.375rem 1.5rem;
     border-radius: var(--radius);
-    font-weight: 600;
     text-decoration: none;
   }
-  .projects a:hover {
-    border-color: var(--leather-600);
+  .tile :global(svg) {
+    align-self: flex-end;
+    transition: transform 0.2s;
+  }
+  .tile:hover :global(svg) {
+    transform: translate(3px, -3px);
+  }
+  .tile__label {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.625rem;
+    line-height: 1.15;
+  }
+  .tile:hover .tile__label {
     text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+  }
+  .tile--primary-100 { background: var(--primary-100); color: var(--primary-700); }
+  .tile--primary-200 { background: var(--primary-200); color: var(--primary-700); }
+  .tile--primary-300 { background: var(--primary-300); color: var(--primary-700); }
+  .tile--accent-100 { background: var(--accent-100); color: var(--accent-700); }
+  .tile--accent-200 { background: var(--accent-200); color: var(--accent-700); }
+  .tile--neutral-100 { background: var(--neutral-100); color: var(--neutral-700); }
+  .projects__all {
+    margin: 1.75rem 0 0;
+  }
+
+  .inside {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .inside__photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1.25rem;
+  }
+  .inside__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .inside__text > * {
+    margin: 0;
+  }
+  .inside__eyebrow {
+    color: var(--primary-300);
+    font-weight: 600;
+    font-size: 0.9375rem;
+  }
+  .inside__accent {
+    font-style: italic;
+    font-weight: 700;
+    color: var(--primary-300);
+  }
+  .inside__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    list-style: none;
+    padding: 0;
+  }
+  .inside__list li {
+    display: flex;
+    gap: 0.75rem;
+  }
+  .inside__list :global(svg) {
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+    color: var(--accent-200);
+  }
+
+  .about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-l);
+    max-width: 62.5rem;
+  }
+  .about :global(.about__portrait) {
+    flex: 0 0 12.5rem;
+    height: 12.5rem;
+    border-radius: var(--radius-pill);
+    border: 6px solid #fff;
+    box-shadow: 0 0 0 2px var(--primary-200);
+  }
+  .about__text {
+    flex: 999 1 26rem;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-s);
+  }
+  .about__text > * {
+    margin: 0;
   }
 </style>

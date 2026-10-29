@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import CategoryChip from './CategoryChip.astro';
 import { guidePath } from '../i18n/ui';
 import type { Article } from '../lib/articles';
 
@@ -13,8 +14,9 @@ const { data } = article;
 const Heading = `h${headingLevel}` as const;
 ---
 
-<article class="card">
+<article class:list={['card', { 'card--dark': !data.cover }]}>
   <div class="card__body">
+    <CategoryChip lang={data.lang} category={data.category} />
     <Heading class="card__title">
       <a href={guidePath(data.lang, data.slug)}>{data.title}</a>
     </Heading>
@@ -29,9 +31,14 @@ const Heading = `h${headingLevel}` as const;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: var(--color-surface);
+    background: #fff;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius);
     overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-2px);
   }
   .card :global(img) {
     order: -1;
@@ -40,13 +47,22 @@ const Heading = `h${headingLevel}` as const;
     object-fit: cover;
   }
   .card__body {
-    padding: var(--space-s) var(--space-m) var(--space-m);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    padding: 1.375rem 1.5rem 1.625rem;
+    flex-grow: 1;
   }
   .card__title {
-    font-size: 1.3rem;
-    margin: 0 0 var(--space-xs);
+    margin: 0;
+    font-size: 1.375rem;
   }
-  /* Whole card clickable, while the link text stays the title only. */
+  .card__title a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  /* Whole card clickable; the link text stays the title. */
   .card__title a::after {
     content: '';
     position: absolute;
@@ -59,7 +75,32 @@ const Heading = `h${headingLevel}` as const;
   .card__title a:focus-visible {
     outline: none;
   }
+  .card:hover .card__title a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+  }
   .card p {
     margin: 0;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+  }
+  /* No cover: typographic card on deep teal. */
+  .card--dark {
+    min-height: 26rem;
+    justify-content: flex-end;
+    background: var(--accent-700);
+    border-color: var(--accent-700);
+  }
+  .card--dark .card__title {
+    font-size: 1.75rem;
+  }
+  .card--dark .card__title a {
+    color: #fff;
+  }
+  .card--dark p {
+    color: var(--accent-100);
+  }
+  .card--dark:has(a:focus-visible) {
+    outline-color: var(--color-focus);
   }
 </style>

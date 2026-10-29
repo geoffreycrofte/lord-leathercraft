@@ -1,5 +1,6 @@
 ---
 import logo from '../assets/logo.svg?raw';
+import Icon from './Icon.astro';
 import { SHOP_URL } from '../data/site';
 import { otherLang, routes, useTranslations, type Lang } from '../i18n/ui';
 import type { Alternates } from '../layouts/BaseLayout.astro';
@@ -15,34 +16,36 @@ const target = otherLang(lang);
 const switchHref = alternates[target] ?? routes.home[target];
 const current = Astro.url.pathname;
 const nav = [
-  { href: routes.home[lang], label: t('nav.home') },
   { href: routes.guides[lang], label: t('nav.guides') },
+  { href: `${routes.home[lang]}#projects`, label: t('nav.patterns') },
+  { href: `${routes.home[lang]}#about`, label: t('nav.about') },
 ];
-const isCurrent = (href: string) =>
-  href === routes.home[lang] ? current === href : current.startsWith(href);
 ---
 
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="brand" href={routes.home[lang]}>
       <span class="brand__logo" aria-hidden="true" set:html={logo} />
-      <span class="brand__name">{t('site.name')}</span>
+      <span class="visually-hidden">{t('site.name')}, {t('nav.home')}</span>
     </a>
     <nav aria-label={t('nav.label')}>
-      <ul>
+      <ul class="nav">
         {
           nav.map((item) => (
             <li>
-              <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+              <a class="nav__link" href={item.href} aria-current={current.startsWith(item.href) ? 'page' : undefined}>
                 {item.label}
               </a>
             </li>
           ))
         }
-        <li><a href={SHOP_URL} hreflang="en">{t('nav.shop')}</a></li>
         <li>
-          <a href={switchHref} hreflang={target} lang={target}>
-            {t('lang.switch')}
+          <a class="nav__lang" href={switchHref} hreflang={target} lang={target}>{t('lang.switch')}</a>
+        </li>
+        <li>
+          <a class="button button--small" href={SHOP_URL} hreflang="en">
+            {t('nav.shop')}
+            <Icon name="external" size={16} strokeWidth={2.2} />
           </a>
         </li>
       </ul>
@@ -52,7 +55,7 @@ const isCurrent = (href: string) =>
 
 <style>
   .site-header {
-    background: var(--color-surface);
+    background: #fff;
     border-bottom: 1px solid var(--color-border);
   }
   .site-header__inner {
@@ -64,35 +67,51 @@ const isCurrent = (href: string) =>
     padding-block: var(--space-s);
   }
   .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-xs);
-    color: var(--color-text);
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-decoration: none;
+    display: block;
+    border-radius: var(--radius-s);
   }
-  .brand__logo :global(svg) {
-    width: 2.75rem;
-    height: 2.75rem;
+  .brand__logo {
     display: block;
   }
-  nav ul {
+  .brand__logo :global(svg) {
+    display: block;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  .nav {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-xs) var(--space-m);
+    align-items: center;
+    gap: var(--space-xs) 1.75rem;
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  nav a {
     font-weight: 600;
+    font-size: 1rem;
+  }
+  .nav__link {
+    color: var(--color-text);
     text-decoration: none;
   }
-  nav a:hover,
-  nav a[aria-current='page'] {
+  .nav__link:hover,
+  .nav__link[aria-current='page'] {
+    color: var(--color-text);
     text-decoration: underline;
-    text-decoration-thickness: 0.12em;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+  .nav__lang {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    border: 2px solid var(--neutral-200);
+    border-radius: var(--radius-pill);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .nav__lang:hover {
+    border-color: var(--neutral-600);
+    color: var(--color-text);
   }
 </style>

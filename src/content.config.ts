@@ -21,6 +21,7 @@ const articles = defineCollection({
       lang: z.enum(['en', 'fr']),
       slug: z.string().regex(/^[a-z0-9-]+$/),
       translationKey: z.string(),
+      category: z.enum(['care', 'design', 'materials', 'tools']),
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
       cover: image().optional(),

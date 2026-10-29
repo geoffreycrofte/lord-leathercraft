@@ -1,85 +1,126 @@
 ---
 import SocialIcon from './SocialIcon.astro';
-import { socials } from '../data/site';
-import { routes, useTranslations, type Lang } from '../i18n/ui';
+import { SHOP_URL, socials } from '../data/site';
+import { otherLang, routes, useTranslations, type Lang } from '../i18n/ui';
+import type { Alternates } from '../layouts/BaseLayout.astro';
 
 interface Props {
   lang: Lang;
+  alternates: Alternates;
 }
 
-const { lang } = Astro.props;
+const { lang, alternates } = Astro.props;
 const t = useTranslations(lang);
+const target = otherLang(lang);
+const switchHref = alternates[target] ?? routes.home[target];
 ---
 
-<footer class="site-footer">
-  <div class="container">
-    <section aria-labelledby="footer-social">
-      <h2 id="footer-social" class="site-footer__title">{t('footer.social')}</h2>
-      <ul class="social">
+<footer class="site-footer on-dark">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <p class="site-footer__name">{t('site.name')}</p>
+      <p>{t('footer.about')}</p>
+      <p><a href={switchHref} hreflang={target} lang={target}>{t('lang.switchLong')}</a></p>
+    </div>
+    <nav aria-labelledby="footer-explore">
+      <h2 id="footer-explore">{t('footer.explore')}</h2>
+      <ul>
+        <li><a href={routes.guides[lang]}>{t('nav.guides')}</a></li>
+        <li><a href={SHOP_URL} hreflang="en">{t('nav.shop')}</a></li>
+        <li><a href={`${routes.home[lang]}#about`}>{t('nav.about')}</a></li>
+      </ul>
+    </nav>
+    <nav aria-labelledby="footer-social">
+      <h2 id="footer-social">{t('footer.social')}</h2>
+      <ul>
         {
           socials.map((s) => (
             <li>
-              <a href={s.url}>
+              <a href={s.url} class="social">
                 <SocialIcon slug={s.icon} />
-                <span>{s.name}</span>
+                {s.name}
               </a>
             </li>
           ))
         }
       </ul>
-    </section>
-    <nav aria-label={t('footer.legal')}>
-      <ul class="legal">
+    </nav>
+    <nav aria-labelledby="footer-legal">
+      <h2 id="footer-legal">{t('footer.legal')}</h2>
+      <ul>
         <li><a href={routes.legal[lang]}>{t('footer.legalNotice')}</a></li>
         <li><a href={routes.privacy[lang]}>{t('footer.privacy')}</a></li>
         <li><a href={routes.affiliate[lang]}>{t('footer.affiliate')}</a></li>
       </ul>
     </nav>
-    <p class="copyright">© {new Date().getFullYear()} Lord Leathercraft</p>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>© {new Date().getFullYear()} Lord Leathercraft · {t('footer.privacyNote')}</p>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    margin-top: var(--space-xl);
-    padding-block: var(--space-l);
-    background: var(--leather-700);
-    color: var(--leather-100);
+    background: var(--neutral-700);
+    color: var(--neutral-100);
+    font-size: 0.9375rem;
   }
-  .site-footer a {
-    color: inherit;
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+    gap: var(--space-l);
+    padding-block: 4rem var(--space-l);
   }
-  .site-footer__title {
-    font-size: 1.25rem;
-    margin: 0 0 var(--space-s);
+  .site-footer__name {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .site-footer__brand p:not(.site-footer__name) {
+    color: var(--neutral-300);
+  }
+  h2 {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--primary-300);
   }
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-xs) var(--space-m);
+    flex-direction: column;
+    gap: 0.5rem;
   }
-  .social a {
+  a {
+    color: var(--neutral-100);
+  }
+  a:hover {
+    color: #fff;
+  }
+  .site-footer__brand a {
+    color: var(--primary-100);
+  }
+  .social {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding-block: 0.25rem;
   }
-  .social svg {
-    width: 1.25rem;
-    height: 1.25rem;
+  .social :global(svg) {
+    width: 1.125rem;
+    height: 1.125rem;
   }
-  .legal {
-    margin-top: var(--space-l);
-    font-size: 0.9375rem;
+  .site-footer__bottom {
+    padding-block: 1.25rem 2rem;
+    border-top: 1px solid var(--neutral-600);
+    color: var(--neutral-300);
   }
-  .copyright {
-    margin: var(--space-s) 0 0;
-    font-size: 0.9375rem;
-  }
-  .site-footer :focus-visible {
-    outline-color: var(--leather-100);
+  .site-footer__bottom p {
+    margin: 0;
   }
 </style>

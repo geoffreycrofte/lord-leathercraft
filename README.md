@@ -46,6 +46,7 @@ description: 'Meta description rédigée à la main, entre 70 et 160 caractères
 lang: fr                       # en ou fr
 slug: entretenir-le-cuir       # URL traduite : /fr/guides/entretenir-le-cuir/
 translationKey: leather-care   # identique dans les deux versions
+category: care                 # care, design, materials ou tools (étiquette)
 pubDate: 2026-10-29
 updatedDate: 2026-11-15        # optionnel
 cover: ../../../assets/articles/photo.jpg   # optionnel
@@ -85,4 +86,4 @@ Pour un nouveau programme, ajoute son domaine ou son paramètre dans `src/lib/re
 
 ## Accessibilité
 
-Le site vise le niveau WCAG 2.2 AA. Les contrastes de la palette sont documentés en tête de `src/styles/global.css`.
+Le site vise le niveau WCAG 2.2 AA. La palette (issue du Figma « Leather Craft Branding ») et ses règles de contraste sont documentées en tête de `src/styles/global.css`.

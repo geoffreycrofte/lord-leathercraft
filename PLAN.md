@@ -88,7 +88,7 @@ Payhip est très limité pour le contenu et le SEO :
 - [ ] Bascule DNS et activation de GitHub Pages ([docs/deploiement.md](docs/deploiement.md))
 - [x] Phase Claude Design : canevas https://claude.ai/artifact/FsjPri4A6Fv43xCmArJe4K (accueil bureau et mobile, fondations), validé
 - [x] Design system reporté dans le code : palette Figma en variables CSS, boutons en pilule, étiquettes de catégorie, en-tête et pied de page, nouvelle page d'accueil
-- [ ] Remplacer les emplacements photo (voir « Photos à intégrer »)
+- [x] Remplacer les emplacements photo de l'accueil (voir « Photos à intégrer »)
 
 ### Phase 1 bis — Navigation et nouvelles sections
 
@@ -123,8 +123,8 @@ Payhip est très limité pour le contenu et le SEO :
 
 Les photos du fichier Figma « Leather Craft Branding » n'ont pas pu être téléchargées : www.figma.com est bloqué par le réseau de la session. Geoffrey les fournira. En attendant :
 
-- [ ] **Portrait** (accueil, section « À propos ») : composant `Placeholder` dans `src/views/HomeView.astro`.
-- [ ] **Photos de collections** : les tuiles de l'accueil sont en aplats de couleur. Une version photo reste possible.
+- [x] **Portrait** (accueil, section « À propos »), recadré sur le visage.
+- [x] **Photos de collections** : les 6 tuiles de l'accueil ont leur photo.
 - [ ] **Photo de couverture pour l'article cuir ou cuir vegan** : la carte s'affiche en version sombre, sans image.
 - [ ] **Logo clair pour fonds sombres** : le pied de page utilise le nom en Fraunces.
 

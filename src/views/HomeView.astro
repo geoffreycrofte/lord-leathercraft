@@ -3,12 +3,19 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import Icon from '../components/Icon.astro';
-import Placeholder from '../components/Placeholder.astro';
 import { SHOP_URL, shopCollections, socials, type CollectionKey } from '../data/site';
 import { guidePath, routes, type Lang } from '../i18n/ui';
 import { getArticles } from '../lib/articles';
 import heroPhoto from '../assets/home/packaging.jpg';
 import patternPhoto from '../assets/articles/pattern-illustrator.jpg';
+import portraitPhoto from '../assets/home/portrait.jpg';
+import catCardholders from '../assets/home/cat-cardholders.jpg';
+import catWallets from '../assets/home/cat-wallets.jpg';
+import catBags from '../assets/home/cat-bags.jpg';
+import catDeskHome from '../assets/home/cat-desk-home.jpg';
+import catWearables from '../assets/home/cat-wearables.jpg';
+import catLaptop from '../assets/home/cat-laptop-sleeves.jpg';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
   lang: Lang;
@@ -20,14 +27,14 @@ const latest = articles.slice(0, 3);
 const featured = articles.find((a) => a.data.translationKey === 'design-process');
 const instagram = socials.find((s) => s.icon === 'instagram')!;
 
-/** Each tile keeps a text colour with at least 7:1 on its background. */
-const projects: { key: CollectionKey; tone: string }[] = [
-  { key: 'wallets', tone: 'tile--primary-100' },
-  { key: 'cardholders', tone: 'tile--accent-100' },
-  { key: 'bags', tone: 'tile--primary-200' },
-  { key: 'deskHome', tone: 'tile--neutral-100' },
-  { key: 'wears', tone: 'tile--accent-200' },
-  { key: 'laptopSleeves', tone: 'tile--primary-300' },
+/** Each tile keeps a text colour with at least 7:1 on its background. The photo is decorative: the label names the collection. */
+const projects: { key: CollectionKey; tone: string; photo?: ImageMetadata }[] = [
+  { key: 'wallets', tone: 'tile--primary-100', photo: catWallets },
+  { key: 'cardholders', tone: 'tile--accent-100', photo: catCardholders },
+  { key: 'bags', tone: 'tile--primary-200', photo: catBags },
+  { key: 'deskHome', tone: 'tile--neutral-100', photo: catDeskHome },
+  { key: 'wears', tone: 'tile--accent-200', photo: catWearables },
+  { key: 'laptopSleeves', tone: 'tile--primary-300', photo: catLaptop },
 ];
 
 const copy = {
@@ -70,7 +77,7 @@ const copy = {
       'I started leathercraft at the end of 2020, first for myself, making the small goods I needed. Friends and colleagues asked for theirs, the catalogue grew, and I decided to share the templates I use every day.',
       'I am a digital designer, so precise, well-finished templates matter to me, on screen as much as in leather. Lord Leathercraft is a not-for-profit side project to help beginners get started.',
     ],
-    portrait: 'portrait of Geoffrey Crofte',
+    portrait: 'Geoffrey Crofte, sitting in front of a chalkboard wall, looking at the camera with a hand on his chin.',
     follow: 'Follow on Instagram',
   },
   fr: {
@@ -112,7 +119,7 @@ const copy = {
       'J’ai commencé la maroquinerie fin 2020, d’abord pour moi, en fabriquant les petits objets dont j’avais besoin. Des amis et des collègues ont demandé les leurs, le catalogue a grandi, et j’ai décidé de partager les gabarits que j’utilise tous les jours.',
       'Je suis designer numérique : des gabarits précis et bien finis comptent pour moi, à l’écran comme dans le cuir. Lord Leathercraft est un projet bénévole pour aider les débutants à se lancer.',
     ],
-    portrait: 'portrait de Geoffrey Crofte',
+    portrait: 'Geoffrey Crofte, assis devant un mur en ardoise, regarde l’objectif, une main sur le menton.',
     follow: 'Suivre sur Instagram',
   },
 }[lang];
@@ -224,13 +231,16 @@ const jsonLd = [
       <p class="muted prose">{copy.projectsIntro}</p>
       <ul class="tiles" role="list">
         {
-          projects.map(({ key, tone }) => (
+          projects.map(({ key, tone, photo }) => (
             <li>
-              <a class:list={['tile', 'stitch--hover', tone]} href={shopCollections[key].url} hreflang="en">
-                <Icon name="external" size={24} />
-                <span class="tile__label">
-                  {shopCollections[key][lang]}
-                  <span class="visually-hidden">, {copy.shopSuffix}</span>
+              <a class:list={['tile', 'stitch--hover', 'zoom-media', tone, { 'tile--photo': photo }]} href={shopCollections[key].url} hreflang="en">
+                {photo && <Image class="tile__photo" src={photo} alt="" widths={[400, 700]} sizes="(min-width: 75rem) 18rem, (min-width: 40rem) 45vw, 100vw" />}
+                <span class="tile__bar">
+                  <span class="tile__label">
+                    {shopCollections[key][lang]}
+                    <span class="visually-hidden">, {copy.shopSuffix}</span>
+                  </span>
+                  <Icon name="external" size={24} />
                 </span>
               </a>
             </li>
@@ -280,7 +290,7 @@ const jsonLd = [
 
   <section id="about" class="section" aria-labelledby="about-title">
     <div class="container about">
-      <Placeholder lang={lang} label={copy.portrait} class="about__portrait" />
+      <Image class="about__portrait" src={portraitPhoto} alt={copy.portrait} widths={[200, 400]} sizes="12.5rem" />
       <div class="about__text">
         <h2 id="about-title" class="section__title">{copy.aboutTitle}</h2>
         {copy.about.map((p) => <p class="muted">{p}</p>)}
@@ -486,14 +496,32 @@ const jsonLd = [
   .tile {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
+    height: 100%;
     min-height: 10.5rem;
-    padding: 1.375rem 1.5rem;
     border-radius: var(--radius);
+    overflow: hidden;
     text-decoration: none;
   }
+  .tile :global(.tile__photo) {
+    display: block;
+    flex: 1 0 auto;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  .tile__bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1.125rem 1.375rem 1.25rem;
+  }
+  .tile:not(.tile--photo) .tile__bar {
+    flex-grow: 1;
+  }
   .tile :global(svg) {
-    align-self: flex-end;
+    flex-shrink: 0;
     transition: transform 0.2s;
   }
   .tile:hover :global(svg) {
@@ -580,6 +608,7 @@ const jsonLd = [
     border-radius: var(--radius-pill);
     border: 6px solid #fff;
     box-shadow: 0 0 0 2px var(--primary-200);
+    object-fit: cover;
   }
   .about__text {
     flex: 999 1 26rem;

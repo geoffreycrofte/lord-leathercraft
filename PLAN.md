@@ -90,6 +90,21 @@ Payhip est très limité pour le contenu et le SEO :
 - [x] Design system reporté dans le code : palette Figma en variables CSS, boutons en pilule, étiquettes de catégorie, en-tête et pied de page, nouvelle page d'accueil
 - [ ] Remplacer les emplacements photo (voir « Photos à intégrer »)
 
+### Phase 1 bis — Navigation et nouvelles sections
+
+- [x] Navigation : Guides, Mon matériel, Mes outils, Portfolio, La boutique, Blog
+- [x] Menu mobile en `<dialog>` : logo centré, boutons en icône seule (libellés pour lecteurs d'écran), ouverture en cercle et liens en cascade, langues et réseaux dans le menu
+- [x] **Mon matériel** : 50 cuirs (fiche détaillée par cuir), 24 fils, 53 boucles, importés de Notion avec leurs propriétés et leurs relations
+- [x] **Portfolio** : 66 pièces importées de Notion (photos, textes FR et EN, cuirs et fils liés, vidéos YouTube sans cookies), filtre par famille
+- [x] **Mes outils** : structure en 3 niveaux (base, avancé, pro) par tâche, liste de départ générique sans liens
+- [x] **Blog** : collection d'articles courts (actu, réponse, réaction, astuce) qui renvoient vers les guides et les patrons ; premier article sur le nouveau site
+- [x] Script d'import Notion (`scripts/import-notion.mjs`, voir [docs/notion.md](docs/notion.md))
+- [x] Compression des photos : `npm run images` (1200 px, mozjpeg, sans métadonnées), lancée par l'import et vérifiée en CI
+- [x] Détails « craft » : coutures sellier, bords de peau, étiquettes trouées, micro-interactions
+- [ ] Remplacer la liste d'outils de départ par la vraie liste, avec les liens (Geoffrey)
+- [ ] Ajouter les liens fournisseurs des cuirs, fils et boucles dans `src/data/suppliers.ts` (Geoffrey)
+- [ ] Relire les traductions des fiches Notion (cuirs, portfolio)
+
 ### Phase 2 — Contenu
 
 - [ ] Plan éditorial complet
@@ -147,3 +162,9 @@ Pour remplacer un emplacement : déposer l'image dans `src/assets/`, l'importer 
 | 2026-10-29 | Règles de contraste : Primary 500 en texte seulement sur blanc ; Accent 500 et plus clair en décor uniquement ; étiquettes Accent 700 sur Accent 100. |
 | 2026-10-29 | Les articles reçoivent une catégorie (`care`, `design`, `materials`, `tools`), affichée en étiquette. Un article sans couverture s'affiche en carte sombre. |
 | 2026-10-29 | Logo SVG du dépôt corrigé (balises de groupe orphelines). |
+| 2026-10-30 | Navigation : Guides, Mon matériel, Mes outils, Portfolio, La boutique, Blog. Sur mobile : logo centré, menu plein écran, sélecteur de langue dans le menu. |
+| 2026-10-30 | Mon matériel et Portfolio viennent de Notion. Une fiche JSON par page Notion, qui garde l'identifiant, le lien et les propriétés, pour faciliter les mises à jour. |
+| 2026-10-30 | Prix, stock et statut de disponibilité (vente sur commande) conservés dans les données mais non affichés. |
+| 2026-10-30 | Liens fournisseurs gérés à part (`src/data/suppliers.ts`), par identifiant Notion, pour survivre aux importations. |
+| 2026-10-30 | Photos stockées à 1200 px maximum, en qualité 72 environ, et à 300 Ko maximum ; Astro génère les tailles adaptées et le WebP au build. |
+| 2026-10-30 | Historique de la branche réécrit (avec l'accord de Geoffrey) pour n'y garder que les photos compressées. |

@@ -1,13 +1,20 @@
 /**
  * Renders the Markdown body exported from a Notion page. The export marks
  * each image with a `{{image:N}}` line and internal Notion links as
- * `(notion:<id>)`; this splits the body into HTML chunks and image slots,
+ * `(notion:<id>)`; this splits the body into HTML chunks, image slots and
+ * YouTube videos,
  * and points Notion links to the matching page of this site.
  */
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 import { remarkAffiliateLinks } from './remark-affiliate-links.mjs';
 
-export type BodyPart = { type: 'html'; html: string } | { type: 'image'; index: number };
+export type BodyPart =
+  | { type: 'html'; html: string }
+  | { type: 'image'; index: number }
+  | { type: 'video'; id: string };
+
+/** A paragraph that is only a link to a YouTube video becomes an embedded player. */
+const videoLine = /^\[[^\]]*\]\(https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{11})[^)]*\)\s*$/;
 
 let processor: Awaited<ReturnType<typeof createMarkdownProcessor>> | undefined;
 
@@ -23,16 +30,27 @@ export async function renderNotionBody(markdown: string, resolve: NotionLinkReso
 
   const parts: BodyPart[] = [];
   let hasAffiliateLinks = false;
-  for (const chunk of linked.split(/^\{\{image:(\d+)\}\}\s*$/m)) {
-    if (/^\d+$/.test(chunk)) {
-      parts.push({ type: 'image', index: Number(chunk) - 1 });
-      continue;
-    }
-    if (!chunk.trim()) continue;
-    // The language decides the affiliate marker wording.
-    const result = await processor.render(chunk, { fileURL: new URL(`file:///notion/${lang}/body.md`) });
+  let buffer: string[] = [];
+  const flush = async () => {
+    const chunk = buffer.join('\n');
+    buffer = [];
+    if (!chunk.trim()) return;
+    // The file path tells the affiliate plugin which language to use.
+    const result = await processor!.render(chunk, { fileURL: new URL(`file:///notion/${lang}/body.md`) });
     if (result.metadata.frontmatter?.hasAffiliateLinks) hasAffiliateLinks = true;
     parts.push({ type: 'html', html: result.code });
+  };
+
+  for (const line of linked.split('\n')) {
+    const image = line.match(/^\{\{image:(\d+)\}\}\s*$/);
+    const video = line.match(videoLine);
+    if (!image && !video) {
+      buffer.push(line);
+      continue;
+    }
+    await flush();
+    parts.push(image ? { type: 'image', index: Number(image[1]) - 1 } : { type: 'video', id: video![1] });
   }
+  await flush();
   return { parts, hasAffiliateLinks };
 }

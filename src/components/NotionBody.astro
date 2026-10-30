@@ -4,6 +4,7 @@
  * the English text (marked lang="en") when no translation exists yet.
  */
 import { Image } from 'astro:assets';
+import YouTube from './YouTube.astro';
 import { renderNotionBody } from '../lib/notion-markdown';
 import { notionLinkResolver } from '../lib/notion';
 import type { ImageMetadata } from 'astro';
@@ -38,6 +39,8 @@ const { parts } = source.trim() ? await renderNotionBody(source, resolver, textL
       {parts.map((part) =>
         part.type === 'html' ? (
           <Fragment set:html={part.html} />
+        ) : part.type === 'video' ? (
+          <YouTube id={part.id} title={lang === 'fr' ? `${name} : vidéo de fabrication` : `${name}: making-of video`} lang={lang} />
         ) : skipImages || !images[part.index] || images[part.index].file.src === hide?.src ? null : (
           <figure>
             <Image

@@ -91,7 +91,7 @@ for (const [kind, target] of Object.entries(targets)) {
     (entry.images ?? []).forEach((img, i) => {
       const file = existing_(img.file);
       if (!file) return;
-      kept.push({ ...img, file });
+      kept.push({ ...img, caption: img.caption ?? '', file });
       renumber.set(i + 1, kept.length);
     });
     entry.images = kept;
@@ -107,6 +107,7 @@ for (const [kind, target] of Object.entries(targets)) {
     const out = {
       ...entry,
       slug,
+      descriptionFr: entry.descriptionFr ?? '',
       contentMarkdown: cleanMarkdown(entry.contentMarkdown),
       contentMarkdownFr: cleanMarkdown(entry.contentMarkdownFr),
       cover: local(cover),

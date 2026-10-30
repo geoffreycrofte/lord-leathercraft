@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Keeps source photos light before they reach the repository: resizes to
- * 1400 px wide at most (the largest size the pages use), re-encodes JPEG (mozjpeg, progressive) and PNG,
+ * 1200 px wide at most, re-encodes JPEG (mozjpeg, progressive) and PNG,
  * and strips metadata (EXIF, GPS). Astro still generates the responsive
  * sizes and WebP at build time; this only caps what is stored in git.
  *
@@ -15,9 +15,9 @@ import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { extname, join } from 'node:path';
 import sharp from 'sharp';
 
-const MAX_WIDTH = 1400;
-const MAX_BYTES = 400 * 1024;
-const JPEG = { quality: 76, mozjpeg: true, progressive: true };
+const MAX_WIDTH = 1200;
+const MAX_BYTES = 300 * 1024;
+const JPEG = { quality: 72, mozjpeg: true, progressive: true };
 
 const args = process.argv.slice(2);
 const check = args.includes('--check');
@@ -59,7 +59,7 @@ for (const root of roots) {
       output = await pipeline().png({ compressionLevel: 9, palette: !meta.hasAlpha, quality: 85 }).toBuffer();
     } else {
       // Lower the quality step by step for very detailed photos only.
-      for (const quality of [JPEG.quality, 70, 64, 58]) {
+      for (const quality of [JPEG.quality, 66, 60, 54]) {
         output = await pipeline().jpeg({ ...JPEG, quality }).toBuffer();
         if (output.length <= MAX_BYTES) break;
       }

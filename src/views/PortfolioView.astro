@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import PieceCard from '../components/PieceCard.astro';
+import { routes, type Lang } from '../i18n/ui';
+import { getPieces } from '../lib/notion';
+import { families, familyOf, type Family } from '../lib/portfolio';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const pieces = await getPieces();
+const counts = new Map<Family, number>();
+pieces.forEach((p) => {
+  const f = familyOf(p.data.properties.Tags);
+  counts.set(f, (counts.get(f) ?? 0) + 1);
+});
+const filters = (Object.keys(families) as Family[]).filter((f) => counts.has(f));
+
+const copy = {
+  en: {
+    title: 'Portfolio',
+    accent: 'pieces made by hand',
+    description: 'Wallets, cardholders, belts, watch straps and bags I have made by hand since 2020, with their leathers, threads and dimensions.',
+    intro: 'Pieces I have designed and made since 2020. Many of them became patterns you can make yourself.',
+    filter: 'Show',
+    all: 'All',
+    count: (n: number) => `${n} pieces shown`,
+  },
+  fr: {
+    title: 'Portfolio',
+    accent: 'des pièces faites main',
+    description: 'Portefeuilles, porte-cartes, ceintures, bracelets de montre et sacs que j’ai fabriqués à la main depuis 2020, avec leurs cuirs, fils et dimensions.',
+    intro: 'Les pièces que j’ai conçues et fabriquées depuis 2020. Beaucoup sont devenues des patrons que vous pouvez fabriquer vous-même.',
+    filter: 'Afficher',
+    all: 'Tout',
+    count: (n: number) => `${n} pièces affichées`,
+  },
+}[lang];
+---
+
+<BaseLayout lang={lang} title={copy.title} description={copy.description} alternates={routes.portfolio}>
+  <div class="container">
+    <PageIntro title={copy.title} accent={copy.accent} intro={copy.intro} />
+
+    <div class="filters" role="group" aria-labelledby="filter-label" hidden>
+      <span id="filter-label" class="filters__label">{copy.filter}</span>
+      <button type="button" data-filter="all" aria-pressed="true">{copy.all} <span class="muted">({pieces.length})</span></button>
+      {
+        filters.map((f) => (
+          <button type="button" data-filter={f} aria-pressed="false">
+            {families[f][lang]} <span class="muted">({counts.get(f)})</span>
+          </button>
+        ))
+      }
+    </div>
+    <p class="visually-hidden" role="status" data-count-template={copy.count(0)}></p>
+
+    <ul class="pieces" role="list">
+      {pieces.map((p) => <li data-family={familyOf(p.data.properties.Tags)}><PieceCard lang={lang} piece={p} headingLevel={2} /></li>)}
+    </ul>
+  </div>
+</BaseLayout>
+
+<script>
+  const group = document.querySelector<HTMLElement>('.filters');
+  const status = document.querySelector<HTMLElement>('[data-count-template]');
+  const items = [...document.querySelectorAll<HTMLElement>('.pieces > li')];
+  if (group && status) {
+    group.hidden = false;
+    const buttons = [...group.querySelectorAll<HTMLButtonElement>('button')];
+    group.addEventListener('click', (event) => {
+      const button = (event.target as Element).closest('button');
+      if (!button) return;
+      const family = button.dataset.filter;
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+      let shown = 0;
+      items.forEach((item) => {
+        item.hidden = family !== 'all' && item.dataset.family !== family;
+        if (!item.hidden) shown++;
+      });
+      status.textContent = (status.dataset.countTemplate ?? '').replace('0', String(shown));
+    });
+  }
+</script>
+
+<style>
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: var(--space-l);
+  }
+  .filters[hidden] {
+    display: none;
+  }
+  .filters__label {
+    font-weight: 700;
+    margin-right: 0.25rem;
+  }
+  .filters button {
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    border: 2px solid var(--neutral-200);
+    border-radius: var(--radius-pill);
+    background: #fff;
+    color: var(--color-text);
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    cursor: pointer;
+  }
+  .filters button:hover {
+    border-color: var(--neutral-600);
+  }
+  .filters button[aria-pressed='true'] {
+    background: var(--neutral-700);
+    border-color: var(--neutral-700);
+    color: #fff;
+  }
+  .filters button[aria-pressed='true'] .muted {
+    color: var(--neutral-300);
+  }
+  .pieces {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-m);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+</style>

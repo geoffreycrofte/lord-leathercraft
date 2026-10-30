@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateNotice from '../components/AffiliateNotice.astro';
+import OfferLink from '../components/OfferLink.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { tasks, tiers, tools, type Tool } from '../data/tools';
+import { routes, type Lang } from '../i18n/ui';
+import { isAffiliateUrl } from '../lib/remark-affiliate-links.mjs';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const copy = {
+  en: {
+    title: 'My tools',
+    accent: 'from first cut to pro',
+    description: 'The leathercraft tools I use, from a beginner’s kit to professional machines, sorted by level and task, with where to buy them.',
+    intro: 'You do not need everything to start. Begin with the basics, then add tools when a project asks for them.',
+    guidesLink: 'New to leathercraft? Start with the guides.',
+  },
+  fr: {
+    title: 'Mes outils',
+    accent: 'de la première découpe au pro',
+    description: 'Les outils de maroquinerie que j’utilise, du kit débutant aux machines pro, classés par niveau et par tâche, avec où les acheter.',
+    intro: 'Pas besoin de tout pour commencer. Démarrez avec les bases, puis ajoutez des outils quand un projet en a besoin.',
+    guidesLink: 'Vous débutez ? Commencez par les guides.',
+  },
+}[lang];
+
+const tierKeys = Object.keys(tiers) as Tool['tier'][];
+const hasAffiliate = tools.some((tool) => tool.offers.some((o) => isAffiliateUrl(o.url)));
+---
+
+<BaseLayout lang={lang} title={copy.title} description={copy.description} alternates={routes.tools}>
+  <div class="container">
+    <PageIntro title={copy.title} accent={copy.accent} intro={copy.intro}>
+      <p class="tools__guides"><a href={routes.guides[lang]}>{copy.guidesLink}</a></p>
+    </PageIntro>
+    {hasAffiliate && <AffiliateNotice lang={lang} />}
+
+    {
+      tierKeys.map((tier, i) => (
+        <section class="tier" aria-labelledby={`tier-${tier}`}>
+          <div class="tier__head">
+            <span class="tier__step stitch" aria-hidden="true">{i + 1}</span>
+            <div>
+              <h2 id={`tier-${tier}`}>{tiers[tier][lang].title}</h2>
+              <p class="muted">{tiers[tier][lang].intro}</p>
+            </div>
+          </div>
+          <ul class="tools" role="list">
+            {tools
+              .filter((tool) => tool.tier === tier)
+              .map((tool) => (
+                <li class="tool">
+                  <span class="chip">{tasks[tool.task][lang]}</span>
+                  <h3>{tool.name[lang]}</h3>
+                  <p>{tool.description[lang]}</p>
+                  {tool.offers.length > 0 && (
+                    <div class="tool__offers">
+                      {tool.offers.map((o) => (
+                        <OfferLink lang={lang} url={o.url} label={o.shop} code={o.code} />
+                      ))}
+                    </div>
+                  )}
+                </li>
+              ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .tools__guides {
+    margin: var(--space-s) 0 0;
+    font-weight: 600;
+  }
+  .tier {
+    padding-block: var(--space-l);
+    border-top: 2px dashed var(--neutral-200);
+  }
+  .tier__head {
+    display: flex;
+    gap: var(--space-m);
+    align-items: flex-start;
+    margin-bottom: var(--space-m);
+  }
+  .tier__head h2 {
+    margin: 0 0 0.25rem;
+  }
+  .tier__head p {
+    margin: 0;
+  }
+  .tier__step::after {
+    inset: 0.25rem;
+    border-radius: 50%;
+  }
+  .tier__step {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--radius-pill);
+    background: var(--primary-100);
+    color: var(--primary-700);
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.375rem;
+  }
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+    gap: var(--space-s);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .tool {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1.25rem 1.375rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+  .tool h3 {
+    margin: 0.25rem 0 0;
+    font-size: 1.1875rem;
+  }
+  .tool p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+  }
+  .tool__offers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+</style>

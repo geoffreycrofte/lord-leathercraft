@@ -14,7 +14,7 @@ const { data } = article;
 const Heading = `h${headingLevel}` as const;
 ---
 
-<article class:list={['card', { 'card--dark': !data.cover }]}>
+<article class:list={['card', 'zoom-media', { 'card--dark': !data.cover }]}>
   <div class="card__body">
     <CategoryChip lang={data.lang} category={data.category} />
     <Heading class="card__title">

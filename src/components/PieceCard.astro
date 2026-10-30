@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import Placeholder from './Placeholder.astro';
+import type { Lang } from '../i18n/ui';
+import { piecePath, type Piece } from '../lib/notion';
+import { familyLabel, familyOf } from '../lib/portfolio';
+
+interface Props {
+  lang: Lang;
+  piece: Piece;
+  headingLevel?: 2 | 3;
+}
+
+const { lang, piece, headingLevel = 3 } = Astro.props;
+const { data } = piece;
+const Heading = `h${headingLevel}` as const;
+const photo = data.cover ?? data.images[0]?.file;
+const props = data.properties as Record<string, unknown>;
+const description = lang === 'fr' && data.descriptionFr ? data.descriptionFr : (props.Description as string | null);
+const family = familyOf(props.Tags);
+---
+
+<article class="piece zoom-media" data-family={family}>
+  <div class="piece__body">
+    <span class="chip chip--tag">{familyLabel(family, lang)}</span>
+    <Heading class="piece__name"><a href={piecePath(lang, data.slug)}>{data.name}</a></Heading>
+    {description && <p lang={lang === 'fr' && !data.descriptionFr ? 'en' : undefined}>{description}</p>}
+  </div>
+  {
+    photo ? (
+      <Image src={photo} alt="" widths={[400, 700]} sizes="(min-width: 40rem) 20rem, 100vw" />
+    ) : (
+      <Placeholder lang={lang} label={data.name} class="piece__placeholder" />
+    )
+  }
+</article>
+
+<style>
+  .piece {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .piece :global(img),
+  .piece :global(.piece__placeholder) {
+    order: -1;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+  .piece__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem 1.25rem;
+  }
+  .piece__name {
+    margin: 0;
+    font-size: 1.1875rem;
+  }
+  .piece__name a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .piece__name a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .piece:hover .piece__name a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+  }
+  .piece:has(a:focus-visible) {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+  .piece__name a:focus-visible {
+    outline: none;
+  }
+  .piece p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+  }
+</style>

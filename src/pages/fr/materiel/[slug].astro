@@ -1,0 +1,12 @@
+---
+import LeatherView from '../../../views/LeatherView.astro';
+import { getLeathers, type Leather } from '../../../lib/notion';
+
+export async function getStaticPaths() {
+  return (await getLeathers()).map((leather) => ({ params: { slug: leather.data.slug }, props: { leather } }));
+}
+
+const { leather } = Astro.props as { leather: Leather };
+---
+
+<LeatherView lang="fr" leather={leather} />

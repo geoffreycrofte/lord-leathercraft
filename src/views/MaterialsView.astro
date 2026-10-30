@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateNotice from '../components/AffiliateNotice.astro';
+import MaterialCard from '../components/MaterialCard.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { materialOffers } from '../data/suppliers';
+import { routes, type Lang } from '../i18n/ui';
+import { getBuckles, getLeathers, getThreads, leatherPath } from '../lib/notion';
+import { label, value, valueList } from '../lib/notion-values';
+import { isAffiliateUrl } from '../lib/remark-affiliate-links.mjs';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const [leathers, threads, buckles] = await Promise.all([getLeathers(), getThreads(), getBuckles()]);
+
+const copy = {
+  en: {
+    title: 'My materials',
+    accent: 'leathers, threads and buckles',
+    description: 'The leathers, threads and buckles I use for my leather goods and patterns: tannery, tanning, firmness and finish, with where to buy them.',
+    intro: 'The materials I work with, mostly vegetable-tanned leathers from Tuscany. Each leather has its own page with photos and the pieces I made with it.',
+    nav: 'On this page',
+    leathers: 'Leathers',
+    leathersIntro: 'Photos taken in daylight, from at least two angles. Colours deepen and a patina appears with time.',
+    threads: 'Threads',
+    buckles: 'Belt buckles',
+  },
+  fr: {
+    title: 'Mon matériel',
+    accent: 'cuirs, fils et boucles',
+    description: 'Les cuirs, fils et boucles que j’utilise pour mes objets et mes patrons : tannerie, tannage, fermeté et finition, avec où les acheter.',
+    intro: 'Les matières avec lesquelles je travaille, surtout des cuirs au tannage végétal de Toscane. Chaque cuir a sa page, avec des photos et les pièces que j’ai fabriquées avec.',
+    nav: 'Sur cette page',
+    leathers: 'Cuirs',
+    leathersIntro: 'Photos prises à la lumière du jour, sous au moins deux angles. Les couleurs foncent et une patine apparaît avec le temps.',
+    threads: 'Fils',
+    buckles: 'Boucles de ceinture',
+  },
+}[lang];
+
+const leatherFacts = (props: Record<string, unknown>) =>
+  ['Tanning', 'Fermness', 'Origin of Skin']
+    .map((key) => ({ label: label(key, lang), value: value(props[key], lang) }))
+    .filter((f): f is { label: string; value: string } => Boolean(f.value));
+
+const listFacts = (props: Record<string, unknown>, keys: string[]) =>
+  keys
+    .map((key) => ({ label: label(key, lang), value: valueList(props[key], lang).join(', ') }))
+    .filter((f) => f.value !== '');
+
+/** Thread properties worth showing: every non-relation, non-date text or select value. */
+const threadFacts = (props: Record<string, unknown>) =>
+  Object.entries(props)
+    .filter(([key, v]) => !/^(Name|Status|Created|Last Updated|Last edited)/i.test(key) && v !== null && v !== '' && !(Array.isArray(v) && v.every((x) => /^[0-9a-f]{32}$/.test(String(x)))))
+    .map(([key, v]) => ({ label: label(key, lang), value: valueList(v, lang).join(', ') }))
+    .filter((f) => f.value !== '');
+
+const sections = [
+  { id: 'leathers', title: copy.leathers, count: leathers.length },
+  { id: 'threads', title: copy.threads, count: threads.length },
+  { id: 'buckles', title: copy.buckles, count: buckles.length },
+].filter((s) => s.count > 0);
+
+const hasAffiliate = Object.values(materialOffers).some((offers) => offers.some((o) => isAffiliateUrl(o.url)));
+---
+
+<BaseLayout lang={lang} title={copy.title} description={copy.description} alternates={routes.materials}>
+  <div class="container">
+    <PageIntro title={copy.title} accent={copy.accent} intro={copy.intro}>
+      <nav class="jump" aria-label={copy.nav}>
+        <ul>
+          {sections.map((s) => <li><a href={`#${s.id}`}>{s.title} <span class="muted">({s.count})</span></a></li>)}
+        </ul>
+      </nav>
+    </PageIntro>
+    {hasAffiliate && <AffiliateNotice lang={lang} />}
+
+    <section id="leathers" class="group" aria-labelledby="leathers-title">
+      <h2 id="leathers-title">{copy.leathers}</h2>
+      <p class="muted prose">{copy.leathersIntro}</p>
+      <ul class="grid" role="list">
+        {
+          leathers.map((l) => (
+            <li>
+              <MaterialCard
+                lang={lang}
+                notionId={l.data.notionId}
+                name={l.data.name}
+                photo={l.data.cover ?? l.data.images[0]?.file}
+                href={leatherPath(lang, l.data.slug)}
+                facts={leatherFacts(l.data.properties)}
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    {
+      threads.length > 0 && (
+        <section id="threads" class="group" aria-labelledby="threads-title">
+          <h2 id="threads-title">{copy.threads}</h2>
+          <ul class="grid grid--small" role="list">
+            {threads.map((th) => (
+              <li>
+                <MaterialCard
+                  lang={lang}
+                  notionId={th.data.notionId}
+                  name={th.data.name}
+                  photo={th.data.cover ?? th.data.images[0]?.file}
+                  facts={threadFacts(th.data.properties)}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      buckles.length > 0 && (
+        <section id="buckles" class="group" aria-labelledby="buckles-title">
+          <h2 id="buckles-title">{copy.buckles}</h2>
+          <ul class="grid grid--small" role="list">
+            {buckles.map((b) => (
+              <li>
+                <MaterialCard
+                  lang={lang}
+                  notionId={b.data.notionId}
+                  name={b.data.name}
+                  photo={b.data.cover ?? b.data.images[0]?.file}
+                  facts={listFacts(b.data.properties, ['Type', 'Material', 'Finishing', 'Available sizes'])}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .jump ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: var(--space-m) 0 0;
+    padding: 0;
+  }
+  .jump a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    border: 2px solid var(--neutral-200);
+    border-radius: var(--radius-pill);
+    color: var(--color-text);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .jump a:hover {
+    border-color: var(--neutral-600);
+  }
+  .group {
+    padding-block: var(--space-l);
+    border-top: 2px dashed var(--neutral-200);
+    scroll-margin-top: var(--space-s);
+  }
+  .group h2 {
+    margin-top: 0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-m);
+    list-style: none;
+    margin: var(--space-m) 0 0;
+    padding: 0;
+  }
+  .grid--small {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
+  }
+</style>

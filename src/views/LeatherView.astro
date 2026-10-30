@@ -1,0 +1,154 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AffiliateNotice from '../components/AffiliateNotice.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import NotionBody from '../components/NotionBody.astro';
+import OfferLink from '../components/OfferLink.astro';
+import PieceCard from '../components/PieceCard.astro';
+import { materialOffers } from '../data/suppliers';
+import { routes, useTranslations, type Lang } from '../i18n/ui';
+import { getPieces, leatherPath, related, type Leather } from '../lib/notion';
+import { label, value } from '../lib/notion-values';
+import { isAffiliateUrl } from '../lib/remark-affiliate-links.mjs';
+
+interface Props {
+  lang: Lang;
+  leather: Leather;
+}
+
+const { lang, leather } = Astro.props;
+const { data } = leather;
+const t = useTranslations(lang);
+const props = data.properties as Record<string, unknown>;
+const facts = ['Skin', 'Type of skin', 'Tanning', 'Finishing', 'Fermness', 'Origin of Skin', 'Max-length']
+  .map((key) => ({ label: label(key, lang), value: value(props[key], lang) }))
+  .filter((f): f is { label: string; value: string } => Boolean(f.value));
+const pieces = related(props['Products made with this leather'], await getPieces());
+const offers = materialOffers[data.notionId] ?? [];
+const copy = {
+  en: { where: 'Where to buy it', made: 'Made with this leather', all: 'All materials', leather: 'leather' },
+  fr: { where: 'Où l’acheter', made: 'Fabriqué avec ce cuir', all: 'Tout le matériel', leather: 'cuir' },
+}[lang];
+
+const summary = [value(props['Tanning'], lang), value(props['Fermness'], lang)?.toLowerCase(), value(props['Origin of Skin'], lang)]
+  .filter(Boolean)
+  .join(', ');
+const description =
+  lang === 'fr'
+    ? `Cuir ${data.name}${summary ? ` : ${summary}` : ''}. Photos, caractéristiques et objets que j’ai fabriqués avec ce cuir.`
+    : `${data.name} leather${summary ? `: ${summary}` : ''}. Photos, properties and the leather goods I made with it.`;
+const alternates = { en: leatherPath('en', data.slug), fr: leatherPath('fr', data.slug) };
+const crumbs = [
+  { label: t('nav.home'), href: routes.home[lang] },
+  { label: t('nav.materials'), href: routes.materials[lang] },
+];
+const hero = data.cover ?? data.images[0]?.file;
+---
+
+<BaseLayout lang={lang} title={`${data.name}, ${copy.leather}`} description={description} alternates={alternates}>
+  <div class="container leather">
+    <Breadcrumbs lang={lang} items={crumbs} current={data.name} />
+    <div class="leather__top">
+      {
+        hero && (
+          <Image class="leather__hero" src={hero} alt="" widths={[640, 960, 1400]} sizes="(min-width: 60rem) 36rem, 100vw" loading="eager" />
+        )
+      }
+      <div class="leather__info">
+        <h1>{data.name}</h1>
+        <dl class="facts">
+          {facts.map((f) => (
+            <div>
+              <dt>{f.label}</dt>
+              <dd>{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+        {
+          offers.length > 0 && (
+            <section aria-labelledby="where-title">
+              <h2 id="where-title" class="leather__sub">{copy.where}</h2>
+              {offers.some((o) => isAffiliateUrl(o.url)) && <AffiliateNotice lang={lang} />}
+              <div class="leather__offers">
+                {offers.map((o) => <OfferLink lang={lang} url={o.url} label={o.shop} code={o.code} />)}
+              </div>
+            </section>
+          )
+        }
+      </div>
+    </div>
+
+    <NotionBody lang={lang} markdown={data.contentMarkdown} markdownFr={data.contentMarkdownFr} images={data.images} name={data.name} hide={hero} />
+
+    {
+      pieces.length > 0 && (
+        <section class="made" aria-labelledby="made-title">
+          <h2 id="made-title">{copy.made}</h2>
+          <ul class="made__grid" role="list">
+            {pieces.map((p) => <li><PieceCard lang={lang} piece={p} /></li>)}
+          </ul>
+        </section>
+      )
+    }
+    <p class="back"><a href={routes.materials[lang]}>{copy.all}</a></p>
+  </div>
+</BaseLayout>
+
+<style>
+  .leather__top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    gap: var(--space-l);
+    align-items: start;
+    margin-bottom: var(--space-l);
+  }
+  .leather__hero {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-l);
+  }
+  .leather__info h1 {
+    margin-bottom: var(--space-m);
+  }
+  .leather__sub {
+    font-size: 1.25rem;
+    margin: var(--space-l) 0 var(--space-s);
+  }
+  .leather__offers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1.25rem;
+    margin: 0;
+  }
+  .facts div {
+    display: contents;
+  }
+  .facts dt {
+    color: var(--color-text-muted);
+  }
+  .facts dd {
+    margin: 0;
+    font-weight: 600;
+  }
+  .made {
+    margin-top: var(--space-xl);
+  }
+  .made__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    gap: var(--space-m);
+    list-style: none;
+    margin: var(--space-m) 0 0;
+    padding: 0;
+  }
+  .back {
+    margin-top: var(--space-l);
+    font-weight: 600;
+  }
+</style>

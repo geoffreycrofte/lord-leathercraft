@@ -13,6 +13,10 @@ export const defaultLang: Lang = 'en';
 export const routes = {
   home: { en: '/', fr: '/fr/' },
   guides: { en: '/guides/', fr: '/fr/guides/' },
+  materials: { en: '/materials/', fr: '/fr/materiel/' },
+  tools: { en: '/tools/', fr: '/fr/outils/' },
+  portfolio: { en: '/portfolio/', fr: '/fr/portfolio/' },
+  blog: { en: '/blog/', fr: '/fr/blog/' },
   legal: { en: '/legal-notice/', fr: '/fr/mentions-legales/' },
   privacy: { en: '/privacy/', fr: '/fr/confidentialite/' },
   affiliate: { en: '/affiliate-links/', fr: '/fr/liens-affilies/' },
@@ -29,8 +33,16 @@ export const ui = {
     'nav.home': 'Home',
     'nav.guides': 'Guides',
     'nav.shop': 'Shop',
+    'nav.materials': 'My materials',
+    'nav.tools': 'My tools',
+    'nav.portfolio': 'Portfolio',
+    'nav.blog': 'Blog',
     'nav.patterns': 'Patterns',
     'nav.about': 'About',
+    'menu.open': 'Menu',
+    'menu.close': 'Close',
+    'menu.label': 'Site menu',
+    'menu.language': 'Language',
     'lang.switch': 'Français',
     'lang.switchLong': 'Lire en français',
     'footer.social': 'Follow',
@@ -61,6 +73,13 @@ export const ui = {
     'category.materials': 'Materials',
     'category.tools': 'Tools',
     'placeholder.photo': 'Photo coming soon',
+    'offer.code': 'Code',
+    'offer.none': 'Links coming soon',
+    'kind.news': 'News',
+    'kind.answer': 'Your questions',
+    'kind.reaction': 'Reaction',
+    'kind.tip': 'Quick tip',
+    'post.related': 'To go further',
   },
   fr: {
     'site.name': 'Lord Leathercraft',
@@ -69,9 +88,17 @@ export const ui = {
     'nav.label': 'Principale',
     'nav.home': 'Accueil',
     'nav.guides': 'Guides',
-    'nav.shop': 'Boutique',
+    'nav.shop': 'La boutique',
+    'nav.materials': 'Mon matériel',
+    'nav.tools': 'Mes outils',
+    'nav.portfolio': 'Portfolio',
+    'nav.blog': 'Blog',
     'nav.patterns': 'Patrons',
     'nav.about': 'À propos',
+    'menu.open': 'Menu',
+    'menu.close': 'Fermer',
+    'menu.label': 'Menu du site',
+    'menu.language': 'Langue',
     'lang.switch': 'English',
     'lang.switchLong': 'Read in English',
     'footer.social': 'Suivre',
@@ -102,6 +129,13 @@ export const ui = {
     'category.materials': 'Matières',
     'category.tools': 'Outils',
     'placeholder.photo': 'Photo à venir',
+    'offer.code': 'Code',
+    'offer.none': 'Liens à venir',
+    'kind.news': 'Actu',
+    'kind.answer': 'Vos questions',
+    'kind.reaction': 'Réaction',
+    'kind.tip': 'Astuce',
+    'post.related': 'Pour aller plus loin',
   },
 } as const;
 
@@ -124,4 +158,9 @@ export function formatDate(date: Date, lang: Lang) {
 
 export function guidePath(lang: Lang, slug: string) {
   return `${routes.guides[lang]}${slug}/`;
+}
+
+/** Path of an entry inside a section, e.g. a blog post or a portfolio piece. */
+export function entryPath(section: 'guides' | 'blog' | 'portfolio', lang: Lang, slug: string) {
+  return `${routes[section][lang]}${slug}/`;
 }

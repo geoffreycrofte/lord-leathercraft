@@ -187,14 +187,14 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="section section--alt" aria-labelledby="why-title">
+  <section class="section section--alt hide-edge" aria-labelledby="why-title">
     <div class="container">
       <h2 id="why-title" class="section__title why__title">{copy.whyTitle}</h2>
       <ul class="why">
         {
           copy.why.map((item) => (
             <li>
-              <span class="why__icon">
+              <span class="why__icon stitch">
                 <Icon name={item.icon as 'tool' | 'video' | 'document'} size={32} strokeWidth={1.8} />
               </span>
               <h3>{item.title}</h3>
@@ -218,7 +218,7 @@ const jsonLd = [
     </div>
   </section>
 
-  <section id="projects" class="section section--alt" aria-labelledby="projects-title">
+  <section id="projects" class="section section--alt hide-edge" aria-labelledby="projects-title">
     <div class="container">
       <h2 id="projects-title" class="section__title">{copy.projects}</h2>
       <p class="muted prose">{copy.projectsIntro}</p>
@@ -226,7 +226,7 @@ const jsonLd = [
         {
           projects.map(({ key, tone }) => (
             <li>
-              <a class:list={['tile', tone]} href={shopCollections[key].url} hreflang="en">
+              <a class:list={['tile', 'stitch--hover', tone]} href={shopCollections[key].url} hreflang="en">
                 <Icon name="external" size={24} />
                 <span class="tile__label">
                   {shopCollections[key][lang]}
@@ -246,7 +246,7 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="section section--dark on-dark" aria-labelledby="inside-title">
+  <section class="section section--dark on-dark hide-edge" aria-labelledby="inside-title">
     <div class="container inside">
       <Image
         class="inside__photo"
@@ -363,6 +363,12 @@ const jsonLd = [
     background: #fff;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .hero__card:hover,
+  .hero__card:focus-within {
+    transform: rotate(0deg) translateY(-2px);
   }
   .hero__card :global(img) {
     width: 5.25rem;
@@ -421,6 +427,10 @@ const jsonLd = [
     align-items: center;
     gap: 0.75rem;
     text-align: center;
+  }
+  .why__icon::after {
+    inset: 0.3125rem;
+    border-radius: 50%;
   }
   .why__icon {
     display: grid;

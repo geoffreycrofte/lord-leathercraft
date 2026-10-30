@@ -1,0 +1,55 @@
+---
+/**
+ * Body of a page imported from Notion, in the page language. Falls back to
+ * the English text (marked lang="en") when no translation exists yet.
+ */
+import { Image } from 'astro:assets';
+import { renderNotionBody } from '../lib/notion-markdown';
+import { notionLinkResolver } from '../lib/notion';
+import type { ImageMetadata } from 'astro';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  markdown: string;
+  markdownFr: string;
+  images: { file: ImageMetadata; caption: string }[];
+  /** Name of the entry, used in image alternatives. */
+  name: string;
+  /** Images already shown elsewhere on the page (e.g. in a gallery). */
+  skipImages?: boolean;
+  /** An image already shown above the body (the page hero), not repeated. */
+  hide?: ImageMetadata | null;
+}
+
+const { lang, markdown, markdownFr, images, name, skipImages = false, hide } = Astro.props;
+const useFr = lang === 'fr' && markdownFr.trim() !== '';
+// Some Notion pages were written in French: both fields then hold the French text.
+const sourceIsFr = markdown.trim() !== '' && markdown === markdownFr;
+const textLang: Lang = useFr || sourceIsFr ? 'fr' : 'en';
+const source = useFr ? markdownFr : markdown;
+const resolver = await notionLinkResolver(lang);
+const { parts } = source.trim() ? await renderNotionBody(source, resolver, textLang) : { parts: [] };
+---
+
+{
+  parts.length > 0 && (
+    <div class="prose notion-body" lang={textLang !== lang ? textLang : undefined}>
+      {parts.map((part) =>
+        part.type === 'html' ? (
+          <Fragment set:html={part.html} />
+        ) : skipImages || !images[part.index] || images[part.index].file.src === hide?.src ? null : (
+          <figure>
+            <Image
+              src={images[part.index].file}
+              alt={images[part.index].caption ? "" : `${name}, photo ${part.index + 1}`}
+              widths={[640, 960, 1400]}
+              sizes="(min-width: 75rem) 70ch, 100vw"
+            />
+            {images[part.index].caption && <figcaption>{images[part.index].caption}</figcaption>}
+          </figure>
+        ),
+      )}
+    </div>
+  )
+}

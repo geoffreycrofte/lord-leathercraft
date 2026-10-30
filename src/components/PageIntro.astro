@@ -1,0 +1,29 @@
+---
+/** Page heading block shared by section pages (guides, materials, tools…). */
+interface Props {
+  title: string;
+  accent?: string;
+  intro?: string;
+}
+
+const { title, accent, intro } = Astro.props;
+---
+
+<header class="page-intro">
+  <h1>{title}{accent && <> <em class="title-accent">{accent}</em></>}</h1>
+  {intro && <p class="lead">{intro}</p>}
+  <slot />
+</header>
+
+<style>
+  .page-intro {
+    max-width: 48rem;
+    padding-block: var(--space-xl) var(--space-l);
+  }
+  .page-intro h1 {
+    margin-bottom: var(--space-s);
+  }
+  .page-intro .lead {
+    margin: 0;
+  }
+</style>

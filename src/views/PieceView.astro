@@ -1,0 +1,163 @@
+---
+import { Image, getImage } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import NotionBody from '../components/NotionBody.astro';
+import RelatedCollections from '../components/RelatedCollections.astro';
+import type { CollectionKey } from '../data/site';
+import { routes, useTranslations, type Lang } from '../i18n/ui';
+import { getLeathers, getThreads, leatherPath, materialAnchor, piecePath, related, type Piece } from '../lib/notion';
+import { label, value, valueList } from '../lib/notion-values';
+import { familyLabel, familyOf, type Family } from '../lib/portfolio';
+
+interface Props {
+  lang: Lang;
+  piece: Piece;
+}
+
+const { lang, piece } = Astro.props;
+const { data } = piece;
+const t = useTranslations(lang);
+const props = data.properties as Record<string, unknown>;
+const [allLeathers, allThreads] = await Promise.all([getLeathers(), getThreads()]);
+const leathers = related(props['Leather Type'], allLeathers);
+const threads = related(props['Thread Type'], allThreads);
+const family = familyOf(props.Tags);
+const description = lang === 'fr' && data.descriptionFr ? data.descriptionFr : (props.Description as string | null);
+const facts = ['Dimensions', 'Weight']
+  .map((key) => ({ label: label(key, lang), value: value(props[key], lang) }))
+  .filter((f): f is { label: string; value: string } => Boolean(f.value) && f.value !== 'Unknown');
+const tags = valueList(props.Tags, lang);
+
+/** Shop collections matching the piece family, to find the pattern. */
+const shopFor: Partial<Record<Family, CollectionKey[]>> = {
+  wallets: ['wallets'],
+  cardholders: ['cardholders'],
+  belts: ['wears'],
+  watch: ['wears'],
+  bags: ['bags', 'laptopSleeves'],
+};
+
+const copy = {
+  en: { materials: 'Materials', details: 'Details', back: 'All pieces', fallback: 'A leather piece handmade by Geoffrey Crofte.' },
+  fr: { materials: 'Matières', details: 'Caractéristiques', back: 'Toutes les pièces', fallback: 'Une pièce en cuir faite main par Geoffrey Crofte.' },
+}[lang];
+const metaDescription = `${data.name}. ${description ?? copy.fallback}`.slice(0, 160);
+const alternates = { en: piecePath('en', data.slug), fr: piecePath('fr', data.slug) };
+const crumbs = [
+  { label: t('nav.home'), href: routes.home[lang] },
+  { label: t('nav.portfolio'), href: routes.portfolio[lang] },
+];
+const hero = data.cover ?? data.images[0]?.file;
+const ogImage = hero ? (await getImage({ src: hero, width: 1200, format: 'jpg' })).src : undefined;
+---
+
+<BaseLayout lang={lang} title={data.name} description={metaDescription} alternates={alternates} ogImage={ogImage}>
+  <div class="container">
+    <Breadcrumbs lang={lang} items={crumbs} current={data.name} />
+    <div class="piece-top">
+      {hero && <Image class="piece-top__photo" src={hero} alt="" widths={[640, 960, 1400]} sizes="(min-width: 60rem) 36rem, 100vw" loading="eager" />}
+      <div class="piece-top__info">
+        <span class="chip chip--tag">{familyLabel(family, lang)}</span>
+        <h1>{data.name}</h1>
+        {description && <p class="lead" lang={lang === 'fr' && !data.descriptionFr ? 'en' : undefined}>{description}</p>}
+        <dl class="facts">
+          {facts.map((f) => (
+            <div>
+              <dt>{f.label}</dt>
+              <dd>{f.value}</dd>
+            </div>
+          ))}
+          {
+            leathers.length > 0 && (
+              <div>
+                <dt>{label('Leather Type', lang)}</dt>
+                <dd>
+                  <ul class="inline-list">
+                    {leathers.map((l) => <li><a href={leatherPath(lang, l.data.slug)}>{l.data.name}</a></li>)}
+                  </ul>
+                </dd>
+              </div>
+            )
+          }
+          {
+            threads.length > 0 && (
+              <div>
+                <dt>{label('Thread Type', lang)}</dt>
+                <dd>
+                  <ul class="inline-list">
+                    {threads.map((th) => <li><a href={materialAnchor(lang, th.data.notionId)}>{th.data.name}</a></li>)}
+                  </ul>
+                </dd>
+              </div>
+            )
+          }
+        </dl>
+        {tags.length > 0 && <ul class="tags" aria-label={label('Tags', lang)}>{tags.map((tag) => <li class="chip">{tag}</li>)}</ul>}
+      </div>
+    </div>
+
+    <NotionBody lang={lang} markdown={data.contentMarkdown} markdownFr={data.contentMarkdownFr} images={data.images} name={data.name} hide={hero} />
+
+    <RelatedCollections lang={lang} keys={shopFor[family] ?? ['all']} />
+    <p class="back"><a href={routes.portfolio[lang]}>{copy.back}</a></p>
+  </div>
+</BaseLayout>
+
+<style>
+  .piece-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    gap: var(--space-l);
+    align-items: start;
+    margin-bottom: var(--space-l);
+  }
+  .piece-top__photo {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-l);
+  }
+  .piece-top__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-s);
+  }
+  .piece-top__info > * {
+    margin: 0;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1.25rem;
+  }
+  .facts div {
+    display: contents;
+  }
+  .facts dt {
+    color: var(--color-text-muted);
+  }
+  .facts dd {
+    margin: 0;
+    font-weight: 600;
+  }
+  .inline-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+  .tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+  .back {
+    margin-top: var(--space-l);
+    font-weight: 600;
+  }
+</style>

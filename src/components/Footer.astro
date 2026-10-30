@@ -1,6 +1,7 @@
 ---
 import SocialIcon from './SocialIcon.astro';
-import { SHOP_URL, socials } from '../data/site';
+import { socials } from '../data/site';
+import { mainNav } from '../data/navigation';
 import { otherLang, routes, useTranslations, type Lang } from '../i18n/ui';
 import type { Alternates } from '../layouts/BaseLayout.astro';
 
@@ -15,7 +16,7 @@ const target = otherLang(lang);
 const switchHref = alternates[target] ?? routes.home[target];
 ---
 
-<footer class="site-footer on-dark">
+<footer class="site-footer on-dark hide-edge">
   <div class="container site-footer__grid">
     <div class="site-footer__brand">
       <p class="site-footer__name">{t('site.name')}</p>
@@ -25,8 +26,13 @@ const switchHref = alternates[target] ?? routes.home[target];
     <nav aria-labelledby="footer-explore">
       <h2 id="footer-explore">{t('footer.explore')}</h2>
       <ul>
-        <li><a href={routes.guides[lang]}>{t('nav.guides')}</a></li>
-        <li><a href={SHOP_URL} hreflang="en">{t('nav.shop')}</a></li>
+        {
+          mainNav.map((item) => (
+            <li>
+              <a href={item.href(lang)} hreflang={item.external ? 'en' : undefined}>{t(item.label)}</a>
+            </li>
+          ))
+        }
         <li><a href={`${routes.home[lang]}#about`}>{t('nav.about')}</a></li>
       </ul>
     </nav>

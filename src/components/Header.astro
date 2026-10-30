@@ -1,8 +1,10 @@
 ---
 import logo from '../assets/logo.svg?raw';
 import Icon from './Icon.astro';
-import { SHOP_URL } from '../data/site';
-import { otherLang, routes, useTranslations, type Lang } from '../i18n/ui';
+import SocialIcon from './SocialIcon.astro';
+import { mainNav } from '../data/navigation';
+import { socials } from '../data/site';
+import { languages, otherLang, routes, useTranslations, type Lang } from '../i18n/ui';
 import type { Alternates } from '../layouts/BaseLayout.astro';
 
 interface Props {
@@ -15,43 +17,120 @@ const t = useTranslations(lang);
 const target = otherLang(lang);
 const switchHref = alternates[target] ?? routes.home[target];
 const current = Astro.url.pathname;
-const nav = [
-  { href: routes.guides[lang], label: t('nav.guides') },
-  { href: `${routes.home[lang]}#projects`, label: t('nav.patterns') },
-  { href: `${routes.home[lang]}#about`, label: t('nav.about') },
-];
+const items = mainNav.map((item) => {
+  const href = item.href(lang);
+  return {
+    href,
+    label: t(item.label),
+    external: item.external ?? false,
+    current: !item.external && current.startsWith(href),
+  };
+});
+const menuSocials = socials.filter((s) => ['instagram', 'youtube', 'tiktok', 'pinterest'].includes(s.icon));
 ---
 
 <header class="site-header">
   <div class="container site-header__inner">
+    <button class="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="site-menu" hidden>
+      <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="visually-hidden">{t('menu.open')}</span>
+    </button>
+
     <a class="brand" href={routes.home[lang]}>
       <span class="brand__logo" aria-hidden="true" set:html={logo} />
       <span class="visually-hidden">{t('site.name')}, {t('nav.home')}</span>
     </a>
-    <nav aria-label={t('nav.label')}>
+
+    <nav class="nav-inline" aria-label={t('nav.label')}>
       <ul class="nav">
         {
-          nav.map((item) => (
+          items.map((item) => (
             <li>
-              <a class="nav__link" href={item.href} aria-current={current.startsWith(item.href) ? 'page' : undefined}>
+              <a
+                class="nav__link"
+                href={item.href}
+                aria-current={item.current ? 'page' : undefined}
+                hreflang={item.external ? 'en' : undefined}
+              >
                 {item.label}
+                {item.external && <Icon name="external" size={14} strokeWidth={2.4} />}
               </a>
             </li>
           ))
         }
-        <li>
-          <a class="nav__lang" href={switchHref} hreflang={target} lang={target}>{t('lang.switch')}</a>
-        </li>
-        <li>
-          <a class="button button--small" href={SHOP_URL} hreflang="en">
-            {t('nav.shop')}
-            <Icon name="external" size={16} strokeWidth={2.2} />
-          </a>
-        </li>
       </ul>
     </nav>
+
+    <a class="lang-pill" href={switchHref} hreflang={target} lang={target}>{t('lang.switch')}</a>
   </div>
+
+  <dialog id="site-menu" class="menu" aria-label={t('menu.label')}>
+    <div class="menu__inner">
+      <div class="menu__top">
+        <button class="menu__close" type="button" data-close>
+          <span aria-hidden="true" class="menu__close-icon"></span>
+          <span class="visually-hidden">{t('menu.close')}</span>
+        </button>
+      </div>
+      <nav aria-label={t('nav.label')}>
+        <ul class="menu__list">
+          {
+            items.map((item, i) => (
+              <li style={`--i: ${i}`}>
+                <a
+                  class="menu__link"
+                  href={item.href}
+                  aria-current={item.current ? 'page' : undefined}
+                  hreflang={item.external ? 'en' : undefined}
+                >
+                  {item.label}
+                  {item.external && <Icon name="external" size={24} strokeWidth={2} />}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <div class="menu__footer" style={`--i: ${items.length}`}>
+        <p class="menu__label" id="menu-lang">{t('menu.language')}</p>
+        <ul class="menu__langs" aria-labelledby="menu-lang">
+          <li><a href={current} aria-current="true" lang={lang}>{languages[lang]}</a></li>
+          <li><a href={switchHref} hreflang={target} lang={target}>{languages[target]}</a></li>
+        </ul>
+        <ul class="menu__socials">
+          {
+            menuSocials.map((s) => (
+              <li>
+                <a href={s.url}>
+                  <SocialIcon slug={s.icon} />
+                  <span class="visually-hidden">{s.name}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </dialog>
 </header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const menu = document.querySelector<HTMLDialogElement>('#site-menu');
+  if (toggle && menu) {
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => menu.showModal());
+    menu.querySelector('[data-close]')?.addEventListener('click', () => menu.close());
+    // Close when a link is followed (same-page anchors keep the page in place).
+    menu.addEventListener('click', (event) => {
+      if ((event.target as Element).closest('a')) menu.close();
+    });
+    // Close if the viewport grows past the breakpoint while the menu is open.
+    window.matchMedia('(min-width: 68rem)').addEventListener('change', (e) => {
+      if (e.matches && menu.open) menu.close();
+    });
+  }
+</script>
 
 <style>
   .site-header {
@@ -90,6 +169,10 @@ const nav = [
     font-size: 1rem;
   }
   .nav__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-height: 2.75rem;
     color: var(--color-text);
     text-decoration: none;
   }
@@ -100,7 +183,7 @@ const nav = [
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
   }
-  .nav__lang {
+  .lang-pill {
     display: inline-flex;
     align-items: center;
     min-height: 2.75rem;
@@ -108,10 +191,296 @@ const nav = [
     border: 2px solid var(--neutral-200);
     border-radius: var(--radius-pill);
     color: var(--color-text);
+    font-weight: 600;
+    font-size: 1rem;
     text-decoration: none;
   }
-  .nav__lang:hover {
+  .lang-pill:hover {
     border-color: var(--neutral-600);
     color: var(--color-text);
+  }
+
+  /* Toggle button (shown by the script, below the breakpoint). */
+  .menu-toggle {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border: 2px solid var(--neutral-200);
+    border-radius: var(--radius-pill);
+    background: #fff;
+    color: var(--color-text);
+    font: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .menu-toggle:hover {
+    border-color: var(--neutral-600);
+  }
+  .menu-toggle[hidden] {
+    display: none;
+  }
+  .menu-toggle__bars {
+    display: grid;
+    gap: 4px;
+    width: 1.125rem;
+  }
+  .menu-toggle__bars span {
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+  .menu-toggle__bars span:nth-child(2) {
+    width: 70%;
+    transition: width 0.25s;
+  }
+  .menu-toggle:hover .menu-toggle__bars span:nth-child(2) {
+    width: 100%;
+  }
+
+  /* Small screens with JavaScript: centred logo, menu in a dialog. */
+  @media (max-width: 67.99rem) {
+    :global(.js) .site-header__inner {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+    }
+    :global(.js) .nav-inline,
+    :global(.js) .lang-pill {
+      display: none;
+    }
+    :global(.js) .brand {
+      grid-column: 2;
+    }
+    .brand__logo :global(svg) {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+  @media (min-width: 68rem) {
+    .menu-toggle {
+      display: none !important;
+    }
+    .site-header__inner {
+      flex-wrap: nowrap;
+    }
+    .nav-inline {
+      margin-inline: auto 0;
+    }
+  }
+
+  /* The menu dialog. */
+  .menu {
+    --reveal: circle(0% at 3rem 3rem);
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: var(--neutral-700);
+    color: var(--neutral-100);
+    overflow-y: auto;
+    clip-path: circle(150% at 3rem 3rem);
+  }
+  .menu::backdrop {
+    background: transparent;
+  }
+  .menu__inner {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    padding: var(--space-s) var(--space-m) var(--space-l);
+  }
+  .menu__top {
+    display: flex;
+  }
+  .menu__close {
+    display: inline-grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border: 2px solid var(--neutral-600);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .menu__close:hover {
+    border-color: var(--neutral-300);
+  }
+  .menu__close-icon {
+    position: relative;
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+  .menu__close-icon::before,
+  .menu__close-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transform: rotate(45deg);
+  }
+  .menu__close-icon::after {
+    transform: rotate(-45deg);
+  }
+  .menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .menu__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-block: 0.375rem;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: clamp(2rem, 1.4rem + 3vw, 3rem);
+    line-height: 1.15;
+    text-decoration: none;
+  }
+  .menu__link:hover,
+  .menu__link[aria-current='page'] {
+    color: var(--primary-300);
+  }
+  .menu__link[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+    text-underline-offset: 0.15em;
+  }
+  .menu__footer {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-s);
+    padding-top: var(--space-m);
+    border-top: 1px solid var(--neutral-600);
+  }
+  .menu__label {
+    flex-basis: 100%;
+    margin: 0;
+    color: var(--primary-300);
+    font-weight: 700;
+    font-size: 0.9375rem;
+  }
+  .menu__langs,
+  .menu__socials {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .menu__langs a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0 1.125rem;
+    border: 2px solid var(--neutral-600);
+    border-radius: var(--radius-pill);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__langs a[aria-current] {
+    background: var(--primary-100);
+    border-color: var(--primary-100);
+    color: var(--neutral-700);
+  }
+  .menu__langs a:not([aria-current]):hover {
+    border-color: var(--neutral-300);
+  }
+  .menu__socials a {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: var(--radius-pill);
+    color: #fff;
+  }
+  .menu__socials a:hover {
+    background: var(--neutral-600);
+  }
+  .menu__socials :global(svg) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .menu :focus-visible {
+    outline-color: var(--primary-100);
+  }
+
+  /* Opening: a circle grows from the menu button, then the links rise in turn. */
+  @media (prefers-reduced-motion: no-preference) {
+    .menu {
+      transition:
+        clip-path 0.55s cubic-bezier(0.7, 0, 0.2, 1),
+        overlay 0.55s allow-discrete,
+        display 0.55s allow-discrete;
+    }
+    .menu:not([open]) {
+      clip-path: var(--reveal);
+    }
+    @starting-style {
+      .menu[open] {
+        clip-path: var(--reveal);
+      }
+    }
+    .menu__list li,
+    .menu__footer {
+      transition:
+        opacity 0.4s ease,
+        transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transition-delay: calc(0.18s + var(--i) * 0.05s);
+    }
+    .menu:not([open]) :is(.menu__list li, .menu__footer) {
+      opacity: 0;
+      transform: translateY(1.5rem);
+      transition-delay: 0s;
+    }
+    @starting-style {
+      .menu[open] :is(.menu__list li, .menu__footer) {
+        opacity: 0;
+        transform: translateY(1.5rem);
+      }
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .menu {
+      transition: opacity 0.2s, overlay 0.2s allow-discrete, display 0.2s allow-discrete;
+    }
+    .menu:not([open]) {
+      opacity: 0;
+    }
+    @starting-style {
+      .menu[open] {
+        opacity: 0;
+      }
+    }
+  }
+
+  :global(html:has(.menu[open])) {
+    overflow: hidden;
   }
 </style>

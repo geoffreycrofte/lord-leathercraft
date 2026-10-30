@@ -1,0 +1,137 @@
+---
+/**
+ * A material (leather, thread, buckle) as a shop-like card: photo, name,
+ * key properties and, when known, links to the supplier.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import OfferLink from './OfferLink.astro';
+import Placeholder from './Placeholder.astro';
+import { materialOffers } from '../data/suppliers';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  notionId: string;
+  name: string;
+  photo?: ImageMetadata | null;
+  /** Detail page; without it, the card is not a link. */
+  href?: string;
+  facts: { label: string; value: string }[];
+  headingLevel?: 2 | 3;
+}
+
+const { lang, notionId, name, photo, href, facts, headingLevel = 3 } = Astro.props;
+const Heading = `h${headingLevel}` as const;
+const offers = materialOffers[notionId] ?? [];
+---
+
+<article class="material zoom-media" id={`m-${notionId}`}>
+  <div class="material__body">
+    <Heading class="material__name">
+      {href ? <a href={href}>{name}</a> : name}
+    </Heading>
+    {
+      facts.length > 0 && (
+        <dl class="material__facts">
+          {facts.map((f) => (
+            <div>
+              <dt>{f.label}</dt>
+              <dd>{f.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )
+    }
+    {
+      offers.length > 0 && (
+        <div class="material__offers">
+          {offers.map((o) => <OfferLink lang={lang} url={o.url} label={o.shop} code={o.code} />)}
+        </div>
+      )
+    }
+  </div>
+  {
+    photo ? (
+      <Image src={photo} alt="" widths={[400, 700]} sizes="(min-width: 40rem) 20rem, 100vw" />
+    ) : (
+      <Placeholder lang={lang} label={name} class="material__placeholder" />
+    )
+  }
+</article>
+
+<style>
+  .material {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    scroll-margin-top: var(--space-l);
+  }
+  .material :global(img),
+  .material :global(.material__placeholder) {
+    order: -1;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  .material__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem 1.25rem;
+    flex-grow: 1;
+  }
+  .material__name {
+    margin: 0;
+    font-size: 1.1875rem;
+  }
+  .material__name a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .material__name a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .material:hover .material__name a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+  }
+  .material:has(.material__name a:focus-visible) {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+  .material__name a:focus-visible {
+    outline: none;
+  }
+  .material__facts {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.125rem 0.75rem;
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+  .material__facts div {
+    display: contents;
+  }
+  .material__facts dt {
+    color: var(--color-text-muted);
+  }
+  .material__facts dd {
+    margin: 0;
+  }
+  .material__offers {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+</style>

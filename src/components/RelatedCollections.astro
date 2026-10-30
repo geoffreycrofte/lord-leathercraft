@@ -13,7 +13,7 @@ const t = useTranslations(lang);
 
 {
   keys.length > 0 && (
-    <section class="related" aria-labelledby="related-title">
+    <section class="related stitch" aria-labelledby="related-title">
       <h2 id="related-title">{t('article.related')}</h2>
       <p>{t('external.newShop')}</p>
       <ul>
@@ -36,6 +36,7 @@ const t = useTranslations(lang);
     padding: var(--space-m);
     background: var(--primary-050);
     border: 1px solid var(--primary-100);
+    color: var(--primary-700);
     border-radius: var(--radius);
   }
   h2 {
@@ -44,5 +45,10 @@ const t = useTranslations(lang);
   }
   ul {
     margin: 0;
+  }
+  p,
+  ul {
+    position: relative;
+    color: var(--color-text);
   }
 </style>

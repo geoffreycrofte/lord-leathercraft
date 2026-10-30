@@ -12,4 +12,4 @@ const { lang, category } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<span class:list={['chip', tone[category]]}>{t(`category.${category}`)}</span>
+<span class:list={['chip', 'chip--tag', tone[category]]}>{t(`category.${category}`)}</span>

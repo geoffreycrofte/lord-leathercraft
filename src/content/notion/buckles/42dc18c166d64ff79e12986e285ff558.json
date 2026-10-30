@@ -1,0 +1,39 @@
+{
+  "notionId": "42dc18c166d64ff79e12986e285ff558",
+  "notionUrl": "https://app.notion.com/p/42dc18c166d64ff79e12986e285ff558",
+  "name": "Sam - Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "25mm",
+      "30mm",
+      "35mm",
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2023-06-24 11:36:29Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Sam - Brass"
+  },
+  "createdTime": "2023-06-24 11:36:29Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./42dc18c166d64ff79e12986e285ff558/1.jpg",
+  "images": [
+    {
+      "file": "./42dc18c166d64ff79e12986e285ff558/1.jpg",
+      "caption": "",
+      "width": 1724,
+      "height": 1266
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "sam-brass"
+}

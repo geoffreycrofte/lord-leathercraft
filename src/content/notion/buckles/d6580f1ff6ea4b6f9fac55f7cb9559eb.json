@@ -1,0 +1,36 @@
+{
+  "notionId": "d6580f1ff6ea4b6f9fac55f7cb9559eb",
+  "notionUrl": "https://app.notion.com/p/d6580f1ff6ea4b6f9fac55f7cb9559eb",
+  "name": "Moe - Satin-finish Chrome",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Solid Brass"
+    ],
+    "Created": "2023-06-24 12:01:03Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Moe - Satin-finish Chrome"
+  },
+  "createdTime": "2023-06-24 12:01:03Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./d6580f1ff6ea4b6f9fac55f7cb9559eb/1.jpg",
+  "images": [
+    {
+      "file": "./d6580f1ff6ea4b6f9fac55f7cb9559eb/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1622
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "moe-satin-finish-chrome"
+}

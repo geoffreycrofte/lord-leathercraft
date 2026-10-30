@@ -1,0 +1,38 @@
+{
+  "notionId": "d00ae164150241738911a920d66cad6a",
+  "notionUrl": "https://app.notion.com/p/d00ae164150241738911a920d66cad6a",
+  "name": "Max - Satin-finish antique Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "30mm",
+      "35mm",
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2023-06-24 11:11:34Z",
+    "Finishing": "Satin Antique",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Max - Satin-finish antique Brass"
+  },
+  "createdTime": "2023-06-24 11:11:34Z",
+  "lastEdited": "2023-06-24T12:23:10.894Z",
+  "cover": "./d00ae164150241738911a920d66cad6a/1.jpg",
+  "images": [
+    {
+      "file": "./d00ae164150241738911a920d66cad6a/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1094
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "max-satin-finish-antique-brass"
+}

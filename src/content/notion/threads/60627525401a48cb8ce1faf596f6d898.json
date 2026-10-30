@@ -1,0 +1,35 @@
+{
+  "notionId": "60627525401a48cb8ce1faf596f6d898",
+  "notionUrl": "https://app.notion.com/p/60627525401a48cb8ce1faf596f6d898",
+  "name": "Light Blue",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 18:53:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "cf1c5232898b4ce781d02876c2be0276"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 18:48:03Z",
+    "Name": "Light Blue"
+  },
+  "createdTime": "2021-06-29 18:48:03Z",
+  "lastEdited": "2021-06-29T18:53:00.000Z",
+  "cover": "./60627525401a48cb8ce1faf596f6d898/1.jpg",
+  "images": [
+    {
+      "file": "./60627525401a48cb8ce1faf596f6d898/1.jpg",
+      "caption": "",
+      "width": 1601,
+      "height": 900
+    },
+    {
+      "file": "./60627525401a48cb8ce1faf596f6d898/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "light-blue"
+}

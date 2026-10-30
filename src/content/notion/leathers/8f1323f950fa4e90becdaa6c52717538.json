@@ -1,0 +1,39 @@
+{
+  "notionId": "8f1323f950fa4e90becdaa6c52717538",
+  "notionUrl": "https://app.notion.com/p/8f1323f950fa4e90becdaa6c52717538",
+  "name": "Black Mat - Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:33:00Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Anilin Pull-up oiled",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:31:14Z",
+    "Name": "Black Mat - Strap"
+  },
+  "createdTime": "2023-06-24 10:31:14Z",
+  "lastEdited": "2023-06-24T10:33:00.145Z",
+  "cover": "./8f1323f950fa4e90becdaa6c52717538/1.jpg",
+  "images": [
+    {
+      "file": "./8f1323f950fa4e90becdaa6c52717538/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1098
+    },
+    {
+      "file": "./8f1323f950fa4e90becdaa6c52717538/2.jpg",
+      "caption": "",
+      "width": 1884,
+      "height": 1494
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "black-mat-strap"
+}

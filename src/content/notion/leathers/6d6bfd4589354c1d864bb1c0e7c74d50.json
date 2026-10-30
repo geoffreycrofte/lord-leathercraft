@@ -1,0 +1,39 @@
+{
+  "notionId": "6d6bfd4589354c1d864bb1c0e7c74d50",
+  "notionUrl": "https://app.notion.com/p/6d6bfd4589354c1d864bb1c0e7c74d50",
+  "name": "Violet - MARBRE",
+  "properties": {
+    "Type of skin": "N/C",
+    "Fermness": "Soft",
+    "Last Updated": "2023-06-23 19:14:27Z",
+    "Products made with this leather": null,
+    "Skin": "Calf",
+    "Status": "In stock",
+    "Finishing": null,
+    "Origin of Skin": null,
+    "Max-length": null,
+    "Tanning": null,
+    "Created": "2021-05-24 19:43:16Z",
+    "Name": "Violet - MARBRE"
+  },
+  "createdTime": "2021-05-24 19:43:16Z",
+  "lastEdited": "2023-06-23T19:14:27.153Z",
+  "cover": "./6d6bfd4589354c1d864bb1c0e7c74d50/1.jpg",
+  "images": [
+    {
+      "file": "./6d6bfd4589354c1d864bb1c0e7c74d50/1.jpg",
+      "caption": "",
+      "width": 1715,
+      "height": 965
+    },
+    {
+      "file": "./6d6bfd4589354c1d864bb1c0e7c74d50/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "A calf leather different from other leathers that offers several smooth finishes.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Un cuir de veau qui se distingue des autres cuirs et propose plusieurs finitions lisses.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "violet-marbre"
+}

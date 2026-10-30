@@ -1,0 +1,41 @@
+{
+  "notionId": "fa5390d3d1c8427da7861aefe237b9bc",
+  "notionUrl": "https://app.notion.com/p/fa5390d3d1c8427da7861aefe237b9bc",
+  "name": "Dark Brown - Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:31:08Z",
+    "Products made with this leather": [
+      "68b0dd2d83a84011a0cbbbf7fb5c5f5b"
+    ],
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Anilin Pull-up oiled",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:29:41Z",
+    "Name": "Dark Brown - Strap"
+  },
+  "createdTime": "2023-06-24 10:29:41Z",
+  "lastEdited": "2023-06-24T10:31:08.128Z",
+  "cover": "./fa5390d3d1c8427da7861aefe237b9bc/1.jpg",
+  "images": [
+    {
+      "file": "./fa5390d3d1c8427da7861aefe237b9bc/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1089
+    },
+    {
+      "file": "./fa5390d3d1c8427da7861aefe237b9bc/2.jpg",
+      "caption": "",
+      "width": 1948,
+      "height": 1402
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "dark-brown-strap"
+}

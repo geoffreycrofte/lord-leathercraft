@@ -1,0 +1,36 @@
+{
+  "notionId": "13b1d345267480eabd98ff656e393d97",
+  "notionUrl": "https://app.notion.com/p/13b1d345267480eabd98ff656e393d97",
+  "name": "A18 - Horizon Black Silver",
+  "properties": {
+    "Look": [
+      "Silver"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2024-11-11 20:35:23Z",
+    "Finishing": "Multiple",
+    "Type": [
+      "Buckle Plate"
+    ],
+    "Name": "A18 - Horizon Black Silver"
+  },
+  "createdTime": "2024-11-11 20:35:23Z",
+  "lastEdited": "2024-11-11T20:36:56.394Z",
+  "cover": "./13b1d345267480eabd98ff656e393d97/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d345267480eabd98ff656e393d97/1.jpg",
+      "caption": "",
+      "width": 1080,
+      "height": 1037
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a18-horizon-black-silver"
+}

@@ -1,0 +1,37 @@
+{
+  "notionId": "713e7ac037f54d639db09a43947c4829",
+  "notionUrl": "https://app.notion.com/p/713e7ac037f54d639db09a43947c4829",
+  "name": "Acajou - LUXE",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Soft",
+    "Last Updated": "2022-05-01 09:22:00Z",
+    "Products made with this leather": [
+      "116b958e9be14773b2bdafa4faab4e94",
+      "f2509b2f844e47c1ab25113d5ec7a32e",
+      "aee11bf74cd9438caa169fdbd90a728b"
+    ],
+    "Skin": "Cow",
+    "Status": "In stock",
+    "Finishing": null,
+    "Origin of Skin": null,
+    "Max-length": null,
+    "Tanning": null,
+    "Created": "2021-05-24 19:43:16Z",
+    "Name": "Acajou - LUXE"
+  },
+  "createdTime": "2021-05-24 19:43:16Z",
+  "lastEdited": "2022-05-01T09:22:00.000Z",
+  "cover": "./713e7ac037f54d639db09a43947c4829/1.jpg",
+  "images": [
+    {
+      "file": "./713e7ac037f54d639db09a43947c4829/1.jpg",
+      "caption": "",
+      "width": 988,
+      "height": 556
+    }
+  ],
+  "contentMarkdown": "This 1mm leather offers a really classy finish. Combined with other leathers it allows for very interesting two-tone creations.\n\n{{image:1}}",
+  "contentMarkdownFr": "Ce cuir de 1 mm d'épaisseur offre une finition vraiment élégante. Associé à d'autres cuirs, il permet des créations bicolores très intéressantes.\n\n{{image:1}}",
+  "slug": "acajou-luxe"
+}

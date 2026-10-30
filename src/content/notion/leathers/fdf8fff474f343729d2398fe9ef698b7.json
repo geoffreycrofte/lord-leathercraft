@@ -1,0 +1,39 @@
+{
+  "notionId": "fdf8fff474f343729d2398fe9ef698b7",
+  "notionUrl": "https://app.notion.com/p/fdf8fff474f343729d2398fe9ef698b7",
+  "name": "Red - Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:26:14Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Semi-anilin + Dyed Wax",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:24:36Z",
+    "Name": "Red - Strap"
+  },
+  "createdTime": "2023-06-24 10:24:36Z",
+  "lastEdited": "2023-06-24T10:26:14.312Z",
+  "cover": "./fdf8fff474f343729d2398fe9ef698b7/1.jpg",
+  "images": [
+    {
+      "file": "./fdf8fff474f343729d2398fe9ef698b7/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 940
+    },
+    {
+      "file": "./fdf8fff474f343729d2398fe9ef698b7/2.jpg",
+      "caption": "",
+      "width": 1606,
+      "height": 1272
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "red-strap"
+}

@@ -1,0 +1,38 @@
+{
+  "notionId": "491528dbf8ca4cfcaeefde15474cb244",
+  "notionUrl": "https://app.notion.com/p/491528dbf8ca4cfcaeefde15474cb244",
+  "name": "Off-White",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 18:56:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "aee11bf74cd9438caa169fdbd90a728b",
+      "cc165197fab2455d815d3df41de32feb",
+      "0e5e54988e694d25bba881f0910f48f5",
+      "5ed0c2426f03409ea213a286416e9467"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 18:55:08Z",
+    "Name": "Off-White"
+  },
+  "createdTime": "2021-06-29 18:55:08Z",
+  "lastEdited": "2021-06-29T18:56:00.000Z",
+  "cover": "./491528dbf8ca4cfcaeefde15474cb244/1.jpg",
+  "images": [
+    {
+      "file": "./491528dbf8ca4cfcaeefde15474cb244/1.jpg",
+      "caption": "",
+      "width": 1592,
+      "height": 892
+    },
+    {
+      "file": "./491528dbf8ca4cfcaeefde15474cb244/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "off-white"
+}

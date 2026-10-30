@@ -1,0 +1,36 @@
+{
+  "notionId": "ec7aa01b61ab4025812e6167a4026acb",
+  "notionUrl": "https://app.notion.com/p/ec7aa01b61ab4025812e6167a4026acb",
+  "name": "Tom - Antique Silver",
+  "properties": {
+    "Look": [
+      "Silver"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Steel"
+    ],
+    "Created": "2023-06-24 11:40:06Z",
+    "Finishing": "Antique",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Tom - Antique Silver"
+  },
+  "createdTime": "2023-06-24 11:40:06Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./ec7aa01b61ab4025812e6167a4026acb/1.jpg",
+  "images": [
+    {
+      "file": "./ec7aa01b61ab4025812e6167a4026acb/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1269
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "tom-antique-silver"
+}

@@ -1,0 +1,45 @@
+{
+  "notionId": "be0d14499fbd4140a996f5a56fcad921",
+  "notionUrl": "https://app.notion.com/p/be0d14499fbd4140a996f5a56fcad921",
+  "name": "Walpier Grid - Blue Navy",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Soft",
+    "Last Updated": "2023-11-06 22:26:36Z",
+    "Products made with this leather": null,
+    "Skin": "Vachette",
+    "Status": "In stock",
+    "Finishing": "Anilin Pull-up oiled",
+    "Origin of Skin": "Italy",
+    "Max-length": null,
+    "Tanning": "Veg-Tan",
+    "Created": "2023-11-06 21:58:49Z",
+    "Name": "Walpier Grid - Blue Navy"
+  },
+  "createdTime": "2023-11-06 21:58:49Z",
+  "lastEdited": "2023-11-06T22:26:36.097Z",
+  "cover": "./be0d14499fbd4140a996f5a56fcad921/3.jpg",
+  "images": [
+    {
+      "file": "./be0d14499fbd4140a996f5a56fcad921/1.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "./be0d14499fbd4140a996f5a56fcad921/2.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "./be0d14499fbd4140a996f5a56fcad921/3.jpg",
+      "caption": "",
+      "width": 794,
+      "height": 596
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}\n{{image:3}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}\n{{image:3}}",
+  "slug": "walpier-grid-blue-navy"
+}

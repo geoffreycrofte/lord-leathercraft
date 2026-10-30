@@ -1,0 +1,37 @@
+{
+  "notionId": "0ecfd2a0824342369c16ed8f27819402",
+  "notionUrl": "https://app.notion.com/p/0ecfd2a0824342369c16ed8f27819402",
+  "name": "Yellow",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:07:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "7740edc2e29e4ce4a71eeb63a8a60998",
+      "117b3b9ac7c646ef83537b405d8c97ab",
+      "2631d3452674804c91a8fa4e36cd4c56"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 19:06:25Z",
+    "Name": "Yellow"
+  },
+  "createdTime": "2021-06-29 19:06:25Z",
+  "lastEdited": "2021-06-29T19:07:00.000Z",
+  "cover": "./0ecfd2a0824342369c16ed8f27819402/1.jpg",
+  "images": [
+    {
+      "file": "./0ecfd2a0824342369c16ed8f27819402/1.jpg",
+      "caption": "",
+      "width": 1463,
+      "height": 821
+    },
+    {
+      "file": "./0ecfd2a0824342369c16ed8f27819402/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1127
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "yellow"
+}

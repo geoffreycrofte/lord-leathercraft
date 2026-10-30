@@ -1,0 +1,36 @@
+{
+  "notionId": "13b1d345267480d285dcfdcfcef6d1f6",
+  "notionUrl": "https://app.notion.com/p/13b1d345267480d285dcfdcfcef6d1f6",
+  "name": "A9 - H Lines Silver",
+  "properties": {
+    "Look": [
+      "Silver"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Zinc Plated"
+    ],
+    "Created": "2024-11-11 20:03:16Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Buckle Plate"
+    ],
+    "Name": "A9 - H Lines Silver"
+  },
+  "createdTime": "2024-11-11 20:03:16Z",
+  "lastEdited": "2024-11-11T20:19:00.723Z",
+  "cover": "./13b1d345267480d285dcfdcfcef6d1f6/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d345267480d285dcfdcfcef6d1f6/1.jpg",
+      "caption": "",
+      "width": 960,
+      "height": 960
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a9-h-lines-silver"
+}

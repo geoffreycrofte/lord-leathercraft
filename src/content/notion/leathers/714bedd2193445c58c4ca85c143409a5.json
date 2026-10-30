@@ -1,0 +1,39 @@
+{
+  "notionId": "714bedd2193445c58c4ca85c143409a5",
+  "notionUrl": "https://app.notion.com/p/714bedd2193445c58c4ca85c143409a5",
+  "name": "Bordeaux - SWEET",
+  "properties": {
+    "Type of skin": "N/C",
+    "Fermness": "Really soft",
+    "Last Updated": "2023-11-06 21:50:52Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "Out of stock",
+    "Finishing": null,
+    "Origin of Skin": null,
+    "Max-length": null,
+    "Tanning": null,
+    "Created": "2021-05-24 19:43:16Z",
+    "Name": "Bordeaux - SWEET"
+  },
+  "createdTime": "2021-05-24 19:43:16Z",
+  "lastEdited": "2023-11-06T21:50:52.232Z",
+  "cover": "./714bedd2193445c58c4ca85c143409a5/1.jpg",
+  "images": [
+    {
+      "file": "./714bedd2193445c58c4ca85c143409a5/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1122
+    },
+    {
+      "file": "./714bedd2193445c58c4ca85c143409a5/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1122
+    }
+  ],
+  "contentMarkdown": "A 1mm leather that is quite soft in thickness and ideal for small jobs such as soft bags or pouches for example. This burgundy color works very well alone or with olive or turquoise colors.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Un cuir de 1 mm d'épaisseur, plutôt souple, idéal pour les petits ouvrages comme les sacs souples ou les pochettes par exemple. Ce bordeaux fonctionne très bien seul ou associé au vert olive ou au turquoise.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "bordeaux-sweet"
+}

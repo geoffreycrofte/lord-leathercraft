@@ -1,0 +1,42 @@
+{
+  "notionId": "4fdd3aab0a7d4a4b88a5d0bf552856d1",
+  "notionUrl": "https://app.notion.com/p/4fdd3aab0a7d4a4b88a5d0bf552856d1",
+  "name": "Fauve - LUXE",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Soft",
+    "Last Updated": "2022-05-01 09:22:00Z",
+    "Products made with this leather": [
+      "08f6968b42ab4f56a2732ae62f7a9978",
+      "54bda784437f4e0f974ea7264b13c5e3"
+    ],
+    "Skin": "Cow",
+    "Status": "In stock",
+    "Finishing": null,
+    "Origin of Skin": null,
+    "Max-length": null,
+    "Tanning": null,
+    "Created": "2021-05-24 19:43:16Z",
+    "Name": "Fauve - LUXE"
+  },
+  "createdTime": "2021-05-24 19:43:16Z",
+  "lastEdited": "2022-05-01T09:22:00.000Z",
+  "cover": "./4fdd3aab0a7d4a4b88a5d0bf552856d1/1.jpg",
+  "images": [
+    {
+      "file": "./4fdd3aab0a7d4a4b88a5d0bf552856d1/1.jpg",
+      "caption": "",
+      "width": 1676,
+      "height": 946
+    },
+    {
+      "file": "./4fdd3aab0a7d4a4b88a5d0bf552856d1/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "This 1 to 1.8mm leather offers a really classy finish. Combined with other leathers it allows very interesting two-tone creations\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Ce cuir de 1 à 1,8 mm d'épaisseur offre une finition vraiment élégante. Associé à d'autres cuirs, il permet des créations bicolores très intéressantes.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "fauve-luxe"
+}

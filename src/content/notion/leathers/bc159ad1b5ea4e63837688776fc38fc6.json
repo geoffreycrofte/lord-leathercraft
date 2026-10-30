@@ -1,0 +1,43 @@
+{
+  "notionId": "bc159ad1b5ea4e63837688776fc38fc6",
+  "notionUrl": "https://app.notion.com/p/bc159ad1b5ea4e63837688776fc38fc6",
+  "name": "Satin Black - LUXE",
+  "properties": {
+    "Type of skin": "N/C",
+    "Fermness": "Moderate",
+    "Last Updated": "2023-11-06 21:50:13Z",
+    "Products made with this leather": [
+      "cf1c5232898b4ce781d02876c2be0276",
+      "f1d9661f6ccf413e811ba2d76f93baa6",
+      "ab7a61c8cd35419eaead96cde1b1cc3f"
+    ],
+    "Skin": "Cow",
+    "Status": "Out of stock",
+    "Finishing": null,
+    "Origin of Skin": null,
+    "Max-length": null,
+    "Tanning": null,
+    "Created": "2021-05-24 19:43:16Z",
+    "Name": "Satin Black - LUXE"
+  },
+  "createdTime": "2021-05-24 19:43:16Z",
+  "lastEdited": "2023-11-06T21:50:13.507Z",
+  "cover": "./bc159ad1b5ea4e63837688776fc38fc6/1.jpg",
+  "images": [
+    {
+      "file": "./bc159ad1b5ea4e63837688776fc38fc6/1.jpg",
+      "caption": "",
+      "width": 1999,
+      "height": 1125
+    },
+    {
+      "file": "./bc159ad1b5ea4e63837688776fc38fc6/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "A very fine leather of 0,5mm of the LUXE range, of French origin.\n\nThis suir is mainly used for decorations or thin pockets inside card holders or wallets.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Un cuir très fin de 0,5 mm de la gamme LUXE, d'origine française.\n\nCe cuir est principalement utilisé pour des décorations ou pour les poches fines à l'intérieur des porte-cartes ou des portefeuilles.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "satin-black-luxe"
+}

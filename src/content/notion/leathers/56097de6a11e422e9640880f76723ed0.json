@@ -1,0 +1,39 @@
+{
+  "notionId": "56097de6a11e422e9640880f76723ed0",
+  "notionUrl": "https://app.notion.com/p/56097de6a11e422e9640880f76723ed0",
+  "name": "Fauve - LONDON",
+  "properties": {
+    "Type of skin": null,
+    "Fermness": "Hard",
+    "Last Updated": "2022-05-01 09:22:00Z",
+    "Products made with this leather": null,
+    "Skin": "Vachette",
+    "Status": "Out of stock",
+    "Finishing": null,
+    "Origin of Skin": null,
+    "Max-length": null,
+    "Tanning": null,
+    "Created": "2021-05-24 19:43:15Z",
+    "Name": "Fauve - LONDON"
+  },
+  "createdTime": "2021-05-24 19:43:15Z",
+  "lastEdited": "2022-05-01T09:22:00.000Z",
+  "cover": "./56097de6a11e422e9640880f76723ed0/1.jpg",
+  "images": [
+    {
+      "file": "./56097de6a11e422e9640880f76723ed0/1.jpg",
+      "caption": "",
+      "width": 1534,
+      "height": 863
+    },
+    {
+      "file": "./56097de6a11e422e9640880f76723ed0/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "Un cuir très épais utilisé principalement pour la création de ceinture. Mais existe en plusieurs épaisseurs notamment pour la création de porte-carte ou porte-clé par exemple.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Un cuir très épais utilisé principalement pour la création de ceinture. Mais existe en plusieurs épaisseurs notamment pour la création de porte-carte ou porte-clé par exemple.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "fauve-london"
+}

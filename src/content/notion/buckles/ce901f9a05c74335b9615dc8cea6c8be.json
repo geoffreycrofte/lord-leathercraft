@@ -1,0 +1,39 @@
+{
+  "notionId": "ce901f9a05c74335b9615dc8cea6c8be",
+  "notionUrl": "https://app.notion.com/p/ce901f9a05c74335b9615dc8cea6c8be",
+  "name": "Sam - Antique Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "25mm",
+      "30mm",
+      "35mm",
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2023-06-24 11:34:30Z",
+    "Finishing": "Antique",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Sam - Antique Brass"
+  },
+  "createdTime": "2023-06-24 11:34:30Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./ce901f9a05c74335b9615dc8cea6c8be/1.jpg",
+  "images": [
+    {
+      "file": "./ce901f9a05c74335b9615dc8cea6c8be/1.jpg",
+      "caption": "",
+      "width": 1194,
+      "height": 810
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "sam-antique-brass"
+}

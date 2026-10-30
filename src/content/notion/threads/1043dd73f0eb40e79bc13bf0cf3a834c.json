@@ -1,0 +1,36 @@
+{
+  "notionId": "1043dd73f0eb40e79bc13bf0cf3a834c",
+  "notionUrl": "https://app.notion.com/p/1043dd73f0eb40e79bc13bf0cf3a834c",
+  "name": "Grey",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:05:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "de6ddbf05eec401da13dc5b3b6e2cc0a",
+      "e4d669f4a0684377b3ebf64f24af2118"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 19:04:08Z",
+    "Name": "Grey"
+  },
+  "createdTime": "2021-06-29 19:04:08Z",
+  "lastEdited": "2021-06-29T19:05:00.000Z",
+  "cover": "./1043dd73f0eb40e79bc13bf0cf3a834c/1.jpg",
+  "images": [
+    {
+      "file": "./1043dd73f0eb40e79bc13bf0cf3a834c/1.jpg",
+      "caption": "",
+      "width": 1670,
+      "height": 940
+    },
+    {
+      "file": "./1043dd73f0eb40e79bc13bf0cf3a834c/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "grey"
+}

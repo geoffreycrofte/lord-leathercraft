@@ -1,0 +1,37 @@
+{
+  "notionId": "13b1d3452674803e8961f9efd59490f1",
+  "notionUrl": "https://app.notion.com/p/13b1d3452674803e8961f9efd59490f1",
+  "name": "21 - Simple Plate",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "30mm",
+      "35mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2024-11-11 20:43:26Z",
+    "Finishing": "Brushed",
+    "Type": [
+      "Buckle Plate"
+    ],
+    "Name": "21 - Simple Plate"
+  },
+  "createdTime": "2024-11-11 20:43:26Z",
+  "lastEdited": "2024-11-11T20:45:39.842Z",
+  "cover": "./13b1d3452674803e8961f9efd59490f1/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d3452674803e8961f9efd59490f1/1.jpg",
+      "caption": "",
+      "width": 1080,
+      "height": 1040
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "21-simple-plate"
+}

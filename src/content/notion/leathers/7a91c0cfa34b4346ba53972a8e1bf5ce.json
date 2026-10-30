@@ -1,0 +1,39 @@
+{
+  "notionId": "7a91c0cfa34b4346ba53972a8e1bf5ce",
+  "notionUrl": "https://app.notion.com/p/7a91c0cfa34b4346ba53972a8e1bf5ce",
+  "name": "Blue - Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:28:01Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Semi-anilin + Dyed Wax",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:27:25Z",
+    "Name": "Blue - Strap"
+  },
+  "createdTime": "2023-06-24 10:27:25Z",
+  "lastEdited": "2023-06-24T10:28:01.795Z",
+  "cover": "./7a91c0cfa34b4346ba53972a8e1bf5ce/1.jpg",
+  "images": [
+    {
+      "file": "./7a91c0cfa34b4346ba53972a8e1bf5ce/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1121
+    },
+    {
+      "file": "./7a91c0cfa34b4346ba53972a8e1bf5ce/2.jpg",
+      "caption": "",
+      "width": 1850,
+      "height": 1488
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "blue-strap"
+}

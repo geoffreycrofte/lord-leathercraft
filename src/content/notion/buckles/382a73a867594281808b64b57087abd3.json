@@ -1,0 +1,36 @@
+{
+  "notionId": "382a73a867594281808b64b57087abd3",
+  "notionUrl": "https://app.notion.com/p/382a73a867594281808b64b57087abd3",
+  "name": "Moe - Satin-finish Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Solid Brass"
+    ],
+    "Created": "2023-06-24 11:54:46Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Moe - Satin-finish Brass"
+  },
+  "createdTime": "2023-06-24 11:54:46Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./382a73a867594281808b64b57087abd3/1.jpg",
+  "images": [
+    {
+      "file": "./382a73a867594281808b64b57087abd3/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1593
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "moe-satin-finish-brass"
+}

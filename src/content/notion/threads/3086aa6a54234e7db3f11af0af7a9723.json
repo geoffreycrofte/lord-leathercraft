@@ -1,0 +1,39 @@
+{
+  "notionId": "3086aa6a54234e7db3f11af0af7a9723",
+  "notionUrl": "https://app.notion.com/p/3086aa6a54234e7db3f11af0af7a9723",
+  "name": "Beige",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:43:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "3d72a67afc1148a0b42165dc27466f5d",
+      "eb93569b95a842b1a53b66e182eb26ca",
+      "599e075a52894b7890f76fd135840b44",
+      "b9adbdedb9df4c2c90c4294cb0e8f20a",
+      "a942aac478104847adabe97f09262365"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 18:57:55Z",
+    "Name": "Beige"
+  },
+  "createdTime": "2021-06-29 18:57:55Z",
+  "lastEdited": "2021-06-29T19:43:00.000Z",
+  "cover": "./3086aa6a54234e7db3f11af0af7a9723/1.jpg",
+  "images": [
+    {
+      "file": "./3086aa6a54234e7db3f11af0af7a9723/1.jpg",
+      "caption": "",
+      "width": 1574,
+      "height": 886
+    },
+    {
+      "file": "./3086aa6a54234e7db3f11af0af7a9723/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "beige"
+}

@@ -1,0 +1,39 @@
+{
+  "notionId": "8bac3e9a60aa4889858a85b205d94933",
+  "notionUrl": "https://app.notion.com/p/8bac3e9a60aa4889858a85b205d94933",
+  "name": "Chocolate Brown - Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:21:48Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Semi-anilin + Dyed Wax",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:20:59Z",
+    "Name": "Chocolate Brown - Strap"
+  },
+  "createdTime": "2023-06-24 10:20:59Z",
+  "lastEdited": "2023-06-24T10:21:48.329Z",
+  "cover": "./8bac3e9a60aa4889858a85b205d94933/1.jpg",
+  "images": [
+    {
+      "file": "./8bac3e9a60aa4889858a85b205d94933/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1096
+    },
+    {
+      "file": "./8bac3e9a60aa4889858a85b205d94933/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1552
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "chocolate-brown-strap"
+}

@@ -1,0 +1,36 @@
+{
+  "notionId": "13b1d345267480c29405f0d66723d597",
+  "notionUrl": "https://app.notion.com/p/13b1d345267480c29405f0d66723d597",
+  "name": "AP2 - Chrome Set",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Steel"
+    ],
+    "Created": "2024-11-11 20:48:27Z",
+    "Finishing": "Brushed",
+    "Type": [
+      "Buckle Plate"
+    ],
+    "Name": "AP2 - Chrome Set"
+  },
+  "createdTime": "2024-11-11 20:48:27Z",
+  "lastEdited": "2024-11-11T20:49:25.195Z",
+  "cover": "./13b1d345267480c29405f0d66723d597/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d345267480c29405f0d66723d597/1.jpg",
+      "caption": "",
+      "width": 1080,
+      "height": 1079
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "ap2-chrome-set"
+}

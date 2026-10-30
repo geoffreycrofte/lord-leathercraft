@@ -1,0 +1,45 @@
+{
+  "notionId": "30f6f22187f545f9ab7638c16e4b3867",
+  "notionUrl": "https://app.notion.com/p/30f6f22187f545f9ab7638c16e4b3867",
+  "name": "Epi - Black (Louis Vuitton)",
+  "properties": {
+    "Type of skin": "Varnish",
+    "Fermness": "Moderate",
+    "Last Updated": "2023-11-06 22:26:49Z",
+    "Products made with this leather": null,
+    "Skin": "Vachette",
+    "Status": "In stock",
+    "Finishing": "Anilin Varnished",
+    "Origin of Skin": "N/C",
+    "Max-length": null,
+    "Tanning": "Chrome-Tan",
+    "Created": "2023-11-06 22:14:19Z",
+    "Name": "Epi - Black (Louis Vuitton)"
+  },
+  "createdTime": "2023-11-06 22:14:19Z",
+  "lastEdited": "2023-11-06T22:26:49.133Z",
+  "cover": "./30f6f22187f545f9ab7638c16e4b3867/0-cover.jpg",
+  "images": [
+    {
+      "file": "./30f6f22187f545f9ab7638c16e4b3867/1.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "./30f6f22187f545f9ab7638c16e4b3867/2.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "./30f6f22187f545f9ab7638c16e4b3867/3.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 900
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}\n{{image:3}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}\n{{image:3}}",
+  "slug": "epi-black-louis-vuitton"
+}

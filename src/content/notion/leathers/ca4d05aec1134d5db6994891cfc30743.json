@@ -1,0 +1,39 @@
+{
+  "notionId": "ca4d05aec1134d5db6994891cfc30743",
+  "notionUrl": "https://app.notion.com/p/ca4d05aec1134d5db6994891cfc30743",
+  "name": "Yellow - GRANITE",
+  "properties": {
+    "Type of skin": "N/C",
+    "Fermness": "Soft",
+    "Last Updated": "2022-05-01 09:22:00Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "In stock",
+    "Finishing": null,
+    "Origin of Skin": null,
+    "Max-length": null,
+    "Tanning": null,
+    "Created": "2021-05-24 19:43:16Z",
+    "Name": "Yellow - GRANITE"
+  },
+  "createdTime": "2021-05-24 19:43:16Z",
+  "lastEdited": "2022-05-01T09:22:00.000Z",
+  "cover": "./ca4d05aec1134d5db6994891cfc30743/1.jpg",
+  "images": [
+    {
+      "file": "./ca4d05aec1134d5db6994891cfc30743/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    },
+    {
+      "file": "./ca4d05aec1134d5db6994891cfc30743/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "With a thickness of 1 mm, this leather of the GRANITE range offers a small interesting relief to the touch. It is of French origin.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "D'une épaisseur de 1 mm, ce cuir de la gamme GRANITE offre au toucher un léger relief intéressant. Il est d'origine française.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "yellow-granite"
+}

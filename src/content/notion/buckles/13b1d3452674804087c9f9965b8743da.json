@@ -1,0 +1,38 @@
+{
+  "notionId": "13b1d3452674804087c9f9965b8743da",
+  "notionUrl": "https://app.notion.com/p/13b1d3452674804087c9f9965b8743da",
+  "name": "20 - Silver Gun Pinch",
+  "properties": {
+    "Look": [
+      "Chrome",
+      "Silver Gun"
+    ],
+    "Available sizes": [
+      "35mm",
+      "30mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2024-11-11 20:40:32Z",
+    "Finishing": "Brushed",
+    "Type": [
+      "Buckle Plate"
+    ],
+    "Name": "20 - Silver Gun Pinch"
+  },
+  "createdTime": "2024-11-11 20:40:32Z",
+  "lastEdited": "2024-11-11T20:43:16.849Z",
+  "cover": "./13b1d3452674804087c9f9965b8743da/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d3452674804087c9f9965b8743da/1.jpg",
+      "caption": "",
+      "width": 1080,
+      "height": 1033
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "20-silver-gun-pinch"
+}

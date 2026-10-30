@@ -1,0 +1,33 @@
+{
+  "notionId": "926b3bdf0d95418bb85a3459855a1c69",
+  "notionUrl": "https://app.notion.com/p/926b3bdf0d95418bb85a3459855a1c69",
+  "name": "Red",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:13:00Z",
+    "Related to Catalogue des produits (Property)": null,
+    "Status": "Available",
+    "Created": "2021-06-29 19:11:22Z",
+    "Name": "Red"
+  },
+  "createdTime": "2021-06-29 19:11:22Z",
+  "lastEdited": "2021-06-29T19:13:00.000Z",
+  "cover": "./926b3bdf0d95418bb85a3459855a1c69/1.jpg",
+  "images": [
+    {
+      "file": "./926b3bdf0d95418bb85a3459855a1c69/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1123
+    },
+    {
+      "file": "./926b3bdf0d95418bb85a3459855a1c69/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1127
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "red"
+}

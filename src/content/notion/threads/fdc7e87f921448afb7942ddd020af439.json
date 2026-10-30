@@ -1,0 +1,33 @@
+{
+  "notionId": "fdc7e87f921448afb7942ddd020af439",
+  "notionUrl": "https://app.notion.com/p/fdc7e87f921448afb7942ddd020af439",
+  "name": "Royal Blue",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:09:00Z",
+    "Related to Catalogue des produits (Property)": null,
+    "Status": "Available",
+    "Created": "2021-06-29 19:08:24Z",
+    "Name": "Royal Blue"
+  },
+  "createdTime": "2021-06-29 19:08:24Z",
+  "lastEdited": "2021-06-29T19:09:00.000Z",
+  "cover": "./fdc7e87f921448afb7942ddd020af439/1.jpg",
+  "images": [
+    {
+      "file": "./fdc7e87f921448afb7942ddd020af439/1.jpg",
+      "caption": "",
+      "width": 1828,
+      "height": 1030
+    },
+    {
+      "file": "./fdc7e87f921448afb7942ddd020af439/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1127
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "royal-blue"
+}

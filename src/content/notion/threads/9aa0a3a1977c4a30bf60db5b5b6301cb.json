@@ -1,0 +1,35 @@
+{
+  "notionId": "9aa0a3a1977c4a30bf60db5b5b6301cb",
+  "notionUrl": "https://app.notion.com/p/9aa0a3a1977c4a30bf60db5b5b6301cb",
+  "name": "Violet",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:10:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "b4e388fd634d4ef6baf4c0c5fc4fe2d8"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 19:09:47Z",
+    "Name": "Violet"
+  },
+  "createdTime": "2021-06-29 19:09:47Z",
+  "lastEdited": "2021-06-29T19:10:00.000Z",
+  "cover": "./9aa0a3a1977c4a30bf60db5b5b6301cb/1.jpg",
+  "images": [
+    {
+      "file": "./9aa0a3a1977c4a30bf60db5b5b6301cb/1.jpg",
+      "caption": "",
+      "width": 1953,
+      "height": 1098
+    },
+    {
+      "file": "./9aa0a3a1977c4a30bf60db5b5b6301cb/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1127
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "violet"
+}

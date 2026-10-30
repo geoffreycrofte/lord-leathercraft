@@ -1,0 +1,39 @@
+{
+  "notionId": "3bbb32527c904e94a796b32727833416",
+  "notionUrl": "https://app.notion.com/p/3bbb32527c904e94a796b32727833416",
+  "name": "Badalassi - Wax Ortensia",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Moderate",
+    "Last Updated": "2023-11-06 21:49:51Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "In stock",
+    "Finishing": null,
+    "Origin of Skin": "Italy, Tuscany",
+    "Max-length": null,
+    "Tanning": "Veg-Tan",
+    "Created": "2023-11-06 21:46:13Z",
+    "Name": "Badalassi - Wax Ortensia"
+  },
+  "createdTime": "2023-11-06 21:46:13Z",
+  "lastEdited": "2023-11-06T21:49:51.227Z",
+  "cover": "./3bbb32527c904e94a796b32727833416/0-cover.jpg",
+  "images": [
+    {
+      "file": "./3bbb32527c904e94a796b32727833416/1.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "./3bbb32527c904e94a796b32727833416/2.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 900
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "badalassi-wax-ortensia"
+}

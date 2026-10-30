@@ -1,0 +1,38 @@
+{
+  "notionId": "cb4bf040efee44f59f2a4f14c9e91cde",
+  "notionUrl": "https://app.notion.com/p/cb4bf040efee44f59f2a4f14c9e91cde",
+  "name": "Eli - Satin-finish Chrome",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "30mm",
+      "35mm",
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated"
+    ],
+    "Created": "2023-06-24 11:31:27Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Eli - Satin-finish Chrome"
+  },
+  "createdTime": "2023-06-24 11:31:27Z",
+  "lastEdited": "2023-06-24T12:23:27.377Z",
+  "cover": "./cb4bf040efee44f59f2a4f14c9e91cde/1.jpg",
+  "images": [
+    {
+      "file": "./cb4bf040efee44f59f2a4f14c9e91cde/1.jpg",
+      "caption": "",
+      "width": 1964,
+      "height": 1216
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "eli-satin-finish-chrome"
+}

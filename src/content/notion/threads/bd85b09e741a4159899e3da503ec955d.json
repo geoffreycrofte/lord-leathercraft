@@ -1,0 +1,33 @@
+{
+  "notionId": "bd85b09e741a4159899e3da503ec955d",
+  "notionUrl": "https://app.notion.com/p/bd85b09e741a4159899e3da503ec955d",
+  "name": "Browny",
+  "properties": {
+    "Shape": "Round",
+    "Last Updated": "2021-06-29 19:42:00Z",
+    "Related to Catalogue des produits (Property)": null,
+    "Status": "Available",
+    "Created": "2021-06-29 19:40:59Z",
+    "Name": "Browny"
+  },
+  "createdTime": "2021-06-29 19:40:59Z",
+  "lastEdited": "2021-06-29T19:42:00.000Z",
+  "cover": "./bd85b09e741a4159899e3da503ec955d/1.jpg",
+  "images": [
+    {
+      "file": "./bd85b09e741a4159899e3da503ec955d/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./bd85b09e741a4159899e3da503ec955d/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "browny"
+}

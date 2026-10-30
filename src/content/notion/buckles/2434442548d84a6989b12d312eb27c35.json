@@ -1,0 +1,36 @@
+{
+  "notionId": "2434442548d84a6989b12d312eb27c35",
+  "notionUrl": "https://app.notion.com/p/2434442548d84a6989b12d312eb27c35",
+  "name": "Tom - Polished Chrome",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Steel"
+    ],
+    "Created": "2023-06-24 11:48:54Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Tom - Polished Chrome"
+  },
+  "createdTime": "2023-06-24 11:48:54Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./2434442548d84a6989b12d312eb27c35/1.jpg",
+  "images": [
+    {
+      "file": "./2434442548d84a6989b12d312eb27c35/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1285
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "tom-polished-chrome"
+}

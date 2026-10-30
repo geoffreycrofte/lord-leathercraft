@@ -1,0 +1,33 @@
+{
+  "notionId": "dfc7def83f184151a88e10d1974a2028",
+  "notionUrl": "https://app.notion.com/p/dfc7def83f184151a88e10d1974a2028",
+  "name": "Satin White",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:42:00Z",
+    "Related to Catalogue des produits (Property)": null,
+    "Status": "Available",
+    "Created": "2021-06-29 18:54:09Z",
+    "Name": "Satin White"
+  },
+  "createdTime": "2021-06-29 18:54:09Z",
+  "lastEdited": "2021-06-29T19:42:00.000Z",
+  "cover": "./dfc7def83f184151a88e10d1974a2028/1.jpg",
+  "images": [
+    {
+      "file": "./dfc7def83f184151a88e10d1974a2028/1.jpg",
+      "caption": "",
+      "width": 1569,
+      "height": 880
+    },
+    {
+      "file": "./dfc7def83f184151a88e10d1974a2028/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "satin-white"
+}

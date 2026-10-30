@@ -1,0 +1,38 @@
+{
+  "notionId": "13b1d3452674802b8ac7f8ef043419e6",
+  "notionUrl": "https://app.notion.com/p/13b1d3452674802b8ac7f8ef043419e6",
+  "name": "A1 - Rounded Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "40mm",
+      "35mm",
+      "30mm"
+    ],
+    "Material": [
+      "Solid Brass"
+    ],
+    "Created": "2024-11-11 19:43:35Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "A1 - Rounded Brass"
+  },
+  "createdTime": "2024-11-11 19:43:35Z",
+  "lastEdited": "2024-11-11T20:22:07.574Z",
+  "cover": "./13b1d3452674802b8ac7f8ef043419e6/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d3452674802b8ac7f8ef043419e6/1.jpg",
+      "caption": "",
+      "width": 800,
+      "height": 800
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a1-rounded-brass"
+}

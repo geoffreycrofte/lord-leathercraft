@@ -1,0 +1,45 @@
+{
+  "notionId": "fdae8febf9e44524b7621f82d89033df",
+  "notionUrl": "https://app.notion.com/p/fdae8febf9e44524b7621f82d89033df",
+  "name": "Brown Brick - LUXE",
+  "properties": {
+    "Type of skin": "N/C",
+    "Fermness": "Soft",
+    "Last Updated": "2023-06-23 19:14:39Z",
+    "Products made with this leather": [
+      "08f6968b42ab4f56a2732ae62f7a9978",
+      "3639ca7aebb64029884fc84d9c7eaf87",
+      "116b958e9be14773b2bdafa4faab4e94",
+      "f2509b2f844e47c1ab25113d5ec7a32e",
+      "f1d9661f6ccf413e811ba2d76f93baa6"
+    ],
+    "Skin": "Vachette",
+    "Status": "Out of stock",
+    "Finishing": null,
+    "Origin of Skin": null,
+    "Max-length": null,
+    "Tanning": null,
+    "Created": "2021-05-24 19:43:16Z",
+    "Name": "Brown Brick - LUXE"
+  },
+  "createdTime": "2021-05-24 19:43:16Z",
+  "lastEdited": "2023-06-23T19:14:39.052Z",
+  "cover": "./fdae8febf9e44524b7621f82d89033df/1.jpg",
+  "images": [
+    {
+      "file": "./fdae8febf9e44524b7621f82d89033df/1.jpg",
+      "caption": "",
+      "width": 1534,
+      "height": 863
+    },
+    {
+      "file": "./fdae8febf9e44524b7621f82d89033df/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "D'une épaisseur de 1mm à 1,8mm, ce cuir d'origine française et de la gamme LUXE est un classique dans les produits en cuir, à côté des couleurs \"fauve\" et \"cognac\".\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "D'une épaisseur de 1mm à 1,8mm, ce cuir d'origine française et de la gamme LUXE est un classique dans les produits en cuir, à côté des couleurs \"fauve\" et \"cognac\".\n\n{{image:1}}\n{{image:2}}",
+  "slug": "brown-brick-luxe"
+}

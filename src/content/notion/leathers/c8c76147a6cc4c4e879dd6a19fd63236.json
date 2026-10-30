@@ -1,0 +1,53 @@
+{
+  "notionId": "c8c76147a6cc4c4e879dd6a19fd63236",
+  "notionUrl": "https://app.notion.com/p/c8c76147a6cc4c4e879dd6a19fd63236",
+  "name": "Matt Milled - Cognac",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Soft",
+    "Last Updated": "2023-11-06 22:26:26Z",
+    "Products made with this leather": [
+      "b7b641e6ca4f4b629bef5b88382ba0e8"
+    ],
+    "Skin": "Calf",
+    "Status": "In stock",
+    "Finishing": "Semi-anilin + Dyed Wax",
+    "Origin of Skin": "Italy",
+    "Max-length": null,
+    "Tanning": "Veg-Tan",
+    "Created": "2023-11-06 22:08:21Z",
+    "Name": "Matt Milled - Cognac"
+  },
+  "createdTime": "2023-11-06 22:08:21Z",
+  "lastEdited": "2023-11-06T22:26:26.147Z",
+  "cover": "./c8c76147a6cc4c4e879dd6a19fd63236/4.jpg",
+  "images": [
+    {
+      "file": "./c8c76147a6cc4c4e879dd6a19fd63236/1.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "./c8c76147a6cc4c4e879dd6a19fd63236/2.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "./c8c76147a6cc4c4e879dd6a19fd63236/3.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "./c8c76147a6cc4c4e879dd6a19fd63236/4.jpg",
+      "caption": "",
+      "width": 779,
+      "height": 584
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "slug": "matt-milled-cognac"
+}

@@ -1,0 +1,39 @@
+{
+  "notionId": "49a3f50c1f5a4fa983fb84f0c0c419c1",
+  "notionUrl": "https://app.notion.com/p/49a3f50c1f5a4fa983fb84f0c0c419c1",
+  "name": "Turquoise Blue - SWEET",
+  "properties": {
+    "Type of skin": "N/C",
+    "Fermness": "Really soft",
+    "Last Updated": "2023-11-06 21:50:55Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "Out of stock",
+    "Finishing": null,
+    "Origin of Skin": "Unknown",
+    "Max-length": null,
+    "Tanning": null,
+    "Created": "2021-05-24 19:43:16Z",
+    "Name": "Turquoise Blue - SWEET"
+  },
+  "createdTime": "2021-05-24 19:43:16Z",
+  "lastEdited": "2023-11-06T21:50:55.156Z",
+  "cover": "./49a3f50c1f5a4fa983fb84f0c0c419c1/1.jpg",
+  "images": [
+    {
+      "file": "./49a3f50c1f5a4fa983fb84f0c0c419c1/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    },
+    {
+      "file": "./49a3f50c1f5a4fa983fb84f0c0c419c1/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "A 1mm leather that is quite soft in thickness and ideal for small jobs such as soft bags or pouches for example. This turquoise color works very well alone or with colors like white, red or yellow.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Un cuir de 1 mm d'épaisseur, plutôt souple, idéal pour les petits ouvrages comme les sacs souples ou les pochettes par exemple. Ce turquoise fonctionne très bien seul ou associé à des couleurs comme le blanc, le rouge ou le jaune.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "turquoise-blue-sweet"
+}

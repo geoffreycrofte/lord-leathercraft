@@ -1,0 +1,33 @@
+{
+  "notionId": "8265c2710b6a47f8948b43b84b811ca4",
+  "notionUrl": "https://app.notion.com/p/8265c2710b6a47f8948b43b84b811ca4",
+  "name": "Flamingo Pink",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:11:00Z",
+    "Related to Catalogue des produits (Property)": null,
+    "Status": "Available",
+    "Created": "2021-06-29 19:10:35Z",
+    "Name": "Flamingo Pink"
+  },
+  "createdTime": "2021-06-29 19:10:35Z",
+  "lastEdited": "2021-06-29T19:11:00.000Z",
+  "cover": "./8265c2710b6a47f8948b43b84b811ca4/1.jpg",
+  "images": [
+    {
+      "file": "./8265c2710b6a47f8948b43b84b811ca4/1.jpg",
+      "caption": "",
+      "width": 1919,
+      "height": 1079
+    },
+    {
+      "file": "./8265c2710b6a47f8948b43b84b811ca4/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1127
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "flamingo-pink"
+}

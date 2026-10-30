@@ -1,0 +1,47 @@
+{
+  "notionId": "2ce1d3452674806eb135ed9ed023b8e2",
+  "notionUrl": "https://app.notion.com/p/2ce1d3452674806eb135ed9ed023b8e2",
+  "name": "GIA - Double roller buckle",
+  "properties": {
+    "Look": [
+      "Chrome",
+      "Silver"
+    ],
+    "Available sizes": [
+      "20mm",
+      "25mm"
+    ],
+    "Material": [
+      "Zamac",
+      "Steel",
+      "Nickel Plated"
+    ],
+    "Created": "2025-12-19 09:29:04Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Double",
+      "Ardillon"
+    ],
+    "Name": "GIA - Double roller buckle"
+  },
+  "createdTime": "2025-12-19 09:29:04Z",
+  "lastEdited": "2025-12-19T09:33:10.481Z",
+  "cover": "./2ce1d3452674806eb135ed9ed023b8e2/1.jpg",
+  "images": [
+    {
+      "file": "./2ce1d3452674806eb135ed9ed023b8e2/1.jpg",
+      "caption": "",
+      "width": 600,
+      "height": 600
+    },
+    {
+      "file": "./2ce1d3452674806eb135ed9ed023b8e2/2.jpg",
+      "caption": "",
+      "width": 600,
+      "height": 600
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}\nMade in China",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}\nFabriqué en Chine",
+  "slug": "gia-double-roller-buckle"
+}

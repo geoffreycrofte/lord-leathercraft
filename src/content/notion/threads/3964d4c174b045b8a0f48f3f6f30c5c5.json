@@ -1,0 +1,36 @@
+{
+  "notionId": "3964d4c174b045b8a0f48f3f6f30c5c5",
+  "notionUrl": "https://app.notion.com/p/3964d4c174b045b8a0f48f3f6f30c5c5",
+  "name": "Silver White",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:43:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "cf643a8401a74418bd2f1963341b2b53",
+      "ab7a61c8cd35419eaead96cde1b1cc3f"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 18:50:15Z",
+    "Name": "Silver White"
+  },
+  "createdTime": "2021-06-29 18:50:15Z",
+  "lastEdited": "2021-06-29T19:43:00.000Z",
+  "cover": "./3964d4c174b045b8a0f48f3f6f30c5c5/1.jpg",
+  "images": [
+    {
+      "file": "./3964d4c174b045b8a0f48f3f6f30c5c5/1.jpg",
+      "caption": "",
+      "width": 1467,
+      "height": 826
+    },
+    {
+      "file": "./3964d4c174b045b8a0f48f3f6f30c5c5/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "silver-white"
+}

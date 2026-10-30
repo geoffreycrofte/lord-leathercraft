@@ -1,0 +1,36 @@
+{
+  "notionId": "81ecf9e34c6a4d22af3448acccd60495",
+  "notionUrl": "https://app.notion.com/p/81ecf9e34c6a4d22af3448acccd60495",
+  "name": "Yun - Satin-finish Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2023-06-24 12:13:19Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Yun - Satin-finish Brass"
+  },
+  "createdTime": "2023-06-24 12:13:19Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./81ecf9e34c6a4d22af3448acccd60495/1.jpg",
+  "images": [
+    {
+      "file": "./81ecf9e34c6a4d22af3448acccd60495/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1632
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "yun-satin-finish-brass"
+}

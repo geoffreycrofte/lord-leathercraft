@@ -1,0 +1,36 @@
+{
+  "notionId": "13b1d34526748049895bf46fc18c6810",
+  "notionUrl": "https://app.notion.com/p/13b1d34526748049895bf46fc18c6810",
+  "name": "A7 - Double Band Plate",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Steel"
+    ],
+    "Created": "2024-11-11 19:58:59Z",
+    "Finishing": "Brushed",
+    "Type": [
+      "Buckle Plate"
+    ],
+    "Name": "A7 - Double Band Plate"
+  },
+  "createdTime": "2024-11-11 19:58:59Z",
+  "lastEdited": "2024-11-11T20:19:40.025Z",
+  "cover": "./13b1d34526748049895bf46fc18c6810/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d34526748049895bf46fc18c6810/1.jpg",
+      "caption": "",
+      "width": 800,
+      "height": 800
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a7-double-band-plate"
+}

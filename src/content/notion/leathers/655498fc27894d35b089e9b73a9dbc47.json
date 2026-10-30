@@ -1,0 +1,42 @@
+{
+  "notionId": "655498fc27894d35b089e9b73a9dbc47",
+  "notionUrl": "https://app.notion.com/p/655498fc27894d35b089e9b73a9dbc47",
+  "name": "Brown Oiled Vintage",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-11-06 21:50:22Z",
+    "Products made with this leather": [
+      "cf643a8401a74418bd2f1963341b2b53",
+      "142604c2d06d4174be7848e89e5f3450"
+    ],
+    "Skin": "Cow",
+    "Status": "Out of stock",
+    "Finishing": null,
+    "Origin of Skin": "N/C",
+    "Max-length": null,
+    "Tanning": "Latigo (Mixed)",
+    "Created": "2021-05-24 19:43:16Z",
+    "Name": "Brown Oiled Vintage"
+  },
+  "createdTime": "2021-05-24 19:43:16Z",
+  "lastEdited": "2023-11-06T21:50:22.566Z",
+  "cover": "./655498fc27894d35b089e9b73a9dbc47/0-cover.jpg",
+  "images": [
+    {
+      "file": "./655498fc27894d35b089e9b73a9dbc47/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./655498fc27894d35b089e9b73a9dbc47/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "This leather is approximately 1.6mm thick and is oiled, giving it a dark, vintage look that will lighten with time or physical stresses: knocks, twists, bends.\n\nTime will only make this leather much more typical and pretty, the stamp will do many favours to the aesthetics of your products 😎\n\n## Cleaning\n\nFor maintenance, use a standard, non-coloured shoe care product. If in doubt, test the product on a small, inconspicuous part of the leather.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Ce cuir d'environ 1,6 mm d'épaisseur est huilé, ce qui lui donne un aspect sombre et vintage qui s'éclaircira avec le temps ou sous l'effet des contraintes physiques : chocs, torsions, pliures.\n\nLe temps ne fera que rendre ce cuir encore plus typé et plus beau, et le marquage sublimera l'esthétique de vos produits 😎\n\n## Entretien\n\nPour l'entretien, utilisez un produit d'entretien pour chaussures classique et incolore. En cas de doute, testez le produit sur une petite zone peu visible du cuir.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "brown-oiled-vintage"
+}

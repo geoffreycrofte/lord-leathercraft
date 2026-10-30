@@ -4,7 +4,9 @@ import { guidePath, otherLang, type Lang } from '../i18n/ui';
 export type Article = CollectionEntry<'articles'>;
 
 export async function getArticles(lang?: Lang) {
-  const all = await getCollection('articles', ({ data }) => !data.draft && (!lang || data.lang === lang));
+  // Drafts show up in `npm run dev`, or in a build with PUBLIC_SHOW_DRAFTS=true, for proofreading.
+  const showDrafts = import.meta.env.DEV || import.meta.env.PUBLIC_SHOW_DRAFTS === 'true';
+  const all = await getCollection('articles', ({ data }) => (!data.draft || showDrafts) && (!lang || data.lang === lang));
   return all.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 }
 

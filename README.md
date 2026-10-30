@@ -82,6 +82,19 @@ import photo from '../../../assets/articles/photo.jpg';
 <YouTube id="VIDEO_ID" title="Titre de la vidéo" lang="fr" />
 ```
 
+### Brouillons
+
+Ajoutez `draft: true` dans l'en-tête : l'article n'apparaît pas sur le site publié. Pour le relire :
+
+- `npm run dev`, puis ouvrez l'article dans le navigateur ;
+- ou `PUBLIC_SHOW_DRAFTS=true npm run build && npm run preview` pour une version construite avec les brouillons.
+
+Retirez la ligne `draft: true` (dans les deux langues) pour publier.
+
+### Schémas de cuir
+
+`<LeatherDiagram kind="…" lang="fr" />` dessine une coupe de cuir en SVG, aux couleurs du site et avec du vrai texte : `hide` (couches d'une peau), `aniline`, `semi-aniline`, `pigmented`, `pull-up`.
+
 ### Liens affiliés
 
 Colle simplement le lien en Markdown. Les liens Amazon (avec `tag=` ou `amzn.to`), AliExpress (`s.click.aliexpress.com`) et Payhip (`fp_ref=`) sont détectés automatiquement. Ils reçoivent alors :

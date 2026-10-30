@@ -243,6 +243,41 @@ a:hover {
   border-radius: var(--radius);
 }
 
+/* Tables: a focusable region that scrolls sideways when the table is wider than the screen. */
+.table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: var(--space-m) 0;
+  border-radius: var(--radius-s);
+}
+.prose table {
+  border-collapse: collapse;
+  overflow-wrap: normal;
+  font-size: 0.9375rem;
+}
+.prose th,
+.prose td {
+  padding: 0.625rem 0.875rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+.prose thead th {
+  border-bottom: 2px solid var(--primary-300);
+  font-weight: 700;
+}
+@media (max-width: 30rem) {
+  .prose th,
+  .prose td {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+.prose tbody th,
+.prose tbody td:first-child {
+  font-weight: 600;
+}
+
 /* Pill buttons. */
 .button {
   display: inline-flex;

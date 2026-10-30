@@ -8,6 +8,8 @@ const AFFILIATE_HOSTS = [
   'amzn.eu',
   's.click.aliexpress.com',
   'a.aliexpress.com',
+  // Partner shop with the LORD7 discount code.
+  'buyleatheronline.com',
 ];
 const AFFILIATE_PARAMS = ['fp_ref', 'tag', 'aff', 'aff_id', 'ref_id'];
 

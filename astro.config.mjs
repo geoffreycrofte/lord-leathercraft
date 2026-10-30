@@ -4,6 +4,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { unified } from '@astrojs/markdown-remark';
 import { remarkAffiliateLinks } from './src/lib/remark-affiliate-links.mjs';
+import { rehypeTableWrap } from './src/lib/rehype-table-wrap.mjs';
 
 export default defineConfig({
   site: 'https://lord.crofte.fr',
@@ -16,7 +17,7 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
   markdown: {
-    processor: unified({ remarkPlugins: [remarkAffiliateLinks] }),
+    processor: unified({ remarkPlugins: [remarkAffiliateLinks], rehypePlugins: [rehypeTableWrap] }),
   },
   integrations: [
     mdx(),

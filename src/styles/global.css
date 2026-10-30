@@ -87,6 +87,13 @@ body {
 
 main {
   flex: 1;
+  /* Room before the footer (and its hide edge, 1.25rem tall). */
+  padding-bottom: calc(var(--space-xl) + 1.25rem);
+}
+
+/* Pages ending with a full-width section already have their own spacing. */
+main:has(> .section:last-child) {
+  padding-bottom: 1.25rem;
 }
 
 h1,

@@ -1,0 +1,90 @@
+{
+  "notionId": "ca0bb4357f3b490db6bea6eefc4bd5a4",
+  "notionUrl": "https://app.notion.com/p/ca0bb4357f3b490db6bea6eefc4bd5a4",
+  "name": "Pickey - Guitar Pick Holder",
+  "properties": {
+    "Name": "Pickey - Guitar Pick Holder",
+    "Tags": [
+      "Accessories",
+      "Guitar"
+    ],
+    "Status": "Available on demand",
+    "Price": 45,
+    "Dimensions": null,
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "A keyfob with small rooms for 4 guitar picks",
+    "Leather Type": [
+      "654edb74d3ef4ab58f3a5f645e716f95",
+      "0e4a32949cdd4fe7a84c0aa545d10631"
+    ],
+    "Thread Type": [
+      "c02c9f9539934ec9a41b28e2209e8788"
+    ],
+    "Created": "2024-02-04 16:21:00Z",
+    "Last Updated": "2024-02-04 16:36:21Z"
+  },
+  "createdTime": "2024-02-04T16:21:00Z",
+  "lastEdited": "2024-02-04T16:36:21Z",
+  "cover": "./ca0bb4357f3b490db6bea6eefc4bd5a4/2.jpg",
+  "images": [
+    {
+      "file": "./ca0bb4357f3b490db6bea6eefc4bd5a4/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./ca0bb4357f3b490db6bea6eefc4bd5a4/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./ca0bb4357f3b490db6bea6eefc4bd5a4/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./ca0bb4357f3b490db6bea6eefc4bd5a4/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./ca0bb4357f3b490db6bea6eefc4bd5a4/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./ca0bb4357f3b490db6bea6eefc4bd5a4/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./ca0bb4357f3b490db6bea6eefc4bd5a4/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./ca0bb4357f3b490db6bea6eefc4bd5a4/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./ca0bb4357f3b490db6bea6eefc4bd5a4/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "The Pickey is a small keyfob allowing you to carry 4 of your favourite picks alongside your keys, or anywhere you want to hook them.\n\n## Pictures\n\nSome pictures with picks inside.\n\n{{image:1}}\n{{image:2}}\nWhen empty.\n\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\nSome details\n\n{{image:8}}\n{{image:9}}",
+  "contentMarkdownFr": "Le Pickey est un petit porte-clés qui vous permet d'emporter 4 de vos médiators préférés avec vos clés, ou de les accrocher où vous voulez.\n\n## Photos\n\nQuelques photos avec des médiators à l'intérieur.\n\n{{image:1}}\n{{image:2}}\nVide.\n\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\nQuelques détails\n\n{{image:8}}\n{{image:9}}",
+  "descriptionFr": "Un porte-clés avec de petits compartiments pour 4 médiators",
+  "slug": "pickey-guitar-pick-holder"
+}

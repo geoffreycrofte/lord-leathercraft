@@ -1,0 +1,116 @@
+{
+  "notionId": "fb8f6ba1a4164e0899d23c4b6f25f463",
+  "notionUrl": "https://app.notion.com/p/fb8f6ba1a4164e0899d23c4b6f25f463",
+  "name": "Nest — Minimalist card holder",
+  "properties": {
+    "Name": "Nest — Minimalist card holder",
+    "Tags": [
+      "Minimalist",
+      "Card Holder",
+      "Nomad Wallet"
+    ],
+    "Status": "Available on demand",
+    "Price": 40,
+    "Dimensions": "10 x 7 cm (6mm thickness)",
+    "Weight": null,
+    "Stock": "1 in stock",
+    "Description": "A classical minimalist card holder",
+    "Leather Type": [],
+    "Thread Type": [],
+    "Created": "2021-06-03 21:39:00Z",
+    "Last Updated": "2023-06-24 11:09:56Z"
+  },
+  "createdTime": "2021-06-03T21:39:00Z",
+  "lastEdited": "2023-06-24T11:09:56Z",
+  "cover": "./fb8f6ba1a4164e0899d23c4b6f25f463/1.jpg",
+  "images": [
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1127
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1123
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1123
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1123
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/11.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/12.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/13.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1123
+    },
+    {
+      "file": "./fb8f6ba1a4164e0899d23c4b6f25f463/14.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "This is the shape of a classical card holder with 1 central pocket and 2 side pockets.\n\nYou can put between 3 and 5 cards in there.\n\nThis is made for people in love with minimalist lifestyle and don't bother with useless cards and stuff in there pocket.\n\n[🎨 Play with the colours](https://lord.crofte.fr/leather-color-picker/?c2=brown&c1=blue&p=2)\n\nAsk for leather and thread colors customisation.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\nSome pictures of the creation of it.\n\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}\n{{image:13}}\n{{image:14}}",
+  "contentMarkdownFr": "C'est la forme d'un porte-cartes classique, avec 1 poche centrale et 2 poches latérales.\n\nVous pouvez y glisser entre 3 et 5 cartes.\n\nIl est pensé pour les amoureux du mode de vie minimaliste, qui ne s'encombrent pas de cartes inutiles et autres objets superflus dans leurs poches.\n\n[🎨 Jouez avec les couleurs](https://lord.crofte.fr/leather-color-picker/?c2=brown&c1=blue&p=2)\n\nDemandez une personnalisation des couleurs du cuir et du fil.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\nQuelques photos de sa fabrication.\n\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}\n{{image:13}}\n{{image:14}}",
+  "descriptionFr": "Un porte-cartes minimaliste classique",
+  "slug": "nest-minimalist-card-holder"
+}

@@ -1,0 +1,90 @@
+{
+  "notionId": "d1e51fca464e4f42b4ff8b543117f6f0",
+  "notionUrl": "https://app.notion.com/p/d1e51fca464e4f42b4ff8b543117f6f0",
+  "name": "Belt - Black Classic 2",
+  "properties": {
+    "Name": "Belt - Black Classic 2",
+    "Tags": [
+      "Wearable",
+      "Belt",
+      "Accessories",
+      "Lifestyle"
+    ],
+    "Status": "Available on demand",
+    "Price": 88,
+    "Dimensions": "3.5cm x 115cm",
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "A strong black belt with chrome buckle",
+    "Leather Type": [
+      "572ffe7866034a0f84bbd77a284f6523",
+      "ce1468c6a6ee42a4a1a6d2693a211335"
+    ],
+    "Thread Type": [],
+    "Created": "2023-01-29 21:09:08Z",
+    "Last Updated": "2024-07-08 11:59:24Z"
+  },
+  "createdTime": "2023-01-29T21:09:08Z",
+  "lastEdited": "2024-07-08T11:59:24Z",
+  "cover": "./d1e51fca464e4f42b4ff8b543117f6f0/2.jpg",
+  "images": [
+    {
+      "file": "./d1e51fca464e4f42b4ff8b543117f6f0/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./d1e51fca464e4f42b4ff8b543117f6f0/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./d1e51fca464e4f42b4ff8b543117f6f0/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./d1e51fca464e4f42b4ff8b543117f6f0/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./d1e51fca464e4f42b4ff8b543117f6f0/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./d1e51fca464e4f42b4ff8b543117f6f0/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./d1e51fca464e4f42b4ff8b543117f6f0/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./d1e51fca464e4f42b4ff8b543117f6f0/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./d1e51fca464e4f42b4ff8b543117f6f0/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "Always ask for your dimensions.\n\nMax-lenght is around 120cm but if you need a custom longer size, i’m sure I can find a solution for you! 👌\n\n## Some photos\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}",
+  "contentMarkdownFr": "Précisez toujours vos dimensions.\n\nLa longueur maximale est d'environ 120 cm, mais si vous avez besoin d'une taille plus longue sur mesure, je suis sûr de pouvoir trouver une solution pour vous ! 👌\n\n## Quelques photos\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}",
+  "descriptionFr": "Une ceinture noire robuste avec boucle chromée",
+  "slug": "belt-black-classic-2"
+}

@@ -1,0 +1,59 @@
+{
+  "notionId": "11558436490c4fb880e7d5b8d7dc401e",
+  "notionUrl": "https://app.notion.com/p/11558436490c4fb880e7d5b8d7dc401e",
+  "name": "Belt - Thin Casual",
+  "properties": {
+    "Name": "Belt - Thin Casual",
+    "Tags": [
+      "Lifestyle",
+      "Accessories",
+      "Belt",
+      "Wearable"
+    ],
+    "Status": "Available on demand",
+    "Price": 88,
+    "Dimensions": "4mm x 120cm approx.",
+    "Weight": null,
+    "Stock": "On demand",
+    "Description": "A vintage-styled belt with a brushed chrome buckle",
+    "Leather Type": [
+      "6b6ec3352c094e31b254af808405d7a8"
+    ],
+    "Thread Type": [],
+    "Created": "2024-07-08 11:41:15Z",
+    "Last Updated": "2024-07-08 11:47:06Z"
+  },
+  "createdTime": "2024-07-08T11:41:15Z",
+  "lastEdited": "2024-07-08T11:47:06Z",
+  "cover": "./11558436490c4fb880e7d5b8d7dc401e/2.jpg",
+  "images": [
+    {
+      "file": "./11558436490c4fb880e7d5b8d7dc401e/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1118
+    },
+    {
+      "file": "./11558436490c4fb880e7d5b8d7dc401e/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./11558436490c4fb880e7d5b8d7dc401e/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./11558436490c4fb880e7d5b8d7dc401e/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "This belt is made on-demand at your size (if the provider has the right length of course, it can depend on their stock). The metallic parts are all silver/chrome with a old brushed aspect. The leather used is slightly smooth and won't hurt your body if you move a lot.\n\nThe pattern on the leather is slightly marble and play a great role in its vintage and classy aspect.\n\nAlways ask for your dimensions. Max-lenght is around 120cm but if you need a custom longer size, i’m sure I can find a solution for you! 👌\n\n## A belt making-of video\n\n[Video](https://youtube.com/shorts/A0nI1n870-o?si=TGbj0aOkc8mvgK-b)\n\n## Some pictures\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\nA macro photos of the details.\n\n{{image:4}}",
+  "contentMarkdownFr": "Cette ceinture est fabriquée sur demande à votre taille (à condition que le fournisseur ait la bonne longueur, bien sûr, cela peut dépendre de son stock). Les pièces métalliques sont toutes argentées/chromées, avec un aspect brossé vieilli. Le cuir utilisé est légèrement lisse et ne vous blessera pas si vous bougez beaucoup.\n\nLe motif du cuir est légèrement marbré et joue un grand rôle dans son aspect vintage et chic.\n\nDemandez toujours pour vos dimensions. La longueur maximale est d'environ 120cm, mais si vous avez besoin d'une taille plus longue sur mesure, je suis sûr de pouvoir trouver une solution pour vous ! 👌\n\n## Une vidéo de fabrication de ceinture\n\n[Vidéo](https://youtube.com/shorts/A0nI1n870-o?si=TGbj0aOkc8mvgK-b)\n\n## Quelques photos\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\nUne photo macro des détails.\n\n{{image:4}}",
+  "descriptionFr": "Une ceinture au style vintage avec une boucle en chrome brossé",
+  "slug": "belt-thin-casual"
+}

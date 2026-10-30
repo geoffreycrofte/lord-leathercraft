@@ -1,0 +1,60 @@
+{
+  "notionId": "c5b1158767f845bdbd69a262a9957067",
+  "notionUrl": "https://app.notion.com/p/c5b1158767f845bdbd69a262a9957067",
+  "name": "Belt - Black Classic",
+  "properties": {
+    "Name": "Belt - Black Classic",
+    "Tags": [
+      "Wearable",
+      "Belt",
+      "Accessories",
+      "Lifestyle"
+    ],
+    "Status": "Available on demand",
+    "Price": 88,
+    "Dimensions": "3.5cm x 120cm",
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "A strong black belt with chrome buckle",
+    "Leather Type": [
+      "572ffe7866034a0f84bbd77a284f6523",
+      "ce1468c6a6ee42a4a1a6d2693a211335"
+    ],
+    "Thread Type": [],
+    "Created": "2024-07-08 11:52:44Z",
+    "Last Updated": "2024-07-08 11:59:10Z"
+  },
+  "createdTime": "2024-07-08T11:52:44Z",
+  "lastEdited": "2024-07-08T11:59:10Z",
+  "cover": "./c5b1158767f845bdbd69a262a9957067/0-cover.jpg",
+  "images": [
+    {
+      "file": "./c5b1158767f845bdbd69a262a9957067/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./c5b1158767f845bdbd69a262a9957067/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./c5b1158767f845bdbd69a262a9957067/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./c5b1158767f845bdbd69a262a9957067/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "Always ask for your dimensions.\n\nMax-lenght is around 120cm but if you need a custom longer size, i’m sure I can find a solution for you! 👌\n\n## Some photos\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "contentMarkdownFr": "Demandez toujours pour vos dimensions.\n\nLa longueur maximale est d'environ 120cm, mais si vous avez besoin d'une taille plus longue sur mesure, je suis sûr de pouvoir trouver une solution pour vous ! 👌\n\n## Quelques photos\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "descriptionFr": "Une ceinture noire robuste avec boucle chromée",
+  "slug": "belt-black-classic"
+}

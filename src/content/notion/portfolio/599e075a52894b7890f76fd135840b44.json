@@ -1,0 +1,115 @@
+{
+  "notionId": "599e075a52894b7890f76fd135840b44",
+  "notionUrl": "https://app.notion.com/p/599e075a52894b7890f76fd135840b44",
+  "name": "Buzzy - Business Card Holder",
+  "properties": {
+    "Name": "Buzzy - Business Card Holder",
+    "Tags": [
+      "Minimalist",
+      "Card Holder",
+      "Lifestyle",
+      "work"
+    ],
+    "Status": "Available on demand",
+    "Price": 45,
+    "Dimensions": "For 8.5 x 5.5 business cards.",
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "A minimalist business card holder",
+    "Leather Type": [
+      "cc96deecd0354d78a97fa055b9dd9688"
+    ],
+    "Thread Type": [
+      "3086aa6a54234e7db3f11af0af7a9723"
+    ],
+    "Created": "2023-05-19 11:23:16Z",
+    "Last Updated": "2023-09-17 19:58:42Z"
+  },
+  "createdTime": "2023-05-19T11:23:16Z",
+  "lastEdited": "2023-09-17T19:58:42Z",
+  "cover": "./599e075a52894b7890f76fd135840b44/1.jpg",
+  "images": [
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/11.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/12.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./599e075a52894b7890f76fd135840b44/13.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}\n{{image:13}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}\n{{image:13}}",
+  "descriptionFr": "Un porte-cartes de visite minimaliste",
+  "slug": "buzzy-business-card-holder"
+}

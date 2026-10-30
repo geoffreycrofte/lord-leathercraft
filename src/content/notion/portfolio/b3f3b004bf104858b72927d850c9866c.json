@@ -1,0 +1,100 @@
+{
+  "notionId": "b3f3b004bf104858b72927d850c9866c",
+  "notionUrl": "https://app.notion.com/p/b3f3b004bf104858b72927d850c9866c",
+  "name": "Tria - Triangle Shaped Earings",
+  "properties": {
+    "Name": "Tria - Triangle Shaped Earings",
+    "Tags": [
+      "Earings",
+      "Wearable",
+      "Jewelry"
+    ],
+    "Status": "Available on demand",
+    "Price": 25,
+    "Dimensions": null,
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "Minimalist colorful earings",
+    "Leather Type": [
+      "654edb74d3ef4ab58f3a5f645e716f95"
+    ],
+    "Thread Type": [],
+    "Created": "2022-12-13 20:30:00Z",
+    "Last Updated": "2024-01-13 20:58:57Z"
+  },
+  "createdTime": "2022-12-13T20:30:00Z",
+  "lastEdited": "2024-01-13T20:58:57Z",
+  "cover": "./b3f3b004bf104858b72927d850c9866c/4.jpg",
+  "images": [
+    {
+      "file": "./b3f3b004bf104858b72927d850c9866c/1.jpg",
+      "caption": "",
+      "width": 1832,
+      "height": 774
+    },
+    {
+      "file": "./b3f3b004bf104858b72927d850c9866c/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./b3f3b004bf104858b72927d850c9866c/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b3f3b004bf104858b72927d850c9866c/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b3f3b004bf104858b72927d850c9866c/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b3f3b004bf104858b72927d850c9866c/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b3f3b004bf104858b72927d850c9866c/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b3f3b004bf104858b72927d850c9866c/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b3f3b004bf104858b72927d850c9866c/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b3f3b004bf104858b72927d850c9866c/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b3f3b004bf104858b72927d850c9866c/11.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "These Geometrical Earings are ideal to match colorful outfits or to bring colours in a more single-colored-dress for instance.\n\nThe colours can be picked among a list of several leathers like Ortensia and Napoli (these colors), but also Dark Red, Navy, Violet, Olive, Cognac, dark brown, Natural (beige), or black if it's your colour 😉\n\n2 fermoirs are available : hook (this one) or buckle (a closing one)\n\n## “Pelle” Certificate\n\n{{image:1}}\nThis version of leather product comes with a first grade leather, a tannery from Toscany (Italy) that respects the [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). It’s proof of quality, and respect for nature.\n\n## Some Pictures\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n## With reversed colours.\n\nYou can also ask any color combination you want 😊\n\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}",
+  "contentMarkdownFr": "Ces boucles d'oreilles géométriques sont idéales pour s'accorder à des tenues colorées, ou pour apporter une touche de couleur à une robe plus unie, par exemple.\n\nLes couleurs peuvent être choisies parmi plusieurs cuirs, comme Ortensia et Napoli (les couleurs présentées ici), mais aussi Dark Red, Navy, Violet, Olive, Cognac, marron foncé, Natural (beige), ou noir si c'est votre couleur 😉\n\n2 fermoirs sont disponibles : crochet (celui-ci) ou dormeuse (un modèle qui se ferme).\n\n## Certificat « Pelle »\n\n{{image:1}}\nCette version est réalisée dans un cuir de premier choix, issu d'une tannerie de Toscane (Italie) qui respecte le [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). C'est un gage de qualité et de respect de la nature.\n\n## Quelques photos\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n## Avec les couleurs inversées\n\nVous pouvez aussi demander n'importe quelle combinaison de couleurs 😊\n\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}",
+  "descriptionFr": "Boucles d'oreilles minimalistes et colorées",
+  "slug": "tria-triangle-shaped-earings"
+}

@@ -1,0 +1,112 @@
+{
+  "notionId": "fba1cd4fe25b42e5a2d504bc12b39e4c",
+  "notionUrl": "https://app.notion.com/p/fba1cd4fe25b42e5a2d504bc12b39e4c",
+  "name": "Namae - Identity Card Holder",
+  "properties": {
+    "Name": "Namae - Identity Card Holder",
+    "Tags": [
+      "Card Holder",
+      "Identity",
+      "Travel"
+    ],
+    "Status": "Available on demand",
+    "Price": 42,
+    "Dimensions": "12.4 x 9 cm (8mm thickness)",
+    "Weight": "55g",
+    "Stock": "1 in stock",
+    "Description": "Rooms for 1 ID card or driver's license (french) and 2 cards",
+    "Leather Type": [
+      "90143a8cd6eb4d478354c13cf907f2e9",
+      "ba7c693c264c4c15bc841c8d28a879e2",
+      "e4e1a83027894ce1a5e6d0cdcda1e1f2",
+      "706a0a1e3c9a4842bf3bf4d7ae958ad5"
+    ],
+    "Thread Type": [
+      "0726545c314e4cb4922af10cc6dbad8f",
+      "25c8733dc7184d4397c9eb55a9cdd4f6"
+    ],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2023-06-24 11:09:53Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2023-06-24T11:09:53Z",
+  "cover": "./fba1cd4fe25b42e5a2d504bc12b39e4c/2.jpg",
+  "images": [
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/11.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1123
+    },
+    {
+      "file": "./fba1cd4fe25b42e5a2d504bc12b39e4c/12.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "This model was designed to hold 1 French identity card (from before our new credit card format version), 1 driver's license (the pink document) and 2 cards on the side pockets.\n\nYou can even slip in some receipts and subway tickets.\n\nThe 2 leathers used are oiled leathers that change color when handled (they become lighter if stretched), they are very qualitative and make it a high quality product.\n\nHere are some pictures of the product and its design.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\nAnd here some pics of the creation of it.\n\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}",
+  "contentMarkdownFr": "Ce modèle a été conçu pour accueillir 1 carte d'identité française (l'ancien format, avant la nouvelle version au format carte bancaire), 1 permis de conduire (le document rose) et 2 cartes dans les poches latérales.\n\nVous pouvez même y glisser quelques reçus et tickets de métro.\n\nLes 2 cuirs utilisés sont des cuirs huilés qui changent de couleur avec les manipulations (ils s'éclaircissent lorsqu'ils sont étirés) ; ils sont de très grande qualité et en font un produit haut de gamme.\n\nVoici quelques photos du produit et de sa conception.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\nEt voici quelques photos de sa fabrication.\n\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}",
+  "descriptionFr": "De la place pour 1 carte d'identité ou 1 permis de conduire (français) et 2 cartes",
+  "slug": "namae-identity-card-holder"
+}

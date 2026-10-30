@@ -1,0 +1,109 @@
+{
+  "notionId": "55f563fe8dc044458e443098cfebf5e1",
+  "notionUrl": "https://app.notion.com/p/55f563fe8dc044458e443098cfebf5e1",
+  "name": "Lea - Flap Bi-fold Cardholder",
+  "properties": {
+    "Name": "Lea - Flap Bi-fold Cardholder",
+    "Tags": [
+      "Wallet",
+      "Card Holder",
+      "Lifestyle"
+    ],
+    "Status": "Available on demand",
+    "Price": 95,
+    "Dimensions": "10.5x16.5cm (open), 10.5x8.2cm (closed)",
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "Vintage cardholder with 5 pockets",
+    "Leather Type": [
+      "654edb74d3ef4ab58f3a5f645e716f95",
+      "490e0fb38e7f41a38addf153cf017692"
+    ],
+    "Thread Type": [
+      "c02c9f9539934ec9a41b28e2209e8788"
+    ],
+    "Created": "2023-06-13 20:17:08Z",
+    "Last Updated": "2024-01-10 18:45:09Z"
+  },
+  "createdTime": "2023-06-13T20:17:08Z",
+  "lastEdited": "2024-01-10T18:45:09Z",
+  "cover": "./55f563fe8dc044458e443098cfebf5e1/2.jpg",
+  "images": [
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/1.jpg",
+      "caption": "",
+      "width": 1832,
+      "height": 774
+    },
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/11.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./55f563fe8dc044458e443098cfebf5e1/12.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "This classic vintage cardholder is foldable and displays an external card slot for quick access.\n\nThis wallet has 3 card slots and 1 sub-pocket for cash or additional cards, and 1 flap pocket mostly for cash and an additional card or ticket.\n\n## “Pelle” Certificate\n\n{{image:1}}\nThis version of leather product comes with a first grade leather, a tannery from Toscany (Italy) that respects the [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). It’s proof of quality, and respect for nature.\n\n## Video of the making-of\n\nThe long version (tutorial):\n\n[Video](https://youtu.be/QdarNSfnWuI)\n\n## Video of the product\n\n[Video](https://youtube.com/shorts/YHjfVJkp2-s?feature=share3)\n\n## Some pictures\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\nSome more details\n\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}",
+  "contentMarkdownFr": "Ce porte-cartes vintage classique est pliable et dispose d'un emplacement extérieur pour un accès rapide à une carte.\n\nCe portefeuille compte 3 emplacements pour cartes et 1 sous-poche pour de l'argent liquide ou des cartes supplémentaires, ainsi qu'1 poche à rabat, surtout pour l'argent liquide et une carte ou un ticket supplémentaire.\n\n## Certificat « Pelle »\n\n{{image:1}}\nCette version est réalisée dans un cuir de premier choix, issu d'une tannerie de Toscane (Italie) qui respecte le [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). C'est un gage de qualité et de respect de la nature.\n\n## Vidéo de fabrication\n\nLa version longue (tutoriel) :\n\n[Vidéo](https://youtu.be/QdarNSfnWuI)\n\n## Vidéo du produit\n\n[Vidéo](https://youtube.com/shorts/YHjfVJkp2-s?feature=share3)\n\n## Quelques photos\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\nQuelques détails supplémentaires\n\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}",
+  "descriptionFr": "Porte-cartes vintage à 5 poches",
+  "slug": "lea-flap-bi-fold-cardholder"
+}

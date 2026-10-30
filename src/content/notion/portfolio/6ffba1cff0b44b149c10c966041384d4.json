@@ -1,0 +1,118 @@
+{
+  "notionId": "6ffba1cff0b44b149c10c966041384d4",
+  "notionUrl": "https://app.notion.com/p/6ffba1cff0b44b149c10c966041384d4",
+  "name": "Classic - Minimalist Bi-fold Cardholder",
+  "properties": {
+    "Name": "Classic - Minimalist Bi-fold Cardholder",
+    "Tags": [
+      "Wallet",
+      "Card Holder",
+      "Lifestyle"
+    ],
+    "Status": "Available on demand",
+    "Price": 95,
+    "Dimensions": null,
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "Vintage cardholder with 5 pockets",
+    "Leather Type": [],
+    "Thread Type": [
+      "61f82cc404024542a559ffb9024e5cf1"
+    ],
+    "Created": "2022-12-13 21:13:00Z",
+    "Last Updated": "2023-02-04 11:55:23Z"
+  },
+  "createdTime": "2022-12-13T21:13:00Z",
+  "lastEdited": "2023-02-04T11:55:23Z",
+  "cover": "./6ffba1cff0b44b149c10c966041384d4/10.jpg",
+  "images": [
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/1.jpg",
+      "caption": "",
+      "width": 1832,
+      "height": 774
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/11.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/12.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/13.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./6ffba1cff0b44b149c10c966041384d4/14.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "This classic vintage cardholder is foldable and displays an external card slot for quick access.\n\nThis wallet has 3 card slots and 2 sub-pocket for cash or additional cards.\n\nThis version has a waxed combo of leather, cognac and tabacco, and shows-off this unique vintage look that makes it authentic and rustic.\n\n## “Pelle” Certificate\n\n{{image:1}}\nThis version of leather product comes with a first grade leather, a tannery from Toscany (Italy) that respects the [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). It’s proof of quality, and respect for nature.\n\n## Some pictures\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}\n{{image:13}}\n{{image:14}}",
+  "contentMarkdownFr": "Ce porte-cartes vintage classique est pliable et dispose d'un emplacement extérieur pour un accès rapide à une carte.\n\nCe portefeuille compte 3 emplacements pour cartes et 2 sous-poches pour les billets ou des cartes supplémentaires.\n\nCette version associe des cuirs cirés, cognac et tabacco, et affiche ce look vintage unique qui le rend authentique et rustique.\n\n## Certificat « Pelle »\n\n{{image:1}}\nCette version est réalisée dans un cuir de premier choix, issu d'une tannerie de Toscane (Italie) qui respecte le [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). C'est un gage de qualité et de respect de la nature.\n\n## Quelques photos\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}\n{{image:13}}\n{{image:14}}",
+  "descriptionFr": "Porte-cartes vintage à 5 poches",
+  "slug": "classic-minimalist-bi-fold-cardholder"
+}

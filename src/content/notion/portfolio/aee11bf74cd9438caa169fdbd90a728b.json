@@ -1,0 +1,111 @@
+{
+  "notionId": "aee11bf74cd9438caa169fdbd90a728b",
+  "notionUrl": "https://app.notion.com/p/aee11bf74cd9438caa169fdbd90a728b",
+  "name": "Bound - iWatch Strap",
+  "properties": {
+    "Name": "Bound - iWatch Strap",
+    "Tags": [
+      "Lifestyle",
+      "Watch",
+      "Strap",
+      "Accessories",
+      "Wearable"
+    ],
+    "Status": "Available on demand",
+    "Price": 64,
+    "Dimensions": null,
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "Cognac padded watch strap with black finishes",
+    "Leather Type": [
+      "cc96deecd0354d78a97fa055b9dd9688",
+      "713e7ac037f54d639db09a43947c4829"
+    ],
+    "Thread Type": [
+      "491528dbf8ca4cfcaeefde15474cb244"
+    ],
+    "Created": "2022-07-28 20:26:00Z",
+    "Last Updated": "2022-12-12 16:18:00Z"
+  },
+  "createdTime": "2022-07-28T20:26:00Z",
+  "lastEdited": "2022-12-12T16:18:00Z",
+  "cover": "./aee11bf74cd9438caa169fdbd90a728b/7.jpg",
+  "images": [
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/1.jpg",
+      "caption": "",
+      "width": 1832,
+      "height": 774
+    },
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 3555
+    },
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/11.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 3555
+    },
+    {
+      "file": "./aee11bf74cd9438caa169fdbd90a728b/12.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "This Watch Strap is made of the most qualitative part of the leather. This full grain cognac leather is an Italian hide from the Badalassi Carlo Tannery.\n\nIt has a white thread and black is used for the accent colour on the edges and the hardware (buckles). It has been made compatible with iWatch but is totally adjustable for more classical ways to attach it.\n\n## “Pelle” Certificate\n\n{{image:1}}\nThis version of leather product comes with a first grade leather, a tannery from Toscany (Italy) that respects the [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). It’s proof of quality, and respect for nature.\n\n## Some Pictures\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}",
+  "contentMarkdownFr": "Ce bracelet de montre est réalisé dans la partie la plus qualitative du cuir. Ce cuir pleine fleur cognac est une peau italienne issue de la tannerie Badalassi Carlo.\n\nIl est cousu avec un fil blanc, et le noir est utilisé comme couleur d'accent sur les tranches et la quincaillerie (boucles). Il a été conçu pour être compatible avec l'iWatch, mais reste entièrement adaptable à des fixations plus classiques.\n\n## Certificat « Pelle »\n\n{{image:1}}\nCette version est réalisée dans un cuir de premier choix, issu d'une tannerie de Toscane (Italie) qui respecte le [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). C'est un gage de qualité et de respect de la nature.\n\n## Quelques photos\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}",
+  "descriptionFr": "Bracelet de montre rembourré couleur cognac, avec finitions noires",
+  "slug": "bound-iwatch-strap"
+}

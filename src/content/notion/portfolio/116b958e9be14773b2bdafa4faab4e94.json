@@ -1,0 +1,43 @@
+{
+  "notionId": "116b958e9be14773b2bdafa4faab4e94",
+  "notionUrl": "https://app.notion.com/p/116b958e9be14773b2bdafa4faab4e94",
+  "name": "Customizable key fob",
+  "properties": {
+    "Name": "Customizable key fob",
+    "Tags": [],
+    "Status": "Available",
+    "Price": 10,
+    "Dimensions": null,
+    "Weight": null,
+    "Stock": "2 in stock",
+    "Description": "Key ring without clip.",
+    "Leather Type": [
+      "fdae8febf9e44524b7621f82d89033df",
+      "713e7ac037f54d639db09a43947c4829"
+    ],
+    "Thread Type": [],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2023-07-29 21:01:09Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2023-07-29T21:01:09Z",
+  "cover": "./116b958e9be14773b2bdafa4faab4e94/2.jpg",
+  "images": [
+    {
+      "file": "./116b958e9be14773b2bdafa4faab4e94/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./116b958e9be14773b2bdafa4faab4e94/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "This small key ring can be personalized with a few characters (usually no more than 6) if you want to write a first name, nickname or initials.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Ce petit porte-clés peut être personnalisé avec quelques caractères (généralement 6 au maximum) si vous souhaitez y inscrire un prénom, un surnom ou des initiales.\n\n{{image:1}}\n{{image:2}}",
+  "descriptionFr": "Porte-clés sans anneau à clip.",
+  "slug": "customizable-key-fob"
+}

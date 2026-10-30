@@ -1,0 +1,78 @@
+{
+  "notionId": "be6b39e1cca9496a9884105a38ae0607",
+  "notionUrl": "https://app.notion.com/p/be6b39e1cca9496a9884105a38ae0607",
+  "name": "Belt - Black Casual",
+  "properties": {
+    "Name": "Belt - Black Casual",
+    "Tags": [
+      "Wearable",
+      "Belt",
+      "Accessories",
+      "Lifestyle"
+    ],
+    "Status": "Available on demand",
+    "Price": 88,
+    "Dimensions": "3.5cm x 120cm",
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "A strong black belt with dark buckle",
+    "Leather Type": [
+      "572ffe7866034a0f84bbd77a284f6523",
+      "ce1468c6a6ee42a4a1a6d2693a211335"
+    ],
+    "Thread Type": [],
+    "Created": "2024-07-08 11:57:03Z",
+    "Last Updated": "2024-07-08 11:58:26Z"
+  },
+  "createdTime": "2024-07-08T11:57:03Z",
+  "lastEdited": "2024-07-08T11:58:26Z",
+  "cover": "./be6b39e1cca9496a9884105a38ae0607/1.jpg",
+  "images": [
+    {
+      "file": "./be6b39e1cca9496a9884105a38ae0607/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./be6b39e1cca9496a9884105a38ae0607/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./be6b39e1cca9496a9884105a38ae0607/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./be6b39e1cca9496a9884105a38ae0607/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./be6b39e1cca9496a9884105a38ae0607/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./be6b39e1cca9496a9884105a38ae0607/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./be6b39e1cca9496a9884105a38ae0607/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "Always ask for your dimensions.\n\nMax-lenght is around 120cm but if you need a custom longer size, i’m sure I can find a solution for you! 👌\n\n## Some photos\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}",
+  "contentMarkdownFr": "Demandez toujours pour vos dimensions.\n\nLa longueur maximale est d'environ 120cm, mais si vous avez besoin d'une taille plus longue sur mesure, je suis sûr de pouvoir trouver une solution pour vous ! 👌\n\n## Quelques photos\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}",
+  "descriptionFr": "Une ceinture noire robuste avec boucle sombre",
+  "slug": "belt-black-casual"
+}

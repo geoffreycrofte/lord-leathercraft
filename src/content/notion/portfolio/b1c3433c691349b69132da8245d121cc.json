@@ -1,0 +1,101 @@
+{
+  "notionId": "b1c3433c691349b69132da8245d121cc",
+  "notionUrl": "https://app.notion.com/p/b1c3433c691349b69132da8245d121cc",
+  "name": "Belt - Brown & Brass",
+  "properties": {
+    "Name": "Belt - Brown & Brass",
+    "Tags": [
+      "Lifestyle",
+      "Accessories",
+      "Belt",
+      "Wearable"
+    ],
+    "Status": "Available on demand",
+    "Price": 88,
+    "Dimensions": "4mm x 115cm approx.",
+    "Weight": null,
+    "Stock": "On demand",
+    "Description": "A vintage-styled belt with brass buckle.",
+    "Leather Type": [
+      "c1fc8489f59e40e2bca1066fec0ffacf"
+    ],
+    "Thread Type": [],
+    "Created": "2023-01-29 21:19:31Z",
+    "Last Updated": "2024-01-13 20:43:23Z"
+  },
+  "createdTime": "2023-01-29T21:19:31Z",
+  "lastEdited": "2024-01-13T20:43:23Z",
+  "cover": "./b1c3433c691349b69132da8245d121cc/2.jpg",
+  "images": [
+    {
+      "file": "./b1c3433c691349b69132da8245d121cc/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b1c3433c691349b69132da8245d121cc/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b1c3433c691349b69132da8245d121cc/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b1c3433c691349b69132da8245d121cc/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b1c3433c691349b69132da8245d121cc/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b1c3433c691349b69132da8245d121cc/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b1c3433c691349b69132da8245d121cc/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b1c3433c691349b69132da8245d121cc/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b1c3433c691349b69132da8245d121cc/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b1c3433c691349b69132da8245d121cc/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./b1c3433c691349b69132da8245d121cc/11.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "This belt is made on-demand at your size (if the provider has the right length of course, it can depend on their stock). The metallic parts are all brass with a old brushed style. The leather used is a true full grain leather, strong and smooth at the same time.\n\nAlways ask for your dimensions. Max-lenght is around 120cm but if you need a custom longer size, i’m sure I can find a solution for you! 👌\n\n## Making-of video\n\n[Video](https://youtube.com/shorts/A0nI1n870-o?si=TGbj0aOkc8mvgK-b)\n\n## Some pictures\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\nHere is the back of it, but only you will see it, I think 😁\n\n{{image:6}}\n{{image:7}}\nSome macro photos of the details.\n\n{{image:8}}\n{{image:9}}\nThe belt on a pair of blue jeans.\n\n{{image:10}}\n{{image:11}}",
+  "contentMarkdownFr": "Cette ceinture est fabriquée sur commande à votre taille (si le fournisseur dispose de la bonne longueur, bien sûr ; cela peut dépendre de son stock). Toutes les pièces métalliques sont en laiton, au style brossé à l'ancienne. Le cuir utilisé est un véritable cuir pleine fleur, à la fois robuste et doux.\n\nPrécisez toujours vos dimensions. La longueur maximale est d'environ 120 cm, mais si vous avez besoin d'une taille plus longue sur mesure, je suis sûr de pouvoir trouver une solution pour vous ! 👌\n\n## Vidéo du making-of\n\n[Vidéo](https://youtube.com/shorts/A0nI1n870-o?si=TGbj0aOkc8mvgK-b)\n\n## Quelques photos\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\nVoici l'envers, mais vous serez sans doute le seul à le voir 😁\n\n{{image:6}}\n{{image:7}}\nQuelques photos macro des détails.\n\n{{image:8}}\n{{image:9}}\nLa ceinture portée sur un jean bleu.\n\n{{image:10}}\n{{image:11}}",
+  "descriptionFr": "Une ceinture au style vintage avec boucle en laiton.",
+  "slug": "belt-brown-and-brass"
+}

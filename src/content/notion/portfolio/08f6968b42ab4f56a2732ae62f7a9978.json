@@ -1,0 +1,109 @@
+{
+  "notionId": "08f6968b42ab4f56a2732ae62f7a9978",
+  "notionUrl": "https://app.notion.com/p/08f6968b42ab4f56a2732ae62f7a9978",
+  "name": "Lux - The Luxury card holder (prototype)",
+  "properties": {
+    "Name": "Lux - The Luxury card holder (prototype)",
+    "Tags": [],
+    "Status": "Available",
+    "Price": 35,
+    "Dimensions": "17 x 10.5 cm open - 8.5 x 10.5 cm closed (1cm thickness when closed)",
+    "Weight": "71g",
+    "Stock": "1 in stock",
+    "Description": "Rooms for 2 cards and more with the 3 other pockets.",
+    "Leather Type": [
+      "4fdd3aab0a7d4a4b88a5d0bf552856d1",
+      "fdae8febf9e44524b7621f82d89033df"
+    ],
+    "Thread Type": [],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2021-09-08 16:58:00Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2021-09-08T16:58:00Z",
+  "cover": "./08f6968b42ab4f56a2732ae62f7a9978/0-cover.jpg",
+  "images": [
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1123
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1123
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/11.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/12.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    },
+    {
+      "file": "./08f6968b42ab4f56a2732ae62f7a9978/13.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    }
+  ],
+  "contentMarkdown": "This card holder has 2 spaces for your cards and 3 other storage spaces for your receipts and other necessities.\n\nIt is composed of 2 different leathers colors \"fawn\" and brick.\n\nThis card holder is a prototype with some defects here and there that's why it is sold at 35€ instead of 68€. These defects are only visual, the product is still very strong.\n\nSome more pictures of the product and its design.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\nQuelques photos des emplacements avec les cartes du milieux qui ressortent mais qui rentrent complètement dans les poches si on les pousse.\n\n{{image:11}}\n{{image:12}}\nA picture of the only defect appearing on the back of the card holder, the stitching are irregular due to the thickness of the leather. (first prototype)\n\n{{image:13}}",
+  "contentMarkdownFr": "Ce porte-cartes dispose de 2 emplacements pour vos cartes et de 3 autres espaces de rangement pour vos reçus et autres indispensables.\n\nIl est composé de 2 cuirs de couleurs différentes : « fauve » et brique.\n\nCe porte-cartes est un prototype présentant quelques défauts ici et là, c'est pourquoi il est vendu 35 € au lieu de 68 €. Ces défauts sont uniquement esthétiques, le produit reste très solide.\n\nQuelques photos supplémentaires du produit et de sa conception.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\nQuelques photos des emplacements, avec les cartes du milieu qui dépassent mais qui rentrent complètement dans les poches si on les pousse.\n\n{{image:11}}\n{{image:12}}\nUne photo du seul défaut visible, au dos du porte-cartes : les coutures sont irrégulières en raison de l'épaisseur du cuir (premier prototype).\n\n{{image:13}}",
+  "descriptionFr": "De la place pour 2 cartes, et plus encore grâce aux 3 autres poches.",
+  "slug": "lux-the-luxury-card-holder-prototype"
+}

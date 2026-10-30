@@ -1,0 +1,60 @@
+{
+  "notionId": "f1d9661f6ccf413e811ba2d76f93baa6",
+  "notionUrl": "https://app.notion.com/p/f1d9661f6ccf413e811ba2d76f93baa6",
+  "name": "Flame - Duo-tone lighter holder",
+  "properties": {
+    "Name": "Flame - Duo-tone lighter holder",
+    "Tags": [
+      "Lighter",
+      "Lifestyle",
+      "Smoker",
+      "BBQ"
+    ],
+    "Status": "Available on demand",
+    "Price": 20,
+    "Dimensions": "8.4 X 4cm (5.8 cm with the fastening part)",
+    "Weight": "7g",
+    "Stock": "On-demand",
+    "Description": "A lighter holder with a reinforcement for 2 different colors of leather.",
+    "Leather Type": [
+      "bc159ad1b5ea4e63837688776fc38fc6",
+      "fdae8febf9e44524b7621f82d89033df"
+    ],
+    "Thread Type": [],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2021-09-08 16:56:00Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2021-09-08T16:56:00Z",
+  "cover": "./f1d9661f6ccf413e811ba2d76f93baa6/1.jpg",
+  "images": [
+    {
+      "file": "./f1d9661f6ccf413e811ba2d76f93baa6/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./f1d9661f6ccf413e811ba2d76f93baa6/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1127
+    },
+    {
+      "file": "./f1d9661f6ccf413e811ba2d76f93baa6/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./f1d9661f6ccf413e811ba2d76f93baa6/4.jpg",
+      "caption": "",
+      "width": 1440,
+      "height": 1440
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nSome pictures of the realization to plunge you in the heart of the confection.\n\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "contentMarkdownFr": "{{image:1}}\nQuelques photos de la réalisation pour vous plonger au cœur de la confection.\n\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "descriptionFr": "Un étui à briquet avec un renfort permettant d'associer 2 cuirs de couleurs différentes.",
+  "slug": "flame-duo-tone-lighter-holder"
+}

@@ -1,0 +1,48 @@
+{
+  "notionId": "54bda784437f4e0f974ea7264b13c5e3",
+  "notionUrl": "https://app.notion.com/p/54bda784437f4e0f974ea7264b13c5e3",
+  "name": "Cable fastener",
+  "properties": {
+    "Name": "Cable fastener",
+    "Tags": [],
+    "Status": "Available",
+    "Price": 8,
+    "Dimensions": null,
+    "Weight": "4g",
+    "Stock": "2 in stock",
+    "Description": "A long strap to keep a cable attached.",
+    "Leather Type": [
+      "4fdd3aab0a7d4a4b88a5d0bf552856d1"
+    ],
+    "Thread Type": [],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2022-12-09 17:46:00Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2022-12-09T17:46:00Z",
+  "cover": "./54bda784437f4e0f974ea7264b13c5e3/1.jpg",
+  "images": [
+    {
+      "file": "./54bda784437f4e0f974ea7264b13c5e3/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    },
+    {
+      "file": "./54bda784437f4e0f974ea7264b13c5e3/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    },
+    {
+      "file": "./54bda784437f4e0f974ea7264b13c5e3/3.jpg",
+      "caption": "",
+      "width": 1680,
+      "height": 3648
+    }
+  ],
+  "contentMarkdown": "A pressure-bearing clip with a metal stud serving as a locking button.\n\nA relatively thick leather is used and an easy to use screw thread allows you to put this clip on any cable.\n\nStrap feasible in other leathers. Do not hesitate to ask.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}",
+  "contentMarkdownFr": "Une attache à pression avec un rivet métallique servant de bouton de fermeture.\n\nUn cuir relativement épais est utilisé, et un filetage facile à manipuler vous permet de fixer cette attache sur n'importe quel câble.\n\nLanière réalisable dans d'autres cuirs. N'hésitez pas à demander.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}",
+  "descriptionFr": "Une longue lanière pour garder un câble attaché.",
+  "slug": "cable-fastener"
+}

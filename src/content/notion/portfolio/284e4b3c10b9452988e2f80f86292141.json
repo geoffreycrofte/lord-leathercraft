@@ -1,0 +1,44 @@
+{
+  "notionId": "284e4b3c10b9452988e2f80f86292141",
+  "notionUrl": "https://app.notion.com/p/284e4b3c10b9452988e2f80f86292141",
+  "name": "Roa - Half-Disk Shaped Earings",
+  "properties": {
+    "Name": "Roa - Half-Disk Shaped Earings",
+    "Tags": [
+      "Earings",
+      "Wearable",
+      "Jewelry"
+    ],
+    "Status": "Available on demand",
+    "Price": 20,
+    "Dimensions": null,
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "A simple shaped earings",
+    "Leather Type": [],
+    "Thread Type": [],
+    "Created": "2022-12-13 21:38:00Z",
+    "Last Updated": "2024-01-13 20:59:16Z"
+  },
+  "createdTime": "2022-12-13T21:38:00Z",
+  "lastEdited": "2024-01-13T20:59:16Z",
+  "cover": "./284e4b3c10b9452988e2f80f86292141/1.jpg",
+  "images": [
+    {
+      "file": "./284e4b3c10b9452988e2f80f86292141/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./284e4b3c10b9452988e2f80f86292141/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "The simplicity in the shape of earings.  \nThese Half-Disk eating are simple but yet can be a good addition of colour to your jewellery.\n\nThe available colours are: yellow, olive, cognac, brown, violet, turquoise (ortensia), natural (beige), dark red, black, blue-jeans.\n\n## Some pictures\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "La simplicité dans la forme d'une boucle d'oreille.  \nCes boucles d'oreilles en demi-disque sont simples, mais peuvent apporter une belle touche de couleur à vos bijoux.\n\nLes couleurs disponibles sont : jaune, olive, cognac, marron, violet, turquoise (Ortensia), naturel (beige), rouge foncé, noir, bleu jean.\n\n## Quelques photos\n\n{{image:1}}\n{{image:2}}",
+  "descriptionFr": "Des boucles d'oreilles à la forme simple",
+  "slug": "roa-half-disk-shaped-earings"
+}

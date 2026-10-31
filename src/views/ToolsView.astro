@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AffiliateNotice from '../components/AffiliateNotice.astro';
 import OfferLink from '../components/OfferLink.astro';
 import PageIntro from '../components/PageIntro.astro';
-import { tasks, tiers, tools, type Tool } from '../data/tools';
+import { offerUrl, tasks, tiers, tools, type Tool } from '../data/tools';
 import { SHOP_URL } from '../data/site';
 import { guidePath, routes, type Lang } from '../i18n/ui';
 import { isAffiliateUrl } from '../lib/remark-affiliate-links.mjs';
@@ -48,7 +48,7 @@ const copy = {
 }[lang];
 
 const tierKeys = Object.keys(tiers) as Tool['tier'][];
-const hasAffiliate = tools.some((tool) => tool.offers.some((o) => isAffiliateUrl(o.url)));
+const hasAffiliate = tools.some((tool) => tool.offers.some((o) => isAffiliateUrl(offerUrl(o, lang))));
 ---
 
 <BaseLayout lang={lang} title={copy.title} description={copy.description} alternates={routes.tools}>
@@ -94,7 +94,7 @@ const hasAffiliate = tools.some((tool) => tool.offers.some((o) => isAffiliateUrl
                   {tool.offers.length > 0 && (
                     <div class="tool__offers">
                       {tool.offers.map((o) => (
-                        <OfferLink lang={lang} url={o.url} label={o.shop} code={o.code} />
+                        <OfferLink lang={lang} url={offerUrl(o, lang)} label={o.shop} code={o.code} />
                       ))}
                     </div>
                   )}

@@ -7,6 +7,7 @@
  */
 import type { ImageMetadata } from 'astro';
 import type { Lang } from '../i18n/ui';
+import { AMAZON_FR_TAG } from './site';
 import cuttingMat from '../assets/tools/cutting-mat.jpg';
 import craftKnife from '../assets/tools/craft-knife.jpg';
 import ruler from '../assets/tools/ruler.jpg';
@@ -42,6 +43,19 @@ export interface Offer {
   url: string;
   /** Partner discount code, shown next to the link. */
   code?: string;
+  /** Amazon product id, to link to amazon.fr on the French pages. */
+  asin?: string;
+}
+
+/**
+ * Link of an offer for a language. On the French pages, Amazon products link
+ * to amazon.fr with the French Associates tag, once that tag is set.
+ */
+export function offerUrl(offer: Offer, lang: Lang): string {
+  if (lang === 'fr' && offer.asin && AMAZON_FR_TAG) {
+    return `https://www.amazon.fr/dp/${offer.asin}?tag=${AMAZON_FR_TAG}`;
+  }
+  return offer.url;
 }
 
 export interface Tool {
@@ -85,7 +99,7 @@ export const tasks: Record<Tool['task'], Text> = {
   assembly: { en: 'Assembly', fr: 'Assemblage' },
 };
 
-const amazon = (url: string): Offer => ({ shop: 'Amazon', url });
+const amazon = (url: string, asin: string): Offer => ({ shop: 'Amazon', url, asin });
 
 export const tools: Tool[] = [
   // Basic
@@ -100,7 +114,7 @@ export const tools: Tool[] = [
     },
     image: cuttingMat,
     alt: { en: 'A green A3 cutting mat with a printed grid.', fr: 'Un tapis de découpe vert au format A3, avec une grille imprimée.' },
-    offers: [amazon('https://amzn.to/40xez1H')],
+    offers: [amazon('https://amzn.to/40xez1H', 'B088M48Z3G')],
   },
   {
     id: 'craft-knife',
@@ -126,7 +140,7 @@ export const tools: Tool[] = [
     },
     image: ruler,
     alt: { en: 'A black aluminium safety ruler on a piece of tan leather.', fr: 'Une règle de sécurité en aluminium noir posée sur un morceau de cuir naturel.' },
-    offers: [amazon('https://amzn.to/3RIdO1F')],
+    offers: [amazon('https://amzn.to/3RIdO1F', 'B0BKZ4KS9J')],
   },
   {
     id: 'spacing-compass',
@@ -139,7 +153,7 @@ export const tools: Tool[] = [
     },
     image: spacingCompass,
     alt: { en: 'A hand holding a steel spacing compass with a locking screw.', fr: 'Une main tenant un compas d’écartement en acier, avec sa vis de blocage.' },
-    offers: [amazon('https://amzn.to/3Yuzel1')],
+    offers: [amazon('https://amzn.to/3Yuzel1', 'B076FRHDNM')],
   },
   {
     id: 'edge-beveler',
@@ -152,7 +166,7 @@ export const tools: Tool[] = [
     },
     image: edgeBeveler,
     alt: { en: 'An edge beveler taking a thin strip off the edge of a piece of leather.', fr: 'Un abat-carre qui enlève une fine lanière sur l’arête d’un morceau de cuir.' },
-    offers: [amazon('https://amzn.to/3I6FoTa')],
+    offers: [amazon('https://amzn.to/3I6FoTa', 'B07CJH77HB')],
   },
   {
     id: 'needles',
@@ -165,7 +179,7 @@ export const tools: Tool[] = [
     },
     image: needles,
     alt: { en: 'Packs of John James harness needles, with loose needles beside them.', fr: 'Des sachets d’aiguilles de sellier John James, avec des aiguilles posées à côté.' },
-    offers: [amazon('https://amzn.to/3DQGos1')],
+    offers: [amazon('https://amzn.to/3DQGos1', 'B07477V1LG')],
   },
   {
     id: 'pricking-iron',
@@ -178,7 +192,7 @@ export const tools: Tool[] = [
     },
     image: prickingIron,
     alt: { en: 'Two steel pricking irons, with 2 and 8 prongs, on a dark background.', fr: 'Deux griffes à frapper en acier, à 2 et 8 dents, sur un fond sombre.' },
-    offers: [amazon('https://amzn.to/3XepZ7i')],
+    offers: [amazon('https://amzn.to/3XepZ7i', 'B07SL9QX45')],
   },
   {
     id: 'mallet',
@@ -191,7 +205,7 @@ export const tools: Tool[] = [
     },
     image: mallet,
     alt: { en: 'A mallet with a white nylon head and a wooden handle.', fr: 'Un maillet à tête en nylon blanc et manche en bois.' },
-    offers: [amazon('https://amzn.to/3NUN6Bm')],
+    offers: [amazon('https://amzn.to/3NUN6Bm', 'B09JSDCZQM')],
   },
   {
     id: 'thread-pack',
@@ -204,7 +218,7 @@ export const tools: Tool[] = [
     },
     image: threadPack,
     alt: { en: 'A clear box of small spools of waxed thread in many colours.', fr: 'Une boîte transparente remplie de petites bobines de fil ciré de toutes les couleurs.' },
-    offers: [amazon('https://amzn.to/3XebTD1')],
+    offers: [amazon('https://amzn.to/3XebTD1', 'B0B93TL1C2')],
   },
   {
     id: 'wood-slicker',
@@ -217,7 +231,7 @@ export const tools: Tool[] = [
     },
     image: woodSlicker,
     alt: { en: 'A set of three dark wooden edge slickers of different shapes.', fr: 'Un kit de trois lissoirs en bois foncé de formes différentes.' },
-    offers: [amazon('https://amzn.to/40BHS33')],
+    offers: [amazon('https://amzn.to/40BHS33', 'B07SGR7H6G')],
   },
   {
     id: 'tokonole',
@@ -230,7 +244,7 @@ export const tools: Tool[] = [
     },
     image: tokonole,
     alt: { en: 'A jar of Tokonole and a small applicator bottle on a cutting mat.', fr: 'Un pot de Tokonole et un petit flacon applicateur sur un tapis de découpe.' },
-    offers: [amazon('https://amzn.to/3I7UQyq')],
+    offers: [amazon('https://amzn.to/3I7UQyq', 'B017X8GL9A')],
   },
   {
     id: 'glue',
@@ -244,9 +258,9 @@ export const tools: Tool[] = [
     image: glue,
     alt: { en: 'Three glue bottles: Fiebing’s Leathercraft Cement, Aquilim 315 and Leather & Suede glue.', fr: 'Trois colles : Fiebing’s Leathercraft Cement, Aquilim 315 et Leather & Suede.' },
     offers: [
-      { shop: 'Aquilim 315', url: 'https://amzn.to/3pRb097' },
-      { shop: 'Leather & Suede', url: 'https://amzn.to/44WaiGh' },
-      { shop: 'Fiebing’s', url: 'https://amzn.to/3Y4IgWW' },
+      { shop: 'Aquilim 315', url: 'https://amzn.to/3pRb097', asin: 'B08CF3QT85' },
+      { shop: 'Leather & Suede', url: 'https://amzn.to/44WaiGh', asin: 'B00178RING' },
+      { shop: 'Fiebing’s', url: 'https://amzn.to/3Y4IgWW', asin: 'B003W0GFTU' },
     ],
   },
 
@@ -262,7 +276,7 @@ export const tools: Tool[] = [
     },
     image: awl,
     alt: { en: 'Three awls with light wooden handles.', fr: 'Trois alènes à manche en bois clair.' },
-    offers: [amazon('https://amzn.to/3JNVWAs')],
+    offers: [amazon('https://amzn.to/3JNVWAs', 'B01F2Z63R6')],
   },
   {
     id: 'creasing-tool',
@@ -275,7 +289,7 @@ export const tools: Tool[] = [
     },
     image: creasingTool,
     alt: { en: 'Three creasing tools with brass ferrules, resting on a strip of orange leather.', fr: 'Trois fileteuses à virole en laiton, posées sur une bande de cuir orange.' },
-    offers: [amazon('https://amzn.to/3HHVFfJ')],
+    offers: [amazon('https://amzn.to/3HHVFfJ', 'B07SMRKJ8G')],
   },
   {
     id: 'alcohol-burner',
@@ -288,7 +302,7 @@ export const tools: Tool[] = [
     },
     image: alcoholBurner,
     alt: { en: 'A small lit stainless steel alcohol burner next to its cap.', fr: 'Une petite lampe à alcool en inox allumée, à côté de son capuchon.' },
-    offers: [amazon('https://amzn.to/3YvkOkK')],
+    offers: [amazon('https://amzn.to/3YvkOkK', 'B0897VSS1D')],
   },
   {
     id: 'triangle-punch',
@@ -301,7 +315,7 @@ export const tools: Tool[] = [
     },
     image: trianglePunch,
     alt: { en: 'A hand pressing a punch on the end of a leather strap.', fr: 'Une main appuyant un emporte-pièce sur le bout d’une lanière de cuir.' },
-    offers: [amazon('https://amzn.to/3Xg0EKp')],
+    offers: [amazon('https://amzn.to/3Xg0EKp', 'B07SMVDDPP')],
   },
   {
     id: 'curvy-punch',
@@ -314,7 +328,7 @@ export const tools: Tool[] = [
     },
     image: curvyPunch,
     alt: { en: 'A row of steel punches with curved blades of different widths.', fr: 'Une rangée d’emporte-pièces en acier à lames courbes de différentes largeurs.' },
-    offers: [amazon('https://amzn.to/40H5uTN')],
+    offers: [amazon('https://amzn.to/40H5uTN', 'B088FNS1H4')],
   },
   {
     id: 'bone-folder',
@@ -327,7 +341,7 @@ export const tools: Tool[] = [
     },
     image: boneFolder,
     alt: { en: 'A hand holding a white bone folder.', fr: 'Une main tenant un plioir blanc.' },
-    offers: [amazon('https://amzn.to/3jFClb8')],
+    offers: [amazon('https://amzn.to/3jFClb8', 'B094YHDS41')],
   },
   {
     id: 'french-skiver',
@@ -340,7 +354,7 @@ export const tools: Tool[] = [
     },
     image: frenchSkiver,
     alt: { en: 'A French skiving tool taking a thin curl off the surface of the leather.', fr: 'Un couteau à parer français qui enlève un fin copeau à la surface du cuir.' },
-    offers: [amazon('https://amzn.to/3XnVhc4')],
+    offers: [amazon('https://amzn.to/3XnVhc4', 'B07CVVRS1C')],
   },
   {
     id: 'groover',
@@ -353,7 +367,7 @@ export const tools: Tool[] = [
     },
     image: groover,
     alt: { en: 'A groover with an adjustable guide cutting a channel near the edge of the leather.', fr: 'Un abaisse-couture à guide réglable qui creuse un sillon près du bord du cuir.' },
-    offers: [amazon('https://amzn.to/3HU6cEB')],
+    offers: [amazon('https://amzn.to/3HU6cEB', 'B081LZZYBH')],
   },
   {
     id: 'rougher',
@@ -366,7 +380,7 @@ export const tools: Tool[] = [
     },
     image: rougher,
     alt: { en: 'A metal rougher scratching the surface of a dark leather.', fr: 'Un grattoir en métal qui griffe la surface d’un cuir foncé.' },
-    offers: [amazon('https://amzn.to/3E2DSPw')],
+    offers: [amazon('https://amzn.to/3E2DSPw', 'B09YCT632J')],
   },
 
   // Higher quality

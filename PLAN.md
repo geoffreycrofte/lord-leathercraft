@@ -101,7 +101,7 @@ Payhip est très limité pour le contenu et le SEO :
 - [x] Script d'import Notion (`scripts/import-notion.mjs`, voir [docs/notion.md](docs/notion.md))
 - [x] Compression des photos : `npm run images` (1200 px, mozjpeg, sans métadonnées), lancée par l'import et vérifiée en CI
 - [x] Détails « craft » : coutures sellier, bords de peau, étiquettes trouées, micro-interactions
-- [ ] Remplacer la liste d'outils de départ par la vraie liste, avec les liens (Geoffrey)
+- [x] Remplacer la liste d'outils de départ par la vraie liste du shop Payhip, avec photos et liens (base, pour aller plus loin, meilleure qualité)
 - [ ] Ajouter les liens fournisseurs des cuirs, fils et boucles dans `src/data/suppliers.ts` (Geoffrey)
 - [ ] Relire les traductions des fiches Notion (cuirs, portfolio)
 
@@ -109,7 +109,9 @@ Payhip est très limité pour le contenu et le SEO :
 
 - [ ] Plan éditorial complet
 - [ ] Reprise des guides Payhip (tips-and-tricks)
-- [ ] Liens affiliés Amazon et AliExpress, et codes promo partenaires, repris des listes d'outils du shop
+- [x] Liens affiliés Amazon, AliExpress, Sinabroks et KemovanCraft, et codes promo partenaires (LORD7, LORD10), repris du shop
+- [x] Page Guides transformée en portail (conseils avant de commencer, puis tous les guides), et guide « Où acheter du cuir »
+- [ ] Migrer les guides débutants ceinture et portefeuille depuis Payhip
 - [ ] Pages piliers par type d'objet (portefeuilles, porte-cartes, sacs…) vers les collections
 - [ ] Présentation des produits sur le site, à concevoir avec le design
 - [ ] Newsletter (voir le journal)

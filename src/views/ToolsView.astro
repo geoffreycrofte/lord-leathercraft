@@ -1,10 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AffiliateNotice from '../components/AffiliateNotice.astro';
 import OfferLink from '../components/OfferLink.astro';
 import PageIntro from '../components/PageIntro.astro';
 import { tasks, tiers, tools, type Tool } from '../data/tools';
-import { routes, type Lang } from '../i18n/ui';
+import { SHOP_URL } from '../data/site';
+import { guidePath, routes, type Lang } from '../i18n/ui';
 import { isAffiliateUrl } from '../lib/remark-affiliate-links.mjs';
 
 interface Props {
@@ -18,6 +20,14 @@ const copy = {
     accent: 'from first cut to pro',
     description: 'The leathercraft tools I use, from a beginner’s kit to professional machines, sorted by level and task, with where to buy them.',
     intro: 'You do not need everything to start. Begin with the basics, then add tools when a project asks for them.',
+    budget:
+      'The whole list below costs around $450. To spend less, start with the tools the pattern you want to make really needs, and upgrade the ones you use the most later. Prices change too often, so I do not list them.',
+    beginnerGuides: 'Making a first belt or wallet? My beginner guides list the tools for each project:',
+    belt: 'Guide and tools to make a leather belt',
+    wallet: 'Guide and tools to make leather wallets',
+    leatherTitle: 'And the leather?',
+    leatherText: 'Look first for a tannery near you: touching the leather and asking a professional for advice is the best way to choose. If you have none nearby, here are the online shops I buy from.',
+    leatherLink: 'Where to buy quality leather',
     guidesLink: 'New to leathercraft? Start with the guides.',
   },
   fr: {
@@ -25,6 +35,14 @@ const copy = {
     accent: 'de la première découpe au pro',
     description: 'Les outils de maroquinerie que j’utilise, du kit débutant aux machines pro, classés par niveau et par tâche, avec où les acheter.',
     intro: 'Pas besoin de tout pour commencer. Démarrez avec les bases, puis ajoutez des outils quand un projet en a besoin.',
+    budget:
+      'La liste complète représente environ 450 $. Pour dépenser moins, commencez par les outils dont le patron que vous voulez réaliser a vraiment besoin, et remplacez plus tard ceux qui vous servent le plus. Les prix changent trop souvent, donc je ne les indique pas.',
+    beginnerGuides: 'Vous préparez une première ceinture ou un premier portefeuille ? Mes guides débutants listent les outils de chaque projet (en anglais) :',
+    belt: 'Guide et outils pour fabriquer une ceinture en cuir',
+    wallet: 'Guide et outils pour fabriquer des portefeuilles en cuir',
+    leatherTitle: 'Et le cuir ?',
+    leatherText: 'Cherchez d’abord une tannerie près de chez vous : toucher le cuir et demander conseil à un professionnel reste la meilleure façon de choisir. Sinon, voici les boutiques en ligne où j’achète le mien.',
+    leatherLink: 'Où acheter du cuir de qualité',
     guidesLink: 'Vous débutez ? Commencez par les guides.',
   },
 }[lang];
@@ -38,6 +56,14 @@ const hasAffiliate = tools.some((tool) => tool.offers.some((o) => isAffiliateUrl
     <PageIntro title={copy.title} accent={copy.accent} intro={copy.intro}>
       <p class="tools__guides"><a href={routes.guides[lang]}>{copy.guidesLink}</a></p>
     </PageIntro>
+    <div class="tools__intro prose">
+      <p>{copy.budget}</p>
+      <p>{copy.beginnerGuides}</p>
+      <ul>
+        <li><a href={`${SHOP_URL}/create-leather-belt-beginner-guide`} hreflang="en">{copy.belt}</a></li>
+        <li><a href={`${SHOP_URL}/create-leather-wallets-beginner-guide`} hreflang="en">{copy.wallet}</a></li>
+      </ul>
+    </div>
     {hasAffiliate && <AffiliateNotice lang={lang} />}
 
     {
@@ -55,6 +81,13 @@ const hasAffiliate = tools.some((tool) => tool.offers.some((o) => isAffiliateUrl
               .filter((tool) => tool.tier === tier)
               .map((tool) => (
                 <li class="tool">
+                  <Image
+                    class="tool__photo"
+                    src={tool.image}
+                    alt={tool.alt[lang]}
+                    widths={[400, 800]}
+                    sizes="(min-width: 75rem) 22rem, (min-width: 40rem) 45vw, 100vw"
+                  />
                   <span class="chip">{tasks[tool.task][lang]}</span>
                   <h3>{tool.name[lang]}</h3>
                   <p>{tool.description[lang]}</p>
@@ -71,10 +104,40 @@ const hasAffiliate = tools.some((tool) => tool.offers.some((o) => isAffiliateUrl
         </section>
       ))
     }
+
+    <section class="tools__leather stitch" aria-labelledby="tools-leather">
+      <h2 id="tools-leather">{copy.leatherTitle}</h2>
+      <p>{copy.leatherText}</p>
+      <p><a class="button" href={guidePath(lang, lang === 'en' ? 'where-to-buy-leather' : 'ou-acheter-du-cuir')}>{copy.leatherLink}</a></p>
+    </section>
   </div>
 </BaseLayout>
 
 <style>
+  .tools__intro {
+    margin-bottom: var(--space-m);
+  }
+  .tool__photo {
+    width: calc(100% + 2.75rem);
+    max-width: none;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin: -1.25rem -1.375rem 0.25rem;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .tools__leather {
+    margin-block: var(--space-l) 0;
+    padding: var(--space-m);
+    border-radius: var(--radius);
+    background: var(--primary-050);
+  }
+  .tools__leather h2 {
+    margin-top: 0;
+  }
+  .tools__leather p {
+    max-width: 65ch;
+  }
   .tools__guides {
     margin: var(--space-s) 0 0;
     font-weight: 600;
@@ -128,6 +191,7 @@ const hasAffiliate = tools.some((tool) => tool.offers.some((o) => isAffiliateUrl
     padding: 1.25rem 1.375rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
+    overflow: hidden;
   }
   .tool h3 {
     margin: 0.25rem 0 0;
@@ -140,9 +204,19 @@ const hasAffiliate = tools.some((tool) => tool.offers.some((o) => isAffiliateUrl
   }
   .tool__offers {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 0.5rem;
     margin-top: auto;
     padding-top: 0.5rem;
+  }
+  /* Narrow cards: the "(affiliate link)" marker wraps as a whole. */
+  .tool__offers :global(.button) {
+    flex-wrap: wrap;
+    column-gap: 0.375rem;
+    row-gap: 0;
+    padding: 0.375rem 1rem;
+    border-radius: 1.375rem;
+    overflow-wrap: normal;
   }
 </style>

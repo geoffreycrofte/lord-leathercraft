@@ -1,0 +1,161 @@
+---
+/**
+ * Opening block of the wallet guide: the making-of video of a pattern, with
+ * the pattern and its collection beside it. Wider than the text column.
+ */
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import YouTube from './YouTube.astro';
+import { shopCollections } from '../data/site';
+import type { Lang } from '../i18n/ui';
+import nestTemplate from '../assets/kits/nest-template.jpg';
+import cardholders from '../assets/kits/cardholder-collection.jpg';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const copy = {
+  en: {
+    eyebrow: 'See it made',
+    title: 'The making of a cardholder, step by step',
+    video: 'How to make the Nest multipurpose cardholder',
+    pattern: 'Nest, multipurpose cardholder',
+    patternMeta: 'PDF pattern with video tutorial · from €8',
+    patternAlt: 'The Nest cardholder in navy and teal leather, with the words “Template to make this wonderful cardholder”.',
+    collection: 'All my cardholder patterns',
+    collectionMeta: 'Minimalist, bi-fold, vertical…',
+    collectionAlt: 'A tan leather cardholder holding cards, next to a lighter.',
+  },
+  fr: {
+    eyebrow: 'En vidéo',
+    title: 'La fabrication d’un porte-cartes, étape par étape',
+    video: 'Comment fabriquer le porte-cartes multifonction Nest (en anglais)',
+    pattern: 'Nest, porte-cartes multifonction',
+    patternMeta: 'Patron PDF avec tutoriel vidéo · à partir de 8 €',
+    patternAlt: 'Le porte-cartes Nest en cuir bleu marine et bleu canard, avec la mention « Template to make this wonderful cardholder ».',
+    collection: 'Tous mes patrons de porte-cartes',
+    collectionMeta: 'Minimalistes, pliants, verticaux…',
+    collectionAlt: 'Un porte-cartes en cuir naturel garni de cartes, à côté d’un briquet.',
+  },
+}[lang];
+const nestUrl = 'https://shop.crofte.fr/b/nest-multipurpose-cardholder-leather-wallet-template';
+---
+
+<section class="spotlight" aria-labelledby="spotlight-title">
+  <div class="spotlight__video">
+    <p class="spotlight__eyebrow">{copy.eyebrow}</p>
+    <h2 id="spotlight-title">{copy.title}</h2>
+    <YouTube id="pGfaG7YIxLc" title={copy.video} lang={lang} />
+  </div>
+  <ul class="spotlight__links" role="list">
+    <li>
+      <a class="spot-card zoom-media" href={nestUrl} hreflang="en">
+        <Image src={nestTemplate} alt={copy.patternAlt} widths={[400, 700]} sizes="(min-width: 60rem) 20rem, 100vw" />
+        <span class="spot-card__text">
+          <strong>{copy.pattern}</strong>
+          <span>{copy.patternMeta}</span>
+        </span>
+        <Icon name="arrowRight" size={20} strokeWidth={2.2} />
+      </a>
+    </li>
+    <li>
+      <a class="spot-card zoom-media" href={shopCollections.cardholders.url} hreflang="en">
+        <Image src={cardholders} alt={copy.collectionAlt} widths={[400, 700]} sizes="(min-width: 60rem) 20rem, 100vw" />
+        <span class="spot-card__text">
+          <strong>{copy.collection}</strong>
+          <span>{copy.collectionMeta}</span>
+        </span>
+        <Icon name="arrowRight" size={20} strokeWidth={2.2} />
+      </a>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .spotlight {
+    display: grid;
+    gap: var(--space-m);
+    /* Wider than the text column, up to the article width. */
+    width: 100cqi;
+    margin-block: var(--space-l);
+    padding: var(--space-m);
+    border-radius: var(--radius-l);
+    background: var(--neutral-700);
+    color: var(--neutral-100);
+  }
+  @media (min-width: 60rem) {
+    .spotlight {
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      align-items: end;
+    }
+  }
+  .spotlight h2 {
+    margin: 0.25rem 0 var(--space-s);
+    color: #fff;
+    font-size: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+  }
+  .spotlight__eyebrow {
+    margin: 0;
+    color: var(--primary-300);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .spotlight :global(.video) {
+    margin: 0;
+  }
+  .spotlight :global(figcaption) {
+    color: var(--neutral-100);
+  }
+  .spotlight :global(figcaption a) {
+    color: var(--primary-300);
+  }
+  .spotlight__links {
+    display: grid;
+    gap: var(--space-s);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .spot-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.25rem 0.75rem;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: #fff;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .spot-card :global(img) {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  .spot-card__text {
+    display: grid;
+    gap: 0.125rem;
+    padding: 0.75rem 0 0.875rem 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+  }
+  .spot-card__text strong {
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+  }
+  .spot-card :global(svg) {
+    margin-right: 1rem;
+    color: var(--primary-600);
+    transition: transform 0.2s;
+  }
+  .spot-card:hover :global(svg) {
+    transform: translateX(3px);
+  }
+</style>

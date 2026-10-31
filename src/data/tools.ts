@@ -35,11 +35,13 @@ import kemovanBeveler from '../assets/tools/kemovan-beveler.jpg';
 import kemovanSkivers from '../assets/tools/kemovan-skivers.jpg';
 import kemovanGroover from '../assets/tools/kemovan-groover.jpg';
 
-type Text = Record<Lang, string>;
+export type Text = Record<Lang, string>;
 
 export interface Offer {
   /** Shop or brand name shown on the button. */
   shop: string;
+  /** Button text, when the shop name alone is not enough. */
+  label?: Text;
   url: string;
   /** Partner discount code, shown next to the link. */
   code?: string;

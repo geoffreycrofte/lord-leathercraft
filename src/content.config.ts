@@ -27,6 +27,8 @@ const articles = defineCollection({
       cover: image().optional(),
       coverAlt: z.string().optional(),
       collections: z.array(z.enum(collectionKeys)).default([]),
+      /** Set when sponsored links come from components (product lists), not Markdown. */
+      sponsored: z.boolean().default(false),
       howTo: z
         .object({
           totalTime: z.string().optional(),

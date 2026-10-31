@@ -2,8 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    # The second branch publishes the preview (preview.crofte.fr) until launch.
-    branches: [main, ccr-1ad3335b-yfae5g]
+    branches: [main]
   workflow_dispatch:
 
 permissions:

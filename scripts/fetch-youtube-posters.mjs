@@ -49,7 +49,9 @@ for (const id of ids) {
       const res = await fetch(`https://i.ytimg.com/vi/${id}/${size}.jpg`);
       if (!res.ok) continue;
       const input = Buffer.from(await res.arrayBuffer());
-      await sharp(input)
+      // Thumbnails often carry black letterbox bars: trim them first.
+      const trimmed = await sharp(input).trim({ background: '#000000', threshold: 40 }).toBuffer().catch(() => input);
+      await sharp(trimmed)
         .resize({ width: 1280, height: 720, fit: 'cover' })
         .jpeg({ quality: 72, mozjpeg: true })
         .toFile(target);

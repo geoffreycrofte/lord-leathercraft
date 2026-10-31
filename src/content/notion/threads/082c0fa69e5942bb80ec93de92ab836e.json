@@ -1,0 +1,40 @@
+{
+  "notionId": "082c0fa69e5942bb80ec93de92ab836e",
+  "notionUrl": "https://app.notion.com/p/082c0fa69e5942bb80ec93de92ab836e",
+  "name": "Brown Tabacco",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:48:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "c3c76d0ff4ad49b08ee3af36cc952758",
+      "11a4829f7bdd4f4993b4d0a341238cb9",
+      "f8ddcc4f230b4821aa59c7f117a87acc",
+      "b7b641e6ca4f4b629bef5b88382ba0e8",
+      "4da1689cf64c4f7cb3ca6918942c00a2"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 19:03:20Z",
+    "Name": "Brown Tabacco"
+  },
+  "createdTime": "2021-06-29 19:03:20Z",
+  "lastEdited": "2021-06-29T19:48:00.000Z",
+  "cover": "./082c0fa69e5942bb80ec93de92ab836e/1.jpg",
+  "images": [
+    {
+      "file": "./082c0fa69e5942bb80ec93de92ab836e/1.jpg",
+      "caption": "",
+      "width": 1647,
+      "height": 927
+    },
+    {
+      "file": "./082c0fa69e5942bb80ec93de92ab836e/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "brown-tabacco",
+  "descriptionFr": ""
+}

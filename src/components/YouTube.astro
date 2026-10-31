@@ -1,0 +1,93 @@
+---
+/**
+ * Privacy-friendly YouTube embed: nothing is requested from YouTube until the
+ * visitor presses play. Without JavaScript, a plain link remains.
+ */
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  id: string;
+  title: string;
+  lang: Lang;
+  /** Local poster image (no request to YouTube for thumbnails). */
+  poster?: ImageMetadata;
+}
+
+const { id, title, lang, poster } = Astro.props;
+const t = useTranslations(lang);
+const watchUrl = `https://www.youtube.com/watch?v=${id}`;
+---
+
+<figure class="video">
+  <div class="video__frame" data-video-id={id} data-video-title={title}>
+    {poster && <Image src={poster} alt="" widths={[640, 1280]} sizes="(min-width: 75rem) 70ch, 100vw" />}
+    <button type="button" class="video__play" hidden>
+      <span>{t('video.play')}<span class="visually-hidden">: {title}</span></span>
+    </button>
+  </div>
+  <figcaption>
+    {title}. {t('video.notice')} <a href={watchUrl}>{t('video.watchOn')}</a>.
+  </figcaption>
+</figure>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.video__frame').forEach((frame) => {
+    const button = frame.querySelector<HTMLButtonElement>('.video__play');
+    if (!button) return;
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${frame.dataset.videoId}?autoplay=1`;
+      iframe.title = frame.dataset.videoTitle ?? '';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      iframe.allowFullscreen = true;
+      frame.replaceChildren(iframe);
+      iframe.focus();
+    });
+  });
+</script>
+
+<style>
+  .video {
+    margin: var(--space-l) 0;
+  }
+  .video__frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--neutral-700);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .video__frame :global(img),
+  .video__frame :global(iframe) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0;
+  }
+  .video__play {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.875rem 1.5rem;
+    border: 2px solid var(--primary-100);
+    border-radius: 999px;
+    background: var(--neutral-700);
+    color: var(--primary-100);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .video__play:hover {
+    background: var(--primary-600);
+  }
+  .video__play:focus-visible {
+    outline-color: var(--primary-100);
+  }
+</style>

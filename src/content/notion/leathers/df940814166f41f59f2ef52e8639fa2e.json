@@ -1,0 +1,40 @@
+{
+  "notionId": "df940814166f41f59f2ef52e8639fa2e",
+  "notionUrl": "https://app.notion.com/p/df940814166f41f59f2ef52e8639fa2e",
+  "name": "Cognac - Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:19:03Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Semi-anilin + Dyed Wax",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:18:02Z",
+    "Name": "Cognac - Strap"
+  },
+  "createdTime": "2023-06-24 10:18:02Z",
+  "lastEdited": "2023-06-24T10:19:03.630Z",
+  "cover": "./df940814166f41f59f2ef52e8639fa2e/1.jpg",
+  "images": [
+    {
+      "file": "./df940814166f41f59f2ef52e8639fa2e/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1050
+    },
+    {
+      "file": "./df940814166f41f59f2ef52e8639fa2e/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1476
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "cognac-strap",
+  "descriptionFr": ""
+}

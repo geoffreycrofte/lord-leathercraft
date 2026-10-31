@@ -1,0 +1,37 @@
+{
+  "notionId": "13b1d3452674808983c2ec26d7ec7c34",
+  "notionUrl": "https://app.notion.com/p/13b1d3452674808983c2ec26d7ec7c34",
+  "name": "22 - Maybe Z",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Steel"
+    ],
+    "Created": "2024-11-11 20:45:44Z",
+    "Finishing": "Brushed",
+    "Type": [
+      "Buckle Plate"
+    ],
+    "Name": "22 - Maybe Z"
+  },
+  "createdTime": "2024-11-11 20:45:44Z",
+  "lastEdited": "2024-11-11T20:46:58.082Z",
+  "cover": "./13b1d3452674808983c2ec26d7ec7c34/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d3452674808983c2ec26d7ec7c34/1.jpg",
+      "caption": "",
+      "width": 1080,
+      "height": 1076
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "22-maybe-z",
+  "descriptionFr": ""
+}

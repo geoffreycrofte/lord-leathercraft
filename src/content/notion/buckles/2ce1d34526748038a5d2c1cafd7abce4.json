@@ -1,0 +1,49 @@
+{
+  "notionId": "2ce1d34526748038a5d2c1cafd7abce4",
+  "notionUrl": "https://app.notion.com/p/2ce1d34526748038a5d2c1cafd7abce4",
+  "name": "LYJ - Original Wavy Buckle",
+  "properties": {
+    "Look": [
+      "Silver"
+    ],
+    "Available sizes": [
+      "25mm"
+    ],
+    "Material": [
+      "Steel"
+    ],
+    "Created": "2025-12-19 09:37:12Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "LYJ - Original Wavy Buckle"
+  },
+  "createdTime": "2025-12-19 09:37:12Z",
+  "lastEdited": "2025-12-19T09:39:16.840Z",
+  "cover": "./2ce1d34526748038a5d2c1cafd7abce4/1.jpg",
+  "images": [
+    {
+      "file": "./2ce1d34526748038a5d2c1cafd7abce4/1.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 1200
+    },
+    {
+      "file": "./2ce1d34526748038a5d2c1cafd7abce4/2.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 1200
+    },
+    {
+      "file": "./2ce1d34526748038a5d2c1cafd7abce4/3.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 1200
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}\n{{image:3}}\nMade in Asia",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}\n{{image:3}}\nFabriqué en Asie",
+  "slug": "lyj-original-wavy-buckle",
+  "descriptionFr": ""
+}

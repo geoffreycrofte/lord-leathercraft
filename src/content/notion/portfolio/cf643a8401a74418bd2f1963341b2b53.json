@@ -1,0 +1,62 @@
+{
+  "notionId": "cf643a8401a74418bd2f1963341b2b53",
+  "notionUrl": "https://app.notion.com/p/cf643a8401a74418bd2f1963341b2b53",
+  "name": "Flame - Vintage Lighter Holder",
+  "properties": {
+    "Name": "Flame - Vintage Lighter Holder",
+    "Tags": [
+      "Lighter",
+      "BBQ",
+      "Lifestyle",
+      "Smoker"
+    ],
+    "Status": "Available on demand",
+    "Price": 16,
+    "Dimensions": "8.4 X 4cm (5.8 cm with the fastening part)",
+    "Weight": "13g",
+    "Stock": "On-demand",
+    "Description": "A lighter holder and its small eyelet for transport.",
+    "Leather Type": [
+      "655498fc27894d35b089e9b73a9dbc47"
+    ],
+    "Thread Type": [
+      "3964d4c174b045b8a0f48f3f6f30c5c5",
+      "a00cae571eff4bb985d5dfcb670f2c91"
+    ],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2022-12-12 16:09:00Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2022-12-12T16:09:00Z",
+  "cover": "./cf643a8401a74418bd2f1963341b2b53/0-cover.jpg",
+  "images": [
+    {
+      "file": "./cf643a8401a74418bd2f1963341b2b53/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    },
+    {
+      "file": "./cf643a8401a74418bd2f1963341b2b53/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    },
+    {
+      "file": "./cf643a8401a74418bd2f1963341b2b53/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    },
+    {
+      "file": "./cf643a8401a74418bd2f1963341b2b53/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "A 1 piece leather lighter holder with an eyelet allowing you to hang it with any key ring or carabiner if you wish.\n\nHere are some original photos of the product in development.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "contentMarkdownFr": "Un étui à briquet en cuir d'une seule pièce, avec un œillet qui vous permet de l'accrocher à n'importe quel porte-clés ou mousqueton si vous le souhaitez.\n\nVoici quelques photos d'origine du produit en cours de développement.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "descriptionFr": "Un étui à briquet et son petit œillet pour le transport.",
+  "slug": "flame-vintage-lighter-holder"
+}

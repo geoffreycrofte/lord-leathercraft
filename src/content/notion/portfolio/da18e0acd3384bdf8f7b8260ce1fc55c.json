@@ -1,0 +1,174 @@
+{
+  "notionId": "da18e0acd3384bdf8f7b8260ce1fc55c",
+  "notionUrl": "https://app.notion.com/p/da18e0acd3384bdf8f7b8260ce1fc55c",
+  "name": "Colbys v2 - Cardholder & organizer",
+  "properties": {
+    "Name": "Colbys v2 - Cardholder & organizer",
+    "Tags": [
+      "Wallet",
+      "Card Holder",
+      "Travel",
+      "Identity",
+      "Lifestyle"
+    ],
+    "Status": "Available on demand",
+    "Price": 190,
+    "Dimensions": "9.8x12.cm folded, 19x12cm open (thickness, folded: 11.5mm)",
+    "Weight": "114",
+    "Stock": "On-demand",
+    "Description": "The Colbys wallet with a cash pocket",
+    "Leather Type": [
+      "99dcfba80e5d4f01859daf447f2c34ac",
+      "4224c608783f4ef98127ea424ecee29e",
+      "0e4a32949cdd4fe7a84c0aa545d10631",
+      "cc96deecd0354d78a97fa055b9dd9688"
+    ],
+    "Thread Type": [
+      "eaff9871978142069e69ed4c6ed07237",
+      "61f82cc404024542a559ffb9024e5cf1"
+    ],
+    "Created": "2022-03-28 16:58:38Z",
+    "Last Updated": "2023-09-17 19:42:04Z"
+  },
+  "createdTime": "2022-03-28T16:58:38Z",
+  "lastEdited": "2023-09-17T19:42:04Z",
+  "cover": "./da18e0acd3384bdf8f7b8260ce1fc55c/2.jpg",
+  "images": [
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/1.jpg",
+      "caption": "",
+      "width": 1832,
+      "height": 774
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/2.jpg",
+      "caption": "",
+      "width": 1024,
+      "height": 576
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/3.jpg",
+      "caption": "",
+      "width": 1024,
+      "height": 576
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1115
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/8.jpg",
+      "caption": "",
+      "width": 1024,
+      "height": 576
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/9.jpg",
+      "caption": "",
+      "width": 1024,
+      "height": 576
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/11.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/12.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/13.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/14.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/15.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/16.jpg",
+      "caption": "",
+      "width": 1680,
+      "height": 3648
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/17.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/18.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/19.jpg",
+      "caption": "",
+      "width": 1680,
+      "height": 3648
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/20.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/21.jpg",
+      "caption": "",
+      "width": 1680,
+      "height": 3648
+    },
+    {
+      "file": "./da18e0acd3384bdf8f7b8260ce1fc55c/22.jpg",
+      "caption": "",
+      "width": 1680,
+      "height": 3648
+    }
+  ],
+  "contentMarkdown": "This card holder can hold your French ID card (the big one, not the CB one), a driver's license, 4 cards to be placed in the inside right slots, 1 to 4 cards in the left slot, and several cards in the left sub-pocket (about 6 or more)\n\nIn addition of the Colbys v1, this v2 can carry some cash in the back pocket if you want a dedicated pocket for this. (photos coming soon)\n\nThis handmade wallet is from an original template designed to order for a specific use.\n\n[The leather](notion:b82a8bf9ee1040e0816e7a0581027cbd) used named Pueblo has a marbled aspect that gives it a classy, grunge and unique visual. I use here the colors Tabacco and Cognac in combination.\n\n## “Pelle” Certificate\n\n{{image:1}}\nThis version of leather product comes with a first grade leather, a tannery from Toscany (Italy) that respects the [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). It’s proof of quality, and respect for nature.\n\n## Making-of\n\nA small video of the making-of on my Youtube Channel. This was for the Colbys V1.\n\n[Video](https://youtu.be/v1F4mqUwOd4)\n\nSubscribe to get notified of new video (no more than 2 a month)\n\n## Photos\n\nSome pictures of the wallet.\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\nI fill this wallet for you with a lot of content to show you that you can put a lot in there.\n\n{{image:6}}\n{{image:7}}\nThis realization comes with an original label and certification of vegetable tanned leather from Tuscany\n\nSome macro pictures to let you enjoy the details.\n\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}\n{{image:13}}\n{{image:14}}\nSome pictures of the making.\n\n{{image:15}}\n{{image:16}}\n{{image:17}}\n{{image:18}}\n{{image:19}}\n{{image:20}}\n{{image:21}}\n{{image:22}}",
+  "contentMarkdownFr": "Ce porte-cartes peut contenir votre carte d'identité française (la grande, pas celle au format carte bancaire), un permis de conduire, 4 cartes à glisser dans les emplacements intérieurs droits, 1 à 4 cartes dans l'emplacement gauche, et plusieurs cartes dans la sous-poche gauche (environ 6 ou plus).\n\nEn plus de ce que propose le Colbys v1, cette v2 peut accueillir des billets dans la poche arrière, si vous souhaitez une poche dédiée. (photos à venir)\n\nCe portefeuille fait main est issu d'un patron original conçu sur commande pour un usage précis.\n\n[Le cuir](notion:b82a8bf9ee1040e0816e7a0581027cbd) utilisé, nommé Pueblo, présente un aspect marbré qui lui donne un rendu chic, brut et unique. J'utilise ici les coloris Tabacco et Cognac en association.\n\n## Certificat « Pelle »\n\n{{image:1}}\nCette version est réalisée dans un cuir de premier choix, issu d'une tannerie de Toscane (Italie) qui respecte le [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). C'est un gage de qualité et de respect de la nature.\n\n## Making-of\n\nUne petite vidéo du making-of sur ma chaîne YouTube. Elle concernait le Colbys V1.\n\n[Vidéo](https://youtu.be/v1F4mqUwOd4)\n\nAbonnez-vous pour être averti des nouvelles vidéos (pas plus de 2 par mois).\n\n## Photos\n\nQuelques photos du portefeuille.\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\nJe l'ai bien rempli pour vous montrer tout ce qu'on peut y glisser.\n\n{{image:6}}\n{{image:7}}\nCette réalisation est accompagnée d'une étiquette originale et du certificat de cuir tanné végétal de Toscane.\n\nQuelques photos macro pour profiter des détails.\n\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}\n{{image:13}}\n{{image:14}}\nQuelques photos de la fabrication.\n\n{{image:15}}\n{{image:16}}\n{{image:17}}\n{{image:18}}\n{{image:19}}\n{{image:20}}\n{{image:21}}\n{{image:22}}",
+  "descriptionFr": "Le portefeuille Colbys, avec une poche pour les billets",
+  "slug": "colbys-v2-cardholder-and-organizer"
+}

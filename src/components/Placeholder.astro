@@ -1,0 +1,39 @@
+---
+/**
+ * Stand-in for a photo that is not available yet. Swap it for an <Image>
+ * when the photo arrives (see PLAN.md, "Photos à intégrer").
+ */
+import Icon from './Icon.astro';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  /** What the photo will show, read by screen readers. */
+  label: string;
+  class?: string;
+}
+
+const { lang, label, class: className } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class:list={['placeholder', className]} role="img" aria-label={`${t('placeholder.photo')}: ${label}`}>
+  <Icon name="image" size={32} strokeWidth={1.6} />
+  <span aria-hidden="true">{t('placeholder.photo')}</span>
+</div>
+
+<style>
+  .placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: var(--space-s);
+    background: var(--primary-100);
+    color: var(--primary-700);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL } from '../../data/site';
+import { routes } from '../../i18n/ui';
+---
+
+<PageLayout
+  lang="fr"
+  title="Mentions légales"
+  description="Mentions légales de lord.crofte.fr : qui publie ce site, qui l’héberge, et comment prendre contact au sujet de son contenu."
+  alternates={routes.legal}
+  updated={new Date('2026-10-29')}
+>
+  <h2>Éditeur</h2>
+  <p>
+    Ce site est édité par Geoffrey Crofte, à titre personnel. Lord Leathercraft est le nom d’une initiative bénévole et
+    non déclarée (association de fait) qui aide les débutants à apprendre la maroquinerie. Elle n’a pas de personnalité
+    juridique distincte.
+  </p>
+  <p>Directeur de la publication : Geoffrey Crofte.</p>
+  <p>Contact : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+
+  <h2>Hébergement</h2>
+  <p>
+    GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.
+    <a href="https://github.com/contact" hreflang="en">github.com/contact</a>.
+  </p>
+
+  <h2>Boutique en ligne</h2>
+  <p>
+    Les patrons et objets faits main sont vendus sur <a href="https://shop.crofte.fr" hreflang="en">shop.crofte.fr</a>
+    (en anglais), une boutique gérée avec Payhip. Ses propres conditions et informations légales s’appliquent aux achats.
+  </p>
+
+  <h2>Propriété intellectuelle</h2>
+  <p>
+    Sauf mention contraire, les textes, photos, dessins et patrons de ce site sont l’œuvre de Geoffrey Crofte. Merci de ne
+    pas les réutiliser sans autorisation. Faire un lien vers n’importe quelle page est le bienvenu.
+  </p>
+
+  <h2>Liens affiliés</h2>
+  <p>Certaines pages contiennent des liens affiliés. Voir <a href={routes.affiliate.fr}>comment fonctionnent les liens affiliés</a>.</p>
+</PageLayout>

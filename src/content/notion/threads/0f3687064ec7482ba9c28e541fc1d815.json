@@ -1,0 +1,34 @@
+{
+  "notionId": "0f3687064ec7482ba9c28e541fc1d815",
+  "notionUrl": "https://app.notion.com/p/0f3687064ec7482ba9c28e541fc1d815",
+  "name": "Dark Magenta",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-30 18:53:00Z",
+    "Related to Catalogue des produits (Property)": null,
+    "Status": "Available",
+    "Created": "2021-06-29 18:40:00Z",
+    "Name": "Dark Magenta"
+  },
+  "createdTime": "2021-06-29 18:40:00Z",
+  "lastEdited": "2021-06-30T18:53:00.000Z",
+  "cover": "./0f3687064ec7482ba9c28e541fc1d815/1.jpg",
+  "images": [
+    {
+      "file": "./0f3687064ec7482ba9c28e541fc1d815/1.jpg",
+      "caption": "",
+      "width": 1494,
+      "height": 840
+    },
+    {
+      "file": "./0f3687064ec7482ba9c28e541fc1d815/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "dark-magenta",
+  "descriptionFr": ""
+}

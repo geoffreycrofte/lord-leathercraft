@@ -1,0 +1,65 @@
+{
+  "notionId": "0eb5f22124474184a1c76b8e0b1665be",
+  "notionUrl": "https://app.notion.com/p/0eb5f22124474184a1c76b8e0b1665be",
+  "name": "Belt - Brown Rider Belt",
+  "properties": {
+    "Name": "Belt - Brown Rider Belt",
+    "Tags": [
+      "Lifestyle",
+      "Accessories",
+      "Belt",
+      "Wearable"
+    ],
+    "Status": "Available on demand",
+    "Price": 88,
+    "Dimensions": "4mm x 120cm approx.",
+    "Weight": null,
+    "Stock": "On demand",
+    "Description": "A dark textured belt with a clean dark buckle",
+    "Leather Type": [
+      "bfde2758a89a42bcb6297cfdc0970cb4"
+    ],
+    "Thread Type": [],
+    "Created": "2024-07-08 11:47:22Z",
+    "Last Updated": "2024-07-08 11:51:54Z"
+  },
+  "createdTime": "2024-07-08T11:47:22Z",
+  "lastEdited": "2024-07-08T11:51:54Z",
+  "cover": "./0eb5f22124474184a1c76b8e0b1665be/0-cover.jpg",
+  "images": [
+    {
+      "file": "./0eb5f22124474184a1c76b8e0b1665be/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./0eb5f22124474184a1c76b8e0b1665be/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./0eb5f22124474184a1c76b8e0b1665be/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./0eb5f22124474184a1c76b8e0b1665be/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./0eb5f22124474184a1c76b8e0b1665be/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "This belt is made on-demand at your size (if the provider has the right length of course, it can depend on their stock). The metallic parts are all silver-gun with a clean aspect. The leather used is slightly smooth and won't hurt your body if you move a lot.\n\nThe pattern on the leather is slightly marble and play a great role in its vintage and classy aspect.\n\nAlways ask for your dimensions. Max-lenght is around 120cm but if you need a custom longer size, i’m sure I can find a solution for you! 👌\n\n## A belt making-of video\n\n[Video](https://youtube.com/shorts/A0nI1n870-o?si=TGbj0aOkc8mvgK-b)\n\n## Some pictures\n\n{{image:1}}\n{{image:2}}\nSome macro photos of the details.\n\n{{image:3}}\n{{image:4}}\n{{image:5}}",
+  "contentMarkdownFr": "Cette ceinture est fabriquée sur demande à votre taille (à condition que le fournisseur ait la bonne longueur, bien sûr, cela peut dépendre de son stock). Les pièces métalliques sont toutes couleur gun metal, avec un aspect épuré. Le cuir utilisé est légèrement lisse et ne vous blessera pas si vous bougez beaucoup.\n\nLe motif du cuir est légèrement marbré et joue un grand rôle dans son aspect vintage et chic.\n\nDemandez toujours pour vos dimensions. La longueur maximale est d'environ 120cm, mais si vous avez besoin d'une taille plus longue sur mesure, je suis sûr de pouvoir trouver une solution pour vous ! 👌\n\n## Une vidéo de fabrication de ceinture\n\n[Vidéo](https://youtube.com/shorts/A0nI1n870-o?si=TGbj0aOkc8mvgK-b)\n\n## Quelques photos\n\n{{image:1}}\n{{image:2}}\nQuelques photos macro des détails.\n\n{{image:3}}\n{{image:4}}\n{{image:5}}",
+  "descriptionFr": "Une ceinture texturée sombre avec une boucle sombre épurée",
+  "slug": "belt-brown-rider-belt"
+}

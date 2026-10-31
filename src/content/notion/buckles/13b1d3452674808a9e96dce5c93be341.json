@@ -1,0 +1,38 @@
+{
+  "notionId": "13b1d3452674808a9e96dce5c93be341",
+  "notionUrl": "https://app.notion.com/p/13b1d3452674808a9e96dce5c93be341",
+  "name": "A3 - Vintage Brass or Silver (fixed)",
+  "properties": {
+    "Look": [
+      "Brass",
+      "Silver"
+    ],
+    "Available sizes": [
+      "30mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2024-11-11 19:49:12Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "A3 - Vintage Brass or Silver (fixed)"
+  },
+  "createdTime": "2024-11-11 19:49:12Z",
+  "lastEdited": "2024-11-11T20:21:17.731Z",
+  "cover": "./13b1d3452674808a9e96dce5c93be341/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d3452674808a9e96dce5c93be341/1.jpg",
+      "caption": "",
+      "width": 800,
+      "height": 800
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a3-vintage-brass-or-silver-fixed",
+  "descriptionFr": ""
+}

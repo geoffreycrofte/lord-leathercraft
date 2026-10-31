@@ -1,0 +1,42 @@
+{
+  "notionId": "bfde2758a89a42bcb6297cfdc0970cb4",
+  "notionUrl": "https://app.notion.com/p/bfde2758a89a42bcb6297cfdc0970cb4",
+  "name": "Brown - Scarfed Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:52:18Z",
+    "Products made with this leather": [
+      "0eb5f22124474184a1c76b8e0b1665be"
+    ],
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Anilin Scarfed",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:50:15Z",
+    "Name": "Brown - Scarfed Strap"
+  },
+  "createdTime": "2023-06-24 10:50:15Z",
+  "lastEdited": "2023-06-24T10:52:18.203Z",
+  "cover": "./bfde2758a89a42bcb6297cfdc0970cb4/1.jpg",
+  "images": [
+    {
+      "file": "./bfde2758a89a42bcb6297cfdc0970cb4/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1122
+    },
+    {
+      "file": "./bfde2758a89a42bcb6297cfdc0970cb4/2.jpg",
+      "caption": "",
+      "width": 1758,
+      "height": 1744
+    }
+  ],
+  "contentMarkdown": "The scarfed finishing gives this leather strap this slight pattern on the grain side.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "La finition « scarfed » donne à cette bande de cuir ce léger motif côté fleur.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "brown-scarfed-strap",
+  "descriptionFr": ""
+}

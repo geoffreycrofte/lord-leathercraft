@@ -1,0 +1,92 @@
+{
+  "notionId": "de6ddbf05eec401da13dc5b3b6e2cc0a",
+  "notionUrl": "https://app.notion.com/p/de6ddbf05eec401da13dc5b3b6e2cc0a",
+  "name": "Bound - Blue Navy Watch band",
+  "properties": {
+    "Name": "Bound - Blue Navy Watch band",
+    "Tags": [],
+    "Status": "Available on demand",
+    "Price": 65,
+    "Dimensions": null,
+    "Weight": null,
+    "Stock": "On demand",
+    "Description": null,
+    "Leather Type": [
+      "0e4a32949cdd4fe7a84c0aa545d10631"
+    ],
+    "Thread Type": [
+      "1043dd73f0eb40e79bc13bf0cf3a834c"
+    ],
+    "Created": "2021-09-14 18:55:00Z",
+    "Last Updated": "2023-02-04 11:59:50Z"
+  },
+  "createdTime": "2021-09-14T18:55:00Z",
+  "lastEdited": "2023-02-04T11:59:50Z",
+  "cover": "./de6ddbf05eec401da13dc5b3b6e2cc0a/6.jpg",
+  "images": [
+    {
+      "file": "./de6ddbf05eec401da13dc5b3b6e2cc0a/1.jpg",
+      "caption": "",
+      "width": 1832,
+      "height": 774
+    },
+    {
+      "file": "./de6ddbf05eec401da13dc5b3b6e2cc0a/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./de6ddbf05eec401da13dc5b3b6e2cc0a/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 3555
+    },
+    {
+      "file": "./de6ddbf05eec401da13dc5b3b6e2cc0a/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./de6ddbf05eec401da13dc5b3b6e2cc0a/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./de6ddbf05eec401da13dc5b3b6e2cc0a/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./de6ddbf05eec401da13dc5b3b6e2cc0a/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./de6ddbf05eec401da13dc5b3b6e2cc0a/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./de6ddbf05eec401da13dc5b3b6e2cc0a/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./de6ddbf05eec401da13dc5b3b6e2cc0a/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "## “Pelle” Certificate\n\n{{image:1}}\nThis version of leather product comes with a first grade leather, a tannery from Toscany (Italy) that respects the [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). It’s proof of quality, and respect for nature.\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}",
+  "contentMarkdownFr": "## Certificat « Pelle »\n\n{{image:1}}\nCette version est réalisée dans un cuir de premier choix, issu d'une tannerie de Toscane (Italie) qui respecte le [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). C'est un gage de qualité et de respect de la nature.\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}",
+  "descriptionFr": "",
+  "slug": "bound-blue-navy-watch-band"
+}

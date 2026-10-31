@@ -1,0 +1,87 @@
+{
+  "notionId": "b3b9f92dcefe446fa96f905a13cfd9db",
+  "notionUrl": "https://app.notion.com/p/b3b9f92dcefe446fa96f905a13cfd9db",
+  "name": "Passport Holder (Prototype)",
+  "properties": {
+    "Name": "Passport Holder (Prototype)",
+    "Tags": [
+      "Passport",
+      "Card Holder",
+      "Travel",
+      "Documents"
+    ],
+    "Status": "Disponible",
+    "Price": 40,
+    "Dimensions": "15.2 x 11cm (closed) 15.2 x 23 cm (open) - 1.5cm thickness closed",
+    "Weight": "132g",
+    "Stock": "1 en stock",
+    "Description": "A white passport and travel document holder.",
+    "Leather Type": [],
+    "Thread Type": [],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2023-03-03 23:13:13Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2023-03-03T23:13:13Z",
+  "cover": "./b3b9f92dcefe446fa96f905a13cfd9db/0-cover.jpg",
+  "images": [
+    {
+      "file": "./b3b9f92dcefe446fa96f905a13cfd9db/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    },
+    {
+      "file": "./b3b9f92dcefe446fa96f905a13cfd9db/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./b3b9f92dcefe446fa96f905a13cfd9db/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./b3b9f92dcefe446fa96f905a13cfd9db/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./b3b9f92dcefe446fa96f905a13cfd9db/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./b3b9f92dcefe446fa96f905a13cfd9db/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./b3b9f92dcefe446fa96f905a13cfd9db/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./b3b9f92dcefe446fa96f905a13cfd9db/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./b3b9f92dcefe446fa96f905a13cfd9db/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "This passport holder will be your travel companion allowing you to store your transportation card, your passport and many other useful documents such as your roadmap or receipts.\n\nIt has 6 card spaces, and 3 pockets, one of which is for your passport.\n\nThis prototype has a few flaws here and there, that's why it is offered at a price of 40€ instead of the usual 120€. It is nevertheless strong, these defects are only visual.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}",
+  "contentMarkdownFr": "Ce porte-passeport sera votre compagnon de voyage : il vous permet de ranger votre carte de transport, votre passeport et bien d'autres documents utiles comme votre itinéraire ou vos reçus.\n\nIl dispose de 6 emplacements pour cartes et de 3 poches, dont une pour votre passeport.\n\nCe prototype présente quelques défauts ici et là, c'est pourquoi il est proposé au prix de 40 € au lieu des 120 € habituels. Il reste néanmoins solide : ces défauts sont uniquement esthétiques.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}",
+  "descriptionFr": "Un porte-passeport et porte-documents de voyage blanc.",
+  "slug": "passport-holder-prototype"
+}

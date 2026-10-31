@@ -1,0 +1,52 @@
+{
+  "notionId": "2ce1d34526748081bbf5edcef5343eea",
+  "notionUrl": "https://app.notion.com/p/2ce1d34526748081bbf5edcef5343eea",
+  "name": "FIP - Double brass buck",
+  "properties": {
+    "Look": [
+      "Silver",
+      "Chrome"
+    ],
+    "Available sizes": [
+      "25mm"
+    ],
+    "Material": [
+      "Brass",
+      "Nickel Plated"
+    ],
+    "Created": "2025-12-19 09:41:23Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Double",
+      "Ardillon"
+    ],
+    "Name": "FIP - Double brass buck"
+  },
+  "createdTime": "2025-12-19 09:41:23Z",
+  "lastEdited": "2025-12-19T09:46:00.857Z",
+  "cover": "./2ce1d34526748081bbf5edcef5343eea/1.jpg",
+  "images": [
+    {
+      "file": "./2ce1d34526748081bbf5edcef5343eea/1.jpg",
+      "caption": "",
+      "width": 1080,
+      "height": 975
+    },
+    {
+      "file": "./2ce1d34526748081bbf5edcef5343eea/2.jpg",
+      "caption": "",
+      "width": 1080,
+      "height": 1015
+    },
+    {
+      "file": "./2ce1d34526748081bbf5edcef5343eea/3.jpg",
+      "caption": "",
+      "width": 1080,
+      "height": 1024
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}\n{{image:3}}\nMade in Taiwan.",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}\n{{image:3}}\nFabriqué à Taïwan.",
+  "slug": "fip-double-brass-buck",
+  "descriptionFr": ""
+}

@@ -1,0 +1,39 @@
+{
+  "notionId": "dd415571ed8840a88a88ae10a8418d49",
+  "notionUrl": "https://app.notion.com/p/dd415571ed8840a88a88ae10a8418d49",
+  "name": "Eli - Satin-finish antique Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "30mm",
+      "35mm",
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated"
+    ],
+    "Created": "2023-06-24 11:25:07Z",
+    "Finishing": "Satin Antique",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Eli - Satin-finish antique Brass"
+  },
+  "createdTime": "2023-06-24 11:25:07Z",
+  "lastEdited": "2023-06-24T12:23:23.427Z",
+  "cover": "./dd415571ed8840a88a88ae10a8418d49/1.jpg",
+  "images": [
+    {
+      "file": "./dd415571ed8840a88a88ae10a8418d49/1.jpg",
+      "caption": "",
+      "width": 1998,
+      "height": 1254
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "eli-satin-finish-antique-brass",
+  "descriptionFr": ""
+}

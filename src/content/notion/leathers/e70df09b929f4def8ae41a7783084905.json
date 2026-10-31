@@ -1,0 +1,40 @@
+{
+  "notionId": "e70df09b929f4def8ae41a7783084905",
+  "notionUrl": "https://app.notion.com/p/e70df09b929f4def8ae41a7783084905",
+  "name": "Crimson Red - Scarfed Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:54:28Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Anilin Scarfed",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:52:27Z",
+    "Name": "Crimson Red - Scarfed Strap"
+  },
+  "createdTime": "2023-06-24 10:52:27Z",
+  "lastEdited": "2023-06-24T10:54:28.887Z",
+  "cover": "./e70df09b929f4def8ae41a7783084905/1.jpg",
+  "images": [
+    {
+      "file": "./e70df09b929f4def8ae41a7783084905/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1082
+    },
+    {
+      "file": "./e70df09b929f4def8ae41a7783084905/2.jpg",
+      "caption": "",
+      "width": 1686,
+      "height": 1414
+    }
+  ],
+  "contentMarkdown": "The scarfed finishing gives this leather strap this slight pattern on the grain side.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "La finition « scarfed » donne à cette bande de cuir ce léger motif côté fleur.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "crimson-red-scarfed-strap",
+  "descriptionFr": ""
+}

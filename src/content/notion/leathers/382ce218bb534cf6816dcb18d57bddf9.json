@@ -1,0 +1,40 @@
+{
+  "notionId": "382ce218bb534cf6816dcb18d57bddf9",
+  "notionUrl": "https://app.notion.com/p/382ce218bb534cf6816dcb18d57bddf9",
+  "name": "London Fauve - Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:16:41Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Semi-anilin + Dyed Wax",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:12:50Z",
+    "Name": "London Fauve - Strap"
+  },
+  "createdTime": "2023-06-24 10:12:50Z",
+  "lastEdited": "2023-06-24T10:16:41.499Z",
+  "cover": "./382ce218bb534cf6816dcb18d57bddf9/1.jpg",
+  "images": [
+    {
+      "file": "./382ce218bb534cf6816dcb18d57bddf9/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1069
+    },
+    {
+      "file": "./382ce218bb534cf6816dcb18d57bddf9/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1558
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "london-fauve-strap",
+  "descriptionFr": ""
+}

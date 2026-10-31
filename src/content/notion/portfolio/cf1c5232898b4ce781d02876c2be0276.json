@@ -1,0 +1,57 @@
+{
+  "notionId": "cf1c5232898b4ce781d02876c2be0276",
+  "notionUrl": "https://app.notion.com/p/cf1c5232898b4ce781d02876c2be0276",
+  "name": "Flame - Lighter Holder",
+  "properties": {
+    "Name": "Flame - Lighter Holder",
+    "Tags": [
+      "Lighter",
+      "Lifestyle",
+      "Smoker",
+      "BBQ"
+    ],
+    "Status": "Disponible",
+    "Price": 16,
+    "Dimensions": "8.4 X 4cm (5.8 cm with the fastening part)",
+    "Weight": "8g",
+    "Stock": "3 en stock",
+    "Description": "A leather and colored stitching to choose from the available stock.",
+    "Leather Type": [
+      "bc159ad1b5ea4e63837688776fc38fc6"
+    ],
+    "Thread Type": [
+      "60627525401a48cb8ce1faf596f6d898",
+      "2a84dc8d34a3489bb996b342bd2f93b2",
+      "38485e8ff21346499d001b9458affc1b"
+    ],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2021-09-08 16:56:00Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2021-09-08T16:56:00Z",
+  "cover": "./cf1c5232898b4ce781d02876c2be0276/0-cover.jpg",
+  "images": [
+    {
+      "file": "./cf1c5232898b4ce781d02876c2be0276/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./cf1c5232898b4ce781d02876c2be0276/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./cf1c5232898b4ce781d02876c2be0276/3.jpg",
+      "caption": "",
+      "width": 1440,
+      "height": 1440
+    }
+  ],
+  "contentMarkdown": "This product is at the same level as the [Vintage Lighter Holder](notion:cf643a8401a74418bd2f1963341b2b53) but offers a customization of colors in the range of leather and waxed threads available. I invite you to visit the leather range and the list of waxed threads for more information.\n\nBelow are some examples of combinations.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\nOther leather colors are of course available, this is just a sample of the versions already made.",
+  "contentMarkdownFr": "Ce produit est du même niveau que le [Vintage Lighter Holder](notion:cf643a8401a74418bd2f1963341b2b53), mais propose une personnalisation des couleurs parmi la gamme de cuirs et de fils cirés disponibles. Je vous invite à consulter la gamme de cuirs et la liste des fils cirés pour plus d'informations.\n\nVoici quelques exemples de combinaisons.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\nD'autres couleurs de cuir sont bien sûr disponibles ; ce n'est qu'un échantillon des versions déjà réalisées.",
+  "descriptionFr": "Un cuir et des coutures colorées à choisir parmi le stock disponible.",
+  "slug": "flame-lighter-holder"
+}

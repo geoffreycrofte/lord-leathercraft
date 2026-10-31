@@ -1,0 +1,38 @@
+{
+  "notionId": "13b1d34526748042b039ebf2ee36fdda",
+  "notionUrl": "https://app.notion.com/p/13b1d34526748042b039ebf2ee36fdda",
+  "name": "A2 - Brass Double à Rouleau",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "35mm",
+      "30mm"
+    ],
+    "Material": [
+      "Solid Brass"
+    ],
+    "Created": "2024-11-11 19:46:16Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "A2 - Brass Double à Rouleau"
+  },
+  "createdTime": "2024-11-11 19:46:16Z",
+  "lastEdited": "2024-11-11T20:21:41.235Z",
+  "cover": "./13b1d34526748042b039ebf2ee36fdda/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d34526748042b039ebf2ee36fdda/1.jpg",
+      "caption": "",
+      "width": 960,
+      "height": 960
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a2-brass-double-a-rouleau",
+  "descriptionFr": ""
+}

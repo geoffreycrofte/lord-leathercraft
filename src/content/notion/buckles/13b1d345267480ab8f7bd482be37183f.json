@@ -1,0 +1,37 @@
+{
+  "notionId": "13b1d345267480ab8f7bd482be37183f",
+  "notionUrl": "https://app.notion.com/p/13b1d345267480ab8f7bd482be37183f",
+  "name": "A17 - Metal Mix⁴",
+  "properties": {
+    "Look": [
+      "Gold"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2024-11-11 20:33:24Z",
+    "Finishing": "Multiple",
+    "Type": [
+      "Buckle Plate"
+    ],
+    "Name": "A17 - Metal Mix⁴"
+  },
+  "createdTime": "2024-11-11 20:33:24Z",
+  "lastEdited": "2024-11-11T20:34:55.209Z",
+  "cover": "./13b1d345267480ab8f7bd482be37183f/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d345267480ab8f7bd482be37183f/1.jpg",
+      "caption": "",
+      "width": 638,
+      "height": 637
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a17-metal-mix",
+  "descriptionFr": ""
+}

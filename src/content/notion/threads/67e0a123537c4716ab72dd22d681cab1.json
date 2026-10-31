@@ -1,0 +1,34 @@
+{
+  "notionId": "67e0a123537c4716ab72dd22d681cab1",
+  "notionUrl": "https://app.notion.com/p/67e0a123537c4716ab72dd22d681cab1",
+  "name": "Dark Blue",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 18:50:00Z",
+    "Related to Catalogue des produits (Property)": null,
+    "Status": "Available",
+    "Created": "2021-06-29 18:49:03Z",
+    "Name": "Dark Blue"
+  },
+  "createdTime": "2021-06-29 18:49:03Z",
+  "lastEdited": "2021-06-29T18:50:00.000Z",
+  "cover": "./67e0a123537c4716ab72dd22d681cab1/1.jpg",
+  "images": [
+    {
+      "file": "./67e0a123537c4716ab72dd22d681cab1/1.jpg",
+      "caption": "",
+      "width": 1463,
+      "height": 824
+    },
+    {
+      "file": "./67e0a123537c4716ab72dd22d681cab1/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "dark-blue",
+  "descriptionFr": ""
+}

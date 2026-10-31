@@ -1,0 +1,43 @@
+{
+  "notionId": "f2509b2f844e47c1ab25113d5ec7a32e",
+  "notionUrl": "https://app.notion.com/p/f2509b2f844e47c1ab25113d5ec7a32e",
+  "name": "Customizable key fob",
+  "properties": {
+    "Name": "Customizable key fob",
+    "Tags": [],
+    "Status": "Available",
+    "Price": 12,
+    "Dimensions": null,
+    "Weight": null,
+    "Stock": "2 in stock",
+    "Description": "Small key ring with clip",
+    "Leather Type": [
+      "713e7ac037f54d639db09a43947c4829",
+      "fdae8febf9e44524b7621f82d89033df"
+    ],
+    "Thread Type": [],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2023-07-29 21:00:50Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2023-07-29T21:00:50Z",
+  "cover": "./f2509b2f844e47c1ab25113d5ec7a32e/1.jpg",
+  "images": [
+    {
+      "file": "./f2509b2f844e47c1ab25113d5ec7a32e/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1123
+    },
+    {
+      "file": "./f2509b2f844e47c1ab25113d5ec7a32e/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    }
+  ],
+  "contentMarkdown": "This small keychain has a ring and a mini clipand can be personalized with a few characters (usually no more than 6) if you want to write a first name, nickname or initials.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Ce petit porte-clés dispose d'un anneau et d'un mini mousqueton, et peut être personnalisé avec quelques caractères (généralement 6 au maximum) si vous souhaitez y inscrire un prénom, un surnom ou des initiales.\n\n{{image:1}}\n{{image:2}}",
+  "descriptionFr": "Petit porte-clés avec mousqueton",
+  "slug": "customizable-key-fob-2"
+}

@@ -1,0 +1,38 @@
+{
+  "notionId": "13b1d3452674809380b3d87ecc968026",
+  "notionUrl": "https://app.notion.com/p/13b1d3452674809380b3d87ecc968026",
+  "name": "A14 - Plate, Duo of Metal",
+  "properties": {
+    "Look": [
+      "Chrome",
+      "Silver Gun"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2024-11-11 20:25:26Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Buckle Plate"
+    ],
+    "Name": "A14 - Plate, Duo of Metal"
+  },
+  "createdTime": "2024-11-11 20:25:26Z",
+  "lastEdited": "2024-11-11T20:27:27.645Z",
+  "cover": "./13b1d3452674809380b3d87ecc968026/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d3452674809380b3d87ecc968026/1.jpg",
+      "caption": "",
+      "width": 622,
+      "height": 636
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a14-plate-duo-of-metal",
+  "descriptionFr": ""
+}

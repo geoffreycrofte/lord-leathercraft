@@ -1,0 +1,93 @@
+{
+  "notionId": "7740edc2e29e4ce4a71eeb63a8a60998",
+  "notionUrl": "https://app.notion.com/p/7740edc2e29e4ce4a71eeb63a8a60998",
+  "name": "The Corsair - Minimalist Card holder",
+  "properties": {
+    "Name": "The Corsair - Minimalist Card holder",
+    "Tags": [
+      "Minimalist",
+      "Card Holder",
+      "Lifestyle",
+      "Nomad Wallet",
+      "Pouch"
+    ],
+    "Status": "Available on demand",
+    "Price": 45,
+    "Dimensions": "10 x 7cm (closed)",
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "Can carry up to 10 cards, cash, or diverse stuff",
+    "Leather Type": [
+      "654edb74d3ef4ab58f3a5f645e716f95"
+    ],
+    "Thread Type": [
+      "0ecfd2a0824342369c16ed8f27819402",
+      "cdcdfdcb169240779d2aa159d27c2366"
+    ],
+    "Created": "2022-12-09 16:51:00Z",
+    "Last Updated": "2023-09-17 19:51:43Z"
+  },
+  "createdTime": "2022-12-09T16:51:00Z",
+  "lastEdited": "2023-09-17T19:51:43Z",
+  "cover": "./7740edc2e29e4ce4a71eeb63a8a60998/2.jpg",
+  "images": [
+    {
+      "file": "./7740edc2e29e4ce4a71eeb63a8a60998/1.jpg",
+      "caption": "",
+      "width": 1832,
+      "height": 774
+    },
+    {
+      "file": "./7740edc2e29e4ce4a71eeb63a8a60998/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./7740edc2e29e4ce4a71eeb63a8a60998/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./7740edc2e29e4ce4a71eeb63a8a60998/4.jpg",
+      "caption": "8 cards and a bit of cash, and I still have got room for more.",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./7740edc2e29e4ce4a71eeb63a8a60998/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./7740edc2e29e4ce4a71eeb63a8a60998/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./7740edc2e29e4ce4a71eeb63a8a60998/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    },
+    {
+      "file": "./7740edc2e29e4ce4a71eeb63a8a60998/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./7740edc2e29e4ce4a71eeb63a8a60998/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "## Short description\n\nThis cardholder is a format of wallet that is just perfect. It's minimalist but yet has enough space for a lot of stuff.\n\n## Long description\n\nI love the balance between minimalism and the room you have in there. I did put easily 8 cards but could have make it 10, and some cash next to it.  \nIt fits into the pocket and is easy to open/close. And let's not talk about the great look.\n\n## Details\n\nAnyways, here is a Corsair Wallet made of Yellow thread and Pueblo leather in Ortensia. But you can ask to all the customisation you want. (almost)\n\n## “Pelle” Certificate\n\n{{image:1}}\nThis version of leather product comes with a first grade leather, a tannery from Toscany (Italy) that respects the [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). It’s proof of quality, and respect for nature.\n\n## Photos\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\nSome examples of use, just to help you imagine the space you have in there.\n\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}",
+  "contentMarkdownFr": "## Description courte\n\nCe porte-cartes est un format de portefeuille tout simplement parfait. Il est minimaliste, tout en offrant assez de place pour beaucoup de choses.\n\n## Description longue\n\nJ'adore l'équilibre entre minimalisme et espace disponible. J'y ai glissé facilement 8 cartes, j'aurais pu aller jusqu'à 10, avec quelques billets à côté.  \nIl tient dans la poche et s'ouvre et se ferme facilement. Et ne parlons même pas de son allure.\n\n## Détails\n\nVoici donc un portefeuille Corsair réalisé avec un fil jaune et du cuir Pueblo coloris Ortensia. Mais vous pouvez demander toutes les personnalisations que vous souhaitez (ou presque).\n\n## Certificat « Pelle »\n\n{{image:1}}\nCette version est réalisée dans un cuir de premier choix, issu d'une tannerie de Toscane (Italie) qui respecte le [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). C'est un gage de qualité et de respect de la nature.\n\n## Photos\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\nQuelques exemples d'utilisation, pour vous aider à imaginer l'espace disponible.\n\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}",
+  "descriptionFr": "Peut contenir jusqu'à 10 cartes, des billets ou divers petits objets",
+  "slug": "the-corsair-minimalist-card-holder"
+}

@@ -1,0 +1,37 @@
+{
+  "notionId": "f6779aaecc204eab9e8cd293ad63567b",
+  "notionUrl": "https://app.notion.com/p/f6779aaecc204eab9e8cd293ad63567b",
+  "name": "Yse - Satin-finish Antique Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Zinc Plated"
+    ],
+    "Created": "2023-06-24 11:52:57Z",
+    "Finishing": "Satin Antique",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Yse - Satin-finish Antique Brass"
+  },
+  "createdTime": "2023-06-24 11:52:57Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./f6779aaecc204eab9e8cd293ad63567b/1.jpg",
+  "images": [
+    {
+      "file": "./f6779aaecc204eab9e8cd293ad63567b/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1500
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "yse-satin-finish-antique-brass",
+  "descriptionFr": ""
+}

@@ -1,0 +1,39 @@
+{
+  "notionId": "13b1d345267480cca827fec7ddaa8d0d",
+  "notionUrl": "https://app.notion.com/p/13b1d345267480cca827fec7ddaa8d0d",
+  "name": "A4 - Brass with keeper",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "35mm",
+      "40mm",
+      "30mm"
+    ],
+    "Material": [
+      "Solid Brass"
+    ],
+    "Created": "2024-11-11 19:50:54Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "A4 - Brass with keeper"
+  },
+  "createdTime": "2024-11-11 19:50:54Z",
+  "lastEdited": "2024-11-11T20:21:01.136Z",
+  "cover": "./13b1d345267480cca827fec7ddaa8d0d/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d345267480cca827fec7ddaa8d0d/1.jpg",
+      "caption": "",
+      "width": 960,
+      "height": 960
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a4-brass-with-keeper",
+  "descriptionFr": ""
+}

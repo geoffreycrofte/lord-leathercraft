@@ -1,0 +1,15 @@
+---
+import { useTranslations, type Lang } from '../i18n/ui';
+import type { Article } from '../lib/articles';
+
+interface Props {
+  lang: Lang;
+  category: Article['data']['category'];
+}
+
+const tone = { care: 'chip--accent', design: 'chip--primary', materials: 'chip--accent', tools: '' } as const;
+const { lang, category } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<span class:list={['chip', 'chip--tag', tone[category]]}>{t(`category.${category}`)}</span>

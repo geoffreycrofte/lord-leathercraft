@@ -1,0 +1,40 @@
+{
+  "notionId": "3dfa98b94af34d6d997c480cecc294f7",
+  "notionUrl": "https://app.notion.com/p/3dfa98b94af34d6d997c480cecc294f7",
+  "name": "Bordeaux Red - Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:40:17Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Anilin + Dyed Wax",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:38:42Z",
+    "Name": "Bordeaux Red - Strap"
+  },
+  "createdTime": "2023-06-24 10:38:42Z",
+  "lastEdited": "2023-06-24T10:40:17.376Z",
+  "cover": "./3dfa98b94af34d6d997c480cecc294f7/1.jpg",
+  "images": [
+    {
+      "file": "./3dfa98b94af34d6d997c480cecc294f7/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1226
+    },
+    {
+      "file": "./3dfa98b94af34d6d997c480cecc294f7/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1732
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "bordeaux-red-strap",
+  "descriptionFr": ""
+}

@@ -1,0 +1,249 @@
+---
+/**
+ * Cross-section diagrams of leather, drawn in SVG so they stay sharp, use
+ * the site palette and carry real, translated text.
+ *
+ * - `hide`: the layers of a hide and where each leather quality comes from.
+ * - `aniline`, `semi-aniline`, `pigmented`, `pull-up`: the layers a finish adds.
+ */
+import type { Lang } from '../i18n/ui';
+
+type Kind = 'hide' | 'aniline' | 'semi-aniline' | 'pigmented' | 'pull-up';
+
+interface Props {
+  kind: Kind;
+  lang: Lang;
+}
+
+const { kind, lang } = Astro.props;
+const uid = `ld-${kind}`;
+
+const text = {
+  en: {
+    grain: 'Grain',
+    grainNote: 'tight fibres, natural surface',
+    corium: 'Corium',
+    coriumNote: 'looser fibres, the bulk of the hide',
+    flesh: 'Flesh side',
+    fullGrain: 'Full grain',
+    fullGrainNote: 'grain kept intact',
+    corrected: 'Corrected grain',
+    correctedNote: 'grain sanded, then coated',
+    split: 'Split',
+    splitNote: 'lower layer, no grain',
+    dye: 'Dyed through',
+    fibres: 'leather fibres',
+    noCoat: 'No surface coat',
+    noCoatNote: 'pores stay visible',
+    thinCoat: 'Thin coat',
+    thinCoatNote: 'lightly pigmented',
+    pigment: 'Pigment layer',
+    pigmentNote: 'opaque, hides the grain',
+    topcoat: 'Top coat',
+    topcoatNote: 'protective finish',
+    oils: 'Oils and waxes',
+    oilsNote: 'loaded into the fibres',
+    titles: {
+      hide: 'Cross-section of a hide',
+      aniline: 'Aniline leather in cross-section',
+      'semi-aniline': 'Semi-aniline leather in cross-section',
+      pigmented: 'Pigmented leather in cross-section',
+      'pull-up': 'Pull-up leather in cross-section',
+    },
+    descs: {
+      hide: 'From top to bottom: the grain, made of tight fibres, then the corium, with looser fibres, then the flesh side. Full grain keeps the whole grain; corrected grain has its surface sanded and coated; a split is cut from the lower layer and has no grain.',
+      aniline: 'The dye goes through the leather fibres. Nothing covers the surface, so the pores stay visible.',
+      'semi-aniline': 'The leather is dyed through, then covered with a thin coat holding a little pigment.',
+      pigmented: 'On top of the dyed fibres, an opaque pigment layer hides the surface, and a top coat protects it.',
+      'pull-up': 'The dyed fibres are loaded with oils and waxes, which move when the leather is bent and lighten the colour.',
+    },
+  },
+  fr: {
+    grain: 'Fleur',
+    grainNote: 'fibres serrées, surface naturelle',
+    corium: 'Derme',
+    coriumNote: 'fibres plus lâches, l’essentiel de la peau',
+    flesh: 'Côté chair',
+    fullGrain: 'Pleine fleur',
+    fullGrainNote: 'fleur conservée intacte',
+    corrected: 'Fleur corrigée',
+    correctedNote: 'fleur poncée, puis enduite',
+    split: 'Croûte',
+    splitNote: 'couche inférieure, sans fleur',
+    dye: 'Teint dans la masse',
+    fibres: 'fibres du cuir',
+    noCoat: 'Aucune couche',
+    noCoatNote: 'les pores restent visibles',
+    thinCoat: 'Fine couche',
+    thinCoatNote: 'légèrement pigmentée',
+    pigment: 'Pigment',
+    pigmentNote: 'opaque, masque la fleur',
+    topcoat: 'Vernis',
+    topcoatNote: 'couche de protection',
+    oils: 'Huiles et cires',
+    oilsNote: 'chargées dans les fibres',
+    titles: {
+      hide: 'Coupe d’une peau',
+      aniline: 'Cuir aniline en coupe',
+      'semi-aniline': 'Cuir semi-aniline en coupe',
+      pigmented: 'Cuir pigmenté en coupe',
+      'pull-up': 'Cuir pull-up en coupe',
+    },
+    descs: {
+      hide: 'De haut en bas : la fleur, aux fibres serrées, puis le derme, aux fibres plus lâches, puis le côté chair. La pleine fleur garde toute la fleur ; la fleur corrigée a sa surface poncée et enduite ; la croûte est taillée dans la couche inférieure et n’a pas de fleur.',
+      aniline: 'La teinture traverse les fibres du cuir. Rien ne recouvre la surface : les pores restent visibles.',
+      'semi-aniline': 'Le cuir est teint dans la masse, puis recouvert d’une fine couche contenant un peu de pigment.',
+      pigmented: 'Au-dessus des fibres teintes, une couche de pigment opaque masque la surface, et un vernis la protège.',
+      'pull-up': 'Les fibres teintes sont chargées d’huiles et de cires, qui se déplacent quand on plie le cuir et éclaircissent la couleur.',
+    },
+  },
+}[lang];
+
+/* Colours from the brand palette. */
+const c = {
+  ink: '#242525',
+  muted: '#435056',
+  fibreLight: '#f9d3a1',
+  fibre: '#efb378',
+  fibreDark: '#d27f41',
+  dye: '#8c4111',
+  pigment: '#471b06',
+  coat: '#d2f7f9',
+  coatEdge: '#00686e',
+  oil: '#fee9ce',
+};
+
+// Block geometry shared by every diagram.
+const x = 24;
+const w = 360;
+const labelX = 412;
+// Pores along the top surface of the finish diagrams.
+const pores = Array.from({ length: 11 }, (_, i) => x + 14 + i * 32 + (i % 3) * 5);
+---
+
+<figure class="diagram">
+  <svg viewBox={kind === 'hide' ? '0 0 720 280' : '0 20 720 270'} role="img" aria-labelledby={`${uid}-t ${uid}-d`}>
+    <title id={`${uid}-t`}>{text.titles[kind]}</title>
+    <desc id={`${uid}-d`}>{text.descs[kind]}</desc>
+    <defs>
+      <pattern id={`${uid}-fibres`} width="36" height="18" patternUnits="userSpaceOnUse">
+        <rect width="36" height="18" fill={c.fibreLight} />
+        <path d="M0 9 C9 2 18 16 27 9 S36 4 36 9" fill="none" stroke={c.fibre} stroke-width="2" />
+        <path d="M0 16 C10 12 20 19 36 14" fill="none" stroke={c.fibreDark} stroke-width="1" opacity="0.5" />
+      </pattern>
+      <pattern id={`${uid}-grain`} width="10" height="6" patternUnits="userSpaceOnUse">
+        <rect width="10" height="6" fill={c.fibre} />
+        <path d="M0 3 H10" stroke={c.fibreDark} stroke-width="1.5" />
+      </pattern>
+      <pattern id={`${uid}-oil`} width="14" height="14" patternUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="2.2" fill={c.oil} />
+        <circle cx="11" cy="10" r="1.6" fill={c.oil} />
+      </pattern>
+      <linearGradient id={`${uid}-dye`} x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color={c.dye} stop-opacity="0.7" />
+        <stop offset="1" stop-color={c.dye} stop-opacity="0.15" />
+      </linearGradient>
+    </defs>
+
+    <g font-family="inherit" font-size="15" fill={c.ink}>
+      {
+        kind === 'hide' ? (
+          <>
+            {/* Hide: grain, corium, flesh, with brackets for each quality. */}
+            <rect x={x} y="40" width={w} height="44" fill={`url(#${uid}-grain)`} rx="4" />
+            <rect x={x} y="84" width={w} height="150" fill={`url(#${uid}-fibres)`} />
+            <rect x={x} y="234" width={w} height="22" fill={c.fibreDark} opacity="0.55" rx="4" />
+            <text x={x + 12} y="72" font-weight="700">{text.grain}</text>
+            <text x={x + 12} y="124" font-weight="700">{text.corium}</text>
+            <text x={x + 12} y="250" font-weight="700" font-size="13">{text.flesh}</text>
+
+            {/* Sanding line for corrected grain. */}
+            <line x1={x} x2={x + w} y1="52" y2="52" stroke={c.ink} stroke-width="1.5" stroke-dasharray="6 5" />
+            {/* Split line. */}
+            <line x1={x} x2={x + w} y1="150" y2="150" stroke={c.ink} stroke-width="2" stroke-dasharray="10 6" />
+
+            <path d={`M${x + w + 12} 40 h10 v110 h-10`} fill="none" stroke={c.ink} stroke-width="2" />
+            <text x={labelX} y="100" font-weight="700">{text.fullGrain}</text>
+            <text x={labelX} y="118" fill={c.muted} font-size="14">{text.fullGrainNote}</text>
+
+            <path d={`M${x + w - 40} 52 L${labelX - 12} 30`} stroke={c.ink} stroke-width="1.5" fill="none" />
+            <text x={labelX} y="28" font-weight="700">{text.corrected}</text>
+            <text x={labelX} y="46" fill={c.muted} font-size="14">{text.correctedNote}</text>
+
+            <path d={`M${x + w + 12} 150 h10 v106 h-10`} fill="none" stroke={c.ink} stroke-width="2" />
+            <text x={labelX} y="200" font-weight="700">{text.split}</text>
+            <text x={labelX} y="218" fill={c.muted} font-size="14">{text.splitNote}</text>
+          </>
+        ) : (
+          <>
+            {/* Finish: fibres, dye, and the layers the finish adds on top. */}
+            <rect x={x} y="110" width={w} height="160" fill={`url(#${uid}-fibres)`} rx="4" />
+            <rect x={x} y="110" width={w} height="160" fill={`url(#${uid}-dye)`} rx="4" />
+            {kind === 'pull-up' && <rect x={x} y="110" width={w} height="160" fill={`url(#${uid}-oil)`} rx="4" />}
+            {kind !== 'pigmented' &&
+              pores.map((px) => <path d={`M${px} 110 q4 7 8 0`} fill={c.pigment} opacity="0.75" />)}
+            {kind === 'semi-aniline' && <rect x={x} y="96" width={w} height="14" fill={c.dye} opacity="0.55" rx="3" />}
+            {kind === 'pigmented' && (
+              <>
+                <rect x={x} y="86" width={w} height="24" fill={c.pigment} rx="3" />
+                <rect x={x} y="70" width={w} height="16" fill={c.coat} stroke={c.coatEdge} stroke-width="1.5" rx="3" />
+              </>
+            )}
+
+            {/* Labels with leader lines. */}
+            {kind === 'aniline' && (
+              <>
+                <path d={`M${x + w - 30} 112 L${labelX - 12} 70`} stroke={c.ink} stroke-width="1.5" fill="none" />
+                <text x={labelX} y="66" font-weight="700">{text.noCoat}</text>
+                <text x={labelX} y="86" fill={c.muted} font-size="14">{text.noCoatNote}</text>
+              </>
+            )}
+            {kind === 'semi-aniline' && (
+              <>
+                <path d={`M${x + w - 30} 103 L${labelX - 12} 70`} stroke={c.ink} stroke-width="1.5" fill="none" />
+                <text x={labelX} y="66" font-weight="700">{text.thinCoat}</text>
+                <text x={labelX} y="86" fill={c.muted} font-size="14">{text.thinCoatNote}</text>
+              </>
+            )}
+            {kind === 'pigmented' && (
+              <>
+                <path d={`M${x + w - 30} 78 L${labelX - 12} 46`} stroke={c.ink} stroke-width="1.5" fill="none" />
+                <text x={labelX} y="42" font-weight="700">{text.topcoat}</text>
+                <text x={labelX} y="60" fill={c.muted} font-size="14">{text.topcoatNote}</text>
+                <path d={`M${x + w - 50} 98 L${labelX - 12} 112`} stroke={c.ink} stroke-width="1.5" fill="none" />
+                <text x={labelX} y="116" font-weight="700">{text.pigment}</text>
+                <text x={labelX} y="134" fill={c.muted} font-size="14">{text.pigmentNote}</text>
+              </>
+            )}
+            {kind === 'pull-up' && (
+              <>
+                <path d={`M${x + w - 60} 150 L${labelX - 12} 120`} stroke={c.ink} stroke-width="1.5" fill="none" />
+                <text x={labelX} y="116" font-weight="700">{text.oils}</text>
+                <text x={labelX} y="134" fill={c.muted} font-size="14">{text.oilsNote}</text>
+              </>
+            )}
+            <path d={`M${x + w - 20} 200 L${labelX - 12} 200`} stroke={c.ink} stroke-width="1.5" fill="none" />
+            <text x={labelX} y="196" font-weight="700">{text.dye}</text>
+            <text x={labelX} y="214" fill={c.muted} font-size="14">{text.fibres}</text>
+          </>
+        )
+      }
+    </g>
+  </svg>
+  <figcaption>{text.titles[kind]}. {text.descs[kind]}</figcaption>
+</figure>
+
+<style>
+  .diagram {
+    margin: var(--space-l) 0;
+  }
+  .diagram svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: var(--space-s);
+    background: var(--primary-050);
+    border: 1px solid var(--primary-100);
+    border-radius: var(--radius);
+  }
+</style>

@@ -1,0 +1,54 @@
+{
+  "notionId": "0e4a32949cdd4fe7a84c0aa545d10631",
+  "notionUrl": "https://app.notion.com/p/0e4a32949cdd4fe7a84c0aa545d10631",
+  "name": "Pueblo - Navy",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Moderate",
+    "Last Updated": "2023-06-23 19:18:27Z",
+    "Products made with this leather": [
+      "de6ddbf05eec401da13dc5b3b6e2cc0a",
+      "e4d669f4a0684377b3ebf64f24af2118",
+      "bec0a214d2d845b1877a4aceab420790",
+      "da18e0acd3384bdf8f7b8260ce1fc55c",
+      "69b01dba05af4b60af854d80a4d40f85",
+      "188640d361a9405592d4caf4e4431dfe",
+      "b4e388fd634d4ef6baf4c0c5fc4fe2d8",
+      "cc165197fab2455d815d3df41de32feb",
+      "0e5e54988e694d25bba881f0910f48f5",
+      "34d26223ded141aeac9b250261d97c36",
+      "91bf9b1b9e034c0a9e077654ea1f600c",
+      "ca0bb4357f3b490db6bea6eefc4bd5a4",
+      "1715b49694414c58ad0ab7317cb0227b"
+    ],
+    "Skin": "Cow",
+    "Status": "In stock",
+    "Finishing": null,
+    "Origin of Skin": "Italy, Tuscany",
+    "Max-length": null,
+    "Tanning": "Veg-Tan",
+    "Created": "2021-06-28 21:11:20Z",
+    "Name": "Pueblo - Navy"
+  },
+  "createdTime": "2021-06-28 21:11:20Z",
+  "lastEdited": "2023-06-23T19:18:27.400Z",
+  "cover": "./0e4a32949cdd4fe7a84c0aa545d10631/1.jpg",
+  "images": [
+    {
+      "file": "./0e4a32949cdd4fe7a84c0aa545d10631/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./0e4a32949cdd4fe7a84c0aa545d10631/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    }
+  ],
+  "contentMarkdown": "The Badalassi Carlo Pueblo leather is a top quality leather made in Toscani, Italia and has a strong label you will receive with each product made with this leather. ([Official Page](https://www.pellealvegetale.it/tanneries/badalassi-carlo/))\n\nThis leather wears a marble texture aspect that makes it classy and original.\n\nIt takes a wonderful patina with the age that makes it even more authentic. The creations made with this leather is a promise of a lifetime lasting product.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Le cuir Pueblo de Badalassi Carlo est un cuir de très grande qualité fabriqué en Toscane, en Italie ; il est accompagné d'une étiquette d'authenticité que vous recevrez avec chaque produit réalisé dans ce cuir. ([Page officielle](https://www.pellealvegetale.it/tanneries/badalassi-carlo/))\n\nCe cuir présente un aspect marbré qui le rend à la fois élégant et original.\n\nAvec le temps, il développe une magnifique patine qui le rend encore plus authentique. Les créations réalisées dans ce cuir sont la promesse d'un produit fait pour durer toute une vie.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "pueblo-navy",
+  "descriptionFr": ""
+}

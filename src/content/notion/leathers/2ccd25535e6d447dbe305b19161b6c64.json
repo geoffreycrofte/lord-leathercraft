@@ -1,0 +1,46 @@
+{
+  "notionId": "2ccd25535e6d447dbe305b19161b6c64",
+  "notionUrl": "https://app.notion.com/p/2ccd25535e6d447dbe305b19161b6c64",
+  "name": "Violet - Glossy",
+  "properties": {
+    "Type of skin": "N/C",
+    "Fermness": "Soft",
+    "Last Updated": "2023-06-23 19:13:34Z",
+    "Products made with this leather": null,
+    "Skin": "Goat",
+    "Status": "In stock",
+    "Finishing": null,
+    "Origin of Skin": null,
+    "Max-length": null,
+    "Tanning": "Chrome-Tan",
+    "Created": "2021-05-24 19:43:16Z",
+    "Name": "Violet - Glossy"
+  },
+  "createdTime": "2021-05-24 19:43:16Z",
+  "lastEdited": "2023-06-23T19:13:34.730Z",
+  "cover": "./2ccd25535e6d447dbe305b19161b6c64/1.jpg",
+  "images": [
+    {
+      "file": "./2ccd25535e6d447dbe305b19161b6c64/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./2ccd25535e6d447dbe305b19161b6c64/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    },
+    {
+      "file": "./2ccd25535e6d447dbe305b19161b6c64/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "A relatively thin skin with a glossy finish (smooth with reflections) that makes it ideal for objects such as purses, bags or small wallets.\n\nSome pictures with different lights to give you an idea.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}",
+  "contentMarkdownFr": "Une peau relativement fine à la finition brillante (lisse, avec des reflets), idéale pour des objets comme les porte-monnaie, les sacs ou les petits portefeuilles.\n\nQuelques photos sous différents éclairages pour vous en donner une idée.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}",
+  "slug": "violet-glossy",
+  "descriptionFr": ""
+}

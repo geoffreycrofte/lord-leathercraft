@@ -1,0 +1,54 @@
+{
+  "notionId": "3639ca7aebb64029884fc84d9c7eaf87",
+  "notionUrl": "https://app.notion.com/p/3639ca7aebb64029884fc84d9c7eaf87",
+  "name": "Cable strap",
+  "properties": {
+    "Name": "Cable strap",
+    "Tags": [],
+    "Status": "Available",
+    "Price": 5,
+    "Dimensions": null,
+    "Weight": null,
+    "Stock": "3 in stock",
+    "Description": "A clip to keep your cables rolled up.",
+    "Leather Type": [
+      "fdae8febf9e44524b7621f82d89033df"
+    ],
+    "Thread Type": [],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2022-12-09 17:46:00Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2022-12-09T17:46:00Z",
+  "cover": "./3639ca7aebb64029884fc84d9c7eaf87/1.jpg",
+  "images": [
+    {
+      "file": "./3639ca7aebb64029884fc84d9c7eaf87/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./3639ca7aebb64029884fc84d9c7eaf87/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1122
+    },
+    {
+      "file": "./3639ca7aebb64029884fc84d9c7eaf87/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1123
+    },
+    {
+      "file": "./3639ca7aebb64029884fc84d9c7eaf87/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "This type of cable clip is ideal for quickly holding a small cable such as headphones, or short charger cable for example. The color of the leather and the edge can be customized.\n\nHere are 2 variations in brown and off-white.\n\nThe length can be adjusted to a few millimeters according to your needs.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "contentMarkdownFr": "Ce type d'attache-câble est idéal pour maintenir rapidement un petit câble, comme celui d'écouteurs ou un câble de chargeur court par exemple. La couleur du cuir et de la tranche peut être personnalisée.\n\nVoici 2 variantes, en marron et en blanc cassé.\n\nLa longueur peut être ajustée au millimètre près selon vos besoins.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "descriptionFr": "Une attache pour garder vos câbles enroulés.",
+  "slug": "cable-strap"
+}

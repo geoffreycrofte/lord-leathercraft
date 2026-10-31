@@ -1,0 +1,45 @@
+{
+  "notionId": "572ffe7866034a0f84bbd77a284f6523",
+  "notionUrl": "https://app.notion.com/p/572ffe7866034a0f84bbd77a284f6523",
+  "name": "Black - Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:24:29Z",
+    "Products made with this leather": [
+      "d1e51fca464e4f42b4ff8b543117f6f0",
+      "c5b1158767f845bdbd69a262a9957067",
+      "be6b39e1cca9496a9884105a38ae0607",
+      "2631d345267480cfbe3ff54e01eaff6c"
+    ],
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Semi-anilin + Dyed Wax",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:22:43Z",
+    "Name": "Black - Strap"
+  },
+  "createdTime": "2023-06-24 10:22:43Z",
+  "lastEdited": "2023-06-24T10:24:29.679Z",
+  "cover": "./572ffe7866034a0f84bbd77a284f6523/1.jpg",
+  "images": [
+    {
+      "file": "./572ffe7866034a0f84bbd77a284f6523/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1053
+    },
+    {
+      "file": "./572ffe7866034a0f84bbd77a284f6523/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1508
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "black-strap",
+  "descriptionFr": ""
+}

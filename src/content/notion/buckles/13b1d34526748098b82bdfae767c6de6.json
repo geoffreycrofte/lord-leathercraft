@@ -1,0 +1,37 @@
+{
+  "notionId": "13b1d34526748098b82bdfae767c6de6",
+  "notionUrl": "https://app.notion.com/p/13b1d34526748098b82bdfae767c6de6",
+  "name": "A8 - H Lines Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Zinc Plated"
+    ],
+    "Created": "2024-11-11 20:01:42Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Buckle Plate"
+    ],
+    "Name": "A8 - H Lines Brass"
+  },
+  "createdTime": "2024-11-11 20:01:42Z",
+  "lastEdited": "2024-11-11T20:19:09.958Z",
+  "cover": "./13b1d34526748098b82bdfae767c6de6/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d34526748098b82bdfae767c6de6/1.jpg",
+      "caption": "",
+      "width": 960,
+      "height": 960
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a8-h-lines-brass",
+  "descriptionFr": ""
+}

@@ -1,0 +1,37 @@
+{
+  "notionId": "e3427b75efb24a578901dd39b097b428",
+  "notionUrl": "https://app.notion.com/p/e3427b75efb24a578901dd39b097b428",
+  "name": "Moe - Antique Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Solid Brass"
+    ],
+    "Created": "2023-06-24 11:59:12Z",
+    "Finishing": "Antique",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Moe - Antique Brass"
+  },
+  "createdTime": "2023-06-24 11:59:12Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./e3427b75efb24a578901dd39b097b428/1.jpg",
+  "images": [
+    {
+      "file": "./e3427b75efb24a578901dd39b097b428/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1635
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "moe-antique-brass",
+  "descriptionFr": ""
+}

@@ -1,0 +1,37 @@
+{
+  "notionId": "c8be7148c1354cedb6074927b3f9d9f5",
+  "notionUrl": "https://app.notion.com/p/c8be7148c1354cedb6074927b3f9d9f5",
+  "name": "Washed Red",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 18:47:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "1b698eca083645dba827d5eba016d3c8",
+      "ef6f45b04d8f4e20bf5216ebfa5f8825"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 18:46:41Z",
+    "Name": "Washed Red"
+  },
+  "createdTime": "2021-06-29 18:46:41Z",
+  "lastEdited": "2021-06-29T18:47:00.000Z",
+  "cover": "./c8be7148c1354cedb6074927b3f9d9f5/1.jpg",
+  "images": [
+    {
+      "file": "./c8be7148c1354cedb6074927b3f9d9f5/1.jpg",
+      "caption": "",
+      "width": 1571,
+      "height": 883
+    },
+    {
+      "file": "./c8be7148c1354cedb6074927b3f9d9f5/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "washed-red",
+  "descriptionFr": ""
+}

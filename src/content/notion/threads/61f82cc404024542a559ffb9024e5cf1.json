@@ -1,0 +1,45 @@
+{
+  "notionId": "61f82cc404024542a559ffb9024e5cf1",
+  "notionUrl": "https://app.notion.com/p/61f82cc404024542a559ffb9024e5cf1",
+  "name": "Caramel",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:43:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "e6ec73230e5549df837fb74c257e221d",
+      "ac3e3569c52e4a02b63c15d9a89d1434",
+      "cc165197fab2455d815d3df41de32feb",
+      "6ffba1cff0b44b149c10c966041384d4",
+      "74e6374269344f9aa0491f333ccbad3c",
+      "0e5e54988e694d25bba881f0910f48f5",
+      "34d26223ded141aeac9b250261d97c36",
+      "da18e0acd3384bdf8f7b8260ce1fc55c",
+      "1715b49694414c58ad0ab7317cb0227b",
+      "a46660945ffc4d45bfa5468d3a3ab3e4"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 18:59:29Z",
+    "Name": "Caramel"
+  },
+  "createdTime": "2021-06-29 18:59:29Z",
+  "lastEdited": "2021-06-29T19:43:00.000Z",
+  "cover": "./61f82cc404024542a559ffb9024e5cf1/1.jpg",
+  "images": [
+    {
+      "file": "./61f82cc404024542a559ffb9024e5cf1/1.jpg",
+      "caption": "",
+      "width": 1680,
+      "height": 942
+    },
+    {
+      "file": "./61f82cc404024542a559ffb9024e5cf1/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "caramel",
+  "descriptionFr": ""
+}

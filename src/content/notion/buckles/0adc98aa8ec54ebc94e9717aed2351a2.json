@@ -1,0 +1,39 @@
+{
+  "notionId": "0adc98aa8ec54ebc94e9717aed2351a2",
+  "notionUrl": "https://app.notion.com/p/0adc98aa8ec54ebc94e9717aed2351a2",
+  "name": "Max - Polished Chrome",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "30mm",
+      "35mm",
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2023-06-24 11:22:53Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Max - Polished Chrome"
+  },
+  "createdTime": "2023-06-24 11:22:53Z",
+  "lastEdited": "2023-06-24T12:23:19.328Z",
+  "cover": "./0adc98aa8ec54ebc94e9717aed2351a2/1.jpg",
+  "images": [
+    {
+      "file": "./0adc98aa8ec54ebc94e9717aed2351a2/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1185
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "max-polished-chrome",
+  "descriptionFr": ""
+}

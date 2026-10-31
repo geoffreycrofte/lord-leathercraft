@@ -1,0 +1,39 @@
+{
+  "notionId": "13b1d3452674806a8eded4af427cfb0a",
+  "notionUrl": "https://app.notion.com/p/13b1d3452674806a8eded4af427cfb0a",
+  "name": "A5 - Brass à rouleau",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "40mm",
+      "35mm",
+      "30mm"
+    ],
+    "Material": [
+      "Solid Brass"
+    ],
+    "Created": "2024-11-11 19:53:09Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "A5 - Brass à rouleau"
+  },
+  "createdTime": "2024-11-11 19:53:09Z",
+  "lastEdited": "2024-11-11T20:20:27.376Z",
+  "cover": "./13b1d3452674806a8eded4af427cfb0a/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d3452674806a8eded4af427cfb0a/1.jpg",
+      "caption": "",
+      "width": 960,
+      "height": 960
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a5-brass-a-rouleau",
+  "descriptionFr": ""
+}

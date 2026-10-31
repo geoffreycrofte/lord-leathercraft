@@ -1,0 +1,18 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  /** Describe what the image shows. Use "" only if the caption already says it all. */
+  alt: string;
+}
+
+const { src, alt } = Astro.props;
+const hasCaption = Astro.slots.has('default');
+---
+
+<figure>
+  <Image src={src} alt={alt} widths={[640, 960, 1400]} sizes="(min-width: 75rem) 70ch, 100vw" />
+  {hasCaption && <figcaption><slot /></figcaption>}
+</figure>

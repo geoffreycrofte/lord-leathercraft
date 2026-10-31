@@ -1,0 +1,50 @@
+{
+  "notionId": "bb19e9b60c454b7d9a79fdf3ff769e69",
+  "notionUrl": "https://app.notion.com/p/bb19e9b60c454b7d9a79fdf3ff769e69",
+  "name": "Pueblo - Tabacco Brown",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Moderate",
+    "Last Updated": "2023-06-23 19:09:38Z",
+    "Products made with this leather": [
+      "c3c76d0ff4ad49b08ee3af36cc952758",
+      "11a4829f7bdd4f4993b4d0a341238cb9",
+      "bec0a214d2d845b1877a4aceab420790",
+      "e6ec73230e5549df837fb74c257e221d",
+      "ac3e3569c52e4a02b63c15d9a89d1434",
+      "69b01dba05af4b60af854d80a4d40f85",
+      "f8ddcc4f230b4821aa59c7f117a87acc",
+      "4da1689cf64c4f7cb3ca6918942c00a2",
+      "1715b49694414c58ad0ab7317cb0227b"
+    ],
+    "Skin": "Cow",
+    "Status": "In stock",
+    "Finishing": null,
+    "Origin of Skin": "Italy, Tuscany",
+    "Max-length": null,
+    "Tanning": "Veg-Tan",
+    "Created": "2021-06-28 20:58:20Z",
+    "Name": "Pueblo - Tabacco Brown"
+  },
+  "createdTime": "2021-06-28 20:58:20Z",
+  "lastEdited": "2023-06-23T19:09:38.142Z",
+  "cover": "./bb19e9b60c454b7d9a79fdf3ff769e69/1.jpg",
+  "images": [
+    {
+      "file": "./bb19e9b60c454b7d9a79fdf3ff769e69/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./bb19e9b60c454b7d9a79fdf3ff769e69/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "The Badalassi Carlo Pueblo leather is a top quality leather made in Toscani, Italia and has a strong label you will receive with each product made with this leather. ([official page](https://www.pellealvegetale.it/tanneries/badalassi-carlo/))\n\nThis leather wears a marble texture aspect that makes it classy and original.\n\nIt takes a wonderful patina with the age that makes it even more authentic. The creations made with this leather is a promise of a lifetime lasting product.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Le cuir Pueblo de Badalassi Carlo est un cuir de très grande qualité fabriqué en Toscane, en Italie ; il est accompagné d'une étiquette d'authenticité que vous recevrez avec chaque produit réalisé dans ce cuir. ([page officielle](https://www.pellealvegetale.it/tanneries/badalassi-carlo/))\n\nCe cuir présente un aspect marbré qui le rend à la fois élégant et original.\n\nAvec le temps, il développe une magnifique patine qui le rend encore plus authentique. Les créations réalisées dans ce cuir sont la promesse d'un produit fait pour durer toute une vie.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "pueblo-tabacco-brown",
+  "descriptionFr": ""
+}

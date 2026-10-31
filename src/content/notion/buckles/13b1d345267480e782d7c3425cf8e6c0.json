@@ -1,0 +1,37 @@
+{
+  "notionId": "13b1d345267480e782d7c3425cf8e6c0",
+  "notionUrl": "https://app.notion.com/p/13b1d345267480e782d7c3425cf8e6c0",
+  "name": "AP1 - Brass Set",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Solid Brass"
+    ],
+    "Created": "2024-11-11 20:47:05Z",
+    "Finishing": "Brushed",
+    "Type": [
+      "Buckle Plate"
+    ],
+    "Name": "AP1 - Brass Set"
+  },
+  "createdTime": "2024-11-11 20:47:05Z",
+  "lastEdited": "2024-11-11T20:48:20.528Z",
+  "cover": "./13b1d345267480e782d7c3425cf8e6c0/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d345267480e782d7c3425cf8e6c0/1.jpg",
+      "caption": "",
+      "width": 1080,
+      "height": 1088
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "ap1-brass-set",
+  "descriptionFr": ""
+}

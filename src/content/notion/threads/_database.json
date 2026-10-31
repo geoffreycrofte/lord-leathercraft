@@ -1,0 +1,15 @@
+{
+  "description": "The thread used are all made waxed, or waxed by myself to improve the strength of the leather good, but also it's water proofness.\n\nThe colours available are listed below, you can also sometimes get the links to the products where I used these specific colours.\n\nThe light effect on some of the colour is due to the sun light and the waxed aspect of the thread. There is no glitter or anything else metallic in it.",
+  "descriptionFr": "Les fils utilisés sont tous cirés d'origine, ou cirés par mes soins, afin d'améliorer la solidité de l'article en cuir, mais aussi son imperméabilité.\n\nLes couleurs disponibles sont listées ci-dessous ; vous trouverez parfois aussi les liens vers les produits pour lesquels j'ai utilisé ces couleurs.\n\nL'effet de lumière sur certaines couleurs est dû à la lumière du soleil et à l'aspect ciré du fil. Il n'y a ni paillettes ni quoi que ce soit de métallique dedans.",
+  "title": "Thread colours",
+  "dataSourceUrl": "collection://c126d31e-9ea7-454e-8b47-a54d828df8fa",
+  "databaseNotionUrl": "https://app.notion.com/p/5ad3be9f75384764b94eec22421d2a27",
+  "schema": {
+    "Name": "title",
+    "Shape": "text",
+    "Status": "select (Available | Refilling | Not available)",
+    "Related to Catalogue des produits (Property)": "relation -> collection://9ca35403-ba76-4999-8b39-390002372f36",
+    "Created": "created_time",
+    "Last Updated": "last_edited_time"
+  }
+}

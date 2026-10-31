@@ -1,0 +1,35 @@
+---
+import BaseLayout, { type Alternates } from './BaseLayout.astro';
+import { formatDate, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  alternates: Alternates;
+  updated?: Date;
+}
+
+const { lang, title, description, alternates, updated } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<BaseLayout lang={lang} title={title} description={description} alternates={alternates}>
+  <div class="container prose page">
+    <h1>{title}</h1>
+    {
+      updated && (
+        <p>
+          {t('article.updated')} <time datetime={updated.toISOString().slice(0, 10)}>{formatDate(updated, lang)}</time>
+        </p>
+      )
+    }
+    <slot />
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    margin-top: var(--space-l);
+  }
+</style>

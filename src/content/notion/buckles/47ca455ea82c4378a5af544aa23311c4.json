@@ -1,0 +1,39 @@
+{
+  "notionId": "47ca455ea82c4378a5af544aa23311c4",
+  "notionUrl": "https://app.notion.com/p/47ca455ea82c4378a5af544aa23311c4",
+  "name": "Max - Satin-finish Chrome",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "30mm",
+      "35mm",
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2023-06-24 11:21:35Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Max - Satin-finish Chrome"
+  },
+  "createdTime": "2023-06-24 11:21:35Z",
+  "lastEdited": "2023-06-24T12:23:15.677Z",
+  "cover": "./47ca455ea82c4378a5af544aa23311c4/1.jpg",
+  "images": [
+    {
+      "file": "./47ca455ea82c4378a5af544aa23311c4/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1195
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "max-satin-finish-chrome",
+  "descriptionFr": ""
+}

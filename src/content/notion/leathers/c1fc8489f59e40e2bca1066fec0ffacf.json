@@ -1,0 +1,42 @@
+{
+  "notionId": "c1fc8489f59e40e2bca1066fec0ffacf",
+  "notionUrl": "https://app.notion.com/p/c1fc8489f59e40e2bca1066fec0ffacf",
+  "name": "Chocolate - Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:36:22Z",
+    "Products made with this leather": [
+      "b1c3433c691349b69132da8245d121cc"
+    ],
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Anilin + Dyed Wax",
+    "Origin of Skin": "Spain",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:33:36Z",
+    "Name": "Chocolate - Strap"
+  },
+  "createdTime": "2023-06-24 10:33:36Z",
+  "lastEdited": "2023-06-24T10:36:22.626Z",
+  "cover": "./c1fc8489f59e40e2bca1066fec0ffacf/1.jpg",
+  "images": [
+    {
+      "file": "./c1fc8489f59e40e2bca1066fec0ffacf/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1213
+    },
+    {
+      "file": "./c1fc8489f59e40e2bca1066fec0ffacf/2.jpg",
+      "caption": "",
+      "width": 1860,
+      "height": 1670
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "chocolate-strap",
+  "descriptionFr": ""
+}

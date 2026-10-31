@@ -1,0 +1,87 @@
+{
+  "notionId": "ab7a61c8cd35419eaead96cde1b1cc3f",
+  "notionUrl": "https://app.notion.com/p/ab7a61c8cd35419eaead96cde1b1cc3f",
+  "name": "Pouch - The \"high-tech\"Rolling case",
+  "properties": {
+    "Name": "Pouch - The \"high-tech\"Rolling case",
+    "Tags": [
+      "Travel",
+      "Lifestyle",
+      "Accessories",
+      "artist",
+      "work",
+      "Cable"
+    ],
+    "Status": "Available on demand",
+    "Price": 56,
+    "Dimensions": "30 x 16cm (open) Pocket of 5.4cm high",
+    "Weight": "66g",
+    "Stock": "On-demand",
+    "Description": "Rolling case with a strap to tie.",
+    "Leather Type": [
+      "bc159ad1b5ea4e63837688776fc38fc6"
+    ],
+    "Thread Type": [
+      "3964d4c174b045b8a0f48f3f6f30c5c5"
+    ],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2023-09-17 19:58:33Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2023-09-17T19:58:33Z",
+  "cover": "./ab7a61c8cd35419eaead96cde1b1cc3f/0-cover.jpg",
+  "images": [
+    {
+      "file": "./ab7a61c8cd35419eaead96cde1b1cc3f/1.jpg",
+      "caption": "The strap after gluing and folding, it was necessary to round the ends.",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./ab7a61c8cd35419eaead96cde1b1cc3f/2.jpg",
+      "caption": "The sewing of the lanyard in progress. It was long!",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./ab7a61c8cd35419eaead96cde1b1cc3f/3.jpg",
+      "caption": "The quality of the stitching on the strap.",
+      "width": 1678,
+      "height": 945
+    },
+    {
+      "file": "./ab7a61c8cd35419eaead96cde1b1cc3f/4.jpg",
+      "caption": "Precise hand cutting of the loops.",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./ab7a61c8cd35419eaead96cde1b1cc3f/5.jpg",
+      "caption": "The kit after sewing the elements and borders.",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./ab7a61c8cd35419eaead96cde1b1cc3f/6.jpg",
+      "caption": "An example with the size of a classic felt-tip pen.",
+      "width": 2000,
+      "height": 1123
+    },
+    {
+      "file": "./ab7a61c8cd35419eaead96cde1b1cc3f/7.jpg",
+      "caption": "The way to close the kit. It's solid!",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./ab7a61c8cd35419eaead96cde1b1cc3f/8.jpg",
+      "caption": "The back of the product",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "This fully cut, folded, and hand-sewn case offers a classy yet practical design. The leather is slightly velvety on the inside, and has a typical grain on the outside. Despite its thinness, it is very robust.\n\nIts flexibility will allow you to keep it a few years easily.\n\nThe folded and hand-sewn strap has a double use: it serves as a loop to hold the pens or cables you will store, but also to keep the case closed.\n\nSome more pictures in situation and during the making.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}",
+  "contentMarkdownFr": "Entièrement découpée, pliée et cousue à la main, cette trousse offre un design à la fois chic et pratique. Le cuir est légèrement velouté à l'intérieur et présente un grain caractéristique à l'extérieur. Malgré sa finesse, il est très robuste.\n\nSa souplesse vous permettra de la garder facilement plusieurs années.\n\nLa lanière, pliée et cousue à la main, a un double usage : elle sert de passant pour maintenir les stylos ou câbles que vous y rangerez, mais aussi à garder la trousse fermée.\n\nQuelques photos supplémentaires en situation et pendant la fabrication.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}",
+  "descriptionFr": "Trousse enroulable avec une lanière de fermeture.",
+  "slug": "pouch-the-high-tech-rolling-case"
+}

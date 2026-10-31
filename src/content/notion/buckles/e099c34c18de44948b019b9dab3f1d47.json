@@ -1,0 +1,43 @@
+{
+  "notionId": "e099c34c18de44948b019b9dab3f1d47",
+  "notionUrl": "https://app.notion.com/p/e099c34c18de44948b019b9dab3f1d47",
+  "name": "Lord - Polished Chrome Buckle kit",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated"
+    ],
+    "Created": "2023-06-24 12:20:30Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Lord - Polished Chrome Buckle kit"
+  },
+  "createdTime": "2023-06-24 12:20:30Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./e099c34c18de44948b019b9dab3f1d47/1.jpg",
+  "images": [
+    {
+      "file": "./e099c34c18de44948b019b9dab3f1d47/1.jpg",
+      "caption": "",
+      "width": 1190,
+      "height": 664
+    },
+    {
+      "file": "./e099c34c18de44948b019b9dab3f1d47/2.jpg",
+      "caption": "",
+      "width": 1192,
+      "height": 968
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "lord-polished-chrome-buckle-kit",
+  "descriptionFr": ""
+}

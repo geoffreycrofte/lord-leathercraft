@@ -1,0 +1,196 @@
+{
+  "notionId": "e86f7b2b30504c61a41712a6e275a5ea",
+  "notionUrl": "https://app.notion.com/p/e86f7b2b30504c61a41712a6e275a5ea",
+  "name": "Wings - Bi-fold Wallet",
+  "properties": {
+    "Name": "Wings - Bi-fold Wallet",
+    "Tags": [
+      "Wallet",
+      "Minimalist",
+      "Card Holder"
+    ],
+    "Status": "Not available",
+    "Price": 98,
+    "Dimensions": "22 x 9 cm ouvert - 11 x 9 cm fermé (épaisseur fermé 1 cm)",
+    "Weight": "100g",
+    "Stock": "On-demand",
+    "Description": "A wallet that can carry several card and bills.",
+    "Leather Type": [
+      "90143a8cd6eb4d478354c13cf907f2e9",
+      "ba7c693c264c4c15bc841c8d28a879e2",
+      "e4e1a83027894ce1a5e6d0cdcda1e1f2",
+      "706a0a1e3c9a4842bf3bf4d7ae958ad5"
+    ],
+    "Thread Type": [
+      "0726545c314e4cb4922af10cc6dbad8f",
+      "25c8733dc7184d4397c9eb55a9cdd4f6"
+    ],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2023-07-29 20:59:13Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2023-07-29T20:59:13Z",
+  "cover": "./e86f7b2b30504c61a41712a6e275a5ea/11.jpg",
+  "images": [
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/11.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/12.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/13.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/14.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/15.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/16.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/17.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/18.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/19.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/20.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/21.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/22.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/23.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/24.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/25.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1122
+    },
+    {
+      "file": "./e86f7b2b30504c61a41712a6e275a5ea/26.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1124
+    }
+  ],
+  "contentMarkdown": "This foldable wallet offers you 2 slots for cards in the front pockets (the inner ones in blue on the pictures), 2 other pockets for bills of tickets below the blue pockets, and also a big space to place bills and money into the main big pocket, like a classical french wallet.\n\nIt is made of 2 oiled leather with 2 different colours but can be made in monochrome too. You can see the [list of leathers](notion:b82a8bf9ee1040e0816e7a0581027cbd) or use the [colour picker](https://lord.crofte.fr/leather-color-picker) to help you with available combination.\n\n[🎨 Play with the colours](https://lord.crofte.fr/leather-color-picker/?c2=brown&c1=blue&p=1)\n\nSmall video of the creation of the product in v1\n\n[Video](https://youtu.be/zDEc0uS9eg0)\n\nSmall product shot of the [version 2](notion:e900714906db4e058d6ef3b2fdb55660) available in the product list:\n\n[Video](https://youtu.be/J9qf-ebiqMI)\n\nHere are some pictures of the creation:\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}\n{{image:13}}\n{{image:14}}\n{{image:15}}\n{{image:16}}\n{{image:17}}\n{{image:18}}\n{{image:19}}\n{{image:20}}\n{{image:21}}\n{{image:22}}\n{{image:23}}\nVoici également une couleur précédemment proposée pour vous montrer les possibilités de plusieurs couleurs.\n\n{{image:24}}\n{{image:25}}\n{{image:26}}",
+  "contentMarkdownFr": "Ce portefeuille pliable vous offre 2 emplacements pour cartes dans les poches avant (les poches intérieures en bleu sur les photos), 2 autres poches pour billets ou tickets sous les poches bleues, ainsi qu'un grand espace pour ranger billets et argent dans la grande poche principale, comme un portefeuille français classique.\n\nIl est fabriqué avec 2 cuirs huilés de 2 couleurs différentes, mais peut aussi être réalisé en monochrome. Vous pouvez consulter la [liste des cuirs](notion:b82a8bf9ee1040e0816e7a0581027cbd) ou utiliser le [sélecteur de couleurs](https://lord.crofte.fr/leather-color-picker) pour vous aider à choisir parmi les combinaisons disponibles.\n\n[🎨 Jouez avec les couleurs](https://lord.crofte.fr/leather-color-picker/?c2=brown&c1=blue&p=1)\n\nPetite vidéo de la fabrication du produit en v1\n\n[Vidéo](https://youtu.be/zDEc0uS9eg0)\n\nPetite présentation de la [version 2](notion:e900714906db4e058d6ef3b2fdb55660) disponible dans la liste des produits :\n\n[Vidéo](https://youtu.be/J9qf-ebiqMI)\n\nVoici quelques photos de la fabrication :\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}\n{{image:11}}\n{{image:12}}\n{{image:13}}\n{{image:14}}\n{{image:15}}\n{{image:16}}\n{{image:17}}\n{{image:18}}\n{{image:19}}\n{{image:20}}\n{{image:21}}\n{{image:22}}\n{{image:23}}\nVoici également une couleur proposée précédemment, pour vous montrer les possibilités offertes par plusieurs couleurs.\n\n{{image:24}}\n{{image:25}}\n{{image:26}}",
+  "descriptionFr": "Un portefeuille pouvant contenir plusieurs cartes et billets.",
+  "slug": "wings-bi-fold-wallet"
+}

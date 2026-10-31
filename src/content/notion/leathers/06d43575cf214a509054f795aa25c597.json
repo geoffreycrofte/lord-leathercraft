@@ -1,0 +1,45 @@
+{
+  "notionId": "06d43575cf214a509054f795aa25c597",
+  "notionUrl": "https://app.notion.com/p/06d43575cf214a509054f795aa25c597",
+  "name": "Pueblo - Mosto",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Moderate",
+    "Last Updated": "2023-06-23 19:10:06Z",
+    "Products made with this leather": [
+      "bec0a214d2d845b1877a4aceab420790",
+      "69b01dba05af4b60af854d80a4d40f85",
+      "3d72a67afc1148a0b42165dc27466f5d",
+      "a942aac478104847adabe97f09262365"
+    ],
+    "Skin": "Cow",
+    "Status": "In stock",
+    "Finishing": null,
+    "Origin of Skin": "Italy, Tuscany",
+    "Max-length": null,
+    "Tanning": "Veg-Tan",
+    "Created": "2021-06-28 21:12:56Z",
+    "Name": "Pueblo - Mosto"
+  },
+  "createdTime": "2021-06-28 21:12:56Z",
+  "lastEdited": "2023-06-23T19:10:06.383Z",
+  "cover": "./06d43575cf214a509054f795aa25c597/1.jpg",
+  "images": [
+    {
+      "file": "./06d43575cf214a509054f795aa25c597/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./06d43575cf214a509054f795aa25c597/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    }
+  ],
+  "contentMarkdown": "The Badalassi Carlo Pueblo leather is a top quality leather made in Toscani, Italia and has a strong label you will receive with each product made with this leather. ([Official page](https://www.pellealvegetale.it/tanneries/badalassi-carlo/))\n\nThis leather wears a marble texture aspect that makes it classy and original.\n\nIt takes a wonderful patina with the age that makes it even more authentic. The creations made with this leather is a promise of a lifetime lasting product.\n\n{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "Le cuir Pueblo de Badalassi Carlo est un cuir de très grande qualité fabriqué en Toscane, en Italie ; il est accompagné d'une étiquette d'authenticité que vous recevrez avec chaque produit réalisé dans ce cuir. ([Page officielle](https://www.pellealvegetale.it/tanneries/badalassi-carlo/))\n\nCe cuir présente un aspect marbré qui le rend à la fois élégant et original.\n\nAvec le temps, il développe une magnifique patine qui le rend encore plus authentique. Les créations réalisées dans ce cuir sont la promesse d'un produit fait pour durer toute une vie.\n\n{{image:1}}\n{{image:2}}",
+  "slug": "pueblo-mosto",
+  "descriptionFr": ""
+}

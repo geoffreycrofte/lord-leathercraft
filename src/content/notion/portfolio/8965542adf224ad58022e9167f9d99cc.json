@@ -1,0 +1,52 @@
+{
+  "notionId": "8965542adf224ad58022e9167f9d99cc",
+  "notionUrl": "https://app.notion.com/p/8965542adf224ad58022e9167f9d99cc",
+  "name": "Cable strap with stitching",
+  "properties": {
+    "Name": "Cable strap with stitching",
+    "Tags": [],
+    "Status": "Available",
+    "Price": 8,
+    "Dimensions": null,
+    "Weight": null,
+    "Stock": "8 in stock",
+    "Description": "A clip to keep your cables coiled",
+    "Leather Type": [],
+    "Thread Type": [],
+    "Created": "2021-05-24 19:43:15Z",
+    "Last Updated": "2022-12-09 17:46:00Z"
+  },
+  "createdTime": "2021-05-24T19:43:15Z",
+  "lastEdited": "2022-12-09T17:46:00Z",
+  "cover": "./8965542adf224ad58022e9167f9d99cc/0-cover.jpg",
+  "images": [
+    {
+      "file": "./8965542adf224ad58022e9167f9d99cc/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./8965542adf224ad58022e9167f9d99cc/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./8965542adf224ad58022e9167f9d99cc/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1125
+    },
+    {
+      "file": "./8965542adf224ad58022e9167f9d99cc/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "This type of cable clip is ideal for quickly holding a small cable such as headphones, or short charger cable for example. The color of the leather and the edge can be customized.\n\nThis version comes with a folded leather and it has a colored edge, mainly for style.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "contentMarkdownFr": "Ce type d'attache-câble est idéal pour maintenir rapidement un petit câble, comme celui d'écouteurs ou un câble de chargeur court par exemple. La couleur du cuir et de la tranche peut être personnalisée.\n\nCette version est réalisée en cuir plié et possède une tranche colorée, surtout pour le style.\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}",
+  "descriptionFr": "Une attache pour garder vos câbles enroulés",
+  "slug": "cable-strap-with-stitching"
+}

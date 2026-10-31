@@ -1,0 +1,12 @@
+---
+import PieceView from '../../views/PieceView.astro';
+import { getPieces, type Piece } from '../../lib/notion';
+
+export async function getStaticPaths() {
+  return (await getPieces()).map((piece) => ({ params: { slug: piece.data.slug }, props: { piece } }));
+}
+
+const { piece } = Astro.props as { piece: Piece };
+---
+
+<PieceView lang="en" piece={piece} />

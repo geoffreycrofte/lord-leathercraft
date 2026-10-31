@@ -1,0 +1,39 @@
+{
+  "notionId": "9e331575c79f4413bf5f4c9e7d4d7b56",
+  "notionUrl": "https://app.notion.com/p/9e331575c79f4413bf5f4c9e7d4d7b56",
+  "name": "Eli - Polished Chrome",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "30mm",
+      "35mm",
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated"
+    ],
+    "Created": "2023-06-24 11:30:45Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Eli - Polished Chrome"
+  },
+  "createdTime": "2023-06-24 11:30:45Z",
+  "lastEdited": "2023-06-24T12:23:30.777Z",
+  "cover": "./9e331575c79f4413bf5f4c9e7d4d7b56/1.jpg",
+  "images": [
+    {
+      "file": "./9e331575c79f4413bf5f4c9e7d4d7b56/1.jpg",
+      "caption": "",
+      "width": 1960,
+      "height": 1216
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "eli-polished-chrome",
+  "descriptionFr": ""
+}

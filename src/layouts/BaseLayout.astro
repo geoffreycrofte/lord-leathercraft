@@ -1,0 +1,80 @@
+---
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/400-italic.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/fraunces/wght-italic.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { defaultLang, useTranslations, type Lang } from '../i18n/ui';
+
+export type Alternates = Partial<Record<Lang, string>>;
+
+interface Props {
+  lang: Lang;
+  /** Page title, without the site name. */
+  title: string;
+  /** Hand-written meta description. */
+  description: string;
+  /** Paths of this page in each language, used for hreflang and the switcher. */
+  alternates: Alternates;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  jsonLd?: object[];
+  noindex?: boolean;
+}
+
+const { lang, title, description, alternates, ogImage, ogType = 'website', jsonLd = [], noindex = false } = Astro.props;
+const t = useTranslations(lang);
+const site = Astro.site!;
+const canonical = new URL(Astro.url.pathname, site).href;
+const fullTitle = title === t('site.name') ? title : `${title} · ${t('site.name')}`;
+const image = new URL(ogImage ?? '/open-graph.jpg', site).href;
+const xDefault = alternates[defaultLang];
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {
+      Object.entries(alternates).map(([hreflang, path]) => (
+        <link rel="alternate" hreflang={hreflang} href={new URL(path, site).href} />
+      ))
+    }
+    {xDefault && <link rel="alternate" hreflang="x-default" href={new URL(xDefault, site).href} />}
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta property="og:site_name" content={t('site.name')} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_GB'} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
+  </head>
+  <body>
+    <a class="skip-link" href="#content">{t('skip')}</a>
+    <Header lang={lang} alternates={alternates} />
+    <main id="content">
+      <slot />
+    </main>
+    <Footer lang={lang} alternates={alternates} />
+  </body>
+</html>

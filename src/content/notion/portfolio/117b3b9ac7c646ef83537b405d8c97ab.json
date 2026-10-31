@@ -1,0 +1,90 @@
+{
+  "notionId": "117b3b9ac7c646ef83537b405d8c97ab",
+  "notionUrl": "https://app.notion.com/p/117b3b9ac7c646ef83537b405d8c97ab",
+  "name": "Pinch - The minimalist bookmark",
+  "properties": {
+    "Name": "Pinch - The minimalist bookmark",
+    "Tags": [
+      "Bookmark",
+      "Book",
+      "Lifestyle"
+    ],
+    "Status": "Available on demand",
+    "Price": 16,
+    "Dimensions": null,
+    "Weight": null,
+    "Stock": "On-demand",
+    "Description": "A small bookmark that pinch your page",
+    "Leather Type": [
+      "cc96deecd0354d78a97fa055b9dd9688"
+    ],
+    "Thread Type": [
+      "0ecfd2a0824342369c16ed8f27819402"
+    ],
+    "Created": "2023-01-03 21:04:04Z",
+    "Last Updated": "2023-09-17 19:39:02Z"
+  },
+  "createdTime": "2023-01-03T21:04:04Z",
+  "lastEdited": "2023-09-17T19:39:02Z",
+  "cover": "./117b3b9ac7c646ef83537b405d8c97ab/2.jpg",
+  "images": [
+    {
+      "file": "./117b3b9ac7c646ef83537b405d8c97ab/1.jpg",
+      "caption": "",
+      "width": 1832,
+      "height": 774
+    },
+    {
+      "file": "./117b3b9ac7c646ef83537b405d8c97ab/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1996
+    },
+    {
+      "file": "./117b3b9ac7c646ef83537b405d8c97ab/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1996
+    },
+    {
+      "file": "./117b3b9ac7c646ef83537b405d8c97ab/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1996
+    },
+    {
+      "file": "./117b3b9ac7c646ef83537b405d8c97ab/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1996
+    },
+    {
+      "file": "./117b3b9ac7c646ef83537b405d8c97ab/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 2000
+    },
+    {
+      "file": "./117b3b9ac7c646ef83537b405d8c97ab/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 2001
+    },
+    {
+      "file": "./117b3b9ac7c646ef83537b405d8c97ab/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 2001
+    },
+    {
+      "file": "./117b3b9ac7c646ef83537b405d8c97ab/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 2000
+    }
+  ],
+  "contentMarkdown": "This bookmark slips easily on your current page, so you can always find easily where you left the story you were reading.\n\nThe price of 16€ is for one unit delivery included. We can find an arrangement for multiple items, for example for:\n\n- 2 items you drop at 12€ per unit\n- 4 items to 10€ per unit\n\nCan come in multiple colours of your choice.\n\nIt's a good that is also included for free in the [Colbys Wallet](notion:f8ddcc4f230b4821aa59c7f117a87acc) if you also want to offer a handmade leather wallet. 👍\n\n## “Pelle” Certificate\n\n{{image:1}}\nThis version of leather product comes with a first grade leather, a tannery from Toscany (Italy) that respects the [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). It’s proof of quality, and respect for nature.\n\n## Some pictures\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}",
+  "contentMarkdownFr": "Ce marque-page se glisse facilement sur votre page en cours, pour toujours retrouver aisément l'endroit où vous avez laissé l'histoire que vous lisiez.\n\nLe prix de 16 € s'entend pour une unité, livraison comprise. Nous pouvons trouver un arrangement pour plusieurs exemplaires, par exemple :\n\n- 2 exemplaires : le prix descend à 12 € l'unité\n- 4 exemplaires : 10 € l'unité\n\nDisponible en plusieurs couleurs, au choix.\n\nC'est une pièce également offerte avec le [Colbys Wallet](notion:f8ddcc4f230b4821aa59c7f117a87acc), si vous souhaitez aussi offrir un portefeuille en cuir fait main. 👍\n\n## Certificat « Pelle »\n\n{{image:1}}\nCette version est réalisée dans un cuir de premier choix, issu d'une tannerie de Toscane (Italie) qui respecte le [Consortium Manifesto](notion:4a58a7b015244c8ea0d583c45532c0d3). C'est un gage de qualité et de respect de la nature.\n\n## Quelques photos\n\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\n{{image:7}}\n{{image:8}}\n{{image:9}}",
+  "descriptionFr": "Un petit marque-page qui pince votre page",
+  "slug": "pinch-the-minimalist-bookmark"
+}

@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { entryPath, formatDate, routes, useTranslations, type Lang } from '../i18n/ui';
+import { getPosts } from '../lib/posts';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const posts = await getPosts(lang);
+const copy = {
+  en: {
+    title: 'Blog',
+    accent: 'from the workbench',
+    description: 'News from the workshop, answers to your questions, reactions and quick leathercraft tips, with links to the guides and patterns that go further.',
+    intro: 'News, answers to your comments, reactions and quick tips. For in-depth tutorials, see the guides.',
+  },
+  fr: {
+    title: 'Blog',
+    accent: 'depuis l’établi',
+    description: 'Les actus de l’atelier, des réponses à vos questions, des réactions et des astuces de maroquinerie, avec des liens vers les guides et les patrons.',
+    intro: 'Des actus, des réponses à vos commentaires, des réactions et des astuces. Pour les tutos de fond, voyez les guides.',
+  },
+}[lang];
+---
+
+<BaseLayout lang={lang} title={copy.title} description={copy.description} alternates={routes.blog}>
+  <div class="container">
+    <PageIntro title={copy.title} accent={copy.accent} intro={copy.intro} />
+    <ol class="posts" role="list">
+      {
+        posts.map((post) => (
+          <li class="post-row">
+            <div class="post-row__meta">
+              <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>{formatDate(post.data.pubDate, lang)}</time>
+              <span class="chip chip--primary">{t(`kind.${post.data.kind}`)}</span>
+            </div>
+            <div>
+              <h2 class="post-row__title">
+                <a href={entryPath('blog', lang, post.data.slug)}>{post.data.title}</a>
+              </h2>
+              <p>{post.data.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</BaseLayout>
+
+<style>
+  .posts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 56rem;
+  }
+  .post-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 12rem) minmax(0, 1fr);
+    gap: var(--space-xs) var(--space-l);
+    padding-block: var(--space-m);
+    border-top: 1px solid var(--color-border);
+  }
+  @media (max-width: 40rem) {
+    .post-row {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  .post-row__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+  }
+  .post-row__title {
+    margin: 0 0 0.375rem;
+    font-size: 1.5rem;
+  }
+  .post-row__title a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .post-row__title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .post-row:hover .post-row__title a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+  }
+  .post-row:has(a:focus-visible) {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+    border-radius: var(--radius-s);
+  }
+  .post-row__title a:focus-visible {
+    outline: none;
+  }
+  .post-row p {
+    margin: 0;
+    color: var(--color-text-muted);
+  }
+</style>

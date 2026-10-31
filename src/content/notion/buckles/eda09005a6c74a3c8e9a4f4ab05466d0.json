@@ -1,0 +1,37 @@
+{
+  "notionId": "eda09005a6c74a3c8e9a4f4ab05466d0",
+  "notionUrl": "https://app.notion.com/p/eda09005a6c74a3c8e9a4f4ab05466d0",
+  "name": "Wim - Satin-finish Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated"
+    ],
+    "Created": "2023-06-24 12:10:47Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Wim - Satin-finish Brass"
+  },
+  "createdTime": "2023-06-24 12:10:47Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./eda09005a6c74a3c8e9a4f4ab05466d0/1.jpg",
+  "images": [
+    {
+      "file": "./eda09005a6c74a3c8e9a4f4ab05466d0/1.jpg",
+      "caption": "",
+      "width": 1982,
+      "height": 1582
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "wim-satin-finish-brass",
+  "descriptionFr": ""
+}

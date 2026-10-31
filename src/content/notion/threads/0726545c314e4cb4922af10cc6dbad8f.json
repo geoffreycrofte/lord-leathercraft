@@ -1,0 +1,39 @@
+{
+  "notionId": "0726545c314e4cb4922af10cc6dbad8f",
+  "notionUrl": "https://app.notion.com/p/0726545c314e4cb4922af10cc6dbad8f",
+  "name": "Washed Caramel",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:43:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "e86f7b2b30504c61a41712a6e275a5ea",
+      "fba1cd4fe25b42e5a2d504bc12b39e4c",
+      "162c5d7d9a954fdc9d88aa3cc921202e",
+      "3df62c74804e45148b736bf623bf6cd1"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 19:01:59Z",
+    "Name": "Washed Caramel"
+  },
+  "createdTime": "2021-06-29 19:01:59Z",
+  "lastEdited": "2021-06-29T19:43:00.000Z",
+  "cover": "./0726545c314e4cb4922af10cc6dbad8f/1.jpg",
+  "images": [
+    {
+      "file": "./0726545c314e4cb4922af10cc6dbad8f/1.jpg",
+      "caption": "",
+      "width": 1625,
+      "height": 915
+    },
+    {
+      "file": "./0726545c314e4cb4922af10cc6dbad8f/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "washed-caramel",
+  "descriptionFr": ""
+}

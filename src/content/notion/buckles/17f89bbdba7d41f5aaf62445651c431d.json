@@ -1,0 +1,40 @@
+{
+  "notionId": "17f89bbdba7d41f5aaf62445651c431d",
+  "notionUrl": "https://app.notion.com/p/17f89bbdba7d41f5aaf62445651c431d",
+  "name": "Sam - Polished Chrome",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "25mm",
+      "30mm",
+      "35mm",
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated + Steel"
+    ],
+    "Created": "2023-06-24 11:38:31Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Sam - Polished Chrome"
+  },
+  "createdTime": "2023-06-24 11:38:31Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./17f89bbdba7d41f5aaf62445651c431d/1.jpg",
+  "images": [
+    {
+      "file": "./17f89bbdba7d41f5aaf62445651c431d/1.jpg",
+      "caption": "",
+      "width": 1186,
+      "height": 866
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "sam-polished-chrome",
+  "descriptionFr": ""
+}

@@ -1,0 +1,40 @@
+{
+  "notionId": "4445df853465425b927292b4ae09f928",
+  "notionUrl": "https://app.notion.com/p/4445df853465425b927292b4ae09f928",
+  "name": "Natural Strap",
+  "properties": {
+    "Type of skin": "Full Grain",
+    "Fermness": "Hard",
+    "Last Updated": "2023-06-24 10:14:45Z",
+    "Products made with this leather": null,
+    "Skin": "Cow",
+    "Status": "On-demand",
+    "Finishing": "Not protected",
+    "Origin of Skin": "Italy",
+    "Max-length": "140 cm",
+    "Tanning": "Veg-Tan",
+    "Created": "2023-06-24 10:09:25Z",
+    "Name": "Natural Strap"
+  },
+  "createdTime": "2023-06-24 10:09:25Z",
+  "lastEdited": "2023-06-24T10:14:45.390Z",
+  "cover": "./4445df853465425b927292b4ae09f928/2.jpg",
+  "images": [
+    {
+      "file": "./4445df853465425b927292b4ae09f928/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1447
+    },
+    {
+      "file": "./4445df853465425b927292b4ae09f928/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 931
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "natural-strap",
+  "descriptionFr": ""
+}

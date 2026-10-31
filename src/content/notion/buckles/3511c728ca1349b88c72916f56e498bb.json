@@ -1,0 +1,37 @@
+{
+  "notionId": "3511c728ca1349b88c72916f56e498bb",
+  "notionUrl": "https://app.notion.com/p/3511c728ca1349b88c72916f56e498bb",
+  "name": "Tom - Satin-finish Antique Brass",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Steel"
+    ],
+    "Created": "2023-06-24 11:47:41Z",
+    "Finishing": "Satin Antique",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Tom - Satin-finish Antique Brass"
+  },
+  "createdTime": "2023-06-24 11:47:41Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./3511c728ca1349b88c72916f56e498bb/1.jpg",
+  "images": [
+    {
+      "file": "./3511c728ca1349b88c72916f56e498bb/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1306
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "tom-satin-finish-antique-brass",
+  "descriptionFr": ""
+}

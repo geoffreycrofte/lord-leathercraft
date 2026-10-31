@@ -1,0 +1,50 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { CONTACT_EMAIL } from '../data/site';
+import { routes } from '../i18n/ui';
+---
+
+<PageLayout
+  lang="en"
+  title="Privacy"
+  description="No cookies, no analytics, no tracking: what data lord.crofte.fr handles, what the host and embedded videos may collect, and your rights."
+  alternates={routes.privacy}
+  updated={new Date('2026-10-29')}
+>
+  <p>Short version: this website sets no cookies, uses no analytics and does not track you.</p>
+
+  <h2>What this website does not do</h2>
+  <ul>
+    <li>No cookies and no local storage.</li>
+    <li>No audience measurement, no advertising, no social media trackers.</li>
+    <li>Fonts are served from this website, not from a third party.</li>
+  </ul>
+
+  <h2>Hosting</h2>
+  <p>
+    The website is hosted by GitHub Pages. Like any web server, GitHub receives technical data such as your IP address
+    when you load a page, for security and operation purposes. See the
+    <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.
+  </p>
+
+  <h2>Videos</h2>
+  <p>
+    Videos are hosted by YouTube. They are embedded in privacy-enhanced mode (youtube-nocookie.com) and nothing is loaded
+    from YouTube until you press play. From then on, the
+    <a href="https://policies.google.com/privacy">Google privacy policy</a> applies.
+  </p>
+
+  <h2>Links to other websites</h2>
+  <p>
+    When you follow a link to the shop (shop.crofte.fr, run with Payhip), to a social network or to a partner’s website,
+    that website’s own privacy policy applies. Affiliate links let the partner know that you came from here: see
+    <a href={routes.affiliate.en}>how affiliate links work</a>.
+  </p>
+
+  <h2>Your rights</h2>
+  <p>
+    If you email me, I only use your address to reply. You can ask me to access or delete our exchanges at
+    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. You can also file a complaint with your data protection
+    authority (in France, the <a href="https://www.cnil.fr/en">CNIL</a>).
+  </p>
+</PageLayout>

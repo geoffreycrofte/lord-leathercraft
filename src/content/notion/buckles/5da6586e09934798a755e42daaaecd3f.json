@@ -1,0 +1,43 @@
+{
+  "notionId": "5da6586e09934798a755e42daaaecd3f",
+  "notionUrl": "https://app.notion.com/p/5da6586e09934798a755e42daaaecd3f",
+  "name": "Lord - Satin-finish Brass Buckle kit",
+  "properties": {
+    "Look": [
+      "Brass"
+    ],
+    "Available sizes": [
+      "40mm"
+    ],
+    "Material": [
+      "Zinc Plated"
+    ],
+    "Created": "2023-06-24 12:16:57Z",
+    "Finishing": "Satin",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Lord - Satin-finish Brass Buckle kit"
+  },
+  "createdTime": "2023-06-24 12:16:57Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./5da6586e09934798a755e42daaaecd3f/1.jpg",
+  "images": [
+    {
+      "file": "./5da6586e09934798a755e42daaaecd3f/1.jpg",
+      "caption": "",
+      "width": 1196,
+      "height": 736
+    },
+    {
+      "file": "./5da6586e09934798a755e42daaaecd3f/2.jpg",
+      "caption": "",
+      "width": 1184,
+      "height": 866
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "lord-satin-finish-brass-buckle-kit",
+  "descriptionFr": ""
+}

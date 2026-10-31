@@ -1,0 +1,38 @@
+{
+  "notionId": "13b1d345267480e49f67f10c83aabd10",
+  "notionUrl": "https://app.notion.com/p/13b1d345267480e49f67f10c83aabd10",
+  "name": "A6 - Silver (gun) ardillon + claw",
+  "properties": {
+    "Look": [
+      "Silver Gun",
+      "Silver"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Zinc Plated"
+    ],
+    "Created": "2024-11-11 19:54:08Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "A6 - Silver (gun) ardillon + claw"
+  },
+  "createdTime": "2024-11-11 19:54:08Z",
+  "lastEdited": "2024-11-11T20:20:01.328Z",
+  "cover": "./13b1d345267480e49f67f10c83aabd10/1.jpg",
+  "images": [
+    {
+      "file": "./13b1d345267480e49f67f10c83aabd10/1.jpg",
+      "caption": "",
+      "width": 960,
+      "height": 960
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "a6-silver-gun-ardillon-claw",
+  "descriptionFr": ""
+}

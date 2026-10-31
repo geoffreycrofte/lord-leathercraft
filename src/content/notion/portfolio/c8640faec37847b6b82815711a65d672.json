@@ -1,0 +1,95 @@
+{
+  "notionId": "c8640faec37847b6b82815711a65d672",
+  "notionUrl": "https://app.notion.com/p/c8640faec37847b6b82815711a65d672",
+  "name": "Belt - Green & Triple Brass",
+  "properties": {
+    "Name": "Belt - Green & Triple Brass",
+    "Tags": [
+      "Lifestyle",
+      "Accessories",
+      "Belt",
+      "Wearable"
+    ],
+    "Status": "Available on demand",
+    "Price": 88,
+    "Dimensions": "4mm x 115cm approx.",
+    "Weight": null,
+    "Stock": "On demand",
+    "Description": "A vintage-styled belt with brass buckle.",
+    "Leather Type": [
+      "38bf1916e5834fa1826f6bcfb867139c"
+    ],
+    "Thread Type": [],
+    "Created": "2023-01-29 21:29:09Z",
+    "Last Updated": "2024-01-13 20:44:00Z"
+  },
+  "createdTime": "2023-01-29T21:29:09Z",
+  "lastEdited": "2024-01-13T20:44:00Z",
+  "cover": "./c8640faec37847b6b82815711a65d672/2.jpg",
+  "images": [
+    {
+      "file": "./c8640faec37847b6b82815711a65d672/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./c8640faec37847b6b82815711a65d672/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./c8640faec37847b6b82815711a65d672/3.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./c8640faec37847b6b82815711a65d672/4.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./c8640faec37847b6b82815711a65d672/5.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./c8640faec37847b6b82815711a65d672/6.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./c8640faec37847b6b82815711a65d672/7.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./c8640faec37847b6b82815711a65d672/8.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./c8640faec37847b6b82815711a65d672/9.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    },
+    {
+      "file": "./c8640faec37847b6b82815711a65d672/10.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1126
+    }
+  ],
+  "contentMarkdown": "This belt is made on-demand at your size (if the provider has the right length of course, it can depend on their stock). The metallic parts are all brass with a old brushed style. The leather used is a true full grain leather, strong and smooth at the same time.\n\nAlways ask for your dimensions. Max-lenght is around 120cm but if you need a custom longer size, i’m sure I can find a solution for you! 👌\n\n## A belt making-of video\n\n[Video](https://youtube.com/shorts/A0nI1n870-o?si=TGbj0aOkc8mvgK-b)\n\n## Some pictures\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\nSome macro photos of the details.\n\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}",
+  "contentMarkdownFr": "Cette ceinture est fabriquée sur commande à votre taille (si le fournisseur dispose de la bonne longueur, bien sûr ; cela peut dépendre de son stock). Toutes les pièces métalliques sont en laiton, au style brossé à l'ancienne. Le cuir utilisé est un véritable cuir pleine fleur, à la fois robuste et doux.\n\nPrécisez toujours vos dimensions. La longueur maximale est d'environ 120 cm, mais si vous avez besoin d'une taille plus longue sur mesure, je suis sûr de pouvoir trouver une solution pour vous ! 👌\n\n## Vidéo de la fabrication d'une ceinture\n\n[Vidéo](https://youtube.com/shorts/A0nI1n870-o?si=TGbj0aOkc8mvgK-b)\n\n## Quelques photos\n\n{{image:1}}\n{{image:2}}\n{{image:3}}\n{{image:4}}\n{{image:5}}\n{{image:6}}\nQuelques photos macro des détails.\n\n{{image:7}}\n{{image:8}}\n{{image:9}}\n{{image:10}}",
+  "descriptionFr": "Une ceinture au style vintage avec boucle en laiton.",
+  "slug": "belt-green-and-triple-brass"
+}

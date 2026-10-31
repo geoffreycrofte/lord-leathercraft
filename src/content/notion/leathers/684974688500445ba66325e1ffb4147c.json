@@ -1,0 +1,42 @@
+{
+  "notionId": "684974688500445ba66325e1ffb4147c",
+  "notionUrl": "https://app.notion.com/p/684974688500445ba66325e1ffb4147c",
+  "name": "Chèvre - Light Brown",
+  "properties": {
+    "Type of skin": "N/C",
+    "Fermness": "Soft",
+    "Last Updated": "2023-11-06 22:30:45Z",
+    "Products made with this leather": [
+      "b7b641e6ca4f4b629bef5b88382ba0e8"
+    ],
+    "Skin": "Goat",
+    "Status": "In stock",
+    "Finishing": "Anilin Varnished",
+    "Origin of Skin": "Italy",
+    "Max-length": null,
+    "Tanning": "Chrome-Tan",
+    "Created": "2023-09-17 18:30:54Z",
+    "Name": "Chèvre - Light Brown"
+  },
+  "createdTime": "2023-09-17 18:30:54Z",
+  "lastEdited": "2023-11-06T22:30:45.057Z",
+  "cover": "./684974688500445ba66325e1ffb4147c/2.jpg",
+  "images": [
+    {
+      "file": "./684974688500445ba66325e1ffb4147c/1.jpg",
+      "caption": "",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "file": "./684974688500445ba66325e1ffb4147c/2.jpg",
+      "caption": "",
+      "width": 690,
+      "height": 517
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\n{{image:2}}",
+  "slug": "chevre-light-brown",
+  "descriptionFr": ""
+}

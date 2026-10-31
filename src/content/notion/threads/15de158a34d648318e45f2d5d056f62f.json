@@ -1,0 +1,37 @@
+{
+  "notionId": "15de158a34d648318e45f2d5d056f62f",
+  "notionUrl": "https://app.notion.com/p/15de158a34d648318e45f2d5d056f62f",
+  "name": "Black",
+  "properties": {
+    "Shape": "Flat",
+    "Last Updated": "2021-06-29 19:06:00Z",
+    "Related to Catalogue des produits (Property)": [
+      "dac47ba9ef5140f88fa99065293c459d",
+      "25577035685d41a4858726948e89cafd"
+    ],
+    "Status": "Available",
+    "Created": "2021-06-29 19:05:36Z",
+    "Name": "Black"
+  },
+  "createdTime": "2021-06-29 19:05:36Z",
+  "lastEdited": "2021-06-29T19:06:00.000Z",
+  "cover": "./15de158a34d648318e45f2d5d056f62f/1.jpg",
+  "images": [
+    {
+      "file": "./15de158a34d648318e45f2d5d056f62f/1.jpg",
+      "caption": "",
+      "width": 1442,
+      "height": 810
+    },
+    {
+      "file": "./15de158a34d648318e45f2d5d056f62f/2.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 921
+    }
+  ],
+  "contentMarkdown": "{{image:1}}\nAnd to help you compare with other colours of the same family of thread.\n\n{{image:2}}",
+  "contentMarkdownFr": "{{image:1}}\nEt pour vous aider à comparer avec les autres couleurs de la même famille de fil.\n\n{{image:2}}",
+  "slug": "black",
+  "descriptionFr": ""
+}

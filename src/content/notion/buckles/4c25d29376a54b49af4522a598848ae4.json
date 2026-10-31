@@ -1,0 +1,37 @@
+{
+  "notionId": "4c25d29376a54b49af4522a598848ae4",
+  "notionUrl": "https://app.notion.com/p/4c25d29376a54b49af4522a598848ae4",
+  "name": "Moe - Polished Chrome",
+  "properties": {
+    "Look": [
+      "Chrome"
+    ],
+    "Available sizes": [
+      "35mm"
+    ],
+    "Material": [
+      "Solid Brass"
+    ],
+    "Created": "2023-06-24 12:00:13Z",
+    "Finishing": "Polished",
+    "Type": [
+      "Ardillon"
+    ],
+    "Name": "Moe - Polished Chrome"
+  },
+  "createdTime": "2023-06-24 12:00:13Z",
+  "lastEdited": "2023-06-24T12:24:12.164Z",
+  "cover": "./4c25d29376a54b49af4522a598848ae4/1.jpg",
+  "images": [
+    {
+      "file": "./4c25d29376a54b49af4522a598848ae4/1.jpg",
+      "caption": "",
+      "width": 2000,
+      "height": 1613
+    }
+  ],
+  "contentMarkdown": "{{image:1}}",
+  "contentMarkdownFr": "{{image:1}}",
+  "slug": "moe-polished-chrome",
+  "descriptionFr": ""
+}

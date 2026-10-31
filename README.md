@@ -30,7 +30,7 @@ src/
   lib/remark-affiliate-links.mjs  détection et marquage des liens affiliés
   content/posts/{en,fr}/ articles du blog (.mdx)
   content/notion/        cuirs, fils, boucles et portfolio importés de Notion (voir docs/notion.md)
-  data/tools.ts          page « Mes outils »
+  data/tools.ts          page « Mes outils » (photos dans src/assets/tools)
   data/suppliers.ts      liens fournisseurs du matériel, par identifiant Notion
 scripts/
   import-notion.mjs      import d'un export Notion

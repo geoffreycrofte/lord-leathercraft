@@ -5,7 +5,12 @@
  *
  * - `hide`: the layers of a hide and where each leather quality comes from.
  * - `aniline`, `semi-aniline`, `pigmented`, `pull-up`: the layers a finish adds.
+ *
+ * Two layouts: labels beside the block on wide screens, and on narrow ones a
+ * full-width block with numbered markers and a text legend below, so the
+ * labels stay readable.
  */
+import LeatherBlock from './LeatherBlock.astro';
 import type { Lang } from '../i18n/ui';
 
 type Kind = 'hide' | 'aniline' | 'semi-aniline' | 'pigmented' | 'pull-up';
@@ -113,55 +118,41 @@ const c = {
   oil: '#fee9ce',
 };
 
-// Block geometry shared by every diagram.
+// Wide layout: block on the left, labels on the right.
 const x = 24;
 const w = 360;
 const labelX = 412;
-// Pores along the top surface of the finish diagrams.
-const pores = Array.from({ length: 11 }, (_, i) => x + 14 + i * 32 + (i % 3) * 5);
+
+// Narrow layout: full-width block, numbered markers, legend below.
+const nx = 12;
+const nw = kind === 'hide' ? 320 : 376;
+const callouts: { x: number; y: number; label: string; note: string }[] = {
+  hide: [
+    { x: 382, y: 95, label: text.fullGrain, note: text.fullGrainNote },
+    { x: nx + nw - 28, y: 52, label: text.corrected, note: text.correctedNote },
+    { x: 382, y: 203, label: text.split, note: text.splitNote },
+  ],
+  aniline: [{ x: nx + nw - 28, y: 94, label: text.noCoat, note: text.noCoatNote }],
+  'semi-aniline': [{ x: nx + nw - 28, y: 103, label: text.thinCoat, note: text.thinCoatNote }],
+  pigmented: [
+    { x: nx + nw - 28, y: 78, label: text.topcoat, note: text.topcoatNote },
+    { x: nx + nw - 64, y: 98, label: text.pigment, note: text.pigmentNote },
+  ],
+  'pull-up': [{ x: nx + nw - 64, y: 160, label: text.oils, note: text.oilsNote }],
+}[kind];
+if (kind !== 'hide') callouts.push({ x: nx + nw - 28, y: 220, label: text.dye, note: text.fibres });
+const labels = { grain: text.grain, corium: text.corium, flesh: text.flesh };
 ---
 
 <figure class="diagram">
-  <svg viewBox={kind === 'hide' ? '0 0 720 280' : '0 20 720 270'} role="img" aria-labelledby={`${uid}-t ${uid}-d`}>
+  <svg class="diagram__wide" viewBox={kind === 'hide' ? '0 0 720 280' : '0 20 720 270'} role="img" aria-labelledby={`${uid}-t ${uid}-d`}>
     <title id={`${uid}-t`}>{text.titles[kind]}</title>
     <desc id={`${uid}-d`}>{text.descs[kind]}</desc>
-    <defs>
-      <pattern id={`${uid}-fibres`} width="36" height="18" patternUnits="userSpaceOnUse">
-        <rect width="36" height="18" fill={c.fibreLight} />
-        <path d="M0 9 C9 2 18 16 27 9 S36 4 36 9" fill="none" stroke={c.fibre} stroke-width="2" />
-        <path d="M0 16 C10 12 20 19 36 14" fill="none" stroke={c.fibreDark} stroke-width="1" opacity="0.5" />
-      </pattern>
-      <pattern id={`${uid}-grain`} width="10" height="6" patternUnits="userSpaceOnUse">
-        <rect width="10" height="6" fill={c.fibre} />
-        <path d="M0 3 H10" stroke={c.fibreDark} stroke-width="1.5" />
-      </pattern>
-      <pattern id={`${uid}-oil`} width="14" height="14" patternUnits="userSpaceOnUse">
-        <circle cx="4" cy="4" r="2.2" fill={c.oil} />
-        <circle cx="11" cy="10" r="1.6" fill={c.oil} />
-      </pattern>
-      <linearGradient id={`${uid}-dye`} x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color={c.dye} stop-opacity="0.7" />
-        <stop offset="1" stop-color={c.dye} stop-opacity="0.15" />
-      </linearGradient>
-    </defs>
-
     <g font-family="inherit" font-size="15" fill={c.ink}>
+      <LeatherBlock kind={kind} uid={uid} x={x} w={w} colors={c} labels={labels} />
       {
         kind === 'hide' ? (
           <>
-            {/* Hide: grain, corium, flesh, with brackets for each quality. */}
-            <rect x={x} y="40" width={w} height="44" fill={`url(#${uid}-grain)`} rx="4" />
-            <rect x={x} y="84" width={w} height="150" fill={`url(#${uid}-fibres)`} />
-            <rect x={x} y="234" width={w} height="22" fill={c.fibreDark} opacity="0.55" rx="4" />
-            <text x={x + 12} y="72" font-weight="700">{text.grain}</text>
-            <text x={x + 12} y="124" font-weight="700">{text.corium}</text>
-            <text x={x + 12} y="250" font-weight="700" font-size="13">{text.flesh}</text>
-
-            {/* Sanding line for corrected grain. */}
-            <line x1={x} x2={x + w} y1="52" y2="52" stroke={c.ink} stroke-width="1.5" stroke-dasharray="6 5" />
-            {/* Split line. */}
-            <line x1={x} x2={x + w} y1="150" y2="150" stroke={c.ink} stroke-width="2" stroke-dasharray="10 6" />
-
             <path d={`M${x + w + 12} 40 h10 v110 h-10`} fill="none" stroke={c.ink} stroke-width="2" />
             <text x={labelX} y="100" font-weight="700">{text.fullGrain}</text>
             <text x={labelX} y="118" fill={c.muted} font-size="14">{text.fullGrainNote}</text>
@@ -176,21 +167,6 @@ const pores = Array.from({ length: 11 }, (_, i) => x + 14 + i * 32 + (i % 3) * 5
           </>
         ) : (
           <>
-            {/* Finish: fibres, dye, and the layers the finish adds on top. */}
-            <rect x={x} y="110" width={w} height="160" fill={`url(#${uid}-fibres)`} rx="4" />
-            <rect x={x} y="110" width={w} height="160" fill={`url(#${uid}-dye)`} rx="4" />
-            {kind === 'pull-up' && <rect x={x} y="110" width={w} height="160" fill={`url(#${uid}-oil)`} rx="4" />}
-            {kind !== 'pigmented' &&
-              pores.map((px) => <path d={`M${px} 110 q4 7 8 0`} fill={c.pigment} opacity="0.75" />)}
-            {kind === 'semi-aniline' && <rect x={x} y="96" width={w} height="14" fill={c.dye} opacity="0.55" rx="3" />}
-            {kind === 'pigmented' && (
-              <>
-                <rect x={x} y="86" width={w} height="24" fill={c.pigment} rx="3" />
-                <rect x={x} y="70" width={w} height="16" fill={c.coat} stroke={c.coatEdge} stroke-width="1.5" rx="3" />
-              </>
-            )}
-
-            {/* Labels with leader lines. */}
             {kind === 'aniline' && (
               <>
                 <path d={`M${x + w - 30} 112 L${labelX - 12} 70`} stroke={c.ink} stroke-width="1.5" fill="none" />
@@ -230,12 +206,49 @@ const pores = Array.from({ length: 11 }, (_, i) => x + 14 + i * 32 + (i % 3) * 5
       }
     </g>
   </svg>
+
+  <div class="diagram__narrow">
+    <svg viewBox={kind === 'hide' ? '0 30 400 236' : '0 60 400 220'} role="img" aria-labelledby={`${uid}-nt ${uid}-d`}>
+      <title id={`${uid}-nt`}>{text.titles[kind]}</title>
+      <g font-family="inherit" font-size="17" fill={c.ink}>
+        <LeatherBlock kind={kind} uid={`${uid}-n`} x={nx} w={nw} colors={c} labels={labels} />
+        {
+          kind === 'hide' && (
+            <>
+              <path d={`M${nx + nw + 10} 40 h10 v110 h-10`} fill="none" stroke={c.ink} stroke-width="2" />
+              <path d={`M${nx + nw + 10} 150 h10 v106 h-10`} fill="none" stroke={c.ink} stroke-width="2" />
+            </>
+          )
+        }
+        {
+          callouts.map((m, i) => (
+            <g aria-hidden="true">
+              <circle cx={m.x} cy={m.y} r="13" fill={c.ink} stroke="#fff" stroke-width="2" />
+              <text x={m.x} y={m.y + 5.5} text-anchor="middle" fill="#fff" font-size="15" font-weight="700">
+                {i + 1}
+              </text>
+            </g>
+          ))
+        }
+      </g>
+    </svg>
+    <ol class="diagram__legend" aria-hidden="true">
+      {
+        callouts.map((m) => (
+          <li>
+            <span><strong>{m.label}</strong>{lang === 'fr' ? ' : ' : ': '}{m.note}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
   <figcaption>{text.titles[kind]}. {text.descs[kind]}</figcaption>
 </figure>
 
 <style>
   .diagram {
     margin: var(--space-l) 0;
+    container-type: inline-size;
   }
   .diagram svg {
     display: block;
@@ -245,5 +258,45 @@ const pores = Array.from({ length: 11 }, (_, i) => x + 14 + i * 32 + (i % 3) * 5
     background: var(--primary-050);
     border: 1px solid var(--primary-100);
     border-radius: var(--radius);
+  }
+  .diagram__narrow {
+    display: none;
+  }
+  @container (max-width: 34rem) {
+    .diagram__wide {
+      display: none !important;
+    }
+    .diagram__narrow {
+      display: block;
+    }
+  }
+  .diagram__legend {
+    display: grid;
+    gap: 0.375rem;
+    margin: 0.75rem 0 1rem;
+    padding: 0;
+    list-style: none;
+    counter-reset: callout;
+    font-size: 0.9375rem;
+  }
+  .diagram__legend li {
+    display: flex;
+    gap: 0.625rem;
+    align-items: baseline;
+    counter-increment: callout;
+  }
+  .diagram__legend li::before {
+    content: counter(callout);
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--color-text);
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    transform: translateY(0.3rem);
   }
 </style>

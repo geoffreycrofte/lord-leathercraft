@@ -7,7 +7,7 @@ import { routes } from '../i18n/ui';
 <PageLayout
   lang="en"
   title="Affiliate links"
-  description="Why some links on lord.crofte.fr are affiliate links, how they are marked, which programmes I take part in, and what it changes for you."
+  description="Why some links on lord.crofte.fr are affiliate links, how they are signalled, which programmes I take part in, and what it changes for you."
   alternates={routes.affiliate}
   updated={new Date('2026-10-29')}
 >
@@ -18,8 +18,7 @@ import { routes } from '../i18n/ui';
 
   <h2>How to recognise them</h2>
   <ul>
-    <li>Each affiliate link is followed by the words “(affiliate link)”, inside the link itself.</li>
-    <li>Every page containing at least one affiliate link shows a notice at the top of the article.</li>
+    <li>Every page containing at least one affiliate link says so in a notice at the top of the page.</li>
     <li>In the code, these links carry <code>rel="sponsored"</code>, as search engines ask.</li>
   </ul>
 
@@ -27,7 +26,7 @@ import { routes } from '../i18n/ui';
   <ul>
     <li>
       <strong>Payhip</strong>, the platform behind my shop. If you want to sell your own patterns, my
-      <a href={PAYHIP_AFFILIATE_URL} rel="sponsored noopener">Payhip referral link<span class="affiliate-marker"> (affiliate link)</span></a>
+      <a href={PAYHIP_AFFILIATE_URL} rel="sponsored noopener">Payhip referral link</a>
       is the one to use.
     </li>
     <li><strong>Amazon</strong>. As an Amazon Associate, I earn from qualifying purchases.</li>

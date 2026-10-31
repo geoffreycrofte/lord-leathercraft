@@ -1,0 +1,71 @@
+---
+/**
+ * The leather block of a LeatherDiagram: fibres, dye and the layers a finish
+ * adds, without the side labels. Drawn inside the diagram's <svg>.
+ */
+interface Props {
+  kind: 'hide' | 'aniline' | 'semi-aniline' | 'pigmented' | 'pull-up';
+  /** Prefix of the pattern ids, unique per <svg>. */
+  uid: string;
+  x: number;
+  w: number;
+  colors: Record<string, string>;
+  /** In-block labels of the hide diagram. */
+  labels: { grain: string; corium: string; flesh: string };
+}
+
+const { kind, uid, x, w, colors: c, labels } = Astro.props;
+// Pores along the top surface, spread over the block width.
+const poreCount = Math.round(w / 32);
+const pores = Array.from({ length: poreCount }, (_, i) => x + 14 + i * ((w - 28) / poreCount) + (i % 3) * 5);
+---
+
+<defs>
+  <pattern id={`${uid}-fibres`} width="36" height="18" patternUnits="userSpaceOnUse">
+    <rect width="36" height="18" fill={c.fibreLight} />
+    <path d="M0 9 C9 2 18 16 27 9 S36 4 36 9" fill="none" stroke={c.fibre} stroke-width="2" />
+    <path d="M0 16 C10 12 20 19 36 14" fill="none" stroke={c.fibreDark} stroke-width="1" opacity="0.5" />
+  </pattern>
+  <pattern id={`${uid}-grain`} width="10" height="6" patternUnits="userSpaceOnUse">
+    <rect width="10" height="6" fill={c.fibre} />
+    <path d="M0 3 H10" stroke={c.fibreDark} stroke-width="1.5" />
+  </pattern>
+  <pattern id={`${uid}-oil`} width="14" height="14" patternUnits="userSpaceOnUse">
+    <circle cx="4" cy="4" r="2.2" fill={c.oil} />
+    <circle cx="11" cy="10" r="1.6" fill={c.oil} />
+  </pattern>
+  <linearGradient id={`${uid}-dye`} x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color={c.dye} stop-opacity="0.7" />
+    <stop offset="1" stop-color={c.dye} stop-opacity="0.15" />
+  </linearGradient>
+</defs>
+
+{
+  kind === 'hide' ? (
+    <>
+      {/* Grain, corium, flesh, then the sanding and split lines. */}
+      <rect x={x} y="40" width={w} height="44" fill={`url(#${uid}-grain)`} rx="4" />
+      <rect x={x} y="84" width={w} height="150" fill={`url(#${uid}-fibres)`} />
+      <rect x={x} y="234" width={w} height="22" fill={c.fibreDark} opacity="0.55" rx="4" />
+      <text x={x + 12} y="72" font-weight="700">{labels.grain}</text>
+      <text x={x + 12} y="124" font-weight="700">{labels.corium}</text>
+      <text x={x + 12} y="250" font-weight="700" font-size="13">{labels.flesh}</text>
+      <line x1={x} x2={x + w} y1="52" y2="52" stroke={c.ink} stroke-width="1.5" stroke-dasharray="6 5" />
+      <line x1={x} x2={x + w} y1="150" y2="150" stroke={c.ink} stroke-width="2" stroke-dasharray="10 6" />
+    </>
+  ) : (
+    <>
+      <rect x={x} y="110" width={w} height="160" fill={`url(#${uid}-fibres)`} rx="4" />
+      <rect x={x} y="110" width={w} height="160" fill={`url(#${uid}-dye)`} rx="4" />
+      {kind === 'pull-up' && <rect x={x} y="110" width={w} height="160" fill={`url(#${uid}-oil)`} rx="4" />}
+      {kind !== 'pigmented' && pores.map((px) => <path d={`M${px} 110 q4 7 8 0`} fill={c.pigment} opacity="0.75" />)}
+      {kind === 'semi-aniline' && <rect x={x} y="96" width={w} height="14" fill={c.dye} opacity="0.55" rx="3" />}
+      {kind === 'pigmented' && (
+        <>
+          <rect x={x} y="86" width={w} height="24" fill={c.pigment} rx="3" />
+          <rect x={x} y="70" width={w} height="16" fill={c.coat} stroke={c.coatEdge} stroke-width="1.5" rx="3" />
+        </>
+      )}
+    </>
+  )
+}

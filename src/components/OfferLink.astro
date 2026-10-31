@@ -1,7 +1,7 @@
 ---
 /**
  * Link to a shop or supplier. Affiliate links (detected from the URL) get
- * rel="sponsored" and the visible "(affiliate link)" marker, like in articles.
+ * rel="sponsored", like in articles. The page shows the notice at the top.
  */
 import Icon from './Icon.astro';
 import { isAffiliateUrl } from '../lib/remark-affiliate-links.mjs';
@@ -22,7 +22,6 @@ const affiliate = isAffiliateUrl(url);
 <span class="offer">
   <a class="button button--small button--outline" href={url} rel={affiliate ? 'sponsored noopener' : undefined}>
     {label}
-    {affiliate && <span class="affiliate-marker">({t('affiliate.marker')})</span>}
     <Icon name="external" size={14} strokeWidth={2.4} />
   </a>
   {code && <span class="offer__code">{t('offer.code')} <strong>{code}</strong></span>}

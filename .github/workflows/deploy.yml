@@ -26,6 +26,8 @@ jobs:
       - run: npm ci
       - run: npm run images:check
       - run: npm run check
+      # Video thumbnails, served by the site so visitors never call YouTube.
+      - run: npm run posters
       - run: npm run build
       - uses: actions/upload-pages-artifact@v4
         with:

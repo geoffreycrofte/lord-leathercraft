@@ -35,6 +35,7 @@ src/
 scripts/
   import-notion.mjs      import d'un export Notion
   optimize-images.mjs    compression des photos (npm run images)
+  fetch-youtube-posters.mjs  miniatures des vidéos YouTube dans src/assets/videos (npm run posters)
 public/                  favicons, CNAME, robots.txt, image Open Graph
 docs/deploiement.md      guide DNS et GitHub Pages
 docs/notion.md           contenus issus de Notion et mise à jour
@@ -100,8 +101,7 @@ Retirez la ligne `draft: true` (dans les deux langues) pour publier.
 Colle simplement le lien en Markdown. Les liens Amazon (avec `tag=` ou `amzn.to`), AliExpress (`s.click.aliexpress.com`) et Payhip (`fp_ref=`) sont détectés automatiquement. Ils reçoivent alors :
 
 - `rel="sponsored noopener"` ;
-- la mention visible « (lien affilié) » ou « (affiliate link) » ;
-- l'avertissement de transparence en haut de l'article.
+- l'avertissement de transparence en haut de la page (pas de mention sur chaque lien).
 
 Pour un nouveau programme, ajoute son domaine ou son paramètre dans `src/lib/remark-affiliate-links.mjs`.
 
@@ -117,6 +117,8 @@ relatedGuides: [leather-care]    # translationKey des guides à suggérer en fin
 ## Photos
 
 Avant de commiter de nouvelles photos, lancez `npm run images`. Le script les réduit à 1200 px de large, les recompresse et retire leurs métadonnées (EXIF, GPS). L'intégration continue refuse les images trop lourdes (`npm run images:check`).
+
+Les miniatures des vidéos YouTube sont stockées dans `src/assets/videos`. Quand vous ajoutez une vidéo, lancez `npm run posters` : seules les miniatures manquantes sont téléchargées. L'intégration continue le fait aussi avant chaque build.
 
 ## Accessibilité
 

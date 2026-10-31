@@ -13,6 +13,8 @@ const AFFILIATE_HOSTS = [
   // Partner shop with the LORD7 discount code.
   'buyleatheronline.com',
 ];
+// Short links that hide a referral program (Decocuir: Smile.io referral).
+const AFFILIATE_URLS = ['https://bit.ly/decocuirfr'];
 // sca_ref: Shopify affiliate programs (Leatherbox, Sinabroks).
 const AFFILIATE_PARAMS = ['fp_ref', 'tag', 'aff', 'aff_id', 'ref_id', 'sca_ref'];
 
@@ -23,6 +25,7 @@ export function isAffiliateUrl(href) {
   } catch {
     return false;
   }
+  if (AFFILIATE_URLS.includes(href.replace(/\/$/, ''))) return true;
   const host = url.hostname.replace(/^www\./, '');
   if (AFFILIATE_HOSTS.includes(host)) return true;
   if (/(^|\.)amazon\.[a-z.]+$/.test(host) && url.searchParams.has('tag')) return true;
@@ -30,24 +33,14 @@ export function isAffiliateUrl(href) {
   return AFFILIATE_PARAMS.some((p) => url.searchParams.has(p));
 }
 
-const MARKERS = { en: 'affiliate link', fr: 'lien affilié' };
-
 export function remarkAffiliateLinks() {
   return (tree, file) => {
-    const path = file.history?.[0] ?? '';
-    const marker = /[\\/]fr[\\/]/.test(path) ? MARKERS.fr : MARKERS.en;
     let found = false;
     visit(tree, 'link', (node) => {
       if (!isAffiliateUrl(node.url)) return;
       found = true;
       node.data ??= {};
       node.data.hProperties = { ...node.data.hProperties, rel: 'sponsored noopener' };
-      // Visible marker, inside the link so it is part of its accessible name.
-      node.children.push({
-        type: 'text',
-        value: ` (${marker})`,
-        data: { hName: 'span', hProperties: { className: ['affiliate-marker'] } },
-      });
     });
     if (found) {
       file.data.astro ??= {};

@@ -2,12 +2,12 @@
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
-import PageIntro from '../components/PageIntro.astro';
+import Icon from '../components/Icon.astro';
 import YouTube from '../components/YouTube.astro';
 import { CONTACT_EMAIL, SHOP_URL, shopCollections, socials } from '../data/site';
-import { guidePath, routes, type Lang } from '../i18n/ui';
-import { getArticles } from '../lib/articles';
-import heroPhoto from '../assets/guides/laptop-sleeve.jpg';
+import { guidePath, routes, useTranslations, type Lang } from '../i18n/ui';
+import { getArticles, type Article } from '../lib/articles';
+import heroPhoto from '../assets/guides/leather-rolls.jpg';
 import toolsPhoto from '../assets/guides/pricking-irons.jpg';
 import leatherPhoto from '../assets/guides/veg-tan-certificate.jpg';
 
@@ -16,50 +16,66 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+const t = useTranslations(lang);
 const articles = await getArticles(lang);
 const instagram = socials.find((s) => s.icon === 'instagram')!.url;
 const whereToBuy = guidePath(lang, lang === 'en' ? 'where-to-buy-leather' : 'ou-acheter-du-cuir');
+
+// Guides grouped by category, in a fixed order.
+const categoryOrder: Article['data']['category'][] = ['materials', 'tools', 'care', 'design'];
+const groups = categoryOrder
+  .map((category) => ({ category, items: articles.filter((a) => a.data.category === category) }))
+  .filter((g) => g.items.length > 0);
 
 const copy = {
   en: {
     title: 'Leathercraft guides',
     accent: 'and pro tips',
     description: 'Leathercraft guides and pro tips: choosing your tools and leather, reading and printing a pattern, sharpening your blades, caring for leather.',
-    intro: 'When you start a new pattern, a few habits always pay off. Here are the ones I apply to every project, then all my guides to go further.',
-    heroAlt: 'A man holding a brown leather laptop sleeve with a stitched flap under his arm.',
-    tipsTitle: 'Before you start',
+    intro: 'The habits I apply to every new pattern, then all my guides on leather, tools and care, to go further at your own pace.',
+    jump: 'On this page',
+    jumpTips: 'Pro tips',
+    jumpVideos: 'Videos',
+    jumpGuides: 'All the guides',
+    tipsEyebrow: 'Before you start',
+    tipsTitle: 'Three habits for every new pattern',
+    tipsIntro: 'They take a few minutes, and they save leather, time and frustration.',
     tools: {
       title: 'Choose your tools',
-      text: 'I am often asked which tools I use and how much they cost. Rather than a plain list, I made beginner guides for each project, and a list of all my tools, from the basics to higher quality ones.',
+      text: 'I am often asked which tools I use and how much they cost. Rather than a plain list, I made a beginner guide for each project, and a page with all my tools, from the basics to higher quality ones.',
       belt: 'Guide to making leather belts',
       wallet: 'Guide to making leather wallets',
       list: 'See all my tools',
       alt: 'Two steel pricking irons, with 2 and 8 prongs.',
     },
     read: {
-      title: 'Read the pattern details before you start',
-      text: 'Patterns from one maker do not look like patterns from another. Check what is included and what is not:',
-      items: ['Is there a video or a tutorial?', 'Are there written instructions?', 'Which file formats are included?', 'Can you use it commercially?'],
+      title: 'Read the pattern details',
+      text: 'Patterns from one maker do not look like patterns from another. Before you buy or start, check what is included:',
+      items: ['A video or a tutorial', 'Written instructions', 'The file formats', 'Commercial use'],
       after: 'All of this comes with the patterns in my shop, but read each description: a pattern can come without a video.',
       link: 'See the patterns',
     },
-    print: {
-      title: 'Print it at the right size',
-      text: 'Always check the size of the printed pattern. Set your printer to “actual size”, “100%” or “true to size”. For large patterns, like the MacBook Pro sleeve, I recorded this video.',
-      video: 'How to print a large leathercraft pattern',
-    },
     leather: {
       title: 'Buy the right leather',
-      text: 'Not sure where to buy your leather? I share the shops I trust, and a couple of discount codes.',
+      text: 'The leather makes half of the result. I share the shops I trust, what I buy from each one, and a couple of discount codes.',
       link: 'Where to buy quality leather',
       alt: 'A numbered certificate from the Tuscan vegetable-tanned leather consortium, tied with string.',
     },
+    videosEyebrow: 'Watch',
+    videosTitle: 'Two things to get right before you cut',
+    print: {
+      title: 'Print at the right size',
+      text: 'Set your printer to “actual size”, “100%” or “true to size”, and check the test square. For large patterns, like the MacBook Pro sleeve, here is how I do it.',
+      video: 'How to print a large leathercraft pattern',
+    },
     sharpen: {
       title: 'Sharpen your blades',
-      text: 'Whatever blade you use, start every project with a sharp one. Learning to sharpen takes little equipment and effort, and it helps with every project. Here is a video from kkomeda on sharpening techniques.',
+      text: 'Start every project with a sharp blade. Learning to sharpen takes little equipment, and it helps with every project. A good video by kkomeda on the techniques.',
       video: 'Sharpening techniques, by kkomeda',
     },
-    allTitle: 'All the guides',
+    guidesEyebrow: 'Read',
+    guidesTitle: 'All the guides',
+    guidesCount: (n: number) => `${n} guides, sorted by topic.`,
     moreTitle: 'Any other question?',
     moreText: 'I have plenty of other advice, not always related to patterns. Ask me on Instagram or by email.',
     instagram: 'Message me on Instagram',
@@ -69,41 +85,50 @@ const copy = {
     title: 'Guides de maroquinerie',
     accent: 'et conseils de pro',
     description: 'Guides et conseils de maroquinerie : choisir ses outils et son cuir, lire et imprimer un patron, affûter ses lames, entretenir le cuir.',
-    intro: 'Quand on commence un nouveau patron, quelques habitudes paient toujours. Voici celles que j’applique à chaque projet, puis tous mes guides pour aller plus loin.',
-    heroAlt: 'Un homme tenant sous le bras une housse d’ordinateur en cuir marron, avec un rabat surpiqué.',
-    tipsTitle: 'Avant de commencer',
+    intro: 'Les habitudes que j’applique à chaque nouveau patron, puis tous mes guides sur le cuir, les outils et l’entretien, pour aller plus loin à votre rythme.',
+    jump: 'Sur cette page',
+    jumpTips: 'Conseils de pro',
+    jumpVideos: 'Vidéos',
+    jumpGuides: 'Tous les guides',
+    tipsEyebrow: 'Avant de commencer',
+    tipsTitle: 'Trois habitudes pour chaque nouveau patron',
+    tipsIntro: 'Elles prennent quelques minutes, et font gagner du cuir, du temps et de la patience.',
     tools: {
       title: 'Choisir ses outils',
-      text: 'On me demande souvent quels outils j’utilise et combien ils coûtent. Plutôt qu’une simple liste, j’ai fait des guides débutants pour chaque projet (en anglais), et la liste de tous mes outils, des bases aux modèles de meilleure qualité.',
+      text: 'On me demande souvent quels outils j’utilise et combien ils coûtent. Plutôt qu’une simple liste, j’ai fait un guide débutant par projet (en anglais), et une page avec tous mes outils, des bases aux modèles de meilleure qualité.',
       belt: 'Guide pour fabriquer une ceinture en cuir',
       wallet: 'Guide pour fabriquer des portefeuilles en cuir',
       list: 'Voir tous mes outils',
       alt: 'Deux griffes à frapper en acier, à 2 et 8 dents.',
     },
     read: {
-      title: 'Lire le descriptif du patron avant de commencer',
-      text: 'Les patrons d’un artisan ne ressemblent pas à ceux d’un autre. Vérifiez ce qui est inclus, et ce qui ne l’est pas :',
-      items: ['Y a-t-il une vidéo ou un tutoriel ?', 'Y a-t-il des instructions écrites ?', 'Quels formats de fichier sont fournis ?', 'Peut-on l’utiliser pour vendre ses pièces ?'],
+      title: 'Lire le descriptif du patron',
+      text: 'Les patrons d’un artisan ne ressemblent pas à ceux d’un autre. Avant d’acheter ou de commencer, vérifiez ce qui est inclus :',
+      items: ['Une vidéo ou un tutoriel', 'Des instructions écrites', 'Les formats de fichier', 'L’usage commercial'],
       after: 'Tout cela est fourni avec les patrons de ma boutique, mais lisez chaque descriptif : un patron peut être livré sans vidéo.',
       link: 'Voir les patrons',
     },
-    print: {
-      title: 'L’imprimer à la bonne taille',
-      text: 'Vérifiez toujours la taille du patron imprimé. Réglez votre imprimante sur « taille réelle » ou « 100 % ». Pour les grands patrons, comme la housse de MacBook Pro, j’ai enregistré cette vidéo (en anglais).',
-      video: 'Comment imprimer un grand patron de maroquinerie',
-    },
     leather: {
       title: 'Choisir le bon cuir',
-      text: 'Vous ne savez pas où acheter votre cuir ? Je partage les boutiques en qui j’ai confiance, et quelques codes de réduction.',
+      text: 'Le cuir fait la moitié du résultat. Je partage les boutiques en qui j’ai confiance, ce que j’achète chez chacune, et quelques codes de réduction.',
       link: 'Où acheter du cuir de qualité',
       alt: 'Un certificat numéroté du consortium du cuir au tannage végétal de Toscane, attaché par une ficelle.',
     },
+    videosEyebrow: 'À regarder',
+    videosTitle: 'Deux points à maîtriser avant de couper',
+    print: {
+      title: 'Imprimer à la bonne taille',
+      text: 'Réglez votre imprimante sur « taille réelle » ou « 100 % », et vérifiez le carré de test. Pour les grands patrons, comme la housse de MacBook Pro, voici comment je fais (en anglais).',
+      video: 'Comment imprimer un grand patron de maroquinerie',
+    },
     sharpen: {
       title: 'Affûter ses lames',
-      text: 'Quelle que soit votre lame, commencez chaque projet avec une lame bien affûtée. Apprendre à affûter demande peu de matériel et d’effort, et ça aide sur tous les projets. Voici une vidéo de kkomeda sur les techniques d’affûtage.',
+      text: 'Commencez chaque projet avec une lame bien affûtée. Apprendre à affûter demande peu de matériel, et ça aide sur tous les projets. Une bonne vidéo de kkomeda sur les techniques.',
       video: 'Techniques d’affûtage, par kkomeda',
     },
-    allTitle: 'Tous les guides',
+    guidesEyebrow: 'À lire',
+    guidesTitle: 'Tous les guides',
+    guidesCount: (n: number) => `${n} guides, classés par thème.`,
     moreTitle: 'Une autre question ?',
     moreText: 'J’ai bien d’autres conseils, pas toujours liés aux patrons. Posez-moi vos questions sur Instagram ou par e-mail.',
     instagram: 'M’écrire sur Instagram',
@@ -113,200 +138,446 @@ const copy = {
 ---
 
 <BaseLayout lang={lang} title={copy.title} description={copy.description} alternates={routes.guides}>
-  <div class="container">
-    <div class="guides-hero">
-      <PageIntro title={copy.title} accent={copy.accent} intro={copy.intro} />
-      <Image
-        class="guides-hero__photo"
-        src={heroPhoto}
-        alt={copy.heroAlt}
-        widths={[480, 750]}
-        sizes="(min-width: 60rem) 24rem, 100vw"
-        loading="eager"
-      />
+  <section class="g-hero on-dark" aria-labelledby="g-hero-title">
+    <Image class="g-hero__photo" src={heroPhoto} alt="" widths={[800, 1500]} sizes="100vw" loading="eager" />
+    <div class="container g-hero__content">
+      <h1 id="g-hero-title">{copy.title} <em class="g-hero__accent">{copy.accent}</em></h1>
+      <p class="g-hero__intro">{copy.intro}</p>
+      <nav class="g-hero__jump" aria-label={copy.jump}>
+        <a href="#tips-title">{copy.jumpTips}</a>
+        <a href="#videos-title">{copy.jumpVideos}</a>
+        <a href="#guides-title">{copy.jumpGuides}</a>
+      </nav>
     </div>
+  </section>
 
-    <section class="tips" aria-labelledby="tips-title">
-      <h2 id="tips-title">{copy.tipsTitle}</h2>
-      <ol class="tips__list" role="list">
-        <li class="tip">
-          <div class="tip__body">
-            <h3>{copy.tools.title}</h3>
-            <p>{copy.tools.text}</p>
-            <ul>
-              <li><a href={`${SHOP_URL}/create-leather-belt-beginner-guide`} hreflang="en">{copy.tools.belt}</a></li>
-              <li><a href={`${SHOP_URL}/create-leather-wallets-beginner-guide`} hreflang="en">{copy.tools.wallet}</a></li>
-            </ul>
-            <p><a class="button button--small" href={routes.tools[lang]}>{copy.tools.list}</a></p>
-          </div>
-          <Image class="tip__photo" src={toolsPhoto} alt={copy.tools.alt} widths={[400, 800]} sizes="(min-width: 60rem) 22rem, 100vw" />
-        </li>
-        <li class="tip">
-          <div class="tip__body">
-            <h3>{copy.read.title}</h3>
-            <p>{copy.read.text}</p>
-            <ul>{copy.read.items.map((item) => <li>{item}</li>)}</ul>
-            <p>{copy.read.after}</p>
-            <p><a class="button button--small button--outline" href={shopCollections.all.url}>{copy.read.link}</a></p>
-          </div>
-        </li>
-        <li class="tip">
-          <div class="tip__body">
-            <h3>{copy.print.title}</h3>
-            <p>{copy.print.text}</p>
-          </div>
-          <div class="tip__media">
-            <YouTube id="G9Z4P7WOsBE" title={copy.print.video} lang={lang} />
-          </div>
-        </li>
-        <li class="tip">
-          <div class="tip__body">
-            <h3>{copy.leather.title}</h3>
-            <p>{copy.leather.text}</p>
-            <p><a class="button button--small" href={whereToBuy}>{copy.leather.link}</a></p>
-          </div>
-          <Image class="tip__photo" src={leatherPhoto} alt={copy.leather.alt} widths={[400, 800]} sizes="(min-width: 60rem) 22rem, 100vw" />
-        </li>
-        <li class="tip">
-          <div class="tip__body">
-            <h3>{copy.sharpen.title}</h3>
-            <p>{copy.sharpen.text}</p>
-          </div>
-          <div class="tip__media">
-            <YouTube id="1krMuXIwYnU" title={copy.sharpen.video} lang={lang} />
-          </div>
-        </li>
-      </ol>
-    </section>
+  <section class="section" aria-labelledby="tips-title">
+    <div class="container">
+      <header class="g-head">
+        <p class="g-eyebrow">{copy.tipsEyebrow}</p>
+        <h2 id="tips-title" class="section__title">{copy.tipsTitle}</h2>
+        <p class="muted">{copy.tipsIntro}</p>
+      </header>
 
-    <section class="all-guides" aria-labelledby="all-guides-title">
-      <h2 id="all-guides-title">{copy.allTitle}</h2>
-      <ul class="cards" role="list">
-        {articles.map((article) => <li><ArticleCard article={article} headingLevel={3} /></li>)}
+      <article class="split">
+        <Image class="split__photo" src={toolsPhoto} alt={copy.tools.alt} widths={[480, 800]} sizes="(min-width: 60rem) 34rem, 100vw" />
+        <div class="split__text">
+          <span class="g-num" aria-hidden="true">01</span>
+          <h3>{copy.tools.title}</h3>
+          <p>{copy.tools.text}</p>
+          <ul class="link-list" role="list">
+            <li>
+              <a href={`${SHOP_URL}/create-leather-belt-beginner-guide`} hreflang="en">
+                {copy.tools.belt}
+                <Icon name="arrowRight" size={18} strokeWidth={2.2} />
+              </a>
+            </li>
+            <li>
+              <a href={`${SHOP_URL}/create-leather-wallets-beginner-guide`} hreflang="en">
+                {copy.tools.wallet}
+                <Icon name="arrowRight" size={18} strokeWidth={2.2} />
+              </a>
+            </li>
+          </ul>
+          <p><a class="button" href={routes.tools[lang]}>{copy.tools.list}</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--alt hide-edge" aria-labelledby="read-title">
+    <div class="container checklist">
+      <div class="checklist__head">
+        <span class="g-num" aria-hidden="true">02</span>
+        <h3 id="read-title">{copy.read.title}</h3>
+        <p>{copy.read.text}</p>
+      </div>
+      <ul class="checklist__items" role="list">
+        {
+          copy.read.items.map((item) => (
+            <li class="stitch">
+              <span class="checklist__icon">
+                <Icon name="check" size={20} strokeWidth={2.6} />
+              </span>
+              {item}
+            </li>
+          ))
+        }
       </ul>
-    </section>
+      <div class="checklist__foot">
+        <p class="muted">{copy.read.after}</p>
+        <a class="button button--outline" href={shopCollections.all.url} hreflang="en">{copy.read.link}</a>
+      </div>
+    </div>
+  </section>
 
-    <section class="more stitch" aria-labelledby="more-title">
-      <h2 id="more-title">{copy.moreTitle}</h2>
-      <p>{copy.moreText}</p>
+  <section class="section" aria-labelledby="leather-title">
+    <div class="container">
+      <article class="split split--reverse">
+        <Image class="split__photo" src={leatherPhoto} alt={copy.leather.alt} widths={[480, 900]} sizes="(min-width: 60rem) 34rem, 100vw" />
+        <div class="split__text">
+          <span class="g-num" aria-hidden="true">03</span>
+          <h3 id="leather-title">{copy.leather.title}</h3>
+          <p>{copy.leather.text}</p>
+          <p><a class="button" href={whereToBuy}>{copy.leather.link}</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--dark on-dark hide-edge" aria-labelledby="videos-title">
+    <div class="container">
+      <header class="g-head g-head--center">
+        <p class="g-eyebrow g-eyebrow--light">{copy.videosEyebrow}</p>
+        <h2 id="videos-title" class="section__title">{copy.videosTitle}</h2>
+      </header>
+      <div class="videos">
+        <article>
+          <h3>{copy.print.title}</h3>
+          <p>{copy.print.text}</p>
+          <YouTube id="1krMuXIwYnU" title={copy.print.video} lang={lang} />
+        </article>
+        <article>
+          <h3>{copy.sharpen.title}</h3>
+          <p>{copy.sharpen.text}</p>
+          <YouTube id="G9Z4P7WOsBE" title={copy.sharpen.video} lang={lang} />
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="guides-title">
+    <div class="container">
+      <header class="g-head">
+        <p class="g-eyebrow">{copy.guidesEyebrow}</p>
+        <h2 id="guides-title" class="section__title">{copy.guidesTitle}</h2>
+        <p class="muted">{copy.guidesCount(articles.length)}</p>
+      </header>
+      <div class="groups">
+      {
+        groups.map((group) => (
+          <div class:list={['group', { 'group--wide': group.items.length > 2 }]}>
+            <h3 class="group__title">
+              <span>{t(`category.${group.category}`)}</span>
+            </h3>
+            <ul class="cards" role="list">
+              {group.items.map((article) => (
+                <li>
+                  <ArticleCard article={article} headingLevel={4} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt hide-edge" aria-labelledby="more-title">
+    <div class="container more">
+      <h2 id="more-title" class="section__title">{copy.moreTitle}</h2>
+      <p class="muted">{copy.moreText}</p>
       <p class="more__links">
-        <a class="button button--small" href={instagram}>{copy.instagram}</a>
-        <a class="button button--small button--outline" href={`mailto:${CONTACT_EMAIL}`}>{copy.email}</a>
+        <a class="button" href={instagram}>{copy.instagram}</a>
+        <a class="button button--outline" href={`mailto:${CONTACT_EMAIL}`}>{copy.email}</a>
       </p>
-    </section>
-  </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
-  .guides-hero {
+  /* Hero: full-width photo of leather rolls under a dark veil. */
+  .g-hero {
+    position: relative;
     display: grid;
-    gap: var(--space-m);
-    align-items: center;
-    padding-bottom: var(--space-m);
+    min-height: clamp(22rem, 55vh, 32rem);
+    align-items: end;
+    overflow: hidden;
+    background: var(--neutral-700);
+    color: #fff;
   }
-  .guides-hero :global(.page-intro) {
-    padding-bottom: 0;
-  }
-  .guides-hero__photo {
+  .g-hero__photo {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
-    max-height: 22rem;
+    height: 100%;
     object-fit: cover;
-    border-radius: var(--radius);
   }
-  @media (min-width: 60rem) {
-    .guides-hero {
-      grid-template-columns: 1fr 24rem;
-    }
-    .guides-hero__photo {
-      margin-top: var(--space-xl);
-    }
+  .g-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgb(28 29 29 / 0.92) 15%, rgb(28 29 29 / 0.55) 70%, rgb(28 29 29 / 0.35));
   }
-  .tips,
-  .all-guides {
-    padding-block: var(--space-l);
-    border-top: 2px dashed var(--neutral-200);
+  .g-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: var(--space-xl) var(--space-l);
   }
-  .tips h2,
-  .all-guides h2 {
-    margin-top: 0;
+  .g-hero h1 {
+    max-width: 16ch;
+    margin: 0 0 var(--space-s);
+    color: #fff;
+    font-size: clamp(2.5rem, 1.9rem + 3vw, 4.25rem);
+    line-height: 1.05;
   }
-  .tips__list {
-    display: grid;
-    gap: var(--space-l);
-    list-style: none;
-    margin: var(--space-m) 0 0;
-    padding: 0;
-    counter-reset: tip;
+  .g-hero__accent {
+    font-style: italic;
+    color: var(--primary-300);
   }
-  .tip {
-    display: grid;
-    gap: var(--space-m);
-    align-items: start;
-    counter-increment: tip;
+  .g-hero__intro {
+    max-width: 38rem;
+    margin: 0 0 var(--space-m);
+    font-size: 1.1875rem;
+    color: var(--neutral-100);
   }
-  @media (min-width: 60rem) {
-    .tip:has(> :nth-child(2)) {
-      grid-template-columns: minmax(0, 1fr) 22rem;
-    }
-  }
-  .tip__body {
-    max-width: 65ch;
-  }
-  .tip h3 {
+  .g-hero__jump {
     display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .g-hero__jump a {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(255 255 255 / 0.5);
+    border-radius: var(--radius-pill);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  .g-hero__jump a:hover {
+    background: rgb(255 255 255 / 0.15);
+  }
+
+  /* Section headings with an eyebrow and a short seam. */
+  .g-head {
+    max-width: 40rem;
+    margin-bottom: var(--space-l);
+  }
+  .g-head--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+  .g-head p {
+    margin: 0;
+  }
+  .g-head h2 {
+    margin-block: 0.25rem 0.75rem;
+    font-size: clamp(2rem, 1.6rem + 1.6vw, 2.75rem);
+  }
+  .g-eyebrow {
+    display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    margin: 0 0 0.5rem;
+    color: var(--primary-600);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
-  .tip h3::before {
-    content: counter(tip);
-    flex-shrink: 0;
-    display: grid;
-    place-items: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: var(--radius-pill);
-    background: var(--primary-100);
-    color: var(--primary-700);
+  .g-eyebrow::before {
+    content: '';
+    width: 2.5rem;
+    border-top: 2px dashed currentColor;
+  }
+  .g-eyebrow--light {
+    color: var(--primary-300);
+  }
+
+  /* Big decorative step numbers. */
+  .g-num {
+    display: block;
     font-family: var(--font-heading);
     font-weight: 900;
-    font-size: 1.125rem;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--primary-500);
   }
-  .tip p,
-  .tip ul {
-    margin: 0 0 0.75rem;
+
+  /* Photo and text side by side. */
+  .split {
+    display: grid;
+    gap: var(--space-l);
+    align-items: center;
   }
-  .tip__photo {
+  @media (min-width: 60rem) {
+    .split {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    }
+    .split--reverse .split__photo {
+      order: 2;
+    }
+  }
+  .split__photo {
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    border-radius: var(--radius);
+    border-radius: var(--radius-l);
   }
-  .tip__media :global(.video) {
+  .split__text h3 {
+    margin: 0.5rem 0 0.75rem;
+    font-size: clamp(1.625rem, 1.4rem + 1vw, 2.125rem);
+  }
+  .split__text p {
+    margin: 0 0 var(--space-s);
+  }
+  .link-list {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0 0 var(--space-m);
+    padding: 0;
+    list-style: none;
+  }
+  .link-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1.125rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    color: var(--color-text);
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+  .link-list a:hover {
+    border-color: var(--primary-500);
+  }
+  .link-list :global(svg) {
+    flex-shrink: 0;
+    color: var(--primary-600);
+    transition: transform 0.2s;
+  }
+  .link-list a:hover :global(svg) {
+    transform: translateX(3px);
+  }
+
+  /* Checklist band. */
+  .checklist {
+    display: grid;
+    gap: var(--space-l);
+  }
+  .checklist__head {
+    max-width: 40rem;
+  }
+  .checklist__head h3 {
+    margin: 0.5rem 0 0.75rem;
+    font-size: clamp(1.625rem, 1.4rem + 1vw, 2.125rem);
+  }
+  .checklist__head p {
     margin: 0;
+  }
+  .checklist__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+    gap: var(--space-s);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .checklist__items li {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 1.375rem 1.25rem;
+    border-radius: var(--radius);
+    background: #fff;
+    color: var(--primary-700);
+    font-weight: 600;
+  }
+  .checklist__icon {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--primary-100);
+    color: var(--primary-600);
+  }
+  .checklist__foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-s) var(--space-m);
+  }
+  .checklist__foot p {
+    max-width: 40rem;
+    margin: 0;
+  }
+
+  /* Videos, side by side on the dark band. */
+  .videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+    gap: var(--space-l);
+  }
+  .videos h3 {
+    margin: 0 0 0.5rem;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  .videos p {
+    margin: 0 0 var(--space-s);
+    color: var(--neutral-100);
+  }
+  .videos :global(.video) {
+    margin: 0;
+  }
+  .videos :global(figcaption) {
+    color: var(--neutral-100);
+  }
+  .videos :global(figcaption a) {
+    color: var(--primary-300);
+  }
+
+  /* Guides grouped by topic. Small groups share a row. */
+  .groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-l) 1.75rem;
+  }
+  .group--wide {
+    grid-column: 1 / -1;
+  }
+  .group:not(.group--wide) .cards {
+    grid-template-columns: 1fr;
+  }
+  .group__title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    margin: 0 0 var(--space-m);
+    font-size: 1.375rem;
+  }
+  .group__title::after {
+    content: '';
+    flex: 1;
+    border-top: 2px dashed var(--neutral-200);
   }
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
     gap: 1.75rem;
     list-style: none;
-    margin: var(--space-m) 0 0;
+    margin: 0;
     padding: 0;
   }
+
+  /* Closing call to action. */
   .more {
-    margin-top: var(--space-m);
-    padding: var(--space-m);
-    border-radius: var(--radius);
-    background: var(--primary-050);
-  }
-  .more h2 {
-    margin-top: 0;
+    max-width: 40rem;
+    text-align: center;
   }
   .more__links {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.75rem;
     margin-bottom: 0;
   }

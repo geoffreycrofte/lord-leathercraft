@@ -2,6 +2,10 @@
 /**
  * Privacy-friendly YouTube embed: nothing is requested from YouTube until the
  * visitor presses play. Without JavaScript, a plain link remains.
+ *
+ * The poster is the video thumbnail, downloaded at build time into
+ * src/assets/videos by scripts/fetch-youtube-posters.mjs, unless a `poster`
+ * is given.
  */
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
@@ -15,7 +19,9 @@ interface Props {
   poster?: ImageMetadata;
 }
 
-const { id, title, lang, poster } = Astro.props;
+const thumbnails = import.meta.glob<{ default: ImageMetadata }>('../assets/videos/*.jpg', { eager: true });
+const { id, title, lang } = Astro.props;
+const poster = Astro.props.poster ?? thumbnails[`../assets/videos/${id}.jpg`]?.default;
 const t = useTranslations(lang);
 const watchUrl = `https://www.youtube.com/watch?v=${id}`;
 ---
@@ -24,7 +30,10 @@ const watchUrl = `https://www.youtube.com/watch?v=${id}`;
   <div class="video__frame" data-video-id={id} data-video-title={title}>
     {poster && <Image src={poster} alt="" widths={[640, 1280]} sizes="(min-width: 75rem) 70ch, 100vw" />}
     <button type="button" class="video__play" hidden>
-      <span>{t('video.play')}<span class="visually-hidden">: {title}</span></span>
+      <span class="video__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" /></svg>
+      </span>
+      <span class="visually-hidden">{t('video.play')}: {title}</span>
     </button>
   </div>
   <figcaption>
@@ -72,22 +81,45 @@ const watchUrl = `https://www.youtube.com/watch?v=${id}`;
   .video__play {
     position: absolute;
     inset: 0;
-    margin: auto;
-    width: fit-content;
-    height: fit-content;
-    padding: 0.875rem 1.5rem;
-    border: 2px solid var(--primary-100);
-    border-radius: 999px;
-    background: var(--neutral-700);
-    color: var(--primary-100);
-    font: inherit;
-    font-weight: 600;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: linear-gradient(to top, rgb(0 0 0 / 0.35), rgb(0 0 0 / 0.05) 60%);
+    color: #fff;
     cursor: pointer;
   }
-  .video__play:hover {
+  .video__play[hidden] {
+    display: none;
+  }
+  .video__icon {
+    display: grid;
+    place-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    padding-left: 0.25rem;
+    border-radius: 50%;
+    background: var(--primary-500);
+    box-shadow:
+      0 0 0 0.375rem rgb(255 255 255 / 0.25),
+      0 0.5rem 1.5rem rgb(0 0 0 / 0.3);
+    transition:
+      transform 0.25s,
+      background-color 0.25s;
+  }
+  .video__play:hover .video__icon,
+  .video__play:focus-visible .video__icon {
+    transform: scale(1.08);
     background: var(--primary-600);
   }
   .video__play:focus-visible {
-    outline-color: var(--primary-100);
+    outline: 3px solid var(--primary-100);
+    outline-offset: -0.5rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .video__icon {
+      transition: none;
+    }
   }
 </style>

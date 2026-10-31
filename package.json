@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "images": "node scripts/optimize-images.mjs",
-    "images:check": "node scripts/optimize-images.mjs --check"
+    "images:check": "node scripts/optimize-images.mjs --check",
+    "posters": "node scripts/fetch-youtube-posters.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.5",

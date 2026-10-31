@@ -60,9 +60,8 @@ export const ui = {
     'article.relatedShop': 'See the pattern',
     'article.readMore': 'Read the guide',
     'affiliate.notice':
-      'This page contains affiliate links, marked “(affiliate link)”. If you buy through them, I earn a small commission at no extra cost to you.',
+      'Some links on this page are sponsored (affiliate links). If you buy through them, I earn a small commission at no extra cost to you.',
     'affiliate.learnMore': 'How affiliate links work',
-    'affiliate.marker': 'affiliate link',
     'external.newShop': 'Available as PDF patterns on the Lord Leathercraft shop.',
     'video.play': 'Play the video',
     'video.notice': 'The video is hosted by YouTube (privacy-enhanced mode). It loads only when you press play.',
@@ -116,9 +115,8 @@ export const ui = {
     'article.relatedShop': 'Voir le patron',
     'article.readMore': 'Lire le guide',
     'affiliate.notice':
-      'Cette page contient des liens affiliés, signalés par la mention « (lien affilié) ». Si vous achetez par leur biais, je touche une petite commission, sans surcoût pour vous.',
+      'Certains liens de cette page sont sponsorisés (liens affiliés). Si vous achetez par leur biais, je touche une petite commission, sans surcoût pour vous.',
     'affiliate.learnMore': 'Comment fonctionnent les liens affiliés',
-    'affiliate.marker': 'lien affilié',
     'external.newShop': 'Disponibles en patrons PDF sur la boutique Lord Leathercraft (en anglais).',
     'video.play': 'Lire la vidéo',
     'video.notice': 'La vidéo est hébergée par YouTube (mode confidentialité renforcée). Elle ne se charge que lorsque vous lancez la lecture.',

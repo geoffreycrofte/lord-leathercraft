@@ -100,8 +100,7 @@ Retirez la ligne `draft: true` (dans les deux langues) pour publier.
 Colle simplement le lien en Markdown. Les liens Amazon (avec `tag=` ou `amzn.to`), AliExpress (`s.click.aliexpress.com`) et Payhip (`fp_ref=`) sont détectés automatiquement. Ils reçoivent alors :
 
 - `rel="sponsored noopener"` ;
-- la mention visible « (lien affilié) » ou « (affiliate link) » ;
-- l'avertissement de transparence en haut de l'article.
+- l'avertissement de transparence en haut de la page (pas de mention sur chaque lien).
 
 Pour un nouveau programme, ajoute son domaine ou son paramètre dans `src/lib/remark-affiliate-links.mjs`.
 

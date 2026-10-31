@@ -30,24 +30,14 @@ export function isAffiliateUrl(href) {
   return AFFILIATE_PARAMS.some((p) => url.searchParams.has(p));
 }
 
-const MARKERS = { en: 'affiliate link', fr: 'lien affilié' };
-
 export function remarkAffiliateLinks() {
   return (tree, file) => {
-    const path = file.history?.[0] ?? '';
-    const marker = /[\\/]fr[\\/]/.test(path) ? MARKERS.fr : MARKERS.en;
     let found = false;
     visit(tree, 'link', (node) => {
       if (!isAffiliateUrl(node.url)) return;
       found = true;
       node.data ??= {};
       node.data.hProperties = { ...node.data.hProperties, rel: 'sponsored noopener' };
-      // Visible marker, inside the link so it is part of its accessible name.
-      node.children.push({
-        type: 'text',
-        value: ` (${marker})`,
-        data: { hName: 'span', hProperties: { className: ['affiliate-marker'] } },
-      });
     });
     if (found) {
       file.data.astro ??= {};

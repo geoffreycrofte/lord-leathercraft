@@ -1,5 +1,10 @@
 export const SHOP_URL = 'https://shop.crofte.fr';
 export const PAYHIP_AFFILIATE_URL = 'https://payhip.com/?fp_ref=geoffrey91';
+/**
+ * Amazon France Associates tag (ends with -21). When set, Amazon links on the
+ * French pages go to amazon.fr instead of the amzn.to links (amazon.com).
+ */
+export const AMAZON_FR_TAG = '';
 export const AUTHOR = 'Geoffrey Crofte';
 
 /** Payhip collections. Product pages are on the shop, in English. */

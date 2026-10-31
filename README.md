@@ -105,6 +105,8 @@ Colle simplement le lien en Markdown. Les liens Amazon (avec `tag=` ou `amzn.to`
 
 Pour un nouveau programme, ajoute son domaine ou son paramètre dans `src/lib/remark-affiliate-links.mjs`.
 
+Sur la page Mes outils, chaque produit Amazon garde son ASIN. Quand `AMAZON_FR_TAG` est renseigné dans `src/data/site.ts` (identifiant Partenaires Amazon France, en `-21`), la version française pointe vers amazon.fr ; sinon, elle garde les liens `amzn.to` (amazon.com).
+
 ## Écrire un article de blog
 
 Même principe que les guides, dans `src/content/posts/{en,fr}/`, avec deux champs en plus :

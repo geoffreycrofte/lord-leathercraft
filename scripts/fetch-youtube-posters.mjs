@@ -52,7 +52,7 @@ for (const id of ids) {
       // Thumbnails often carry black letterbox bars: trim them first.
       const trimmed = await sharp(input).trim({ background: '#000000', threshold: 40 }).toBuffer().catch(() => input);
       await sharp(trimmed)
-        .resize({ width: 1280, height: 720, fit: 'cover' })
+        .resize({ width: 1200, height: 675, fit: 'cover' })
         .jpeg({ quality: 72, mozjpeg: true })
         .toFile(target);
       saved = true;

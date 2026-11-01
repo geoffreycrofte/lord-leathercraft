@@ -16,7 +16,7 @@ Notes propres à ce site, lues par le skill `seo-geo` (`.claude/skills/seo-geo/S
 | Liens affiliés | `src/lib/remark-affiliate-links.mjs` | `rel="sponsored noopener"` automatique, plus un avertissement en haut de page. Pour les liens générés par des composants, mettre `sponsored: true` dans le frontmatter. Sur les pages françaises, les liens Amazon pointent vers amazon.fr (`AMAZON_FR_TAG`). |
 | Performance | `scripts/optimize-images.mjs`, polices auto-hébergées | Images de 1200 px maximum et 300 Ko maximum (contrôlé en CI). Aucun script tiers ni traceur. Vidéos YouTube en façade, avec une miniature locale. |
 | Contraintes de contenu | `src/content.config.ts` | Titre de 70 caractères maximum, sans « + » (Payhip le transforme en espace). Description de 70 à 160 caractères. Le build échoue si une traduction manque. |
-| llms.txt | — | Pas encore en place : à générer avec un endpoint `src/pages/llms.txt.ts` à partir des collections. |
+| llms.txt | `src/pages/llms.txt.ts` | Généré à chaque build à partir des guides, des articles de blog et des pages principales. Chaque page anglaise est suivie de sa version française. Signalé en commentaire dans `robots.txt`. |
 
 ## Décisions
 

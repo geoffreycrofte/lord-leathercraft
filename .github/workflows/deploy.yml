@@ -29,6 +29,12 @@ jobs:
       # Video thumbnails, served by the site so visitors never call YouTube.
       - run: npm run posters
       - run: npm run build
+      # Pages new or changed since the live version, for IndexNow (Bing…).
+      - run: node scripts/indexnow.mjs diff
+      - uses: actions/upload-artifact@v4
+        with:
+          name: indexnow-urls
+          path: indexnow-urls.json
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
@@ -42,3 +48,13 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v4
+        with:
+          name: indexnow-urls
+      - run: node scripts/indexnow.mjs submit

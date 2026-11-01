@@ -67,7 +67,7 @@ const tool = (id: string): Product => {
   return found;
 };
 const ali = (url: string): Offer => ({ shop: 'AliExpress', url });
-const amazon = (url: string, asin: string): Offer => ({ shop: 'Amazon', url, asin });
+const amazon = (url: string, asin: string, asinFr?: string): Offer => ({ shop: 'Amazon', url, asin, asinFr });
 const blo = (url: string): Offer => ({ shop: 'Buy Leather Online', url, code: 'LORD7' });
 const SANDING_TUTORIAL = 'https://youtube.com/shorts/Emih74vXB1I';
 const BURNISH_PLAYLIST = 'https://www.youtube.com/watch?v=nrC8kHJTLZ4&list=PLyC9UPLTekcUzhRmC4IBS_TbBw2RdOgcz';
@@ -115,14 +115,13 @@ const tokonole: Product = {
   id: 'tokonole-colours',
   name: { en: 'Tokonole burnishing gum', fr: 'Tokonole, gomme de lissage' },
   description: {
-    en: 'For shiny edges, you cannot do without it: it is the best burnishing gum I know. Start with the white one, which dries clear; it also exists in brown and black.',
-    fr: 'Pour des tranches brillantes, impossible de s’en passer : c’est la meilleure gomme de lissage que je connaisse. Commencez par la blanche, qui sèche transparente ; elle existe aussi en marron et en noir.',
+    en: 'For shiny edges, you cannot do without it: it is the best burnishing gum I know. Start with the white one, which dries clear; it also exists in black.',
+    fr: 'Pour des tranches brillantes, impossible de s’en passer : c’est la meilleure gomme de lissage que je connaisse. Commencez par la blanche, qui sèche transparente ; elle existe aussi en noir.',
   },
   image: tokonolePhoto,
   alt: { en: 'A jar of Tokonole and a small applicator bottle on a cutting mat.', fr: 'Un pot de Tokonole et un petit flacon applicateur sur un tapis de découpe.' },
   offers: [
     { shop: 'Amazon', label: { en: 'Amazon · white', fr: 'Amazon · blanche' }, url: 'https://amzn.to/3Kyhhwo', asin: 'B017X8GL9A' },
-    { shop: 'Amazon', label: { en: 'Brown', fr: 'Marron' }, url: 'https://amzn.to/41txDNR', asin: 'B017X8GKZA' },
     { shop: 'Amazon', label: { en: 'Black', fr: 'Noire' }, url: 'https://amzn.to/3MIJlA9', asin: 'B017X8GL8Q' },
   ],
 };
@@ -465,7 +464,7 @@ export const beltHardware: Product[] = [
     },
     image: buckleArdillon,
     alt: { en: 'A brass prong buckle on a belt, next to a silver one.', fr: 'Une boucle à ardillon laiton sur une ceinture, à côté d’une boucle argentée.' },
-    offers: [amazon('https://amzn.to/3KC8Qld', 'B0B7TBRJ4D')],
+    offers: [amazon('https://amzn.to/3KC8Qld', 'B0B7TBRJ4D', 'B0B2DVXK8L')],
     links: [
       { label: { en: 'Store 1 (AliExpress)', fr: 'Boutique 1 (AliExpress)' }, url: 'https://s.click.aliexpress.com/e/_DEXfdAp' },
       { label: { en: 'Store 2 (AliExpress)', fr: 'Boutique 2 (AliExpress)' }, url: 'https://s.click.aliexpress.com/e/_DDajefR' },
@@ -492,7 +491,7 @@ export const beltHardware: Product[] = [
     },
     image: buckleDRing,
     alt: { en: 'A brass belt loop on a brown belt, next to loops in several finishes.', fr: 'Un passant en laiton sur une ceinture marron, à côté de passants de plusieurs finitions.' },
-    offers: [amazon('https://amzn.to/3zwts89', 'B09NDLZNVZ')],
+    offers: [amazon('https://amzn.to/3zwts89', 'B09NDLZNVZ', 'B0DGXRTXZ8')],
     links: [
       { label: { en: 'More colours', fr: 'Plus de couleurs' }, url: 'https://s.click.aliexpress.com/e/_DDBKK6l' },
       { label: { en: 'Thin, more sizes', fr: 'Fins, plus de tailles' }, url: 'https://s.click.aliexpress.com/e/_DCcoktb' },
@@ -576,7 +575,7 @@ export const walletEdges: Product[] = [
     },
     image: cornerBlades,
     alt: { en: 'Two rows of curved corner punches of several radii.', fr: 'Deux rangées d’emporte-pièces d’angle de plusieurs rayons.' },
-    offers: [amazon('https://amzn.to/3O75GHJ', 'B07YZFMFF4'), { shop: 'Etsy', url: 'https://tidd.ly/3JSkrvv' }],
+    offers: [amazon('https://amzn.to/3O75GHJ', 'B07YZFMFF4', 'B08258KSGX'), { shop: 'Etsy', url: 'https://tidd.ly/3JSkrvv' }],
   },
 ];
 

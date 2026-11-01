@@ -1,178 +1,181 @@
 ---
 name: seo-geo
-description: Référencement naturel (SEO) et visibilité dans les moteurs génératifs (GEO : ChatGPT, Perplexity, Claude, Google AI Overviews) pour lord.crofte.fr. À utiliser pour écrire ou relire un guide, un article de blog, une fiche matériel ou une page ; choisir un titre, une description, un slug ou des liens internes ; organiser le cocon sémantique ; toucher aux balises Open Graph, au JSON-LD, au sitemap, à robots.txt, à llms.txt ou à IndexNow ; ou auditer le SEO du site.
+description: Search engine optimisation (SEO) and generative engine optimisation (GEO, being cited by ChatGPT, Perplexity, Claude, Gemini and Google AI Overviews) for any website. Use when writing or reviewing a page, article or product page; choosing titles, meta descriptions, slugs or internal links; planning a topic cluster or semantic cocoon; setting up or checking canonical, hreflang, Open Graph, structured data (JSON-LD), sitemaps, robots.txt, llms.txt, IndexNow or AI crawler rules; or auditing a site's SEO and AI visibility.
 ---
 
-# SEO et GEO pour lord.crofte.fr
+# SEO and GEO
 
-Ce skill décrit comment le site est déjà optimisé, et les règles à suivre pour tout nouveau contenu. Le but : être trouvé sur Google et Bing, et être cité par les moteurs génératifs, sans jamais sacrifier l'accessibilité (WCAG 2.2 AA) ni la confiance des lecteurs.
+Reference skill for making a website findable in search engines and citable by generative engines, without trading away accessibility, performance or reader trust.
 
-Principe directeur : **une page = une intention de recherche = une réponse claire, vécue et sourcée**. Ce qui sert les lecteurs sert aussi Google et les IA.
+Guiding principle: **one page = one search intent = one clear, first-hand, sourced answer.** What serves readers serves Google, Bing and AI assistants.
 
-## 1. Ce qui est déjà en place (ne pas le casser)
+## 0. Before you start
 
-| Élément | Où | Détail |
-|---|---|---|
-| `<title>`, description, canonical | `src/layouts/BaseLayout.astro` | Titre `Titre · Lord Leathercraft`. Canonical absolu, avec la barre finale (`trailingSlash: 'always'`). |
-| hreflang | `BaseLayout.astro` | Un `<link rel="alternate">` par langue, plus `x-default` vers l'anglais. Fourni par la prop `alternates`. |
-| Open Graph et Twitter | `BaseLayout.astro` | `og:title`, `og:description`, `og:url`, `og:type`, `og:locale` (`en_GB` / `fr_FR`), `og:image`, `twitter:card=summary_large_image`. Image par défaut : `public/open-graph.jpg`. Pour un article, l'image est la couverture, réduite à 1200 px en JPEG (`ArticleView.astro`). |
-| JSON-LD | `ArticleView.astro`, `PostView.astro`, `HomeView.astro` | `Article`, `BreadcrumbList`, `HowTo` (si `howTo` dans le frontmatter), `BlogPosting`, `WebSite`, `Organization`. |
-| Sitemap | `astro.config.mjs` (`@astrojs/sitemap`) | `sitemap-index.xml`, qui pointe vers `sitemap-0.xml`, avec les alternates i18n. Déclaré dans Search Console (propriété Domaine `crofte.fr`) et dans Bing. |
-| robots.txt | `public/robots.txt` | Tout est autorisé, et le fichier indique le sitemap. |
-| IndexNow | `scripts/indexnow.mjs` et le workflow de déploiement | À chaque déploiement, les pages nouvelles ou modifiées sont envoyées à Bing, Yandex, Seznam et Naver. Clé : `public/97422bae69f8220c117c7617ebb0e6f1.txt`, à ne pas supprimer. |
-| Liens affiliés | `src/lib/remark-affiliate-links.mjs` | `rel="sponsored noopener"` automatique, plus un avertissement en haut de page. Pour les liens générés par des composants, mettre `sponsored: true` dans le frontmatter. |
-| Performance | `scripts/optimize-images.mjs`, polices auto-hébergées | Images de 1200 px maximum et 300 Ko maximum, sans métadonnées (contrôlé en CI). Aucun script tiers ni traceur. Vidéos YouTube en façade, chargées au clic. |
-| Contraintes de contenu | `src/content.config.ts` | Titre de 70 caractères maximum, sans « + » (Payhip le transforme en espace). Description de 70 à 160 caractères. Le build échoue si la traduction manque. |
+1. **Read the project's own SEO notes** if they exist: `docs/seo.md`, a `## SEO` section in `CLAUDE.md` or `README.md`. They record what is already in place (where the head tags, JSON-LD and sitemap live), the site's topic map and its constraints. Project notes override the generic advice below.
+2. **No notes yet?** Run the audit (§10) first, then create `docs/seo.md` with: the stack, where each SEO element is generated, the content constraints, the topic map (§4), and the decisions taken (e.g. the AI crawler policy). Keep it updated after each change.
+3. **Check for newer practices** (§11) when the work is more than a small edit, or when this skill's "last reviewed" date is more than about six months old.
 
-## 2. Checklist d'un nouveau guide ou article
+## 1. Workflow
 
-1. **Intention** : formulez en une phrase la question à laquelle la page répond. Vérifiez qu'aucune page existante n'y répond déjà, pour éviter la cannibalisation (voir la carte du cocon, §3).
-2. **Titre** (70 caractères maximum) : le sujet principal en tête, sous une forme que les gens tapent vraiment. Pas de « + ». Les titres-questions marchent bien pour les guides (« Où acheter du cuir de qualité… »).
-3. **Description** (70 à 160 caractères) : la promesse de la page, avec les sous-sujets traités. Elle sert de `meta description` et de texte Open Graph.
-4. **Slug** : traduit, court, en minuscules, avec des tirets, sans mots vides inutiles. Un même `translationKey` relie les deux langues.
-5. **Couverture** : une vraie photo (pas d'image d'illustration générique), avec un `coverAlt` qui décrit l'image. Elle sert aussi d'image Open Graph.
-6. **Structure** : un seul `h1` (le titre), des `h2` qui forment un sommaire logique, des `h3` pour les sous-parties. Pas de niveau sauté.
-7. **Réponse d'abord** : le premier paragraphe répond directement à la question (voir §4).
-8. **Liens internes** : au moins un lien vers la page mère du cocon, et un ou deux liens vers des pages sœurs. Le guide doit aussi recevoir un lien depuis sa page mère (voir §3).
-9. **Liens externes** : vers des sources qui font autorité (consortium, fabricants, normes). Les liens affiliés sont détectés automatiquement, et sinon on ajoute `sponsored: true`.
-10. **Version française** : c'est une adaptation, pas une traduction mot à mot. Le slug est traduit, les liens internes pointent vers les pages `/fr/`, et l'on précise « (en anglais) » quand une destination n'existe qu'en anglais.
-11. **Données structurées** : ajoutez `howTo` pour un pas-à-pas réel. Google n'affiche plus les résultats enrichis HowTo depuis 2023, mais le balisage reste utile aux autres moteurs et aux IA.
-12. **Fraîcheur** : renseignez `updatedDate` à chaque mise à jour importante. Elle alimente `dateModified`, et les IA privilégient les contenus datés et récents.
-13. **Vérification** : `npm run check`, `npm run build`, puis le contrôle du §8.
+1. **Audit**: what exists, what is missing, what is broken (§10).
+2. **Plan**: rank the fixes by impact. In order: indexability and crawl errors first, then duplicate or missing titles and descriptions, then internal linking and structure, then content gaps, then enhancements (structured data, llms.txt, social).
+3. **Implement**: generate SEO elements from data (layouts, content schemas, build scripts) instead of writing them by hand on each page, so they never drift.
+4. **Verify**: build, rerun the audit, check one page of each type in the browser, test the social preview, validate the structured data.
+5. **Record**: update the project notes and the topic map.
 
-## 3. Le cocon sémantique
+## 2. Technical foundations (every page)
 
-Le cocon sémantique (théorisé par Laurent Bourrelly) organise les pages en arbre : une **page mère** couvre un thème large, ses **pages filles** traitent chacune une intention précise. Les liens suivent la structure : ils donnent du sens au moteur et un chemin au lecteur.
+- **Title** `<title>`: unique, about 50–60 characters (cut at about 600 px in results). Main topic first, then the brand: `Topic · Brand`.
+- **Meta description**: unique, about 120–160 characters. A promise of what the page answers, not a keyword list. It is also the default social description.
+- **Canonical**: absolute URL, self-referencing, with the site's trailing-slash convention applied consistently everywhere (links, sitemap, canonical).
+- **Indexing**: `noindex` only on pages that must stay out (search results, thank-you pages, drafts). Never block in `robots.txt` a page you want deindexed: the crawler cannot see the `noindex`.
+- **Headings**: one `h1`, then `h2` and `h3` without skipping levels. They form the outline that both readers and models use.
+- **Language**: `<html lang>` correct on every page.
+- **URLs**: short, lowercase, hyphenated, readable, translated on multilingual sites. **Never change a published URL without a redirect**: use a 301 on servers that support it, or a `meta refresh` page with a canonical to the new URL on static hosts without redirects.
+- **Images**: descriptive `alt` (or `alt=""` when decorative), explicit `width` and `height`, modern formats, lazy-loading below the fold, and no important information only inside an image.
+- **Performance**: Core Web Vitals at the 75th percentile: LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1. Self-host fonts, keep third-party scripts to a minimum, compress images in the build or in CI.
+- **Accessibility overlaps SEO**: descriptive link text, a sound heading structure, alt text and a valid `lang` help both. Never sacrifice WCAG for an SEO trick.
 
-### Règles de maillage
+### Multilingual sites
 
-- **Montée** : chaque page fille renvoie vers sa page mère, avec une ancre qui décrit le thème de la mère.
-- **Descente** : la page mère renvoie vers chacune de ses filles, avec une ancre qui décrit l'intention de la fille.
-- **Latéral** : les sœurs se lient entre elles quand le lecteur en a besoin (« pour la suite, lisez… »). Pas de liens systématiques en pied de page.
-- **Entre cocons** : on passe par la page mère ou par la page pilier, pas de fille à fille d'un autre cocon, sauf si l'intention le justifie vraiment.
-- **Ancres** : descriptives et variées, jamais « cliquez ici » ni l'URL nue. L'ancre dit ce qu'on trouve derrière (c'est aussi une exigence WCAG).
-- **Une intention par page** : si deux pages répondent à la même question, fusionnez-les, ou différenciez nettement leurs angles.
-- **Profondeur** : toute page doit être à trois clics au plus de l'accueil.
+- One URL per language, never language switching by cookie or IP alone.
+- `hreflang` on every version, listing all the versions **including itself**, plus `x-default`. The links must be reciprocal, otherwise they are ignored.
+- Translate slugs, titles and descriptions, and adapt the content rather than translating it word for word. Point internal links to the same-language versions, and say so when a destination exists only in another language.
+- Make the build fail when a translation is missing, so the language versions never go out of step.
 
-### Carte actuelle
+### Discovery
 
-```
-Accueil (pilier)
-├── Guides (/guides/) ─ page mère « apprendre la maroquinerie »
-│   ├── Matières
-│   │   ├── Les types de cuir ─────────┐ mère du sous-cocon « cuir »
-│   │   │   ├── Les finitions du cuir   │ (sœurs liées entre elles)
-│   │   │   ├── Cuir au tannage végétal de Toscane
-│   │   │   ├── Cuir ou cuir vegan
-│   │   │   └── Où acheter du cuir ─────┘ (relie vers Mes outils)
-│   ├── Outils
-│   │   ├── Guide ceinture (outils, cuir, quincaillerie)
-│   │   └── Guide portefeuille et porte-cartes
-│   ├── Entretien : entretenir le cuir
-│   └── Conception : du croquis au patron
-├── Mes outils (/tools/) ── page mère « outillage », liée aux deux guides projet
-├── Mon matériel (/materials/) ─ fiches cuirs, fils, boucles (filles = fiches)
-├── Portfolio ─ pièces (filles), liées aux cuirs utilisés
-└── Blog ─ actualités courtes, qui renvoient toujours vers un guide ou un patron
-```
+- **XML sitemap**: only canonical, indexable URLs, with `hreflang` alternates when relevant. Referenced in `robots.txt` and submitted in Google Search Console and Bing Webmaster Tools. A sitemap index that points to sub-sitemaps is normal.
+- **Search Console**: prefer a *Domain* property, verified by a DNS TXT record at the apex. A subdomain that is a CNAME cannot hold a TXT record, so use the apex or an HTML-file or meta-tag verification instead.
+- **IndexNow** (Bing, Yandex, Seznam, Naver…): host a key file `/<key>.txt` whose content is the key, then POST changed URLs to `https://api.indexnow.org/indexnow`. On static sites, hash the built pages, compare them with the live manifest, and submit only new or changed URLs **after** the deploy. A submission error must never block a deploy.
+- **Bing Webmaster Tools** can import a Search Console property without verifying the domain again.
 
-Quand vous ajoutez une page, placez-la dans cette carte, ajoutez les liens montants et descendants, et mettez la carte à jour ici.
+## 3. Content that ranks and gets cited
 
-### Idées de contenus qui complètent les cocons
+- **Search intent first**: write down the question the page answers before writing it. Check that no other page already answers it, to avoid cannibalisation.
+- **E-E-A-T**: show first-hand Experience (tests, mistakes, photos, measurements, "I have used this since…", "I have not tested this one"), Expertise, Authoritativeness (consistent author identity, links from and to recognised sources) and Trust (transparency on affiliate links, accurate dates, contact details).
+- **Answer first**: the first sentence under each heading answers that heading on its own, in one to three lines. Details come after.
+- **Precision**: real numbers with their units (and the common conversions), named brands, models and standards. Cite the source when a figure is not from your own practice.
+- **Useful formats**: comparison tables, step-by-step lists, short definitions, FAQ blocks built from real reader questions.
+- **Freshness**: show publication and update dates, and update `dateModified` only for substantial changes.
+- **Affiliate links**: `rel="sponsored"` on each one, a visible disclosure near the top of the page, and real first-hand content around them.
+- **Do not**: produce mass AI or paraphrased content without first-hand input, near-duplicate pages that change only a keyword, keyword stuffing, hidden text or links, fake reviews.
 
-- Cuir : « Quelle épaisseur de cuir pour… » (porte-cartes, ceinture, sac), « Reconnaître un cuir de qualité », « Tannage végétal ou chrome ».
-- Outils : « Griffes à frapper : choisir le pas », « Affûter un tranchet », « Lisser les tranches pas à pas » (avec `howTo`).
-- Projets : un guide par famille de patrons (sacs, housses d'ordinateur, bracelets de montre), sur le modèle des guides ceinture et portefeuille.
+## 4. Site structure: topic clusters and the semantic cocoon
 
-## 4. Écrire pour être cité par les IA (GEO)
+The semantic cocoon (a method formalised by Laurent Bourrelly), like topic clusters, organises pages as a tree: a **parent page** covers a broad topic, and each **child page** covers one precise intent. Links follow the tree, which gives meaning to search engines and a path to readers.
 
-Les moteurs génératifs extraient des passages courts et autonomes, et citent les sources qui paraissent fiables. Les travaux de recherche sur le GEO (Aggarwal et al., *GEO: Generative Engine Optimization*, 2023) montrent que trois ajouts augmentent nettement la visibilité dans les réponses générées : **des citations de sources, des statistiques et des citations d'experts**. À l'inverse, le bourrage de mots-clés ne fonctionne pas.
+- **Up**: every child links to its parent, with an anchor that names the parent's topic.
+- **Down**: the parent links to each child, with an anchor that names the child's intent.
+- **Sideways**: siblings link to each other when the reader needs it ("next, read…"), not through generic sitewide blocks.
+- **Across clusters**: go through the parent or the pillar page, except when the intent really justifies a direct link.
+- **Anchors**: descriptive and varied; never "click here" or a bare URL.
+- **Depth**: every important page is at most three clicks from the home page.
+- **Orphans**: every page receives at least one contextual internal link.
+- **Map**: keep an ASCII tree of the clusters in the project notes, and update it whenever a page is added. Use it to spot gaps, which are the next pieces of content to write.
 
-- **Réponse d'abord** : sous chaque `h2`, la première phrase répond seule à la question du titre, en une à trois lignes. Le détail vient ensuite.
-- **Définitions nettes** : « Un cuir pull-up est un cuir aniline ou semi-aniline chargé d'huiles et de cires… ». Une phrase par notion, réutilisable telle quelle.
-- **Faits chiffrés et vérifiables** : épaisseurs en mm (et en oz), pas de griffe (3,85 mm), grains de papier (300, 900, 2000), tailles d'aiguilles. Citez la source quand le chiffre n'est pas issu de votre pratique.
-- **Expérience vécue** (le premier E de E-E-A-T) : à la première personne, avec des essais, des erreurs, des préférences (« J'utilise… depuis 2021 », « Je ne l'ai pas testée moi-même »). C'est ce que les IA ne peuvent pas inventer, et ce que Google valorise.
-- **Questions-réponses** : un bloc `<details>` en fin de guide, avec les vraies questions des lecteurs (Instagram, commentaires YouTube, e-mails).
-- **Tableaux comparatifs** : par exemple finition, aspect, résistance, patine. Les IA les reprennent volontiers.
-- **Entités cohérentes** : écrivez toujours « Lord Leathercraft » et « Geoffrey Crofte » de la même façon, et nommez précisément marques, tanneries et produits (Badalassi Carlo, Tokonole, John James). Le JSON-LD `Organization` et `Person` doit rester aligné.
-- **Pas de texte dans les images** pour une information importante : elle doit exister en texte, ce qui sert à la fois l'accessibilité et les IA.
+## 5. Generative engine optimisation (GEO)
 
-## 5. llms.txt
+Generative engines retrieve short, self-contained passages and cite the sources that look reliable. In *GEO: Generative Engine Optimization* (Aggarwal et al., 2023), adding **source citations, statistics and quotations** raised visibility in generated answers the most, while keyword stuffing did not help.
 
-`llms.txt` est une convention proposée en 2024 par Jeremy Howard ([llmstxt.org](https://llmstxt.org/)) : un fichier Markdown à la racine du site, qui présente le site et liste ses pages clés pour les modèles de langage. Son adoption reste inégale : Google a indiqué ne pas s'en servir pour son classement. Il coûte peu et peut aider les assistants qui le lisent. Il ne remplace ni le sitemap ni un bon contenu.
+- Write **quotable passages**: one clear sentence per definition or fact, which still makes sense if lifted out of the page.
+- Use the **answer-first** structure, question-like headings and FAQ blocks.
+- Keep **entities consistent**: the same spelling of the brand and author everywhere, matching the `Organization` and `Person` JSON-LD and `sameAs` profiles.
+- Back claims with **sources and data**, and show **first-hand experience**, which models cannot invent.
+- Make the content **available as text** in the HTML: not only in images or video, and not only rendered by client-side JavaScript.
+- Check that **AI crawlers are allowed** (§7), and offer an `llms.txt` (§6).
+- **Measure**: ask the main assistants the target questions, note whether and how the site is cited, and repeat after changes. AI referrals show up in analytics as `chatgpt.com`, `perplexity.ai` and similar.
 
-Format attendu :
+## 6. llms.txt
+
+`llms.txt` ([llmstxt.org](https://llmstxt.org/), proposed by Jeremy Howard in 2024) is a Markdown file at the site root that introduces the site and lists its key pages for language models. Adoption is uneven: Google has said it does not use it for ranking. It is cheap, and it can help assistants and agents that read it. It does not replace a sitemap or good content.
 
 ```markdown
-# Lord Leathercraft
+# Site name
 
-> Patrons PDF de maroquinerie, guides et tutoriels par Geoffrey Crofte, artisan en France. Site bilingue anglais et français.
+> One-paragraph summary: who you are, what the site offers, for whom, in which languages.
 
-Les patrons sont vendus sur shop.crofte.fr. Les guides sont gratuits.
+Optional short notes (where to buy, licence, contact).
 
 ## Guides
-- [Types of leather explained](https://lord.crofte.fr/guides/types-of-leather/): full grain, corrected grain, split, thickness.
-- …
-
-## Outils et matériel
-- [My tools](https://lord.crofte.fr/tools/): …
+- [Page title](https://example.com/page/): one-line description.
 
 ## Optional
-- [Blog](https://lord.crofte.fr/blog/): …
+- [Blog](https://example.com/blog/): what a model can skip when short on context.
 ```
 
-Règles :
-- Un seul `h1` (le nom du site), puis une citation `>` qui résume le site, puis des sections `h2` de listes de liens au format `[titre](url): description`.
-- La section `## Optional` regroupe ce qu'un modèle peut ignorer s'il manque de contexte.
-- **Générez le fichier, ne l'écrivez pas à la main** : un endpoint Astro `src/pages/llms.txt.ts`, qui lit les collections `articles` et `posts` (anglais, avec un lien vers la version française), garde le fichier à jour à chaque build.
-- Option : `llms-full.txt`, qui contient le texte intégral des guides en Markdown. À réserver aux guides, pas aux fiches produits.
-- Après sa création, le fichier doit apparaître dans `robots.txt`, en commentaire ou via un lien depuis le pied de page.
+- One `h1` (the site name), then a `>` summary, then `h2` sections with lists of links in the form `[title](url): description`.
+- `## Optional` holds what can be skipped.
+- **Generate it at build time** from the content collections or CMS, never by hand, so it stays in sync.
+- Optional `llms-full.txt`: the full text of the key pages in Markdown. Keep it to evergreen content.
 
-## 6. Robots IA
+## 7. Crawlers and AI bots
 
-Par défaut, tout est autorisé, ce qui permet d'être cité. Les robots concernés : `GPTBot` et `OAI-SearchBot` (OpenAI), `ClaudeBot` et `Claude-SearchBot` (Anthropic), `PerplexityBot`, `Google-Extended` (entraînement Gemini, sans effet sur le classement), `Applebot-Extended`, `CCBot` (Common Crawl).
+- Allow by default if the goal is to be cited. The main user agents are `GPTBot` and `OAI-SearchBot` (OpenAI), `ClaudeBot`, `Claude-SearchBot` and `Claude-User` (Anthropic), `PerplexityBot`, `Google-Extended` (Gemini training; no effect on Google Search ranking), `Applebot-Extended`, `CCBot` (Common Crawl), `Bingbot`.
+- To refuse model training but stay citable, block the training bots (`GPTBot`, `Google-Extended`, `CCBot`, `Applebot-Extended`) and allow the search and retrieval bots (`OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`). This is the owner's decision: record it in the project notes.
+- Bot names and their roles change: check the vendors' documentation (§11) before editing `robots.txt`.
 
-Si un jour on veut empêcher l'entraînement tout en restant cité, on bloque les robots d'entraînement (`GPTBot`, `Google-Extended`, `CCBot`) et on laisse passer les robots de recherche (`OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`). C'est une décision de Geoffrey, pas un réglage par défaut.
+## 8. Structured data (JSON-LD)
 
-## 7. Open Graph et partage social
+- Generate it from the same data as the page. Describe only what is visible on the page.
+- Useful types: `WebSite`, `Organization` (with `logo` and `sameAs`), `Person`, `BreadcrumbList`, `Article` or `BlogPosting` (with `datePublished`, `dateModified`, `author`, `image`), `Product` with `Offer` (only if you sell on the page), `VideoObject`, `ItemList`.
+- **Rich result status changes**: since 2023, Google shows FAQ rich results only for authoritative government and health sites, and no longer shows HowTo rich results. The markup still helps other engines and models understand the page. Check the current list in Google's documentation before promising a rich result.
+- Validate with the [Rich Results Test](https://search.google.com/test/rich-results) and the [Schema Markup Validator](https://validator.schema.org/).
 
-- **Taille** : l'image fait 1200 × 630 px, au ratio 1,91:1. Le sujet est centré, car Pinterest, Facebook et Bluesky recadrent différemment.
-- **Texte des balises** : `og:title` reprend le titre sans le nom du site, et `og:description` reprend la description.
-- **Pages sans couverture** : elles utilisent `public/open-graph.jpg`. Pour une page importante, prévoyez une couverture dédiée.
-- **Pinterest** est un canal fort pour la maroquinerie : préférez des photos verticales lisibles dans les articles, et des `alt` descriptifs. Pinterest les reprend.
-- **Vérification** : après un déploiement, testez avec le débogueur de partage de Facebook, ou en publiant le lien dans un brouillon Bluesky.
+## 9. Social sharing (Open Graph)
 
-## 8. Audit rapide après un build
+- On every page: `og:title`, `og:description`, `og:url` (the canonical), `og:type` (`website` or `article`), `og:image`, `og:site_name`, `og:locale` (plus `og:locale:alternate` on multilingual sites), and `twitter:card=summary_large_image`.
+- Image: 1200 × 630 px (ratio 1.91:1), under about 1 MB, absolute URL, subject centred because each platform crops differently. Use the article's cover when it has one, and a branded default otherwise.
+- Pinterest favours tall, legible images with descriptive `alt` text in the page. Plan for it when the niche is visual.
+- Check with the platforms' debuggers (Facebook Sharing Debugger, LinkedIn Post Inspector) or by pasting the link into a draft post.
+
+## 10. Audit
+
+Run it on the built output when possible (static sites: the build folder; dynamic sites: crawl a staging URL with a crawler such as Screaming Frog or `wget --spider`). Example commands for a static build in `dist/`:
 
 ```bash
-npm run build
-# Titres et descriptions : longueurs contrôlées par le schéma, le build échoue sinon.
-# Images sans attribut alt (alt="" est correct pour une image décorative) :
-grep -rhoE '<img[^>]*>' dist --include=*.html | grep -vE ' alt(=| |>)' | head
-# Chaque page a un canonical et un hreflang :
-for f in $(find dist -name index.html); do grep -q 'rel="canonical"' $f || echo "pas de canonical : $f"; grep -q 'hreflang=' $f || echo "pas de hreflang : $f"; done
-# Liens internes cassés (chemins absolus vers des pages inexistantes) :
-grep -rhoE 'href="/[^"#]*"' dist --include=*.html | sort -u | sed 's/href="//;s/"$//' \
-  | while read p; do [ -e "dist${p}" ] || [ -e "dist${p}index.html" ] || echo "cassé : $p"; done
+OUT=dist
+# Images without an alt attribute (alt="" is fine for decorative images):
+grep -rhoE '<img[^>]*>' $OUT --include=*.html | grep -vE ' alt(=| |>)' | head
+# Pages without a canonical, a description or hreflang (multilingual sites):
+for f in $(find $OUT -name '*.html'); do
+  grep -q 'rel="canonical"' "$f" || echo "no canonical: $f"
+  grep -q 'name="description"' "$f" || echo "no description: $f"
+  grep -q 'hreflang=' "$f" || echo "no hreflang: $f"
+done
+# Duplicate titles (the same title on two language versions linked by hreflang is acceptable):
+grep -rhoE '<title>[^<]*' $OUT --include=*.html | sort | uniq -d
+# Broken internal links (root-relative):
+grep -rhoE 'href="/[^"#?]*"' $OUT --include=*.html | sort -u | sed 's/href="//;s/"$//' \
+  | while read p; do [ -e "$OUT$p" ] || [ -e "$OUT${p}index.html" ] || [ -e "$OUT$p.html" ] || echo "broken: $p"; done
+# robots.txt, sitemap and llms.txt present:
+ls $OUT/robots.txt $OUT/sitemap*.xml $OUT/llms.txt 2>&1
 ```
 
-Exceptions connues : `/links/` (page statique héritée, sans hreflang) et le lien `/404/` de la page 404 vers elle-même.
+Then: accessibility (axe) and Lighthouse on one page of each template; structured data validation; social preview; Search Console *Pages* and *Core Web Vitals* reports; a spot check of how AI assistants answer the site's core questions. Record known, accepted exceptions in the project notes so they are not reported again.
 
-Ensuite : audit axe (accessibilité) des pages modifiées, à 1280 et 320 px de large, et contrôle de l'aperçu Open Graph.
+## 11. Staying current
 
-## 9. À éviter
+Search and AI discovery change fast; this skill is a baseline, not the last word. **Last reviewed: November 2026.**
 
-- Contenu généré en masse ou paraphrasé sans expérience propre. Google le traite comme du contenu de faible valeur, et les IA ne le citent pas.
-- Pages quasi identiques qui ne changent qu'un mot-clé (« portefeuille cuir marron », « portefeuille cuir noir »).
-- Texte caché, liens cachés, faux avis, données structurées qui décrivent un contenu absent de la page.
-- Liens affiliés sans `rel="sponsored"`, ou page affiliée sans contenu propre.
-- Changer un slug publié sans redirection. Sur GitHub Pages, il n'y a pas de redirection serveur : on garde l'ancien slug, ou on crée une page de redirection `meta refresh` avec un canonical vers la nouvelle adresse.
-- Scripts de suivi tiers : le site n'en a aucun, et c'est un choix assumé.
+When the task is more than a small edit, or when this date is older than about six months:
 
-## Sources et inspirations
+1. **Search for the latest practices** before applying anything from memory. Good sources:
+   - [Google Search Central blog](https://developers.google.com/search/blog) and its [documentation updates](https://developers.google.com/search/updates), plus Google's ranking update history;
+   - [Bing Webmaster blog](https://blogs.bing.com/webmaster) and Bing Webmaster guidelines;
+   - [schema.org releases](https://schema.org/docs/releases.html);
+   - [llmstxt.org](https://llmstxt.org/) and [indexnow.org](https://www.indexnow.org/);
+   - the crawler documentation of OpenAI, Anthropic, Perplexity, Google and Apple, for bot names and opt-out rules;
+   - [web.dev](https://web.dev/) for Core Web Vitals thresholds and metrics;
+   - recent research on GEO and AI search visibility, and reputable industry sources (Search Engine Land, Search Engine Roundtable), cross-checked against the primary documentation.
+2. **Compare** what you find with this skill. Prefer primary documentation over blogs, and dated, recent sources over undated ones.
+3. **Apply** what is confirmed, and **tell the user** what changed, with the sources.
+4. **Propose an update to this skill** (and its "last reviewed" date) when a practice here is outdated or a new one is well established. Do not edit the skill silently.
 
-- Google Search Central : [Créer du contenu utile](https://developers.google.com/search/docs/fundamentals/creating-helpful-content), [données structurées](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data), [sites multilingues](https://developers.google.com/search/docs/specialty/international/localized-versions).
-- [IndexNow](https://www.indexnow.org/) et [llms.txt](https://llmstxt.org/).
+## Sources and inspirations
+
+- Google Search Central: [Creating helpful content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content), [structured data](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data), [localized versions](https://developers.google.com/search/docs/specialty/international/localized-versions), [Search Essentials](https://developers.google.com/search/docs/essentials).
+- [IndexNow](https://www.indexnow.org/), [llms.txt](https://llmstxt.org/), [web.dev Core Web Vitals](https://web.dev/articles/vitals).
 - Aggarwal et al., [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735), 2023.
-- Laurent Bourrelly, le cocon sémantique.
-- Skills communautaires dont ce skill s'inspire, sans les recopier : [agricidaniel/claude-seo](https://claudemarketplaces.com/skills/agricidaniel/claude-seo/seo-geo) (accès des robots IA, passages citables, llms.txt) et [infrasity-labs/dev-gtm-claude-skills](https://github.com/infrasity-labs/dev-gtm-claude-skills) (audit de « l'AI-readiness »).
+- Laurent Bourrelly's semantic cocoon method.
+- Community skills that inspired the scope, without copying them: [agricidaniel/claude-seo](https://claudemarketplaces.com/skills/agricidaniel/claude-seo/seo-geo) (AI crawler access, quotable passages, llms.txt) and [infrasity-labs/dev-gtm-claude-skills](https://github.com/infrasity-labs/dev-gtm-claude-skills) (AI-readiness audit).

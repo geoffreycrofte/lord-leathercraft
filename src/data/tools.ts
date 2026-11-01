@@ -35,16 +35,20 @@ import kemovanBeveler from '../assets/tools/kemovan-beveler.jpg';
 import kemovanSkivers from '../assets/tools/kemovan-skivers.jpg';
 import kemovanGroover from '../assets/tools/kemovan-groover.jpg';
 
-type Text = Record<Lang, string>;
+export type Text = Record<Lang, string>;
 
 export interface Offer {
   /** Shop or brand name shown on the button. */
   shop: string;
+  /** Button text, when the shop name alone is not enough. */
+  label?: Text;
   url: string;
   /** Partner discount code, shown next to the link. */
   code?: string;
   /** Amazon product id, to link to amazon.fr on the French pages. */
   asin?: string;
+  /** amazon.fr product id, when the French store sells another reference. */
+  asinFr?: string;
 }
 
 /**
@@ -52,8 +56,9 @@ export interface Offer {
  * to amazon.fr with the French Associates tag, once that tag is set.
  */
 export function offerUrl(offer: Offer, lang: Lang): string {
-  if (lang === 'fr' && offer.asin && AMAZON_FR_TAG) {
-    return `https://www.amazon.fr/dp/${offer.asin}?tag=${AMAZON_FR_TAG}`;
+  const asin = offer.asinFr ?? offer.asin;
+  if (lang === 'fr' && asin && AMAZON_FR_TAG) {
+    return `https://www.amazon.fr/dp/${asin}?tag=${AMAZON_FR_TAG}`;
   }
   return offer.url;
 }

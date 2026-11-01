@@ -111,7 +111,7 @@ Payhip est très limité pour le contenu et le SEO :
 - [ ] Reprise des guides Payhip (tips-and-tricks)
 - [x] Liens affiliés Amazon, AliExpress, Sinabroks et KemovanCraft, et codes promo partenaires (LORD7, LORD10), repris du shop
 - [x] Page Guides transformée en portail (conseils avant de commencer, puis tous les guides), et guide « Où acheter du cuir »
-- [ ] Migrer les guides débutants ceinture et portefeuille depuis Payhip
+- [x] Migrer les guides débutants ceinture et portefeuille depuis Payhip (listes produits partagées avec Mes outils, liens amazon.fr en français)
 - [ ] Pages piliers par type d'objet (portefeuilles, porte-cartes, sacs…) vers les collections
 - [ ] Présentation des produits sur le site, à concevoir avec le design
 - [ ] Newsletter (voir le journal)

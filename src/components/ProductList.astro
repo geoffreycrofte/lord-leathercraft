@@ -1,0 +1,37 @@
+---
+/** A grid of product cards, for the beginner guides. */
+import ProductCard from './ProductCard.astro';
+import type { Product } from '../data/kits';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  products: Product[];
+  lang: Lang;
+  headingLevel?: 3 | 4;
+}
+
+const { products, lang, headingLevel = 3 } = Astro.props;
+---
+
+<ul class="products" role="list">
+  {
+    products.map((product) => (
+      <li>
+        <ProductCard product={product} lang={lang} headingLevel={headingLevel} />
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+    gap: var(--space-s);
+    /* Wider than the text column, up to the article width. */
+    width: 100cqi;
+    margin: var(--space-m) 0 var(--space-l);
+    padding: 0;
+    list-style: none;
+  }
+</style>

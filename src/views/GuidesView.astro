@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import Icon from '../components/Icon.astro';
 import YouTube from '../components/YouTube.astro';
-import { CONTACT_EMAIL, SHOP_URL, shopCollections, socials } from '../data/site';
+import { CONTACT_EMAIL, shopCollections, socials } from '../data/site';
 import { guidePath, routes, useTranslations, type Lang } from '../i18n/ui';
 import { getArticles, type Article } from '../lib/articles';
 import heroPhoto from '../assets/guides/leather-rolls.jpg';
@@ -95,7 +95,7 @@ const copy = {
     tipsIntro: 'Elles prennent quelques minutes, et font gagner du cuir, du temps et de la patience.',
     tools: {
       title: 'Choisir ses outils',
-      text: 'On me demande souvent quels outils j’utilise et combien ils coûtent. Plutôt qu’une simple liste, j’ai fait un guide débutant par projet (en anglais), et une page avec tous mes outils, des bases aux modèles de meilleure qualité.',
+      text: 'On me demande souvent quels outils j’utilise et combien ils coûtent. Plutôt qu’une simple liste, j’ai fait un guide débutant par projet, et une page avec tous mes outils, des bases aux modèles de meilleure qualité.',
       belt: 'Guide pour fabriquer une ceinture en cuir',
       wallet: 'Guide pour fabriquer des portefeuilles en cuir',
       list: 'Voir tous mes outils',
@@ -167,13 +167,13 @@ const copy = {
           <p>{copy.tools.text}</p>
           <ul class="link-list" role="list">
             <li>
-              <a href={`${SHOP_URL}/create-leather-belt-beginner-guide`} hreflang="en">
+              <a href={guidePath(lang, lang === 'en' ? 'leather-belt-making-guide' : 'guide-ceinture-cuir')}>
                 {copy.tools.belt}
                 <Icon name="arrowRight" size={18} strokeWidth={2.2} />
               </a>
             </li>
             <li>
-              <a href={`${SHOP_URL}/create-leather-wallets-beginner-guide`} hreflang="en">
+              <a href={guidePath(lang, lang === 'en' ? 'leather-wallet-making-guide' : 'guide-portefeuille-cuir')}>
                 {copy.tools.wallet}
                 <Icon name="arrowRight" size={18} strokeWidth={2.2} />
               </a>

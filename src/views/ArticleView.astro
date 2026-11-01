@@ -108,7 +108,7 @@ if (data.howTo) {
         />
       )
     }
-    {remarkPluginFrontmatter.hasAffiliateLinks && <AffiliateNotice lang={lang} />}
+    {(remarkPluginFrontmatter.hasAffiliateLinks || data.sponsored) && <AffiliateNotice lang={lang} />}
     <div class="prose">
       <Content components={{ YouTube }} />
     </div>
@@ -117,6 +117,10 @@ if (data.howTo) {
 </BaseLayout>
 
 <style>
+  /* Wide blocks inside the text (product lists) size against the article. */
+  .article {
+    container-type: inline-size;
+  }
   .article__header {
     display: flex;
     flex-direction: column;

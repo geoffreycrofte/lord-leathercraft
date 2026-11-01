@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://lord.crofte.fr/sitemap-index.xml
+
+# Overview of the site for language models: https://lord.crofte.fr/llms.txt

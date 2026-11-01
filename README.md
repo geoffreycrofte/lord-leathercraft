@@ -36,6 +36,7 @@ scripts/
   import-notion.mjs      import d'un export Notion
   optimize-images.mjs    compression des photos (npm run images)
   fetch-youtube-posters.mjs  miniatures des vidéos YouTube dans src/assets/videos (npm run posters)
+  indexnow.mjs           signale à Bing les pages nouvelles ou modifiées (IndexNow), à chaque déploiement
 public/                  favicons, CNAME, robots.txt, image Open Graph
 docs/deploiement.md      guide DNS et GitHub Pages
 docs/notion.md           contenus issus de Notion et mise à jour
@@ -125,3 +126,7 @@ Les miniatures des vidéos YouTube sont stockées dans `src/assets/videos`. Quan
 ## Accessibilité
 
 Le site vise le niveau WCAG 2.2 AA. La palette (issue du Figma « Leather Craft Branding ») et ses règles de contraste sont documentées en tête de `src/styles/global.css`.
+
+## IndexNow (Bing)
+
+À chaque déploiement, `scripts/indexnow.mjs` compare l'empreinte de chaque page avec celle du site en ligne (`/indexnow-manifest.json`), puis envoie à IndexNow la liste des pages nouvelles ou modifiées. Bing, Yandex, Seznam et Naver les explorent alors rapidement. La clé est le fichier `public/97422bae69f8220c117c7617ebb0e6f1.txt` : ne le supprimez pas. Une erreur d'IndexNow ne bloque jamais la mise en ligne.

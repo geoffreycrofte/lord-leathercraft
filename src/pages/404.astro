@@ -10,6 +10,14 @@ import { routes } from '../i18n/ui';
   alternates={{}}
   noindex
 >
+  <script is:inline>
+    // Old /blo/<product id> links, printed in patterns: send them to the
+    // Buy Leather Online search, as the former Nginx rule did.
+    (function () {
+      var m = location.pathname.match(/^\/blo\/(\d+)\/?$/);
+      if (m) location.replace('https://buyleatheronline.com/en/search?s=' + m[1] + '&utm_source=lordleathercraft&utm_medium=pattern');
+    })();
+  </script>
   <div class="container prose notfound">
     <h1>Page not found</h1>
     <p>This page does not exist or has moved. Try the <a href={routes.home.en}>home page</a> or the <a href={routes.guides.en}>guides</a>.</p>

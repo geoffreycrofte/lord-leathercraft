@@ -18,6 +18,21 @@ Notes propres à ce site, lues par le skill `seo-geo` (`.claude/skills/seo-geo/S
 | Contraintes de contenu | `src/content.config.ts` | Titre de 70 caractères maximum, sans « + » (Payhip le transforme en espace). Description de 70 à 160 caractères. Le build échoue si une traduction manque. |
 | llms.txt | `src/pages/llms.txt.ts` | Généré à chaque build à partir des guides, des articles de blog et des pages principales. Chaque page anglaise est suivie de sa version française. Signalé en commentaire dans `robots.txt`. |
 
+## Redirections des anciennes adresses
+
+Reprises de l'ancien Nginx du VPS (`conf/nginx/redirections.conf`) dans `astro.config.mjs` (`redirects`). Chaque ancienne adresse devient une page de redirection immédiate (`meta refresh` et canonical), exclue du sitemap. Avant d'en ajouter une, vérifiez qu'aucune page du site n'utilise déjà cette adresse.
+
+| Ancienne adresse | Destination |
+|---|---|
+| `/products` | `/portfolio/` (remplace la page Notion Products) |
+| `/patterns` | `https://shop.crofte.fr/` |
+| `/wallet` | `/guides/leather-wallet-making-guide/` (remplace le guide Payhip) |
+| `/belt` | `/guides/leather-belt-making-guide/` (remplace le guide Payhip) |
+| `/video-wings2` | `https://youtu.be/VO63oQ0wD3Y` |
+| `/blo/<numéro>` | Recherche Buy Leather Online, avec les paramètres `utm`. Comme l'adresse contient un numéro variable, elle est gérée en JavaScript dans `src/pages/404.astro`. |
+
+L'ancienne règle `/guides` → Payhip est abandonnée : la page `/guides/` existe désormais sur le site.
+
 ## Décisions
 
 - **Robots IA** : tous autorisés, pour être cité.
